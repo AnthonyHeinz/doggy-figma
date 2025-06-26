@@ -10,6 +10,7 @@
   align-items: center;
   position: relative;
   text-align: center;
+  z-index: 1;
 }
 
 .city-content {

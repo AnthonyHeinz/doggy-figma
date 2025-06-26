@@ -2,6 +2,7 @@
   background-color: white;
   padding: 4rem 2rem;
   text-align: center;
+  z-index: 1;
 }
 
 .how-it-works-title {
@@ -67,4 +68,22 @@
   margin-top: 1rem;
   margin-left: 2.5rem;
   margin-top: auto;
+}
+
+.how-it-works-gradient {
+  position: absolute;
+  top: 15rem;
+  left: -3rem;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(
+    ellipse at center,
+    rgba(249, 201, 161, 0.5) 100%,
+    rgba(249, 201, 161, 0.3) 50%,
+    rgba(249, 201, 161, 0.1) 100%,
+    #ffffff 100%
+  );
+  filter: blur(60px);
+  z-index: 0;
+  pointer-events: none;
 }
