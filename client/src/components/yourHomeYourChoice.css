@@ -1,0 +1,70 @@
+.home-choice-section {
+  background: linear-gradient(
+    to bottom,
+    #ffffff 0%,
+    #F7E8CD 33%,
+    #F7E8CD 66%,
+    #ffffff 100%
+  );
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  padding: 4rem 2rem;
+  flex-wrap: wrap;
+  text-align: center;
+}
+
+.dog-icon {
+  height: 6rem;
+  flex-shrink: 0;
+}
+
+.home-choice-content {
+  flex: 1;
+  max-width: 800px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.home-choice-content h2 {
+  font-size: 2rem;
+  font-weight: 800;
+  color: #222;
+  margin-bottom: 0.75rem;
+}
+
+.home-choice-content p {
+  font-size: 1rem;
+  line-height: 1.4;
+  color: #444;
+  margin-bottom: 1.5rem;
+}
+
+.home-choice-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.primary-btn {
+  background-color: #f5aa1c;
+  color: black;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.secondary-btn {
+  background-color: white;
+  color: black;
+  border: 2px solid #f5aa1c;
+  padding: 0.75rem 1.5rem;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+}

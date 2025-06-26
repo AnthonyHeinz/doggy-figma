@@ -1,0 +1,26 @@
+import React from 'react';
+import './yourHomeYourChoice.css';
+import dogIcon from '../assets/dibby_Dog_Logo.png';
+
+function YourHomeYourChoice() {
+  return (
+    <section className='home-choice-section'>
+      <img src={dogIcon} alt='dogIcon' className='dog-icon' />
+      <div className='home-choice-content'>
+        <h2>Your Home, Your Choice</h2>
+        <p>
+          Use Dibby to schedule a property tour from our selection of listings
+          or any other home you've found online.
+        </p>
+        <div className='home-choice-buttons'>
+          <button className='primary-btn'>Start Browsing on Dibby</button>
+          <button className='secondary-btn'>
+            Send a Viewer to a Property You've Found
+          </button>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+export default YourHomeYourChoice;
