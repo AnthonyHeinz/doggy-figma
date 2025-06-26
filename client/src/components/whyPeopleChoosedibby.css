@@ -1,0 +1,80 @@
+.testimonials-section {
+  background: linear-gradient(to bottom, #ffffff 0%, #fff5f5 50%, #ffffff 100%);
+  padding: 4rem 2rem 10rem 2rem;
+  text-align: center;
+  position: relative;
+}
+
+.testimonials-section h2 {
+  font-size: 3rem;
+  font-weight: 800;
+  margin-bottom: 0.5rem;
+  color: #222;
+}
+
+.subtitle {
+  color: #555;
+  font-size: 1rem;
+  margin-bottom: 4rem;
+}
+
+.testimonials-grid {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.testimonial-card {
+  background: white;
+  border-radius: 1rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  padding: 1.5rem;
+  max-width: 280px;
+  text-align: left;
+  flex: 1;
+  min-width: 250px;
+}
+
+.avatar {
+  width: 50px;
+  height: 50px;
+  background: #ccc;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.name {
+  font-weight: bold;
+  margin: 0;
+}
+
+.quote {
+  color: #124075;
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
+
+.dog-icon-bottom-left {
+  height: 100px;
+  position: absolute;
+  bottom: 0rem;
+  left: 3rem;
+}
+
+.dog-icon-top-right {
+  height: 100px;
+  position: absolute;
+  top: 7.2rem;
+  right: 20%;
+  transform: scaleX(-1);
+}
+
+.testimonial-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+
