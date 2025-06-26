@@ -10,6 +10,7 @@ function HowItWorks() {
       description:
         'Choose your next home from our selection of listings or from another site.',
       linkText: 'View Property Listings →',
+      href: 'View_Property_Listing',
       picture: dogIcon,
     },
     {
@@ -25,6 +26,7 @@ function HowItWorks() {
       title: 'Receive a Report',
       description: 'Receive a comprehensive report on your future home.',
       linkText: 'See Example Report →',
+      href: 'See_Example_Report',
       picture: dogIcon,
     },
   ];
@@ -39,7 +41,7 @@ function HowItWorks() {
             <h3 className='step-title'>{step.title}</h3>
             <p className='step-description'>{step.description}</p>
             {step.linkText && (
-              <a className='step-link' href='#'>
+              <a className='step-link' href={step.href}>
                 {step.linkText}
               </a>
             )}
