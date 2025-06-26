@@ -1,0 +1,61 @@
+.city-section {
+  background-image: url('../assets/city_Image.png');
+  background-size: cover;
+  background-position: center bottom;
+  background-repeat: no-repeat;
+  color: white;
+  padding: 4rem 2rem 8rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 500px;
+  position: relative;
+  text-align: center;
+}
+
+
+.city-content {
+  max-width: 1000px;
+  padding: 2rem;
+  border-radius: 8px;
+}
+
+.city-content h1 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.city-content p {
+  margin-bottom: 1.5rem;
+  font-size: 1.1rem;
+}
+
+.city-options {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.city-options input {
+  padding: 0.75rem;
+  border-radius: 4px;
+  border: none;
+  width: 25rem;
+}
+
+.city-options button {
+  padding: 0.75rem 10rem;
+  background-color: #fbbc05;
+  color: black;
+  border: none;
+  border-radius: 4px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.or-separator {
+  font-weight: bold;
+}
