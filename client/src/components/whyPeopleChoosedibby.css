@@ -57,7 +57,7 @@
 .dog-icon-bottom-left {
   height: 100px;
   position: absolute;
-  bottom: 0rem;
+  bottom: -.5rem;
   left: 3rem;
 }
 
