@@ -1,6 +1,7 @@
 import React from 'react';
 import './theDibbyExperience.css';
 import greenCheckMark from '../assets/green_Check_Mark.png';
+import dogIcon from '../assets/dibby_Dog_Logo.png';
 
 function TheDibbyExperience() {
   const features = [
@@ -30,12 +31,17 @@ function TheDibbyExperience() {
         <ul className='feature-grid'>
           {features.map((item, index) => (
             <li key={index}>
-              <img src={greenCheckMark} alt='greenCheckMark' className='check-icon'></img>
+              <img
+                src={greenCheckMark}
+                alt='greenCheckMark'
+                className='check-icon'
+              ></img>
               {item}
             </li>
           ))}
         </ul>
       </div>
+      <img src={dogIcon} alt='dogIcon' className='dibby-experience-dog-icon' />
     </section>
   );
 }

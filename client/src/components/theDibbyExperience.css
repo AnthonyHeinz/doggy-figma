@@ -2,8 +2,8 @@
   background: linear-gradient(
     to bottom,
     #ffffff 0%,
-    #B2D1ED 33%,
-    #B2D1ED 66%,
+    #B2D1ED 50%,
+    #B2D1ED 50%,
     #ffffff 100%
   );
   display: flex;
@@ -35,11 +35,12 @@
 .experience-card {
   background-color: #f8fbff;
   padding: 2rem;
-  border-radius: 16px;
+  border-radius: 8px;
   box-shadow: 0 0 12px rgba(0, 0, 0, 0.08);
   max-width: 550px;
   flex: 1;
   min-width: 300px;
+  z-index: 1;
 }
 
 .experience-card h3 {
@@ -68,4 +69,12 @@
 .check-icon {
   height: 1rem;
   width: 1rem;
+}
+
+.dibby-experience-dog-icon {
+  position: absolute;
+  right: 11rem;
+  top: 69rem;
+  transform: scaleX(-1);
+  z-index: 0;
 }
