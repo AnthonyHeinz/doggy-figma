@@ -76,4 +76,21 @@
   margin-bottom: 1rem;
 }
 
+.how-it-works-gradient-three {
+  position: absolute;
+  top: 10rem;
+  left: -22rem;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(
+    ellipse at center,
+    #f7e3e4cc 100%,
+    #f7e3e480 50%,
+    #ffffff 50%
+  );
+  filter: blur(60px);
+  z-index: -1;
+  pointer-events: none;
+}
+
 

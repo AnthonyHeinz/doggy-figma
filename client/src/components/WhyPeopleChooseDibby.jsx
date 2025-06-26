@@ -24,6 +24,7 @@ const testimonials = [
 function WhyPeopleChooseDibby() {
   return (
     <section className='testimonials-section'>
+      <div className='how-it-works-gradient-three'></div>
       <h2>Why people choose Dibby</h2>
       <p className='subtitle'>
         Hear what real customers have to say about their Dibby experience.
