@@ -25,7 +25,7 @@ function CitySection() {
           <div className='or-separator'>OR</div>
           <div>
             <p>Send a Viewer to a property you’ve found</p>
-            <button>Send a Viewer</button>
+            <button className='viewer-button'>Send a Viewer</button>
           </div>
         </div>
       </div>

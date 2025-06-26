@@ -8,7 +8,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 500px;
   position: relative;
   text-align: center;
 }
@@ -62,7 +61,6 @@
 .input-wrapper {
   position: relative;
   display: inline-block;
-  width: 100%;
 }
 
 .input-wrapper input {
@@ -91,4 +89,31 @@
 .input-wrapper .overlay-button img {
   height: 18px;
   width: 18px;
+}
+
+@media (max-width: 1050px) {
+  .city-options {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .city-options > div:first-child {
+    order: 1;
+  }
+
+  .or-separator {
+    order: 2;
+    font-size: 1rem;
+    margin: 0.5rem 0;
+  }
+
+  .city-options > div:last-child {
+    order: 3;
+  }
+
+  .city-options > div {
+    width: 100%;
+    max-width: 500px;
+  }
 }
