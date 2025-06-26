@@ -42,6 +42,8 @@ function WhyPeopleChooseDibby() {
       </div>
       <img src={dogIcon} alt='dog' className='dog-icon-bottom-left' />
       <img src={dogIcon} alt='dog' className='dog-icon-top-right' />
+      <div className='how-it-works-gradient-four'></div>
+      <div className='how-it-works-gradient-five'></div>
     </section>
   );
 }

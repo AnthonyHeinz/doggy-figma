@@ -57,7 +57,7 @@
 .dog-icon-bottom-left {
   height: 100px;
   position: absolute;
-  bottom: -.5rem;
+  bottom: -0.5rem;
   left: 3rem;
 }
 
@@ -93,4 +93,36 @@
   pointer-events: none;
 }
 
+.how-it-works-gradient-four {
+  position: absolute;
+  top: 3rem;
+  left: 85rem;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(
+    ellipse at center,
+    #f7e3e4cc 100%,
+    #f7e3e480 50%,
+    #ffffff 50%
+  );
+  filter: blur(60px);
+  z-index: -1;
+  pointer-events: none;
+}
 
+.how-it-works-gradient-five {
+  position: absolute;
+  top: 33rem;
+  left: 50rem;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(
+    ellipse at center,
+    #f7e3e4cc 100%,
+    #f7e3e480 50%,
+    #ffffff 50%
+  );
+  filter: blur(60px);
+  z-index: -1;
+  pointer-events: none;
+}
