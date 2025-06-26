@@ -1,3 +1,9 @@
+.city-wrapper {
+  position: relative;
+  width: 100%;
+  height: auto;
+}
+
 .city-section {
   background-image: url('../assets/city_Image.png');
   background-size: cover;
@@ -10,6 +16,16 @@
   align-items: center;
   position: relative;
   text-align: center;
+  z-index: 5;
+}
+
+.city-white-background {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 200px;
+  background-color: white;
   z-index: 1;
 }
 
@@ -117,4 +133,22 @@
     width: 100%;
     max-width: 500px;
   }
+}
+
+.how-it-works-gradient-one {
+  position: absolute;
+  bottom: -5rem;
+  left: -3rem;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(
+    ellipse at center,
+    rgba(249, 201, 161, 0.5) 100%,
+    rgba(249, 201, 161, 0.3) 50%,
+    rgba(249, 201, 161, 0.1) 100%,
+    #ffffff 100%
+  );
+  filter: blur(60px);
+  z-index: 4;
+  pointer-events: none;
 }
