@@ -1,5 +1,6 @@
 import React from 'react';
 import './citySection.css';
+import search from '../assets/Search.png';
 
 function CitySection() {
   return (
@@ -14,7 +15,12 @@ function CitySection() {
         <div className='city-options'>
           <div>
             <p>Start browsing listings on Dibby</p>
-            <input placeholder='Enter city or ZIP Code' />
+            <div className='input-wrapper'>
+              <input type='text' placeholder='Enter city or ZIP Code' />
+              <button className='overlay-button'>
+                <img src={search} alt='Search' />
+              </button>
+            </div>
           </div>
           <div className='or-separator'>OR</div>
           <div>
