@@ -70,7 +70,7 @@
   margin-top: auto;
 }
 
-.how-it-works-gradient {
+.how-it-works-gradient-one {
   position: absolute;
   top: 15rem;
   left: -3rem;
@@ -87,3 +87,22 @@
   z-index: 0;
   pointer-events: none;
 }
+
+.how-it-works-gradient-two {
+  position: absolute;
+  top: 35rem;
+  left: 87rem;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(
+    ellipse at center,
+    rgba(249, 201, 161, 0.5) 100%,
+    rgba(249, 201, 161, 0.3) 50%,
+    rgba(249, 201, 161, 0.1) 100%,
+    #ffffff 100%
+  );
+  filter: blur(60px);
+  z-index: 0;
+  pointer-events: none;
+}
+

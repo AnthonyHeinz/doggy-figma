@@ -33,7 +33,7 @@ function HowItWorks() {
 
   return (
     <section className='how-it-works-section'>
-      <div className='how-it-works-gradient'></div>
+      <div className='how-it-works-gradient-one'></div>
       <h2 className='how-it-works-title'>How it Works</h2>
       <div className='how-it-works-steps'>
         {steps.map((step, index) => (
@@ -50,6 +50,7 @@ function HowItWorks() {
           </div>
         ))}
       </div>
+       <div className='how-it-works-gradient-two'></div>
     </section>
   );
 }
