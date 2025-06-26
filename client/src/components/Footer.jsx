@@ -6,7 +6,7 @@ function Footer() {
   return (
     <footer className='footer'>
       <div className='footer-container'>
-        <div className='footer-column'>
+        <div className='footer-main-column'>
           <h3>Dibby</h3>
           <p>
             Your number one site for making the renting process as easy as
