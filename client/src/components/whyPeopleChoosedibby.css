@@ -98,9 +98,34 @@
 .dog-icon-top-right {
   height: 100px;
   position: absolute;
-  top: 7.2rem;
+  top: 4.25rem;
   right: 20%;
   transform: scaleX(-1);
+  z-index: 0;
+  transition: all 0.3s ease;
+}
+
+@media (max-width: 1200px) {
+  .header-with-dog {
+    justify-content: center;
+    flex-wrap: nowrap;
+    gap: 1.2rem;
+  }
+
+  .dog-icon-top-right {
+    position: static;
+    height: 80px;
+    transform: scaleX(-1);
+  }
+}
+
+  .header-with-dog {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  gap: 1rem;
+  flex-wrap: nowrap;
 }
 
 .how-it-works-gradient-three,

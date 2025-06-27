@@ -61,16 +61,15 @@ function WhyPeopleChooseDibby() {
     return () => window.removeEventListener('resize', updateCount);
   }, []);
 
-useEffect(() => {
-  if (isAnimating) {
-    const timeout = setTimeout(() => {
-      setIsAnimating(false);
-      setAnimateDirection('');
-    }, 300);
-    return () => clearTimeout(timeout);
-  }
-}, [isAnimating]);
-
+  useEffect(() => {
+    if (isAnimating) {
+      const timeout = setTimeout(() => {
+        setIsAnimating(false);
+        setAnimateDirection('');
+      }, 300);
+      return () => clearTimeout(timeout);
+    }
+  }, [isAnimating]);
 
   function getVisibleCount() {
     const width = window.innerWidth;
@@ -104,7 +103,10 @@ useEffect(() => {
   return (
     <section className='testimonials-section'>
       <div className='how-it-works-gradient-three'></div>
-      <h2>Why people choose Dibby</h2>
+      <div className='header-with-dog'>
+        <h2>Why people choose Dibby</h2>
+        <img src={dogIcon} alt='dog' className='dog-icon-top-right' />
+      </div>
       <p className='subtitle'>
         Hear what real customers have to say about their Dibby experience.
       </p>
@@ -116,7 +118,7 @@ useEffect(() => {
         >
           ‹
         </button>
-       <div className={`carousel-track ${animateDirection}`}>
+        <div className={`carousel-track ${animateDirection}`}>
           {visibleCards.map((card, index) => (
             <div className='carousel-card testimonial-card' key={index}>
               <div
@@ -140,7 +142,6 @@ useEffect(() => {
         </button>
       </div>
       <img src={dogIcon} alt='dog' className='dog-icon-bottom-left' />
-      <img src={dogIcon} alt='dog' className='dog-icon-top-right' />
       <div className='how-it-works-gradient-four'></div>
       <div className='how-it-works-gradient-five'></div>
     </section>
