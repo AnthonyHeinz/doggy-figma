@@ -27,21 +27,27 @@ function TheDibbyExperience() {
         </p>
       </div>
       <div className='experience-card'>
-        <h3>What We Provide</h3>
-        <ul className='feature-grid'>
-          {features.map((item, index) => (
-            <li key={index}>
-              <img
-                src={greenCheckMark}
-                alt='greenCheckMark'
-                className='check-icon'
-              ></img>
-              {item}
-            </li>
-          ))}
-        </ul>
+        <img
+          src={dogIcon}
+          alt='dogIcon'
+          className='dibby-experience-dog-icon'
+        />
+        <div className='test'>
+          <h3>What We Provide</h3>
+          <ul className='feature-grid'>
+            {features.map((item, index) => (
+              <li key={index}>
+                <img
+                  src={greenCheckMark}
+                  alt='greenCheckMark'
+                  className='check-icon'
+                />
+                {item}
+              </li>
+            ))}
+          </ul>
+        </div>
       </div>
-      <img src={dogIcon} alt='dogIcon' className='dibby-experience-dog-icon' />
     </section>
   );
 }
