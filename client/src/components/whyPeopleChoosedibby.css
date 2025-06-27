@@ -3,6 +3,7 @@
   text-align: center;
   position: relative;
   font-family: 'Open Sans', sans-serif;
+  overflow: hidden;
 }
 
 .testimonials-section h2 {
