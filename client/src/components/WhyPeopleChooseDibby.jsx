@@ -1,5 +1,5 @@
 import React from 'react';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import './whyPeopleChooseDibby.css';
 import dogIcon from '../assets/dibby_Dog_Logo.png';
 import dogImage from '../assets/testdog.jpeg';
@@ -9,48 +9,62 @@ function WhyPeopleChooseDibby() {
     {
       name: 'Doggo',
       quote: `This honestly made life so much easier. I honestly was pretty nervous about moving with my sister, but Dibby gave us a lot of comfort in our decision.`,
-      image: dogImage 
+      image: dogImage,
     },
     {
       name: 'NAME',
       quote: `This was crazy helpful. So many apartment tours are during the week and it’s hard to take enough time off to make it worth the cost of the work day.`,
-      image: dogImage 
+      image: dogImage,
     },
     {
       name: 'NAME',
       quote: `There is no way me and my partner would have been able to move as quickly without Dibby’s help.`,
-      image:  dogImage ,
+      image: dogImage,
     },
     {
       name: 'NAME',
       quote: `Something was going on with the property manager, and we received very helpful advice.`,
-      image:  dogImage ,
+      image: dogImage,
     },
     {
       name: 'NAME',
       quote: `This honestly made life so much easier. I honestly was pretty nervous about moving with my sister, but Dibby gave us a lot of comfort in our decision.`,
-      image:  dogImage ,
+      image: dogImage,
     },
     {
       name: 'NAME',
       quote: `This was crazy helpful. So many apartment tours are during the week and it’s hard to take enough time off to make it worth the cost of the work day.`,
-      image:  dogImage ,
+      image: dogImage,
     },
     {
       name: 'NAME',
       quote: `There is no way me and my partner would have been able to move as quickly without Dibby’s help.`,
-      image:  dogImage ,
+      image: dogImage,
     },
     {
       name: 'NAME',
       quote: `Something was going on with the property manager, and we received very helpful advice.`,
-      image:  dogImage ,
+      image: dogImage,
     },
   ];
 
   const [startIndex, setStartIndex] = useState(0);
+  const [visibleCount, setVisibleCount] = useState(getVisibleCount(4));
 
-  const visableCount = 4;
+  useEffect(() => {
+    const updateCount = () => setVisibleCount(getVisibleCount());
+    updateCount();
+    window.addEventListener('resize', updateCount);
+    return () => window.removeEventListener('resize', updateCount);
+  }, []);
+
+  function getVisibleCount() {
+    const width = window.innerWidth;
+    if (width >= 1200) return 4;
+    if (width >= 992) return 3;
+    if (width >= 768) return 2;
+    return 1;
+  }
 
   const handlePrev = () => {
     setStartIndex((prev) => Math.max(prev - 1, 0));
@@ -58,13 +72,13 @@ function WhyPeopleChooseDibby() {
 
   const handleNext = () => {
     setStartIndex((prev) =>
-      Math.min(prev + 1, testimonials.length - visableCount)
+      Math.min(prev + 1, testimonials.length - visibleCount)
     );
   };
 
   const visibleCards = testimonials.slice(
     startIndex,
-    startIndex + visableCount
+    startIndex + visibleCount
   );
 
   return (
@@ -100,7 +114,7 @@ function WhyPeopleChooseDibby() {
         <button
           className='carousel-btn'
           onClick={handleNext}
-          disabled={startIndex + visableCount >= testimonials.length}
+          disabled={startIndex + visibleCount >= testimonials.length}
         >
           ›
         </button>
@@ -114,4 +128,3 @@ function WhyPeopleChooseDibby() {
 }
 
 export default WhyPeopleChooseDibby;
-

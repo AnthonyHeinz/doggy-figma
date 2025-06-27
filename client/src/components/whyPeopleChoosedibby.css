@@ -54,6 +54,7 @@
   overflow: hidden;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
   background-color: #f0f0f0;
+  flex-shrink: 0;
 }
 
 .testimonial-background {
@@ -66,7 +67,8 @@
 }
 
 .testimonial-overlay {
-  background-color: rgba(245, 245, 245, 0.95);
+  background-color: rgba(30, 30, 30, 0.6);
+  color: #fff;
   padding: 1rem;
   width: 100%;
   font-size: 0.95rem;
@@ -75,7 +77,6 @@
 
 .testimonial-overlay .quote {
   margin: 0;
-  color: #124075;
   line-height: 1.4;
 }
 
@@ -83,7 +84,6 @@
   margin-top: 0.5rem;
   font-style: italic;
   text-align: right;
-  color: #333;
 }
 
 .dog-icon-bottom-left {
