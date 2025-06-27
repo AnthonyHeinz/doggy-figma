@@ -19,41 +19,71 @@
   margin-bottom: 4rem;
 }
 
-.testimonials-grid {
+.carousel-wrapper {
   display: flex;
-  gap: 1.5rem;
-  flex-wrap: wrap;
+  align-items: center;
   justify-content: center;
+  gap: 1rem;
 }
 
-.testimonial-card {
-  background: white;
+.carousel-btn {
+  font-size: 2rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0 1rem;
+  user-select: none;
+}
+
+.carousel-btn:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+.carousel-track {
+  display: flex;
+  gap: 1rem;
+  overflow: hidden;
+}
+
+.carousel-card {
+  position: relative;
+  height: 320px;
+  width: 250px;
   border-radius: 1rem;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
-  padding: 1.5rem;
-  max-width: 280px;
-  text-align: left;
-  flex: 1;
-  min-width: 250px;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  background-color: #f0f0f0;
 }
 
-.avatar {
-  width: 50px;
-  height: 50px;
-  background: #ccc;
-  border-radius: 50%;
-  flex-shrink: 0;
+.testimonial-background {
+  height: 100%;
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: flex-end;
 }
 
-.name {
-  font-weight: bold;
-  margin: 0;
-}
-
-.quote {
-  color: #124075;
+.testimonial-overlay {
+  background-color: rgba(245, 245, 245, 0.95);
+  padding: 1rem;
+  width: 100%;
   font-size: 0.95rem;
+  text-align: left;
+}
+
+.testimonial-overlay .quote {
+  margin: 0;
+  color: #124075;
   line-height: 1.4;
+}
+
+.testimonial-overlay .name {
+  margin-top: 0.5rem;
+  font-style: italic;
+  text-align: right;
+  color: #333;
 }
 
 .dog-icon-bottom-left {
@@ -71,60 +101,34 @@
   transform: scaleX(-1);
 }
 
-.testimonial-header {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-  margin-bottom: 1rem;
+.how-it-works-gradient-three,
+.how-it-works-gradient-four,
+.how-it-works-gradient-five {
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(
+    ellipse at center,
+    #f7e3e4cc 100%,
+    #f7e3e480 50%,
+    #ffffff 50%
+  );
+  filter: blur(60px);
+  z-index: -1;
+  pointer-events: none;
 }
 
 .how-it-works-gradient-three {
-  position: absolute;
   top: 10rem;
   left: -22rem;
-  width: 400px;
-  height: 400px;
-  background: radial-gradient(
-    ellipse at center,
-    #f7e3e4cc 100%,
-    #f7e3e480 50%,
-    #ffffff 50%
-  );
-  filter: blur(60px);
-  z-index: -1;
-  pointer-events: none;
 }
 
 .how-it-works-gradient-four {
-  position: absolute;
   top: 3rem;
   left: 85rem;
-  width: 400px;
-  height: 400px;
-  background: radial-gradient(
-    ellipse at center,
-    #f7e3e4cc 100%,
-    #f7e3e480 50%,
-    #ffffff 50%
-  );
-  filter: blur(60px);
-  z-index: -1;
-  pointer-events: none;
 }
 
 .how-it-works-gradient-five {
-  position: absolute;
   top: 33rem;
   left: 50rem;
-  width: 400px;
-  height: 400px;
-  background: radial-gradient(
-    ellipse at center,
-    #f7e3e4cc 100%,
-    #f7e3e480 50%,
-    #ffffff 50%
-  );
-  filter: blur(60px);
-  z-index: -1;
-  pointer-events: none;
 }
