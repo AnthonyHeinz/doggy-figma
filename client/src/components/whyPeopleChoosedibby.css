@@ -43,7 +43,6 @@
 .carousel-track {
   display: flex;
   gap: 1rem;
-  overflow-x: auto;
   padding: 0 1rem;
 }
 
@@ -139,5 +138,35 @@
 @media (max-width: 767px) {
   .carousel-card {
     max-width: 90vw;
+  }
+}
+
+.slide-left {
+  animation: slideLeft 0.3s ease-in-out;
+}
+
+@keyframes slideLeft {
+  from {
+    transform: translateX(50px);
+    opacity: 0.6;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.slide-right {
+  animation: slideRight 0.3s ease-in-out;
+}
+
+@keyframes slideRight {
+  from {
+    transform: translateX(-50px);
+    opacity: 0.6;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
   }
 }

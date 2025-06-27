@@ -50,6 +50,9 @@ function WhyPeopleChooseDibby() {
 
   const [startIndex, setStartIndex] = useState(0);
   const [visibleCount, setVisibleCount] = useState(getVisibleCount(4));
+  const [animate, setAnimate] = useState(false);
+  const [animateDirection, setAnimateDirection] = useState('');
+  const [isAnimating, setIsAnimating] = useState(false);
 
   useEffect(() => {
     const updateCount = () => setVisibleCount(getVisibleCount());
@@ -57,6 +60,17 @@ function WhyPeopleChooseDibby() {
     window.addEventListener('resize', updateCount);
     return () => window.removeEventListener('resize', updateCount);
   }, []);
+
+useEffect(() => {
+  if (isAnimating) {
+    const timeout = setTimeout(() => {
+      setIsAnimating(false);
+      setAnimateDirection('');
+    }, 300);
+    return () => clearTimeout(timeout);
+  }
+}, [isAnimating]);
+
 
   function getVisibleCount() {
     const width = window.innerWidth;
@@ -67,10 +81,16 @@ function WhyPeopleChooseDibby() {
   }
 
   const handlePrev = () => {
+    if (startIndex === 0) return;
+    setAnimateDirection('slide-right');
+    setIsAnimating(true);
     setStartIndex((prev) => Math.max(prev - 1, 0));
   };
 
   const handleNext = () => {
+    if (startIndex + visibleCount >= testimonials.length) return;
+    setAnimateDirection('slide-left');
+    setIsAnimating(true);
     setStartIndex((prev) =>
       Math.min(prev + 1, testimonials.length - visibleCount)
     );
@@ -96,7 +116,7 @@ function WhyPeopleChooseDibby() {
         >
           ‹
         </button>
-        <div className='carousel-track'>
+       <div className={`carousel-track ${animateDirection}`}>
           {visibleCards.map((card, index) => (
             <div className='carousel-card testimonial-card' key={index}>
               <div
