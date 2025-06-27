@@ -1,5 +1,8 @@
 import React from 'react';
 import './footer.css';
+import twitterIcon from '../assets/Twitter.png'
+import instaIcon from '../assets/Insta.png'
+import linkedinIcon from '../assets/Linkedin.png'
 import { FaTwitter, FaInstagram, FaLinkedin } from 'react-icons/fa';
 
 function Footer() {
@@ -15,13 +18,13 @@ function Footer() {
           <h4>Follow Us</h4>
           <div className='social-icons'>
             <a href='https://twitter.com' target='_blank' rel='noopener noreferrer'>
-              <FaTwitter />
+              <img src = {twitterIcon} alt = 'twitterIcon' className='social-icons'/>
             </a>
             <a href='https://instagram.com' target='_blank' rel='noopener noreferrer'>
-              <FaInstagram />
+              <img src = {instaIcon} alt = 'instaIcon' className='social-icons'/>
             </a>
             <a href='https://linkedin.com' target='_blank' rel='noopener noreferrer'>
-              <FaLinkedin />
+              <img src = {linkedinIcon} alt = 'linkedinIcon' className='social-icons'/>
             </a>
           </div>
         </div>
