@@ -87,13 +87,13 @@
   pointer-events: none;
 }
 
-.test {
+.what-we-provide-card {
   display: flex;
   width: 100%;
   background-color: #f8fbff;
   border-radius: 8px;
   box-shadow: 0 0 12px rgba(0, 0, 0, 0.1);
-  padding: 3rem;
+  padding: 3.2rem;
   flex-direction: column;
   justify-content: center;
 }

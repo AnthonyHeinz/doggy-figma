@@ -32,7 +32,7 @@ function TheDibbyExperience() {
           alt='dogIcon'
           className='dibby-experience-dog-icon'
         />
-        <div className='test'>
+        <div className='what-we-provide-card'>
           <h3>What We Provide</h3>
           <ul className='feature-grid'>
             {features.map((item, index) => (
