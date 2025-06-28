@@ -1,4 +1,8 @@
 .how-it-works-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   background-color: white;
   padding: 4rem 2rem;
   text-align: center;
@@ -6,6 +10,8 @@
   overflow-x: hidden;
   overflow-y: visible;
   z-index: 2;
+  max-width: 1192px;
+   margin: 0 auto;
 }
 
 .how-it-works-title {
@@ -73,8 +79,6 @@
   margin-left: 2.5rem;
   margin-top: auto;
 }
-
-
 
 .how-it-works-gradient-two {
   position: absolute;
