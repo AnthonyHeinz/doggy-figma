@@ -8,11 +8,11 @@ function CitySection() {
       <section className='city-section'>
         <div className='city-content'>
           <h1>We tour properties just for you.</h1>
-          <p>
+          <h6>
             Found a home that looks promising? Whether it’s listed on Dibby or
             somewhere else, we’ll send a trusted Viewer to tour it for you and
             give a full, honest report so you can move with confidence.
-          </p>
+          </h6>
           <div className='city-options'>
             <div>
               <p>Start browsing listings on Dibby</p>

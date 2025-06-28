@@ -42,17 +42,29 @@
   margin-bottom: 1rem;
 }
 
+.city-content h6 {
+  margin-bottom: 1.5rem;
+  font-size: 1.25rem;
+  max-width: 1063px;
+  font-weight: 600;
+  letter-spacing: 0%;
+  line-height: 28px;
+}
+
 .city-content p {
   margin-bottom: 1.5rem;
-  font-size: 1.1rem;
+  font-size: 1.25rem;
+  max-width: 1063px;
+  font-weight: 600;
 }
 
 .city-options {
   display: flex;
-  justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
   gap: 2rem;
+  max-width: 1093px;
+  justify-content: center;
 }
 
 .city-options input {
