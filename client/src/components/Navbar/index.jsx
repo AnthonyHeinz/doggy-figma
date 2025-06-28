@@ -1,6 +1,6 @@
 import React from 'react';
-import './navbar.css';
-import dibbyLogo from '../assets/dibby_Logo.svg';
+import './styles.css';
+import dibbyLogo from '../../assets/dibby_Logo.svg';
 
 function Navbar() {
   const handleAddPropertyButton = () => {

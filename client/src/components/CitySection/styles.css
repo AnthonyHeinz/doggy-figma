@@ -5,7 +5,7 @@
 }
 
 .city-section {
-  background-image: url('../assets/city_Image.png');
+  background-image: url('../../assets/city_Image.png');
   background-size: cover;
   background-position: center bottom;
   background-repeat: no-repeat;

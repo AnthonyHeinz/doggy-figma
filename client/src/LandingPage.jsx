@@ -1,10 +1,10 @@
-import CitySection from './components/CitySection';
-import Footer from './components/Footer';
-import HowItWorks from './components/HowItWorks';
-import Navbar from './components/navbar';
-import TheDibbyExperience from './components/TheDibbyExperience';
-import WhyPeopleChooseDibby from './components/WhyPeopleChooseDibby';
-import YourHomeYourChoice from './components/YourHomeYourChoice';
+import CitySection from './components/CitySection/index.jsx';
+import Footer from './components/Footer/index.jsx';
+import HowItWorks from './components/HowItWorksSection/index.jsx';
+import Navbar from './components/Navbar/index.jsx';
+import TheDibbyExperience from './components/TheDibbyExperienceSection/index.jsx';
+import WhyPeopleChooseDibby from './components/WhyPeopleChooseDibbySection/index.jsx';
+import YourHomeYourChoice from './components/YourHomeYourChoiceSection/index.jsx';
 
 function LandingPage() {
   return (

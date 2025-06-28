@@ -1,8 +1,8 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
-import './whyPeopleChooseDibby.css';
-import dogIcon from '../assets/dibby_Dog_Logo.png';
-import dogImage from '../assets/testdog.jpeg';
+import './styles.css';
+import dogIcon from '../../assets/dibby_Dog_Logo.png';
+import dogImage from '../../assets/testdog.jpeg';
 
 function WhyPeopleChooseDibby() {
   const testimonials = [
@@ -50,7 +50,6 @@ function WhyPeopleChooseDibby() {
 
   const [startIndex, setStartIndex] = useState(0);
   const [visibleCount, setVisibleCount] = useState(getVisibleCount(4));
-  const [animate, setAnimate] = useState(false);
   const [animateDirection, setAnimateDirection] = useState('');
   const [isAnimating, setIsAnimating] = useState(false);
 

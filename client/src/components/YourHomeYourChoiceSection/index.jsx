@@ -1,6 +1,6 @@
 import React from 'react';
-import './yourHomeYourChoice.css';
-import dogIcon from '../assets/dibby_Dog_Logo.png';
+import './styles.css';
+import dogIcon from '../../assets/dibby_Dog_Logo.png';
 
 function YourHomeYourChoice() {
   return (

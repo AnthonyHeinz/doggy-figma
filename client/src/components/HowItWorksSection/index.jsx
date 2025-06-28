@@ -1,6 +1,6 @@
 import React from 'react';
-import './howItWorks.css';
-import dogIcon from '../assets/dibby_Dog_Logo.png';
+import './styles.css';
+import dogIcon from '../../assets/dibby_Dog_Logo.png';
 
 function HowItWorks() {
   const steps = [
@@ -33,7 +33,6 @@ function HowItWorks() {
 
   return (
     <section className='how-it-works-section'>
-     
       <h2 className='how-it-works-title'>How it Works</h2>
       <div className='how-it-works-steps'>
         {steps.map((step, index) => (
@@ -50,7 +49,7 @@ function HowItWorks() {
           </div>
         ))}
       </div>
-       <div className='how-it-works-gradient-two'></div>
+      <div className='how-it-works-gradient-two'></div>
     </section>
   );
 }
