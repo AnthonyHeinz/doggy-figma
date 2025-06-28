@@ -196,3 +196,19 @@
     opacity: 1;
   }
 }
+
+@media (max-width: 767px) {
+  .carousel-card {
+    max-width: 90vw;
+  }
+
+  .dog-icon-top-right {
+    position: absolute;
+    top: 2rem;
+    right: -4.5rem;
+    transform: scaleX(-1) rotate(45deg);
+    opacity: 0.8;
+    height: 80px;
+    z-index: 0;
+  }
+}
