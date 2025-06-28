@@ -70,22 +70,27 @@
   padding: 0.75rem;
   border-radius: 8px;
   border: none;
-  width: 25rem;
+  width: 31.25rem;
 }
 
 .viewer-button {
-  padding: 0.75rem 10rem;
+  width: 100%;
   max-width: 31.25rem;
+  padding: 0.75rem 12.808125rem;
   background-color: #fbbc05;
   color: black;
   border: none;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1rem;
   border-radius: 8px;
-  font-weight: bold;
   cursor: pointer;
+  white-space: nowrap;
+  box-sizing: border-box;
 }
 
 .or-separator {
   font-weight: bold;
+  font-size: 1.25rem;
   margin: 2rem;
 }
 
