@@ -97,7 +97,10 @@
 
 .input-wrapper {
   position: relative;
-  display: inline-block;
+  display: block;
+  width: 100%;
+  max-width: 31.25rem;
+  box-sizing: border-box;
 }
 
 .input-wrapper input {
@@ -128,7 +131,7 @@
   width: 18px;
 }
 
-@media (max-width: 1050px) {
+@media (max-width: 1155px) {
   .city-options {
     flex-direction: column;
     align-items: center;
@@ -141,7 +144,7 @@
 
   .or-separator {
     order: 2;
-    font-size: 1rem;
+    font-size: 1.25rem;
     margin: 0.5rem 0;
   }
 
@@ -172,3 +175,17 @@
   z-index: 4;
   pointer-events: none;
 }
+
+@media (max-width: 600px) {
+  .city-options-input,
+  .viewer-button,
+  .input-wrapper,
+  .input-wrapper input {
+    max-width: 100%;
+    width: 100%;
+    font-size: 1rem;
+    padding: 0.75rem;
+    box-sizing: border-box;
+  }
+}
+
