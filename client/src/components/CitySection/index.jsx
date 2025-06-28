@@ -17,7 +17,11 @@ function CitySection() {
             <div>
               <p>Start browsing listings on Dibby</p>
               <div className='input-wrapper'>
-                <input type='text' placeholder='Enter city or ZIP Code' />
+                <input
+                  type='text'
+                  placeholder='Enter city or ZIP Code'
+                  className='city-options-input'
+                />
                 <button className='overlay-button'>
                   <img src={search} alt='Search' />
                 </button>
@@ -31,7 +35,7 @@ function CitySection() {
           </div>
         </div>
       </section>
-       <div className='how-it-works-gradient-one'></div>
+      <div className='how-it-works-gradient-one'></div>
       <div className='city-white-background'></div>
     </div>
   );

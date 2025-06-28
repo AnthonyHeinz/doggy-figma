@@ -62,30 +62,31 @@
   display: flex;
   align-items: center;
   flex-wrap: wrap;
-  gap: 2rem;
   max-width: 1093px;
   justify-content: center;
 }
 
-.city-options input {
+.city-options-input {
   padding: 0.75rem;
-  border-radius: 4px;
+  border-radius: 8px;
   border: none;
   width: 25rem;
 }
 
-.city-options > div:last-child > button {
+.viewer-button {
   padding: 0.75rem 10rem;
+  max-width: 31.25rem;
   background-color: #fbbc05;
   color: black;
   border: none;
-  border-radius: 4px;
+  border-radius: 8px;
   font-weight: bold;
   cursor: pointer;
 }
 
 .or-separator {
   font-weight: bold;
+  margin: 2rem;
 }
 
 .input-wrapper {
@@ -94,7 +95,7 @@
 }
 
 .input-wrapper input {
-  max-width: 23rem;
+  max-width: 31.25rem;
   padding: 0.75rem 1rem;
   padding-right: 3rem;
   font-size: 1rem;
