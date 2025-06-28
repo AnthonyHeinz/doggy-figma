@@ -51,6 +51,7 @@
   height: 320px;
   flex: 0 0 auto;
   width: 100%;
+  min-width: 280px;
   max-width: 280px;
   border-radius: 1rem;
   overflow: hidden;
@@ -119,7 +120,7 @@
   }
 }
 
-  .header-with-dog {
+.header-with-dog {
   display: flex;
   justify-content: center;
   align-items: center;
