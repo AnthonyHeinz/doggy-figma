@@ -32,7 +32,9 @@
   font-family: 'Open Sans', sans-serif;
   display: flex;
   flex-direction: column;
-  text-align: left;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
   z-index: 2;
   flex: 1;
   min-width: 280px;
