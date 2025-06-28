@@ -4,14 +4,13 @@
   justify-content: center;
   align-items: center;
   background-color: white;
-  padding: 4rem 2rem;
   text-align: center;
   position: relative;
   overflow-x: hidden;
   overflow-y: visible;
   z-index: 2;
   max-width: 1192px;
-   margin: 0 auto;
+  margin: 3rem auto;
 }
 
 .how-it-works-title {
@@ -24,18 +23,20 @@
 
 .how-it-works-steps {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   flex-wrap: wrap;
-  gap: 2rem;
+  gap: 0;
 }
 
 .step {
   font-family: 'Open Sans', sans-serif;
-  max-width: 280px;
   display: flex;
   flex-direction: column;
   text-align: left;
   z-index: 2;
+  flex: 1;
+  min-width: 280px;
+  max-width: 360px;
 }
 
 .step-number {
@@ -73,20 +74,19 @@
 }
 
 .step-dog {
-  height: 10rem;
-  width: 10rem;
+  height: 13rem;
+  width: 13rem;
   margin-top: 1rem;
-  margin-left: 2.5rem;
   margin-top: auto;
 }
 
 .how-it-works-gradient-two {
   position: absolute;
-  top: 8rem;
-  left: 87rem;
+  top: 10rem;
+  left: 85rem;
   width: 400px;
-  height: 400px;
-  background: radial-gradient(
+  height: 300px;
+ background: radial-gradient(
     ellipse at center,
     rgba(249, 201, 161, 0.5) 100%,
     rgba(249, 201, 161, 0.3) 50%,
@@ -94,6 +94,12 @@
     #ffffff 100%
   );
   filter: blur(60px);
-  z-index: 0;
+  z-index: 2;
   pointer-events: none;
+}
+
+.how-it-works-wrapper {
+  overflow-x: hidden;
+  width: 100%;
+  position: relative;
 }

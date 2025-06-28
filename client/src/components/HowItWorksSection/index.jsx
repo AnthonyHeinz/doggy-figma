@@ -32,25 +32,27 @@ function HowItWorks() {
   ];
 
   return (
-    <section className='how-it-works-section'>
-      <h2 className='how-it-works-title'>How it Works</h2>
-      <div className='how-it-works-steps'>
-        {steps.map((step, index) => (
-          <div className='step' key={index}>
-            <div className='step-number'>{step.number}</div>
-            <h3 className='step-title'>{step.title}</h3>
-            <p className='step-description'>{step.description}</p>
-            {step.linkText && (
-              <a className='step-link' href={step.href}>
-                {step.linkText}
-              </a>
-            )}
-            <img src={step.picture} alt='dog' className='step-dog' />
-          </div>
-        ))}
-      </div>
+    <div className='how-it-works-wrapper'>
+      <section className='how-it-works-section'>
+        <h2 className='how-it-works-title'>How it Works</h2>
+        <div className='how-it-works-steps'>
+          {steps.map((step, index) => (
+            <div className='step' key={index}>
+              <div className='step-number'>{step.number}</div>
+              <h3 className='step-title'>{step.title}</h3>
+              <p className='step-description'>{step.description}</p>
+              {step.linkText && (
+                <a className='step-link' href={step.href}>
+                  {step.linkText}
+                </a>
+              )}
+              <img src={step.picture} alt='dog' className='step-dog' />
+            </div>
+          ))}
+        </div>
+      </section>
       <div className='how-it-works-gradient-two'></div>
-    </section>
+    </div>
   );
 }
 
