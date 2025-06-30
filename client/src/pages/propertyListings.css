@@ -37,6 +37,7 @@
   background-color: #ffffff;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
   cursor: pointer;
+  font-family: 'Open Sans', sans-serif;
 }
 
 #property-listing-bed-bath {
@@ -50,6 +51,7 @@
   background-color: #ffffff;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
   cursor: pointer;
+  font-family: 'Open Sans', sans-serif;
 }
 
 .property-listing-home-lease-type {
@@ -63,6 +65,7 @@
   background-color: #ffffff;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
   cursor: pointer;
+  font-family: 'Open Sans', sans-serif;
 }
 
 #property-listing-search-glass {
