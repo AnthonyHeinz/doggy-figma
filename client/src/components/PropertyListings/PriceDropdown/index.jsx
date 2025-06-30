@@ -3,6 +3,7 @@ import { useState } from 'react';
 import './styles.css';
 
 function PriceDropDown({ onClose }) {
+  const [selectedOption, setSelectedOption] = useState(null);
   const [minMax, setMinMax] = useState('min');
 
   const minOptions = ['No Min', '$500', '$700', '$900'];
@@ -28,7 +29,7 @@ function PriceDropDown({ onClose }) {
           }`}
           onFocus={() => setMinMax('min')}
         />
-        <span id = 'price-dropdown-spacer'>–</span>
+        <span id='price-dropdown-spacer'>–</span>
         <input
           type='text'
           placeholder='Max'
@@ -45,7 +46,13 @@ function PriceDropDown({ onClose }) {
           }`}
         >
           {optionsToShow.map((option, idx) => (
-            <div key={idx} className='price-dropdown-option'>
+            <div
+              key={idx}
+              className={`price-dropdown-option ${
+                selectedOption === option ? 'selected' : ''
+              }`}
+              onClick={() => setSelectedOption(option)}
+            >
               {option}
             </div>
           ))}

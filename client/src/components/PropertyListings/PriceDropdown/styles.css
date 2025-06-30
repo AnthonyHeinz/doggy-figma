@@ -46,11 +46,15 @@
   cursor: pointer;
   width: 100%;
   padding: 0.75rem 1rem;
-  transition: background 0.2s;
+  transition: background 0.2s, color 0.2s;
 }
 
 .price-dropdown-option:hover {
-  background-color: #f1f1f1;
+  background-color: #fff5e2;
+}
+
+.price-dropdown-option.selected {
+  background-color: #ffb500;
 }
 
 .price-dropdown-apply-button {
