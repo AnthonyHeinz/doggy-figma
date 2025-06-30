@@ -1,4 +1,5 @@
 import React from 'react';
+import { useState } from 'react';
 import Navbar from '../components/Navbar';
 import dogIcon from '../assets/dibby_Dog_Logo.png';
 import './propertyListings.css';
@@ -6,6 +7,9 @@ import PropertySearch from '../assets/Property_Listing_Search.png';
 import PriceDropDown from '../components/PropertyListings/index.jsx';
 
 function PropertyListings() {
+  const [priceDropDown, setPriceDropDown] = useState(false);
+  const togglePriceDropdown = () => setPriceDropDown(!priceDropDown);
+
   return (
     <div>
       <Navbar />
@@ -25,9 +29,16 @@ function PropertyListings() {
               ></img>
             </button>
           </div>
-          <button type='text' id='property-listing-price'>
+          <button
+            type='text'
+            id='property-listing-price'
+            onClick={togglePriceDropdown}
+          >
             Price
           </button>
+          {priceDropDown && (
+            <PriceDropDown onClose={() => setPriceDropDown(false)} />
+          )}
           <button type='text' id='property-listing-bed-bath'>
             Beds & Bath
           </button>
