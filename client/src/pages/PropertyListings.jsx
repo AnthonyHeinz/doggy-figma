@@ -7,15 +7,19 @@ import PropertySearch from '../assets/Property_Listing_Search.png';
 import PriceDropDown from '../components/PropertyListings/PriceDropdown/index.jsx';
 import BedAndBathDropDown from '../components/PropertyListings/BedAndBathDropdown/index.jsx';
 import HomeTypeDropDown from '../components/PropertyListings/HomeTypeDropDown/index.jsx';
+import LeaseTypeDropDown from '../components/PropertyListings/LeaseTypeDropDown/index.jsx';
 
 function PropertyListings() {
   const [priceDropDown, setPriceDropDown] = useState(false);
   const [bedAndBathDropDown, setBedAndBathDropDown] = useState(false);
   const [homeTypeDropDown, setHomeTypeDropDown] = useState(false);
+  const [leaseTypeDropDown, setLeaseTypeDropDown] = useState(false);
   const togglePriceDropdown = () => setPriceDropDown(!priceDropDown);
   const toggleBedAndBathDropdown = () =>
     setBedAndBathDropDown(!bedAndBathDropDown);
   const toggleHomeTypeDropDown = () => setHomeTypeDropDown(!homeTypeDropDown);
+  const toggleLeaseTypeDropDown = () =>
+    setLeaseTypeDropDown(!leaseTypeDropDown);
 
   return (
     <div>
@@ -70,9 +74,18 @@ function PropertyListings() {
           {homeTypeDropDown && (
             <HomeTypeDropDown onClose={() => setHomeTypeDropDown(false)} />
           )}
-          <button type='text' className='property-listing-home-lease-type'>
+          <button
+            type='text'
+            className={`property-listing-home-lease-type ${
+              leaseTypeDropDown ? 'selected' : ''
+            }`}
+            onClick={toggleLeaseTypeDropDown}
+          >
             Lease Type
           </button>
+          {leaseTypeDropDown && (
+            <LeaseTypeDropDown onClose={() => setLeaseTypeDropDown(false)} />
+          )}
         </div>
         <img src={dogIcon} alt='dogIcon' id='property-listing-dog-icon'></img>
       </section>
