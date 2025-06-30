@@ -32,7 +32,7 @@
   border-radius: 8px;
   max-width: 105.77px;
   width: 6.610625rem;
-  padding: 0.75rem, 1.5rem;
+  padding: 0.75rem 1.5rem;
   font-size: 1rem;
   background-color: #ffffff;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
@@ -115,7 +115,7 @@
   justify-content: center;
 }
 
-.search-bar-wrapper {
+.property-listing-search-bar-wrapper {
   position: relative;
 }
 
@@ -124,4 +124,30 @@
   width: 4.25rem;
   transform: scaleX(-1);
   margin-right: 19px;
+}
+
+.property-listing-custom-arrow {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-right: 2px solid #222;
+  border-bottom: 2px solid #222;
+  transform: rotate(45deg);
+  transition: transform 0.3s ease;
+  top: 2px;
+}
+
+.property-listing-custom-arrow.selected {
+  transform: rotate(-135deg);
+}
+
+
+#property-listing-price,
+#property-listing-bed-bath,
+.property-listing-home-lease-type {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  padding-left: 1rem;
 }

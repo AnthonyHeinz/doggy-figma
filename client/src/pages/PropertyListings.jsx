@@ -26,7 +26,7 @@ function PropertyListings() {
       <Navbar />
       <section id='property-listing-bar'>
         <div id='property-listing-inputs'>
-          <div className='search-bar-wrapper'>
+          <div className='property-listing-search-bar-wrapper'>
             <input
               type='text'
               id='property-listing-search-bar'
@@ -47,6 +47,9 @@ function PropertyListings() {
             onClick={togglePriceDropdown}
           >
             Price
+            <span
+              className={`property-listing-custom-arrow ${priceDropDown ? 'selected' : ''}`}
+            />
           </button>
           {priceDropDown && (
             <PriceDropDown onClose={() => setPriceDropDown(false)} />
@@ -58,6 +61,9 @@ function PropertyListings() {
             onClick={toggleBedAndBathDropdown}
           >
             Beds & Bath
+              <span
+              className={`property-listing-custom-arrow ${bedAndBathDropDown ? 'selected' : ''}`}
+            />
           </button>
           {bedAndBathDropDown && (
             <BedAndBathDropDown onClose={() => setBedAndBathDropDown(false)} />
@@ -70,6 +76,9 @@ function PropertyListings() {
             onClick={toggleHomeTypeDropDown}
           >
             Home Type
+              <span
+              className={`property-listing-custom-arrow ${homeTypeDropDown ? 'selected' : ''}`}
+            />
           </button>
           {homeTypeDropDown && (
             <HomeTypeDropDown onClose={() => setHomeTypeDropDown(false)} />
@@ -82,6 +91,9 @@ function PropertyListings() {
             onClick={toggleLeaseTypeDropDown}
           >
             Lease Type
+              <span
+              className={`property-listing-custom-arrow ${leaseTypeDropDown ? 'selected' : ''}`}
+            />
           </button>
           {leaseTypeDropDown && (
             <LeaseTypeDropDown onClose={() => setLeaseTypeDropDown(false)} />
