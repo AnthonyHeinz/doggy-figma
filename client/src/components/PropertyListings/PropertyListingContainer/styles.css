@@ -4,7 +4,12 @@
   flex-wrap: wrap;
   gap: 1.375rem;
   max-width: 818px;
-justify-content: center;
+  justify-content: center;
   margin: 0 auto;
   box-sizing: border-box;
+}
+
+.property-listing-results-sort-button-container {
+  display: flex;
+  justify-content: space-between;
 }

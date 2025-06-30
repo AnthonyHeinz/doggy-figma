@@ -1,9 +1,12 @@
 import React from 'react';
+import { useState } from 'react';
 import PropertyListingCard from '../PropertyListingCard';
 import testDog from '../../../assets/testdog.jpeg';
-import './styles.css'
+import './styles.css';
 
 function PropertyListingContainer({ location }) {
+  const [resultsNumber, setResultsNumber] = useState(0);
+
   const hardcodedListings = Array.from({ length: 8 }).map((_, i) => ({
     id: i,
     backgroundImage: testDog,
@@ -18,6 +21,12 @@ function PropertyListingContainer({ location }) {
   return (
     <div>
       <h2>Properties in {location} </h2>
+      <div className='property-listing-results-sort-button-container'>
+        <h4>{resultsNumber} Results</h4>
+        <button className='property-listing-sort-button'>
+          Sort <span className='property-listing-sort-icon'>⇅</span>
+        </button>
+      </div>
       <div className='property-listing-card-container'>
         {hardcodedListings.map((listing) => (
           <PropertyListingCard
