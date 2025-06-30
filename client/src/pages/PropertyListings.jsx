@@ -36,6 +36,7 @@ function PropertyListings() {
           <button
             type='text'
             id='property-listing-price'
+            className={priceDropDown ? 'selected' : ''}
             onClick={togglePriceDropdown}
           >
             Price
@@ -46,6 +47,7 @@ function PropertyListings() {
           <button
             type='text'
             id='property-listing-bed-bath'
+            className={bedAndBathDropDown ? 'selected' : ''}
             onClick={toggleBedAndBathDropdown}
           >
             Beds & Bath
