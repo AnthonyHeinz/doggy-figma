@@ -3,6 +3,7 @@ import Navbar from '../components/Navbar';
 import dogIcon from '../assets/dibby_Dog_Logo.png';
 import './propertyListings.css';
 import PropertySearch from '../assets/Property_Listing_Search.png';
+import PriceDropDown from '../components/PropertyListings/index.jsx';
 
 function PropertyListings() {
   return (
@@ -16,7 +17,7 @@ function PropertyListings() {
               id='property-listing-search-bar'
               placeholder='Enter city or ZIP Code'
             />
-            <button id='property-listingsearch-button'>
+            <button id='property-listing-search-button'>
               <img
                 src={PropertySearch}
                 alt='Property Search'
@@ -24,10 +25,18 @@ function PropertyListings() {
               ></img>
             </button>
           </div>
-          <input type='text' id='property-listing-price' />
-          <input type='text' id='property-listing-bed-bath' />
-          <input type='text' className='property-listing-home-lease-type' />
-          <input type='text' className='property-listing-home-lease-type' />
+          <button type='text' id='property-listing-price'>
+            Price
+          </button>
+          <button type='text' id='property-listing-bed-bath'>
+            Beds & Bath
+          </button>
+          <button type='text' className='property-listing-home-lease-type'>
+            Home Type
+          </button>
+          <button type='text' className='property-listing-home-lease-type'>
+            Lease Type
+          </button>
         </div>
         <img src={dogIcon} alt='dogIcon' id='property-listing-dog-icon'></img>
       </section>
