@@ -1,3 +1,4 @@
+import React from 'react';
 import CitySection from '../components/LandingPageSections/CitySection/index.jsx';
 import Footer from '../components/LandingPageSections/Footer/index.jsx';
 import HowItWorks from '../components/LandingPageSections/HowItWorksSection/index.jsx';

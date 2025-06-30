@@ -1,4 +1,6 @@
+import React from 'react';
 import LandingPage from './pages/LandingPage.jsx';
+import PropertyListings from './pages/PropertyListings.jsx';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 function App() {
@@ -6,6 +8,7 @@ function App() {
     <BrowserRouter>
       <Routes>
           <Route path='/' element={<LandingPage />} />
+          <Route path='/property-listings' element={<PropertyListings />} />
       </Routes>
     </BrowserRouter>
   );
