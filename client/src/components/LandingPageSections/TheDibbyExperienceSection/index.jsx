@@ -1,7 +1,7 @@
 import React from 'react';
 import './styles.css';
-import greenCheckMark from '../../assets/green_Check_Mark.png';
-import dogIcon from '../../assets/dibby_Dog_Logo.png';
+import greenCheckMark from '../../../assets/green_Check_Mark.png';
+import dogIcon from '../../../assets/dibby_Dog_Logo.png';
 
 function TheDibbyExperience() {
   const features = [

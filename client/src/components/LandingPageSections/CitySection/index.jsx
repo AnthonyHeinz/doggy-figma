@@ -1,6 +1,6 @@
 import React from 'react';
 import './styles.css';
-import search from '../../assets/Search.png';
+import search from '../../../assets/Search.png';
 
 function CitySection() {
   return (

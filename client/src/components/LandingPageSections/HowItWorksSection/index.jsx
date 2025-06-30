@@ -1,6 +1,6 @@
 import React from 'react';
 import './styles.css';
-import dogIcon from '../../assets/dibby_Dog_Logo.png';
+import dogIcon from '../../../assets/dibby_Dog_Logo.png';
 
 function HowItWorks() {
   const steps = [

@@ -1,8 +1,8 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
 import './styles.css';
-import dogIcon from '../../assets/dibby_Dog_Logo.png';
-import dogImage from '../../assets/testdog.jpeg';
+import dogIcon from '../../../assets/dibby_Dog_Logo.png';
+import dogImage from '../../../assets/testdog.jpeg';
 
 function WhyPeopleChooseDibby() {
   const testimonials = [
