@@ -86,6 +86,15 @@
   font-family: 'Open Sans', sans-serif;
 }
 
+.property-listing-home-lease-type:hover {
+  border-color: #ffb500;
+}
+
+.property-listing-home-lease-type.selected {
+  background-color: #fff5e2;
+  border-color: #ffb500;
+}
+
 #property-listing-search-glass {
   height: 17.58px;
   width: 17.58px;
