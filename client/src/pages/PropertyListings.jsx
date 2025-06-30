@@ -4,11 +4,15 @@ import Navbar from '../components/Navbar';
 import dogIcon from '../assets/dibby_Dog_Logo.png';
 import './propertyListings.css';
 import PropertySearch from '../assets/Property_Listing_Search.png';
-import PriceDropDown from '../components/PropertyListings/index.jsx';
+import PriceDropDown from '../components/PropertyListings/PriceDropdown/index.jsx';
+import BedAndBathDropDown from '../components/PropertyListings/BedAndBathDropdown/index.jsx';
 
 function PropertyListings() {
   const [priceDropDown, setPriceDropDown] = useState(false);
+  const [bedAndBathDropDown, setBedAndBathDropDown] = useState(false);
   const togglePriceDropdown = () => setPriceDropDown(!priceDropDown);
+  const toggleBedAndBathDropdown = () =>
+    setBedAndBathDropDown(!bedAndBathDropDown);
 
   return (
     <div>
@@ -39,9 +43,17 @@ function PropertyListings() {
           {priceDropDown && (
             <PriceDropDown onClose={() => setPriceDropDown(false)} />
           )}
-          <button type='text' id='property-listing-bed-bath'>
+          <button
+            type='text'
+            id='property-listing-bed-bath'
+            onClick={toggleBedAndBathDropdown}
+          >
             Beds & Bath
           </button>
+          {bedAndBathDropDown && (
+            <BedAndBathDropDown onClose={() => setBedAndBathDropDown(false)} />
+          )}
+
           <button type='text' className='property-listing-home-lease-type'>
             Home Type
           </button>
