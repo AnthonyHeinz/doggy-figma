@@ -1,0 +1,43 @@
+.property-listing-card-container {
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+  overflow: hidden;
+  max-width: 376px;
+  width: 23.5rem;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.property-listing-image {
+  width: 100%;
+  height: 186.67px;
+  object-fit: cover;
+}
+
+.property-listing-info {
+  padding: 0.75rem 1rem 0.875rem 1rem;
+}
+
+.property-listing-price {
+  margin: 0;
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+.property-listing-details {
+  margin: 1rem 0;
+  color: #1c1c1c;
+}
+
+.property-listing-address {
+  margin: 0.25rem 0;
+  color: #1c1c1c;
+  font-size: 0.875rem;
+}
+
+.property-listing-building {
+  margin: 0;
+  color: #6c6c6c;
+  font-size: 0.9rem;
+  font-size: 0.875rem;
+}

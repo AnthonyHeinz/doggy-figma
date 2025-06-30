@@ -141,7 +141,6 @@
   transform: rotate(-135deg);
 }
 
-
 #property-listing-price,
 #property-listing-bed-bath,
 .property-listing-home-lease-type {
@@ -150,4 +149,17 @@
   justify-content: space-between;
   gap: 0.75rem;
   padding-left: 1rem;
+}
+
+.property-listing-results-container {
+  display: flex;
+  flex-direction: row;
+}
+
+.property-listing-map {
+  background-color: #ffffff;
+  max-width: 622px;
+  width: 38.875rem;
+  height: 100vh;
+  overflow: hidden;
 }

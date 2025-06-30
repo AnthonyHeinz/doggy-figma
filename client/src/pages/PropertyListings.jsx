@@ -8,6 +8,7 @@ import PriceDropDown from '../components/PropertyListings/PriceDropdown/index.js
 import BedAndBathDropDown from '../components/PropertyListings/BedAndBathDropdown/index.jsx';
 import HomeTypeDropDown from '../components/PropertyListings/HomeTypeDropDown/index.jsx';
 import LeaseTypeDropDown from '../components/PropertyListings/LeaseTypeDropDown/index.jsx';
+import PropertyListingContainer from '../components/PropertyListings/PropertyListingContainer/index.jsx';
 
 function PropertyListings() {
   const [priceDropDown, setPriceDropDown] = useState(false);
@@ -48,7 +49,9 @@ function PropertyListings() {
           >
             Price
             <span
-              className={`property-listing-custom-arrow ${priceDropDown ? 'selected' : ''}`}
+              className={`property-listing-custom-arrow ${
+                priceDropDown ? 'selected' : ''
+              }`}
             />
           </button>
           {priceDropDown && (
@@ -61,8 +64,10 @@ function PropertyListings() {
             onClick={toggleBedAndBathDropdown}
           >
             Beds & Bath
-              <span
-              className={`property-listing-custom-arrow ${bedAndBathDropDown ? 'selected' : ''}`}
+            <span
+              className={`property-listing-custom-arrow ${
+                bedAndBathDropDown ? 'selected' : ''
+              }`}
             />
           </button>
           {bedAndBathDropDown && (
@@ -76,8 +81,10 @@ function PropertyListings() {
             onClick={toggleHomeTypeDropDown}
           >
             Home Type
-              <span
-              className={`property-listing-custom-arrow ${homeTypeDropDown ? 'selected' : ''}`}
+            <span
+              className={`property-listing-custom-arrow ${
+                homeTypeDropDown ? 'selected' : ''
+              }`}
             />
           </button>
           {homeTypeDropDown && (
@@ -91,8 +98,10 @@ function PropertyListings() {
             onClick={toggleLeaseTypeDropDown}
           >
             Lease Type
-              <span
-              className={`property-listing-custom-arrow ${leaseTypeDropDown ? 'selected' : ''}`}
+            <span
+              className={`property-listing-custom-arrow ${
+                leaseTypeDropDown ? 'selected' : ''
+              }`}
             />
           </button>
           {leaseTypeDropDown && (
@@ -101,6 +110,10 @@ function PropertyListings() {
         </div>
         <img src={dogIcon} alt='dogIcon' id='property-listing-dog-icon'></img>
       </section>
+      <div className='property-listing-results-container'>
+        <section className='property-listing-map'></section>
+        <PropertyListingContainer location='Los Angeles, CA' />
+      </div>
     </div>
   );
 }
