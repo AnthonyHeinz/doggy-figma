@@ -1,0 +1,10 @@
+.property-listing-card-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 1.375rem;
+  max-width: 818px;
+justify-content: center;
+  margin: 0 auto;
+  box-sizing: border-box;
+}

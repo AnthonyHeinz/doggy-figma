@@ -11,7 +11,7 @@ function PropertyListingCard({
   buildingName,
 }) {
   return (
-    <div className='property-listing-card-container'>
+    <div className='property-listing-card'>
       <img
         src={backgroundImage}
         alt='Property'
