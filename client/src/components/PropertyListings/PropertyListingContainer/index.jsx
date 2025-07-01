@@ -21,7 +21,7 @@ function PropertyListingContainer({ location }) {
   return (
     <div className='property-listing-results-map-container'>
       <section className='property-listing-map'></section>
-      <div className='property-listing-results-container'>
+      <section className='property-listing-results-container'>
         <h2>Properties in {location} </h2>
         <div className='property-listing-results-sort-button-container'>
           <h4>{resultsNumber} Results</h4>
@@ -49,7 +49,7 @@ function PropertyListingContainer({ location }) {
           <div id='property-listing-blue-blur' />
           <div id='property-listing-orange-blur' />
         </div>
-      </div>
+      </section>
     </div>
   );
 }

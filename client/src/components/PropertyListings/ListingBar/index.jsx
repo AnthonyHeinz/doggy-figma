@@ -5,13 +5,14 @@ import PriceDropDown from '../PriceDropdown/index.jsx';
 import BedAndBathDropDown from '../BedAndBathDropdown/index.jsx';
 import HomeTypeDropDown from '../HomeTypeDropDown/index.jsx';
 import LeaseTypeDropDown from '../LeaseTypeDropDown/index.jsx';
-import './styles.css'
+import './styles.css';
 
 function ListingBar({
   searchValue,
   onSearchChange,
   onToggleDropdown,
   dropdownStates,
+  onSearchSubmit,
 }) {
   return (
     <section id='property-listing-bar'>
@@ -24,7 +25,7 @@ function ListingBar({
             value={searchValue}
             onChange={(e) => onSearchChange(e.target.value)}
           />
-          <button id='property-listing-search-button'>
+          <button id='property-listing-search-button' onClick={onSearchSubmit}>
             <img
               src={PropertySearch}
               alt='Property Search'
@@ -105,4 +106,4 @@ function ListingBar({
   );
 }
 
-export default ListingBar
+export default ListingBar;
