@@ -12,7 +12,7 @@ function SortDropDown({ onClose }) {
   ];
 
   return (
-    <div className='price-dropdown-container'>
+    <div className='sort-dropdown-container'>
       <div id='property-listing-sort-dropdown-options-container'>
         {sortOptions.map((option, idx) => (
           <div
