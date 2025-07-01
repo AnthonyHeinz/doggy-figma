@@ -19,7 +19,7 @@ function PropertyListingContainer({ location }) {
   }));
 
   return (
-    <div className = 'property-listing-results-container'>
+    <div className='property-listing-results-container'>
       <h2>Properties in {location} </h2>
       <div className='property-listing-results-sort-button-container'>
         <h4>{resultsNumber} Results</h4>
@@ -40,6 +40,12 @@ function PropertyListingContainer({ location }) {
             buildingName={listing.buildingName}
           />
         ))}
+      </div>
+      <div id='property-listing-blurs'>
+        <div id='property-listing-yellow-blur' />
+        <div id='property-listing-pink-blur' />
+         <div id='property-listing-blue-blur' />
+        <div id='property-listing-orange-blur' />
       </div>
     </div>
   );
