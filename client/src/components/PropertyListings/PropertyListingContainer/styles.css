@@ -1,3 +1,15 @@
+.property-listing-results-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.property-listing-results-container h2 {
+  margin: 1.8125rem 1.5rem 0.5rem 1.5rem;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1.5rem;
+  color: #011329;
+}
+
 .property-listing-card-container {
   display: flex;
   flex-direction: row;
@@ -12,4 +24,5 @@
 .property-listing-results-sort-button-container {
   display: flex;
   justify-content: space-between;
+  margin: 0rem 1.5rem;
 }

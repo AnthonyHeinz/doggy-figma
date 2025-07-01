@@ -19,7 +19,7 @@ function PropertyListingContainer({ location }) {
   }));
 
   return (
-    <div>
+    <div className = 'property-listing-results-container'>
       <h2>Properties in {location} </h2>
       <div className='property-listing-results-sort-button-container'>
         <h4>{resultsNumber} Results</h4>

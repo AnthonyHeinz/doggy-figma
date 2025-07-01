@@ -110,7 +110,7 @@ function PropertyListings() {
         </div>
         <img src={dogIcon} alt='dogIcon' id='property-listing-dog-icon'></img>
       </section>
-      <div className='property-listing-results-container'>
+      <div className='property-listing-results-map-container'>
         <section className='property-listing-map'></section>
         <PropertyListingContainer location='Los Angeles, CA' />
       </div>
