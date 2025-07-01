@@ -1,0 +1,152 @@
+#property-listing-bar {
+  display: flex;
+  flex-direction: row;
+  background-color: #f7e8cd;
+  justify-content: space-between;
+  align-items: center;
+  height: 64px;
+}
+
+#property-listing-inputs {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+}
+
+#property-listing-search-bar-wrapper {
+  position: relative;
+}
+
+#property-listing-search-bar {
+  height: 48px;
+  border: none;
+  border-radius: 8px;
+  max-width: 485px;
+  width: 30.3125rem;
+  padding: 0.75rem 1.5rem;
+  margin-left: 1rem;
+  font-size: 1rem;
+  background-color: #ffffff;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+#property-listing-search-button {
+  position: absolute;
+  top: 50%;
+  right: 1rem;
+  transform: translateY(-50%);
+  background: transparent;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#property-listing-search-glass {
+  height: 17.58px;
+  width: 17.58px;
+  background-color: transparent;
+}
+
+#property-listing-price {
+  height: 48px;
+  border: 1.5px solid #e2e2e2;
+  border-radius: 8px;
+  max-width: 105.77px;
+  width: 6.610625rem;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  background-color: #ffffff;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  font-family: 'Open Sans', sans-serif;
+}
+
+#property-listing-price:hover {
+  border-color: #ffb500;
+}
+
+#property-listing-price.selected {
+  background-color: #fff5e2;
+  border-color: #ffb500;
+}
+
+#property-listing-bed-bath {
+  height: 48px;
+  border: 1.5px solid #e2e2e2;
+  border-radius: 8px;
+  max-width: 160.77px;
+  width: 10.08125rem;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  background-color: #ffffff;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  font-family: 'Open Sans', sans-serif;
+}
+
+#property-listing-bed-bath:hover {
+  border-color: #ffb500;
+}
+
+#property-listing-bed-bath.selected {
+  background-color: #fff5e2;
+  border-color: #ffb500;
+}
+
+.property-listing-home-lease-type {
+  height: 48px;
+  border: 1.5px solid #e2e2e2;
+  border-radius: 8px;
+  max-width: 153.77px;
+  width: 9.610625rem;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  background-color: #ffffff;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.property-listing-home-lease-type:hover {
+  border-color: #ffb500;
+}
+
+.property-listing-home-lease-type.selected {
+  background-color: #fff5e2;
+  border-color: #ffb500;
+}
+
+#property-listing-dog-icon {
+  height: 4.25rem;
+  width: 4.25rem;
+  transform: scaleX(-1);
+  margin-right: 19px;
+}
+
+.property-listing-custom-arrow {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-right: 2px solid #222;
+  border-bottom: 2px solid #222;
+  transform: rotate(45deg);
+  transition: transform 0.3s ease;
+  top: 2px;
+}
+
+.property-listing-custom-arrow.selected {
+  transform: rotate(-135deg);
+}
+
+#property-listing-price,
+#property-listing-bed-bath,
+.property-listing-home-lease-type {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  padding-left: 1rem;
+}
