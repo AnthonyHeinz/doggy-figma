@@ -154,6 +154,7 @@
 .property-listing-results-map-container {
   display: flex;
   flex-direction: row;
+  width: 100vw;
 }
 
 .property-listing-map {
@@ -162,4 +163,5 @@
   width: 38.875rem;
   height: 100vh;
   overflow: hidden;
+  width: 43.19vw;
 }

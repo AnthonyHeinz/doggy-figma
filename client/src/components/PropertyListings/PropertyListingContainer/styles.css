@@ -2,6 +2,7 @@
   display: flex;
   flex-direction: column;
   position: relative;
+  width: 56.81vw;
 }
 
 .property-listing-results-container h2 {
@@ -111,7 +112,7 @@
   width: 500px;
   height: 500px;
   border-radius: 50%;
-  background: radial-gradient(circle, #E0EBF5CC, transparent 100%);
+  background: radial-gradient(circle, #e0ebf5cc, transparent 100%);
   filter: blur(100px);
   opacity: 1;
 }
