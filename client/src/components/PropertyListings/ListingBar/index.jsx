@@ -49,7 +49,6 @@ function ListingBar({
         {dropdownStates.price && (
           <PriceDropDown onClose={() => onToggleDropdown('price')} />
         )}
-
         <button
           type='text'
           id='property-listing-bed-bath'

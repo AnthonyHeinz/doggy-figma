@@ -12,8 +12,9 @@ function PropertyListings() {
     bedsBaths: false,
     homeType: false,
     leaseType: false,
+    sort: false,
   });
-  
+
   const handleSearchSubmit = () => {
     const trimmed = searchValue.trim();
     if (trimmed) setSubmittedLocation(trimmed);
@@ -36,7 +37,11 @@ function PropertyListings() {
         onSearchSubmit={handleSearchSubmit}
       />
       {submittedLocation && (
-        <PropertyListingContainer location={submittedLocation} />
+        <PropertyListingContainer
+          location={submittedLocation}
+          onToggleDropdown={toggleDropdown}
+          dropdownStates={dropdownStates}
+        />
       )}
     </div>
   );

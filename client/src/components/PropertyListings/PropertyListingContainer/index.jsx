@@ -3,8 +3,13 @@ import { useState } from 'react';
 import PropertyListingCard from '../PropertyListingCard';
 import testDog from '../../../assets/testdog.jpeg';
 import './styles.css';
+import SortDropDown from '../SortDropDown';
 
-function PropertyListingContainer({ location }) {
+function PropertyListingContainer({
+  location,
+  onToggleDropdown,
+  dropdownStates,
+}) {
   const [resultsNumber, setResultsNumber] = useState(0);
 
   const hardcodedListings = Array.from({ length: 8 }).map((_, i) => ({
@@ -25,9 +30,15 @@ function PropertyListingContainer({ location }) {
         <h2>Properties in {location} </h2>
         <div className='property-listing-results-sort-button-container'>
           <h4>{resultsNumber} Results</h4>
-          <button className='property-listing-sort-button'>
+          <button
+            className='property-listing-sort-button'
+            onClick={() => onToggleDropdown('sort')}
+          >
             Sort <span className='property-listing-sort-icon'>⇅</span>
           </button>
+          {dropdownStates.sort && (
+            <SortDropDown onClose={() => onToggleDropdown('sort')} />
+          )}
         </div>
         <div className='property-listing-card-container'>
           {hardcodedListings.map((listing) => (
