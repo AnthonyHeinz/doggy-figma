@@ -29,10 +29,7 @@ function PropertyListings() {
         dropdownStates={dropdownStates}
         onToggleDropdown={toggleDropdown}
       />
-      <div className='property-listing-results-map-container'>
-        <section className='property-listing-map'></section>
-        <PropertyListingContainer location='Los Angeles, CA' />
-      </div>
+      <PropertyListingContainer location='Los Angeles, CA' />
     </div>
   );
 }

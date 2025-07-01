@@ -116,3 +116,18 @@
   filter: blur(100px);
   opacity: 1;
 }
+
+.property-listing-results-map-container {
+  display: flex;
+  flex-direction: row;
+  width: 100vw;
+}
+
+.property-listing-map {
+  background-color: #ffffff;
+  max-width: 622px;
+  width: 38.875rem;
+  height: 100vh;
+  overflow: hidden;
+  width: 43.19vw;
+}
