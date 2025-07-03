@@ -1,0 +1,39 @@
+#property-details-listing-container {
+  display: flex;
+  flex-direction: row;
+}
+
+#property-details-price-special-features {
+  display: flex;
+  flex-direction: column;
+}
+
+#property-details-price-bed-bath {
+  display: flex;
+  flex-direction: row;
+  width: 32.25rem;
+}
+
+#property-details-price-location {
+  display: flex;
+  flex-direction: column;
+  font-family: 'Open Sans', sans-serif;
+}
+
+#property-details-price-location h4 {
+  font-size: 32px;
+  font-weight: 600px;
+  color: #1c1c1c;
+  padding: 16px 0;
+}
+
+#property-details-location {
+  font-size: 16px;
+  color: #1c1c1c;
+  padding: 8px 0;
+}
+
+#property-details-location-two {
+  font-size: 16px;
+  color: #6c6c6c;
+}
