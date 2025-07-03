@@ -1,8 +1,8 @@
 import React from 'react';
 import './styles.css';
-import twitterIcon from '../../../assets/Twitter.png'
-import instaIcon from '../../../assets/Insta.png'
-import linkedinIcon from '../../../assets/Linkedin.png'
+import twitterIcon from '../../assets/Twitter.png'
+import instaIcon from '../../assets/Insta.png'
+import linkedinIcon from '../../assets/Linkedin.png'
 
 function Footer() {
   return (
