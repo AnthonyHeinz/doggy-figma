@@ -4,6 +4,7 @@ import Footer from '../components/LandingPageSections/Footer/index.jsx';
 import HeroSection from '../components/AboutPageSections/HeroSection/index.jsx';
 import WhoAreWe from '../components/AboutPageSections/WhoAreWeSection/index.jsx'
 import OurMission from '../components/AboutPageSections/OurMissionSection/index.jsx';
+import MeetTheFounder from '../components/AboutPageSections/MeetTheFounderSection/index.jsx';
 
 function AboutPage () {
     return(
@@ -12,6 +13,7 @@ function AboutPage () {
             <HeroSection />
             <WhoAreWe />
             <OurMission />
+            <MeetTheFounder />
             <Footer />
         </div>
     )
