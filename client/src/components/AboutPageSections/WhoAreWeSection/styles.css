@@ -1,0 +1,50 @@
+.who-are-we-section {
+    position: relative;
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+
+}
+
+.who-are-we-section-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 5rem;
+    width: 84%
+}
+
+.who-are-we-text {
+    font-family: 'Open Sans', sans-serif;
+    color: #1C1C1C;
+    padding-right: 5rem
+    
+}
+
+.who-are-we-text h3 {
+    font-size: 3rem;
+    font-weight: 700;
+    padding-bottom: 3rem
+}
+
+.who-are-we-text p {
+    font-size: 1.27rem;
+    font-weight: 400;
+
+}
+.packing-boxes {
+    border-radius: 8px;
+    height: auto;
+    width: 44.4%;
+}
+
+.about-who-are-we-dog-icon {
+    position: absolute;
+    top: 15%;
+    left: 86.7%;
+    transform: rotate(45deg);
+    height: 40%;
+    width: auto;
+    z-index: -1;
+}

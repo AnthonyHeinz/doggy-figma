@@ -26,15 +26,15 @@
 }
 
 .about-hero-section-content h2 {
-    font-size: 2rem;
+    font-size: 4rem;
     font-weight: 700;
-    margin-bottom: 1rem;
+    margin-bottom: 1.7rem;
 }
 
 .about-hero-section-content h6 {
-    font-size: 1rem;
+    font-size: 1.65rem;
     font-weight: 600;
-    margin-bottom: 1rem;
+    margin-bottom: 4.5rem
 }
 
 .about-hero-dog-icon {
