@@ -2,7 +2,6 @@ import React from 'react';
 import { useState } from 'react';
 import './styles.css';
 import TourThisProperty from '../TourThisProperty';
-import dogIcon from '../../../assets/dibby_Dog_Logo.png';
 
 function ListingContainer() {
   const [price, setPrice] = useState('2800');

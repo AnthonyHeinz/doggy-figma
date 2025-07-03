@@ -1,9 +1,11 @@
 import React from 'react';
 import './styles.css';
+import dogIcon from '../../../assets/dibby_Dog_Logo.png';
 
 function TourThisProperty() {
   return (
     <div id='property-details-tour-this-property-container'>
+      <img src={dogIcon} alt='dog icon' className='property-details-dog-icon' />
       <h5>Tour This Property</h5>
       <div id='property-details-send-viewer-list'>
         <h6>
