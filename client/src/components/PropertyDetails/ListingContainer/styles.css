@@ -1,6 +1,7 @@
 #property-details-listing-container {
   display: flex;
   flex-direction: row;
+  padding: 2rem;
 }
 
 #property-details-price-special-features {
@@ -11,13 +12,13 @@
 #property-details-price-bed-bath {
   display: flex;
   flex-direction: row;
-  width: 32.25rem;
 }
 
 #property-details-price-location {
   display: flex;
   flex-direction: column;
   font-family: 'Open Sans', sans-serif;
+  width: 32.25rem;
 }
 
 #property-details-price-location h4 {
@@ -36,4 +37,46 @@
 #property-details-location-two {
   font-size: 16px;
   color: #6c6c6c;
+}
+
+#property-details-bed-bath-sqft {
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+}
+
+#property-details-bed-bath-sqft h4 {
+  color: #1c1c1c;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 32px;
+  font-weight: 600px;
+  padding: 16px 0;
+}
+
+#property-details-bed-bath-sqft p {
+  color: #1c1c1c;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 16px;
+}
+
+.property-listing-contents {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#property-details-whats-special {
+  display: flex;
+  flex-direction: column;
+  padding: 4rem 0;
+  width: 50.9375rem;
+  border-bottom: 1px solid #e2e2e2;
+}
+
+#property-details-whats-special h4 {
+  color: #1c1c1c;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 32px;
+  font-weight: 600px;
+  padding: 1rem 0;
 }

@@ -8,17 +8,48 @@ function ListingContainer() {
     '627 Belmont Ave #6, Los Angeles, CA 90026'
   );
   const [locationTwo, setLocationTwo] = useState('Belmont Apartments');
+  const [houseDetails, setHouseDetails] = useState({
+    beds: 2,
+    baths: 1,
+    sqft: 875,
+  });
 
   return (
     <div id='property-details-listing-container'>
       <div id='property-details-price-special-features'>
-        <div id='property-details-price-bed-bath'>
+        <section id='property-details-price-bed-bath'>
           <div id='property-details-price-location'>
             <h4>${price}/mo</h4>
             <p id='property-details-location'>{location}</p>
             <p id='property-details-location-two'>{locationTwo}</p>
           </div>
-        </div>
+          <div id='property-details-bed-bath-sqft'>
+            <div className='property-listing-contents'>
+              <h4>{houseDetails.beds}</h4>
+              <p>beds</p>
+            </div>
+            <div className='property-listing-contents'>
+              <h4>{houseDetails.baths}</h4>
+              <p>baths</p>
+            </div>
+            <div className='property-listing-contents'>
+              <h4>{houseDetails.sqft}</h4>
+              <p>sqft</p>
+            </div>
+          </div>
+        </section>
+        <section id='property-details-whats-special'>
+          <h4>What's Special</h4>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+            aliquip ex ea commodo consequat. Duis aute irure dolor in
+            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+            culpa qui officia deserunt mollit anim id est laborum.
+          </p>
+        </section>
       </div>
     </div>
   );
