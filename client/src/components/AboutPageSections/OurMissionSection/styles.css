@@ -1,0 +1,18 @@
+.our-mission-section {
+    position: relative;
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+}
+.our-mission-content {
+    padding: 5rem;
+    font-family: 'Open Sans', sans-serif;
+    width: 81%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.our-mission-content h3 {
+    font-weight: 700
+}

@@ -12,14 +12,13 @@
     align-items: center;
     justify-content: center;
     padding-top: 5rem;
-    width: 84%
+    width: 79.7%
 }
 
 .who-are-we-text {
     font-family: 'Open Sans', sans-serif;
     color: #1C1C1C;
-    padding-right: 5rem
-    
+    padding-right: 5rem;
 }
 
 .who-are-we-text h3 {
@@ -29,7 +28,7 @@
 }
 
 .who-are-we-text p {
-    font-size: 1.27rem;
+    font-size: 1.20rem;
     font-weight: 400;
 
 }
@@ -41,8 +40,8 @@
 
 .about-who-are-we-dog-icon {
     position: absolute;
-    top: 15%;
-    left: 86.7%;
+    top: 19%;
+    left: 84.5%;
     transform: rotate(45deg);
     height: 40%;
     width: auto;
