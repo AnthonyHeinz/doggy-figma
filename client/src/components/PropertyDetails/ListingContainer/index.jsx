@@ -14,6 +14,18 @@ function ListingContainer() {
     sqft: 875,
   });
 
+  const [features, setFeatures] = useState([
+    'Lorem ipsum',
+    'Lorem ipsum',
+    'Lorem ipsum',
+    'Consectetur adipiscing',
+    'Consectetur adipiscing',
+    'Consectetur adipiscing',
+    'Lorem ipsum dolor',
+    'Lorem ipsum dolor',
+    'Lorem ipsum dolor',
+  ]);
+
   return (
     <div id='property-details-listing-container'>
       <div id='property-details-price-special-features'>
@@ -50,6 +62,19 @@ function ListingContainer() {
             culpa qui officia deserunt mollit anim id est laborum.
           </p>
         </section>
+        <div className='property-details-grey-line'></div>
+        <section id='property-details-apartment-features'>
+          <h4>Apartment Features</h4>
+          <h6>Features & Appliances</h6>
+          <div className='property-details-list-container'>
+            {features.map((item, index) => (
+              <span className='property-details-list-item' key={index}>
+                {item}
+              </span>
+            ))}
+          </div>
+        </section>
+        <div className='property-details-grey-line'></div>
       </div>
     </div>
   );
