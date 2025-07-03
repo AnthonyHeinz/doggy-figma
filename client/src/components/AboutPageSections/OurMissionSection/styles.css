@@ -6,7 +6,10 @@
     justify-content: center;
 }
 .our-mission-content {
-    padding: 5rem;
+    padding-top: 8rem;
+    padding-right: 0;
+    padding-left: 3.5rem;
+    padding-bottom: 8rem;
     font-family: 'Open Sans', sans-serif;
     width: 81%;
     display: flex;
@@ -15,12 +18,11 @@
 }
 
 .our-mission-content h3 {
-    font-size: 3rem;
+    width: 70%;
+    font-size: 2.5rem;
     font-weight: 700;
-    padding: 3rem;
 }
 
 .our-mission-content p {
-    font-size: 1.2rem;
-    padding: 3rem;
+    font-size: 1rem;
 }
