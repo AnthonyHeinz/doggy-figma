@@ -53,6 +53,12 @@
   height: 13.5rem;
 }
 
+#property-details-send-viewer-list ul {
+  padding-left: 1rem;
+  margin: 0;
+  list-style-position: inside;
+}
+
 #property-details-send-a-viewer-button {
   font-size: 16px;
   font-family: 'Open Sans', sans-serif;
