@@ -1,6 +1,7 @@
 import React from 'react';
 import { useState } from 'react';
 import './styles.css';
+import TourThisProperty from '../TourThisProperty';
 
 function ListingContainer() {
   const [price, setPrice] = useState('2800');
@@ -75,6 +76,9 @@ function ListingContainer() {
           </div>
         </section>
         <div className='property-details-grey-line'></div>
+      </div>
+      <div id = 'property-details-tour-dibby-container'>
+        <TourThisProperty />
       </div>
     </div>
   );
