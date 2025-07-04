@@ -1,3 +1,8 @@
+#property-details-back-search-photos-container {
+  display: flex;
+  flex-direction: column;
+}
+
 .property-details-photo-container {
   display: flex;
   gap: 10px;
@@ -28,4 +33,21 @@
   height: 14.125rem;
   object-fit: cover;
   border-radius: 12px;
+}
+
+.property-details-back-to-search {
+  display: flex;
+  align-items: center;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  color: #1c1c1c;
+  cursor: pointer;
+  transition: color 0.2s ease;
+  gap: 0.5rem;
+  padding: 1rem 2rem;
+}
+
+.property-details-back-to-search:hover {
+  text-decoration: underline;
 }
