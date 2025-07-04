@@ -1,6 +1,7 @@
 import { React, useState } from 'react';
 import SideNavBar from '../SideNavBar/index.jsx';
 import MainContent from '../MainContent/index.jsx';
+import './styles.css';
 
 
 function Profile () {
@@ -9,7 +10,7 @@ function Profile () {
 
 
     return(
-        <div>
+        <div className='profile'>
             <SideNavBar selected={selected} setSelected={setSelected} />
             <MainContent selected={selected} />
         </div>
