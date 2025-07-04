@@ -1,6 +1,7 @@
 import React from 'react';
 import LandingPage from './pages/LandingPage.jsx';
 import PropertyListings from './pages/PropertyListings.jsx';
+import ProfilePage from './pages/ProfilePage.jsx';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 function App() {
@@ -9,6 +10,7 @@ function App() {
       <Routes>
           <Route path='/' element={<LandingPage />} />
           <Route path='/property-listings' element={<PropertyListings />} />
+          <Route path='/profile' element={<ProfilePage />} />
       </Routes>
     </BrowserRouter>
   );
