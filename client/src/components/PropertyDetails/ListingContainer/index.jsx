@@ -4,12 +4,10 @@ import './styles.css';
 import TourThisProperty from '../TourThisProperty';
 
 function ListingContainer() {
-  const [price, setPrice] = useState('2800');
-  const [location, setLocation] = useState(
-    '627 Belmont Ave #6, Los Angeles, CA 90026'
-  );
-  const [locationTwo, setLocationTwo] = useState('Belmont Apartments');
   const [houseDetails, setHouseDetails] = useState({
+    price: '2800',
+    location: '627 Belmont Ave #6, Los Angeles, CA 90026',
+    buildingName: 'Belmont Apartments',
     beds: 2,
     baths: 1,
     sqft: 875,
@@ -32,9 +30,9 @@ function ListingContainer() {
       <div id='property-details-price-special-features'>
         <section id='property-details-price-bed-bath'>
           <div id='property-details-price-location'>
-            <h4>${price}/mo</h4>
-            <p id='property-details-location'>{location}</p>
-            <p id='property-details-location-two'>{locationTwo}</p>
+            <h4>${houseDetails.price}/mo</h4>
+            <p id='property-details-location'>{houseDetails.location}</p>
+            <p id='property-details-location-two'>{houseDetails.buildingName}</p>
           </div>
           <div id='property-details-bed-bath-sqft'>
             <div className='property-listing-contents'>
