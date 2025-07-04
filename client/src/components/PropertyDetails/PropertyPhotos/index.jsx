@@ -12,7 +12,7 @@ function PropertyPhotos() {
     testDog,
   ]);
   return (
-    <div id = 'property-details-back-search-photos-container'>
+    <div id='property-details-back-search-photos-container'>
       <div className='property-details-back-to-search'>
         <div> {'<'} Back to Search</div>
       </div>
@@ -34,6 +34,9 @@ function PropertyPhotos() {
             />
           ))}
         </div>
+        <button className='property-details-see-all-button'>
+          See all photos
+        </button>
       </div>
     </div>
   );

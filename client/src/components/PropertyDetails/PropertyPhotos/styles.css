@@ -4,6 +4,7 @@
 }
 
 .property-details-photo-container {
+  position: relative;
   display: flex;
   gap: 10px;
   margin: 0 3rem;
@@ -49,5 +50,26 @@
 }
 
 .property-details-back-to-search:hover {
+  text-decoration: underline;
+}
+
+.property-details-see-all-button {
+  position: absolute;
+  bottom: 1rem;
+  right: 1rem;
+  background: white;
+  border: none;
+  font-size: 16px;
+  font-weight: 500;
+  color: #1c1c1c;
+  cursor: pointer;
+  font-family: 'Open Sans', sans-serif;
+  transition: text-decoration 0.2s ease;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+}
+
+.property-details-see-all-button:hover {
   text-decoration: underline;
 }
