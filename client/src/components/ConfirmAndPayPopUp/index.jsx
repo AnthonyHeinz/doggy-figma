@@ -1,6 +1,8 @@
 import React from 'react';
 import './styles.css';
+import { useState } from 'react';
 import dogIcon from '../../assets/dibby_Dog_Logo.png';
+import PaymentSuccessful from '../PaymentSuccessful';
 
 function ConfirmAndPayPopUp({
   isOpen,
@@ -12,6 +14,8 @@ function ConfirmAndPayPopUp({
   location,
   buildingName,
 }) {
+  const [showPaymentSuccessfulPopup, setShowPaymentSuccessfulPopup] =
+    useState(false);
   if (!isOpen) return null;
   return (
     <div className='confirm-pay-popup-overlay' onClick={onClose}>
@@ -82,13 +86,20 @@ function ConfirmAndPayPopUp({
               <input type='text' placeholder='ZIP Code' />
               <input type='text' placeholder='Country/Region' />
             </div>
-            <button id='confirm-pay-send-a-viewer-button'>
+            <button
+              id='confirm-pay-send-a-viewer-button'
+              onClick={() => setShowPaymentSuccessfulPopup(true)}
+            >
               Confirm and Pay
             </button>
           </section>
         </div>
         <img src={dogIcon} alt='dog icon' className='confirm-pay-dog-icon' />
       </div>
+      <PaymentSuccessful
+        isOpen={showPaymentSuccessfulPopup}
+        onClose={() => setShowPaymentSuccessfulPopup(false)}
+      />
     </div>
   );
 }
