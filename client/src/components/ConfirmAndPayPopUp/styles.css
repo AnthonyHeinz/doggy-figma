@@ -1,3 +1,36 @@
+.confirm-pay-popup-header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.confirm-pay-back-button {
+  background: none;
+  border: none;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #1c1c1c;
+  cursor: pointer;
+  transition: text-decoration 0.2s ease;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.confirm-pay-back-button:hover {
+  text-decoration: underline;
+}
+
+.confirm-pay-close-button {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: #1c1c1c;
+  cursor: pointer;
+  font-family: 'Open Sans', sans-serif;
+}
+
 .confirm-pay-popup-overlay {
   position: fixed;
   top: 0;
@@ -22,6 +55,11 @@
   height: 51.4375rem;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
   position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+#confirm-pay-body {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -116,10 +154,11 @@
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
+  margin: 1rem 0;
 }
 
 .confirm-pay-step-container h6 {
-  margin: 0;
+  margin: 1rem;
   font-size: 18px;
   font-weight: 600;
   color: #1c1c1c;
@@ -157,7 +196,6 @@
   border: none;
   border-radius: 8px;
   cursor: pointer;
-  margin-top: 2rem;
   transition: background-color 0.2s ease;
 }
 
