@@ -8,7 +8,7 @@ import MeetTheFounder from '../components/AboutPageSections/MeetTheFounderSectio
 
 function AboutPage () {
     return(
-        <div>
+        <div style={{ overflowX: 'hidden'}}>
             <NavBar />
             <HeroSection />
             <WhoAreWe />

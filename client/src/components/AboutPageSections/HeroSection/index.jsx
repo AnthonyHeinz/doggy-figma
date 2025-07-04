@@ -15,6 +15,9 @@ function HeroSection() {
           </h6>
         </div>
       </div>
+      <div className='about-gradient-one'></div>
+      <div className='about-gradient-two'></div>
+      <div className='about-hero-white-background'></div>
     </div>
   );
 }
