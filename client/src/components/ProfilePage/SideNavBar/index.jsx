@@ -2,6 +2,7 @@ import React from 'react';
 import SignOut from '../SignOut/index.jsx';
 import CogIcon from '../../../assets/cogIcon.png';
 import PropertyIcon from '../../../assets/propertyIcon.png';
+import DogIcon from '../../../assets/dibby_Dog_Logo.png';
 import './styles.css';
 
 function SideNavBar({ selected, setSelected }) {
@@ -25,7 +26,9 @@ function SideNavBar({ selected, setSelected }) {
         />
         <span>My Property Listings</span>
       </button>
-      <div className='side-nav-bar-filler'></div>
+      <div className='side-nav-bar-filler'>
+        <img src={DogIcon} alt='dogIcon' className='side-nav-bar-dog-icon' />
+      </div>
       <SignOut />
     </div>
   );

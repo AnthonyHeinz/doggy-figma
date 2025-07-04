@@ -56,8 +56,16 @@ button.not-active span {
     padding: 2px;
 }
 .side-nav-bar-filler {
-    background-color: #fff5e2;
-    opacity: 50%;
-    height: 83vh;
+    position: relative;
+    background-color: rgba(255, 245, 226, 0.5);
+    height: 83%;
+    min-height: 630px;
 }
 
+.side-nav-bar-dog-icon{
+    position: absolute;
+    top: 33.4rem;
+    left: 1.7rem;
+    height: 106px;
+    width: auto;
+}
