@@ -41,7 +41,7 @@ function PropertyPhotos() {
             alt='photo-icon'
             id='property-details-photo-icon'
           ></img>
-          See All {images.length} photos
+          See All {images.length} Photos
         </button>
       </div>
     </div>
