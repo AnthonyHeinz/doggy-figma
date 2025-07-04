@@ -14,7 +14,18 @@ function SideNavBar({ selected, setSelected }) {
         <img src={CogIcon} alt='cogIcon' className='side-nav-bar-cog-icon' />
         My Account
       </button>
-      <button className={selected === 'myPropertyListings' ? 'active' : 'not-active'} onClick={() => setSelected('myPropertyListings')}><img src={PropertyIcon} alt='propertyIcon' className='side-nav-bar-property-icon' />My Property Listings</button>
+      <button
+        className={selected === 'myPropertyListings' ? 'active' : 'not-active'}
+        onClick={() => setSelected('myPropertyListings')}
+      >
+        <img
+          src={PropertyIcon}
+          alt='propertyIcon'
+          className='side-nav-bar-property-icon'
+        />
+        My Property Listings
+      </button>
+      <div className='side-nav-bar-filler'>kjsdgbvk</div>
       <SignOut />
     </div>
   );

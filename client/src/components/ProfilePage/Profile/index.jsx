@@ -1,10 +1,11 @@
 import { React, useState } from 'react';
 import SideNavBar from '../SideNavBar/index.jsx';
-import MyAccount from '../MyAccount/index.jsx';
+import MainContent from '../MainContent/index.jsx';
 
 
 function Profile () {
-    const [ selected, setSelected ] = useState('myAccount')
+    const [ selected, setSelected ] = useState('myAccount');
+    console.log('state: ', selected);
 
 
     return(
