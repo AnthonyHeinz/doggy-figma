@@ -2,6 +2,7 @@ import React from 'react';
 import { useState } from 'react';
 import './styles.css';
 import testDog from '../../../assets/testdog.jpeg';
+import photoIcon from '../../../assets/photo_icon.png';
 
 function PropertyPhotos() {
   const [images, setImages] = useState([
@@ -34,8 +35,13 @@ function PropertyPhotos() {
             />
           ))}
         </div>
-        <button className='property-details-see-all-button'>
-          See all photos
+        <button className='property-details-see-all-photos-button'>
+          <img
+            src={photoIcon}
+            alt='photo-icon'
+            id='property-details-photo-icon'
+          ></img>
+          See All {images.length} photos
         </button>
       </div>
     </div>

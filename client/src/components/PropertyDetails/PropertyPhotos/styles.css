@@ -53,10 +53,13 @@
   text-decoration: underline;
 }
 
-.property-details-see-all-button {
+.property-details-see-all-photos-button {
   position: absolute;
   bottom: 1rem;
   right: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
   background: white;
   border: none;
   font-size: 16px;
@@ -68,8 +71,14 @@
   padding: 0.5rem 1rem;
   border-radius: 8px;
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+  text-align: center;
 }
 
-.property-details-see-all-button:hover {
+.property-details-see-all-photos-button:hover {
   text-decoration: underline;
+}
+
+#property-details-photo-icon {
+  width: 16px;
+  height: 16px;
 }
