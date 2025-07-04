@@ -36,6 +36,7 @@ function ConfirmAndPayPopUp({
             </div>
           </div>
           <div id='confirm-pay-viewing-details'>
+            <h6>Viewing Details</h6>
             <p>Viewings will be completed within 3 business days.</p>
             <p>Viewing report will include the following:</p>
             <ul className='confirm-pay-list'>
