@@ -1,8 +1,9 @@
 #property-details-listing-container {
   display: flex;
   flex-direction: row;
-  padding: 2rem;
+  padding:  2rem 3rem;
   font-family: 'Open Sans', sans-serif;
+  justify-content: space-between;
 }
 
 #property-details-price-special-features {
