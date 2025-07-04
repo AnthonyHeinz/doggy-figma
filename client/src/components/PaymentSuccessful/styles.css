@@ -51,6 +51,7 @@
 #payment-successful-word-box h5 {
   font-size: 24px;
   font-weight: 600;
+  margin: 1rem 0 0 0;
 }
 
 #payment-successful-word-box p {
@@ -78,4 +79,13 @@
 
 #payment-successful-send-a-viewer-button:hover {
   background-color: #e5a300;
+}
+
+.payment-successful-dog-icon {
+  position: absolute;
+  top: 31.5rem;
+  right: 65rem;
+  width: 5.375rem;
+  height: auto;
+  z-index: 0;
 }

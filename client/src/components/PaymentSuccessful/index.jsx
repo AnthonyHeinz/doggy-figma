@@ -1,6 +1,7 @@
 import React from 'react';
 import './styles.css';
 import greenCheck from '../../assets/green_Check_Mark.png';
+import dogIcon from '../../assets/dibby_Dog_Logo.png';
 
 function PaymentSuccessful({ isOpen, onClose }) {
   if (!isOpen) return null;
@@ -30,6 +31,11 @@ function PaymentSuccessful({ isOpen, onClose }) {
           </button>
         </div>
       </div>
+      <img
+        src={dogIcon}
+        alt='dog icon'
+        className='payment-successful-dog-icon'
+      />
     </div>
   );
 }
