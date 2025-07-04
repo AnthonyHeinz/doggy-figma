@@ -4,7 +4,7 @@ import Profile from '../components/ProfilePage/Profile/index.jsx';
 
 function ProfilePage () {
     return (
-        <div>
+        <div className='profile-page'>
             <NavBar />
             <Profile />
         </div>

@@ -2,8 +2,8 @@ import React from 'react';
 
 function MainContent ({ selected }) {
     return (
-        <div>
-
+        <div className='main-content'>
+            {/* {selected === 'myAccount' ? <MyAccount /> : <MyPropertyListings /> } */}
         </div>
     )
 }
