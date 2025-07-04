@@ -1,0 +1,23 @@
+#confirm-pay-popup-container {
+  display: flex;
+  flex-direction: column;
+  width: 60.9375rem;
+  height: 51.4375rem;
+  border-radius: 8.16px;
+  font-family: 'Open Sans', sans-serif;
+}
+
+#confirm-pay-info-container {
+  display: flex;
+  flex-direction: row;
+}
+
+#confirm-pay-location-info {
+  display: flex;
+  flex-direction: column;
+}
+
+#confirm-pay-location-info h5 {
+  font-size: 24px;
+  font-weight: 600;
+}
