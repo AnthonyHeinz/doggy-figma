@@ -1,4 +1,4 @@
-.confirm-pay-popup-overlay {
+.payment-successful-popup-overlay {
   position: fixed;
   top: 0;
   left: 0;
@@ -14,14 +14,26 @@
   font-family: 'Open Sans', sans-serif;
 }
 
-.confirm-pay-popup-box {
-  background-color: #fff;
+.payment-successful-popup-box {
+  background-color: #ffffff;
   padding: 2rem;
   border-radius: 8px;
-  width: 60.9375rem;
-  height: 51.4375rem;
+  width: 53.875rem;
+  height: 21.25rem;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
   position: relative;
   display: flex;
   flex-direction: column;
+}
+
+.payment-successful-close-button {
+  display: flex;
+  justify-content: flex-end;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: #1c1c1c;
+  cursor: pointer;
+  font-family: 'Open Sans', sans-serif;
 }

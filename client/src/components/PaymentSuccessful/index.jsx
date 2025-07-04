@@ -4,11 +4,15 @@ import './styles.css';
 function PaymentSuccessful({ isOpen, onClose }) {
   if (!isOpen) return null;
   return (
-    <div className='confirm-pay-popup-overlay' onClick={onClose}>
+    <div className='payment-successful-popup-overlay' onClick={onClose}>
       <div
-        className='confirm-pay-popup-box'
+        className='payment-successful-popup-box'
         onClick={(e) => e.stopPropagation()}
-      ></div>
+      >
+        <button className='payment-successful-close-button' onClick={onClose}>
+          ×
+        </button>
+      </div>
     </div>
   );
 }
