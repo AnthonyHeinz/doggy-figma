@@ -1,0 +1,15 @@
+.side-nav-bar {
+    position: relative;
+    width: 30%;
+    height: 100vh;
+}
+
+.active {
+    width: 100%;
+    height: 48px;
+    border-bottom: 1px;
+    border-color: #e2e2e2;
+    padding: 1rem 1.25rem 1rem 1.25rem;
+    color: #ffb500;
+    font-family: 'Open Sans', sans-serif;
+}

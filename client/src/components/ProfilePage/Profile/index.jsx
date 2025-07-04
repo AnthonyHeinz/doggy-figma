@@ -4,12 +4,13 @@ import MyAccount from '../MyAccount/index.jsx';
 
 
 function Profile () {
-    const [ selected, setSelected ] = useState('profile')
+    const [ selected, setSelected ] = useState('myAccount')
 
 
     return(
         <div>
-            <SideNavBar selected={selected}/>
+            <SideNavBar selected={selected} setSelected={setSelected} />
+            <MainContent selected={selected} />
         </div>
     )
 }
