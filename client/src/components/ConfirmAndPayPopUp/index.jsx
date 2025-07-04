@@ -1,5 +1,6 @@
 import React from 'react';
 import './styles.css';
+import dogIcon from '../../assets/dibby_Dog_Logo.png';
 
 function ConfirmAndPayPopUp({
   isOpen,
@@ -86,6 +87,7 @@ function ConfirmAndPayPopUp({
             </button>
           </section>
         </div>
+        <img src={dogIcon} alt='dog icon' className='confirm-pay-dog-icon' />
       </div>
     </div>
   );

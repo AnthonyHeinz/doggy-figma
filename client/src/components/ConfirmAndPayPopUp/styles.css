@@ -145,6 +145,7 @@
 
 #confirm-pay-right-side {
   width: 30rem;
+   z-index: 2;
 }
 
 .confirm-pay-step-container {
@@ -203,4 +204,14 @@
 
 #confirm-pay-send-a-viewer-button:hover {
   background-color: #e5a300;
+}
+
+.confirm-pay-dog-icon {
+  position: absolute;
+  top: 3.25rem;
+  right: 6rem;
+  width: 4.255rem;
+  height: auto;
+  transform: scaleX(-1);
+  z-index: 0;
 }
