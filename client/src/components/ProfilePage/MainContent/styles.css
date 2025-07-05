@@ -4,4 +4,5 @@
     height: 100%;
     width: 70vw;
     font-family: 'Open Sans', sans-serif;
+    overflow: hidden;
 }
