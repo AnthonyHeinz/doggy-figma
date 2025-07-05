@@ -1,4 +1,10 @@
-
+.my-prop-list {
+    padding: 40px;
+}
+.my-prop-list h4 {
+    font-size: 32px;
+    font-weight: 600;
+}
 
 .my-prop-list-gradient-one {
   position: absolute;
