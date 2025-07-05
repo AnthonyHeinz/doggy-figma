@@ -1,0 +1,8 @@
+.main-content {
+    position: absolute;
+    left: 30vw;
+    height: 100%;
+    width: 70vw;
+    font-family: 'Open Sans', sans-serif;
+    overflow: hidden;
+}
