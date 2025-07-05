@@ -15,6 +15,6 @@ function Profile () {
             <MainContent selected={selected} />
         </div>
     )
-}
+};
 
-export default Profile;
+export default Profile; 
