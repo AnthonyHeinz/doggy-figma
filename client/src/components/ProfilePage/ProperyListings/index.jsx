@@ -3,16 +3,16 @@ import DogIcon from '../../../assets/dibby_Dog_Logo.png';
 import './styles.css';
 
 function MyPropertyListings() {
-  const [published, setPublished] = useState('true');
+//   const [published, setPublished] = useState('true');
 
-  const hardCodedListingInfo = {
-    address: '627 Belmont Ave #6, Los Angeles, CA 90026',
-    beds: '2',
-    bath: '1',
-    sqft: '875',
-    listingPrice: '2800',
-    added: 'June 1st, 2025'
-  };
+//   const hardCodedListingInfo = {
+//     address: '627 Belmont Ave #6, Los Angeles, CA 90026',
+//     beds: '2',
+//     bath: '1',
+//     sqft: '875',
+//     listingPrice: '2800',
+//     added: 'June 1st, 2025'
+//   };
 
   return (
     <div>
