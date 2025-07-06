@@ -179,6 +179,20 @@
     width: 100%;
     max-width: 100%;
   }
+
+  #property-listing-bar,
+  #property-listing-inputs {
+    padding-left: 1rem;
+    padding-right: 1rem;
+    box-sizing: border-box;
+    width: 100%;
+    overflow-x: hidden;
+  }
+
+  #property-listing-dog-icon {
+    align-self: center;
+    margin: 0;
+  }
 }
 
 @media screen and (max-width: 1250px) {
@@ -216,5 +230,4 @@
     margin-right: 0;
     margin-top: 1rem;
   }
-  
 }

@@ -178,3 +178,13 @@
   }
 }
 
+@media screen and (max-width: 768px) {
+  .property-listing-results-map-container,
+  .property-listing-results-container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+    box-sizing: border-box;
+    width: 100%;
+    overflow-x: hidden;
+  }
+}
