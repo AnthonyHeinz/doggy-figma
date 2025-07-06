@@ -5,7 +5,7 @@ import MainContent from '../MainContent/index.jsx';
 import SignOutPopUp from '../PopUps/SignOut/index.jsx';
 // import DeleteListingPopUp from '../PopUps/DeleteListing/index.jsx';
 import EnterPasswordPopUp from '../PopUps/EnterPassword/index.jsx';
-// import UpdateEmailPopUp from '../PopUps/EmailUpdated/index.jsx';
+import UpdateEmailPopUp from '../PopUps/EmailUpdated/index.jsx';
 // import UpdatePasswordPopUp from '../PopUps/PasswordUpdated/index.jsx';
 // import EmailSuccessPopUp from '../PopUps/EmailUpdated/index.jsx';
 // import PasswordSuccessPopUp from '../PopUps/PasswordUpdated/index.jsx';
@@ -21,6 +21,7 @@ function Profile() {
   // const [ updatePassword, setUpdatePassword ] = useState(false);
   // const [ emailSuccess, setEmailSuccess ]= useState(false);
   // const [ passwordSuccess, setPasswordSuccess ] = useState(false);
+  console.log('state of update Email: ', updateEmail)
 
   return (
     <div className='profile'>
@@ -30,17 +31,18 @@ function Profile() {
         setSelected={setSelected}
         setSignedOut={setSignedOut}
       />
-      <MainContent
-        selected={selected}
-        setEnterPassword={setEnterPassword}
-      />
+      <MainContent selected={selected} setEnterPassword={setEnterPassword} />
       {signedOut && <SignOutPopUp onClose={() => setSignedOut(false)} />}
       {/* {deleteListing && (<DeleteListingPopUp onClose={() => setDeleteListing(true)} />)} */}
-      {enterPassword && (
-        <EnterPasswordPopUp onClose={() => setEnterPassword(false)} />
-      )}
       {updateEmail && (
         <UpdateEmailPopUp onClose={() => setUpdateEmail(false)} />
+      )}
+      {enterPassword && (
+        <EnterPasswordPopUp
+          onClose={() => setEnterPassword(false)}
+          setUpdateEmail={setUpdateEmail}
+          setEnterPassword={setEnterPassword}
+        />
       )}
       {/* {updatePassword && (<UpdatePasswordPopUp onClose={() => setUpdatePassword(true)} />)}
             {emailSuccess && (<EmailSuccessPopUp onClose={() => setEmailSuccess(true)} />)}
