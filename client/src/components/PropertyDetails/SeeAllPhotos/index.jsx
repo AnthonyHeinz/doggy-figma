@@ -19,20 +19,23 @@ function SeeAllPhotos({ isOpen, onClose, images }) {
     <div className='see-all-overlay' onClick={onClose}>
       <div className='see-all-box' onClick={(e) => e.stopPropagation()}>
         <div className='see-all-header'>
-          <div className='see-all-back'>
-            <IoIosArrowBack size={20} />
-            Back to Listing
+          <div className='see-all-popup-x-back-buttons'>
+            <button
+              className='see-all-back-button'
+              onClick={() => console.log('Back')}
+            >
+              {'<'} Back to Listing
+            </button>
+            <button className='see-all-close-button' onClick={onClose}>
+              ×
+            </button>
           </div>
-          <div className='see-all-address'>
-            627 Belmont Ave #6, Los Angeles, CA 90026
+          <div className='see-all-location-send-viewer-button'>
+            <span>627 Belmont Ave #6, Los Angeles, CA 90026</span>
+            <button id='see-all-send-a-viewer-button'>Send a Viewer</button>
           </div>
-          <button className='see-all-send-viewer'>Send a Viewer</button>
-          <button className='see-all-close' onClick={onClose}>
-            ×
-          </button>
         </div>
-
-        <div className='see-all-main'>
+        <div className='see-all-main-container'>
           <button className='see-all-arrow left' onClick={goToPrevious}>
             <IoIosArrowBack size={28} />
           </button>
