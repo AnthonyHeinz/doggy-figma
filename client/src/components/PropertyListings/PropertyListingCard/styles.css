@@ -42,3 +42,12 @@
   font-size: 0.9rem;
   font-size: 0.875rem;
 }
+
+@media screen and (max-width: 480px) {
+  .property-listing-price,
+  .property-listing-details,
+  .property-listing-address,
+  .property-listing-building {
+    font-size: 0.875rem;
+  }
+}

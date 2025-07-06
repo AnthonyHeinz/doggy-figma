@@ -89,3 +89,14 @@
   font-size: 32px;
   font-family: 'Open Sans', sans-serif;
 }
+
+@media screen and (max-width: 768px) {
+  .price-dropdown-container {
+    top: 240px !important;
+    left: 50% !important;
+    transform: translateX(-50%);
+    width: 90vw !important;
+    max-width: none;
+    z-index: 1000;
+  }
+}

@@ -48,3 +48,13 @@
   display: flex;
   margin-bottom: 1.25rem;
 }
+
+@media screen and (max-width: 768px) {
+  #bed-and-bath-dropdown-container {
+    top: 300px !important;
+    left: 50% !important;
+    transform: translateX(-50%);
+    width: 90vw !important;
+    max-width: none;
+  }
+}

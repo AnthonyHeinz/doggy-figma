@@ -154,7 +154,7 @@
 @media screen and (max-width: 768px) {
   #property-listing-bar {
     flex-direction: column;
-    align-items: center;
+    align-items: stretch;
     height: auto;
     padding: 1rem;
     gap: 1rem;
@@ -162,25 +162,21 @@
 
   #property-listing-inputs {
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    align-items: stretch;
     width: 100%;
+    padding: 0 1rem;
     gap: 0.75rem;
   }
 
   #property-listing-search-bar {
-    margin-left: 0;
     width: 100%;
-  }
-
-  #property-listing-dog-icon {
-    align-self: center;
-    margin-right: 0;
+    margin-left: 0;
   }
 
   #property-listing-price,
   #property-listing-bed-bath,
   .property-listing-home-lease-type {
     width: 100%;
+    max-width: 100%;
   }
 }
