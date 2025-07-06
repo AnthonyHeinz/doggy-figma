@@ -1,7 +1,7 @@
 import React from 'react';
 import './styles.css';
 
-function () {
+function EnterPasswordPopUp() {
     return (
     <div className='sign-out-popup-wrapper'>
       <div className='sign-out-popup-content'>
@@ -17,4 +17,4 @@ function () {
     )
 }
 
-export default ;
+export default EnterPasswordPopUp;

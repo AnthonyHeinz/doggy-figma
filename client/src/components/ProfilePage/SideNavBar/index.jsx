@@ -5,7 +5,7 @@ import PropertyIcon from '../../../assets/propertyIcon.png';
 import DogIcon from '../../../assets/dibby_Dog_Logo.png';
 import './styles.css';
 
-function SideNavBar({ selected, setSelected }) {
+function SideNavBar({ selected, setSelected, signedOut, setSignedOut }) {
   return (
     <div className='side-nav-bar'>
       <button
@@ -29,7 +29,7 @@ function SideNavBar({ selected, setSelected }) {
       <div className='side-nav-bar-filler'>
         <img src={DogIcon} alt='dogIcon' className='side-nav-bar-dog-icon' />
       </div>
-      <SignOut />
+      <SignOut signedOut={signedOut} setSignedOut={setSignedOut}/>
     </div>
   );
 }

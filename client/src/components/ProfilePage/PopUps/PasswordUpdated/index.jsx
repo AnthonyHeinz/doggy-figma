@@ -1,10 +1,10 @@
 import React from 'react';
 import './styles.css';
 
-function () {
+function PasswordSuccessPopUp () {
     return (
 
     )
 }
 
-export default ;
+export default PasswordSuccessPopUp;

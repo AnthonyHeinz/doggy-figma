@@ -1,4 +1,5 @@
 import React from 'react';
+
 import CloseWindow from '../../../../assets/closeWindow.png';
 import './styles.css';
 
