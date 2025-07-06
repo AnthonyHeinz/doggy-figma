@@ -1,9 +1,19 @@
 import React, { useState } from 'react';
 import './styles.css';
 import { IoIosArrowBack, IoIosArrowForward } from 'react-icons/io';
+import ConfirmAndPayPopUp from '../../ConfirmAndPayPopUp/index.jsx';
+import testDog from '../../../assets/testdog.jpeg';
 
 function SeeAllPhotos({ isOpen, onClose, images }) {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [showSendViewerPopup, setShowSendViewerPopup] = useState(false);
+  const [houseDetails, setHouseDetails] = useState({
+    location: '627 Belmont Ave #6, Los Angeles, CA 90026',
+    buildingName: 'Belmont Apartments',
+    beds: 2,
+    baths: 1,
+    sqft: 875,
+  });
 
   if (!isOpen) return null;
 
@@ -32,7 +42,22 @@ function SeeAllPhotos({ isOpen, onClose, images }) {
           </div>
           <div className='see-all-location-send-viewer-button'>
             <span>627 Belmont Ave #6, Los Angeles, CA 90026</span>
-            <button id='see-all-send-a-viewer-button'>Send a Viewer</button>
+            <button
+              id='see-all-send-a-viewer-button'
+              onClick={() => setShowSendViewerPopup(true)}
+            >
+              Send a Viewer
+            </button>
+            <ConfirmAndPayPopUp
+              isOpen={showSendViewerPopup}
+              onClose={() => setShowSendViewerPopup(false)}
+              backgroundImage={testDog}
+              beds={houseDetails.beds}
+              baths={houseDetails.baths}
+              sqft={houseDetails.sqft}
+              location={houseDetails.location}
+              buildingName={houseDetails.buildingName}
+            />
           </div>
         </div>
         <div className='see-all-main-container'>
