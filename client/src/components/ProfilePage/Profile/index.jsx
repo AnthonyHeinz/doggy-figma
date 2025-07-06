@@ -31,7 +31,7 @@ function Profile () {
              <img src={DogIcon} alt='dogIcon' className='profile-dog-icon' />
             <SideNavBar selected={selected} setSelected={setSelected} signedOut={signedOut} setSignedOut={setSignedOut}/>
             <MainContent selected={selected} />
-            {signedOut && (<SignOutPopUp onClose={() => setSignedOut(true)} />)}
+            {signedOut && (<SignOutPopUp onClose={() => setSignedOut(false)} />)}
             {/* {deleteListing && (<DeleteListingPopUp onClose={() => setDeleteListing(true)} />)}
             {enterPassword && (<EnterPasswordPopUp onClose={() => setEnterPassword(true)} />)}
             {updateEmail && (<UpdateEmailPopUp onClose={() => setUpdateEmail(true)} />)}

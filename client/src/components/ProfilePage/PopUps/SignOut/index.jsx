@@ -17,10 +17,10 @@ function SignOutPopUp({ onClose }) {
           </button>
           <button className='sign-out-popup-confirm'>Sign Out</button>
         </div>
+        <button onClick={onClose} className='sign-out-pop-up-close-window'>
+          <img src={CloseWindow} />
+        </button>
       </div>
-      <button onClick={onClose} className='sign-out-pop-up-close-window'>
-        <img src={CloseWindow} />
-      </button>
     </div>
   );
 }
