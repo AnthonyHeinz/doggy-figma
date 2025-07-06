@@ -1,6 +1,6 @@
 .personal-information {
   position: relative;
-  padding: 48px;
+  padding: 2.5rem;
 }
 .personal-information h4 {
   font-size: 32px;
@@ -94,13 +94,6 @@
   padding: 2px;
 }
 
-.my-account-dog-icon {
-  position: absolute;
-  transform: scaleX(-1) rotate(27.21deg);
-  top: 2.5rem;
-  left: 64.7rem;
-}
-
 .save-changes {
   background-color: #204777;
   color: #ffffff;
@@ -109,76 +102,3 @@
   border-radius: 8px;
   padding: 12px 18px 12px 18px;
 }
-
-.my-account-gradient-one {
-  position: absolute;
-  top: -20rem;
-  left: -20rem;
-  width: 677px;
-  height: 288px;
-  background: radial-gradient(
-    ellipse at center,
-    rgba(249, 201, 161, 0.5) 100%,
-    rgba(249, 201, 161, 0.3) 50%,
-    rgba(249, 201, 161, 0.1) 100%,
-    #ffffff 100%
-  );
-  filter: blur(60px);
-  z-index: 4;
-  pointer-events: none;
-}
-
-.my-account-gradient-two {
-  position: absolute;
-  top: 10rem;
-  left: 22rem;
-  width: 487px;
-  height: 388px;
-  background: radial-gradient(
-    ellipse at center,
-    #f7e8cd 100%,
-    #f7e8cd 50%,
-    #f7e8cd 100%,
-    #ffffff 100%
-  );
-  filter: blur(200px);
-  z-index: -1;
-  pointer-events: none;
-}
-
-.my-account-gradient-three {
-  position: absolute;
-  top: -20rem;
-  left: 30rem;
-  width: 677px;
-  height: 288px;
-  background: radial-gradient(
-    ellipse at center,
-    #e0ebf5 100%,
-    #e0ebf5 50%,
-    #e0ebf5 100%,
-    #ffffff 100%
-  );
-  filter: blur(200px);
-  z-index: -1;
-  pointer-events: none;
-}
-
-.my-account-gradient-four {
-  position: absolute;
-  top: 23rem;
-  left: 54rem;
-  width: 677px;
-  height: 540px;
-  background: radial-gradient(
-    ellipse at center,
-    #f7e3e4 100%,
-    #f7e3e4 50%,
-    #f7e3e4 100%,
-    #ffffff 100%
-  );
-  filter: blur(160px);
-  z-index: -1;
-  pointer-events: none;
-}
-

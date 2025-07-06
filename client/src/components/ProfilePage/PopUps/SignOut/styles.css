@@ -1,0 +1,13 @@
+.sign-out-pop-up-wrapper {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 105%;
+    height: 42.4%;
+    background-color: #ffffff;
+    z-index: 999;
+}
+
+.sign-out-pop-up-content {
+    
+}

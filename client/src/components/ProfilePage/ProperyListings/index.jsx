@@ -1,5 +1,4 @@
 import React from 'react';
-import DogIcon from '../../../assets/dibby_Dog_Logo.png';
 import PropertyListingCard from '../PropertyListingCard/index.jsx';
 import './styles.css';
 
@@ -23,11 +22,7 @@ function MyPropertyListings() {
              <PropertyListingCard hardCodedListingInfo={hardCodedListingInfo} />
         </div>
       </div>
-      <img src={DogIcon} alt='dogIcon' className='my-prop-list-dog-icon' />
-      <div className='my-prop-list-gradient-one'></div>
-      <div className='my-prop-list-gradient-two'></div>
-      <div className='my-prop-list-gradient-three'></div>
-      <div className='my-prop-list-gradient-four'></div>
+
     </div>
   );
 }

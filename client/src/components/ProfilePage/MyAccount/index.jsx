@@ -66,11 +66,6 @@ function MyAccount() {
         </div>
         <button className='save-changes'>Save Changes</button>
       </div>
-      <img src={DogIcon} alt='dogIcon' className='my-account-dog-icon' />
-      <div className='my-account-gradient-one'></div>
-      <div className='my-account-gradient-two'></div>
-      <div className='my-account-gradient-three'></div>
-      <div className='my-account-gradient-four'></div>
     </div>
   );
 }

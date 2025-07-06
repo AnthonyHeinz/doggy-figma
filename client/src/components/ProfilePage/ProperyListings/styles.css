@@ -1,86 +1,10 @@
 .my-prop-list {
-    padding: 40px;
+    padding: 2.5rem;
+    width: 100%;
+    height: auto;
 }
 .my-prop-list h4 {
     font-size: 32px;
     font-weight: 600;
 }
 
-.my-prop-list-gradient-one {
-  position: absolute;
-  top: -20rem;
-  left: -20rem;
-  width: 677px;
-  height: 288px;
-  background: radial-gradient(
-    ellipse at center,
-    rgba(249, 201, 161, 0.5) 100%,
-    rgba(249, 201, 161, 0.3) 50%,
-    rgba(249, 201, 161, 0.1) 100%,
-    #ffffff 100%
-  );
-  filter: blur(60px);
-  z-index: 4;
-  pointer-events: none;
-}
-
-.my-prop-list-gradient-two {
-  position: absolute;
-  top: 10rem;
-  left: 22rem;
-  width: 487px;
-  height: 388px;
-  background: radial-gradient(
-    ellipse at center,
-    #f7e8cd 100%,
-    #f7e8cd 50%,
-    #f7e8cd 100%,
-    #ffffff 100%
-  );
-  filter: blur(200px);
-  z-index: -1;
-  pointer-events: none;
-}
-
-.my-prop-list-gradient-three {
-  position: absolute;
-  top: -20rem;
-  left: 30rem;
-  width: 677px;
-  height: 288px;
-  background: radial-gradient(
-    ellipse at center,
-    #e0ebf5 100%,
-    #e0ebf5 50%,
-    #e0ebf5 100%,
-    #ffffff 100%
-  );
-  filter: blur(200px);
-  z-index: -1;
-  pointer-events: none;
-}
-
-.my-prop-list-gradient-four {
-  position: absolute;
-  top: 23rem;
-  left: 54rem;
-  width: 677px;
-  height: 540px;
-  background: radial-gradient(
-    ellipse at center,
-    #f7e3e4 100%,
-    #f7e3e4 50%,
-    #f7e3e4 100%,
-    #ffffff 100%
-  );
-  filter: blur(160px);
-  z-index: -1;
-  pointer-events: none;
-}
-
-.my-prop-list-dog-icon {
-  position: absolute;
-  transform: scaleX(-1) rotate(27.21deg);
-  top: 2.5rem;
-  left: 64.7rem;
-}
