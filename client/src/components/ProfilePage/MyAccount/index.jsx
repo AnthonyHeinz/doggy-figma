@@ -1,9 +1,8 @@
 import React from 'react';
 import './styles.css';
 import Pencil from '../../../assets/updatePencil.png';
-import DogIcon from '../../../assets/dibby_Dog_Logo.png';
 
-function MyAccount() {
+function MyAccount({ setEnterPassword }) {
   const hardCodedPersonalInfo = {
     firstName: 'John',
     lastName: 'Smith',
@@ -46,7 +45,7 @@ function MyAccount() {
                 {hardCodedPersonalInfo.email}
               </div>
             </div>
-            <button>
+            <button onClick={() => setEnterPassword(true)}>
               <img src={Pencil} alt='pencil' className='log-and-sec-pencil' />
               <span>Update Email</span>
             </button>

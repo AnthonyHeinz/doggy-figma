@@ -1,7 +1,7 @@
 import React from 'react';
 import './styles.css';
 
-function UpdateEmailPopUp() {
+function UpdateEmailPopUp({ onClose }) {
     return (
 
     )

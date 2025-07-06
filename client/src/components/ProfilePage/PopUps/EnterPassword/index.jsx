@@ -1,20 +1,32 @@
 import React from 'react';
+import CloseWindow from '../../../../assets/closeWindow.png';
 import './styles.css';
 
-function EnterPasswordPopUp() {
-    return (
-    <div className='sign-out-popup-wrapper'>
-      <div className='sign-out-popup-content'>
-        <div className='sign-out-popup-content-text'>Enter 
-        </div>
-        <div className='sign-out-popup-form'>
-            <input></input>
-            <button className='sign-out-pop-up-continue'>Continue</button>
+function EnterPasswordPopUp({ onClose }) {
+  const [ password, setPassword ] = useState('');
+  const testPassword = 'dibby';
+
+  const handleContinue = () => {
+    if (password === testPassword){
+
+    }
+  }
+
+  return (
+    <div className='enter-password-wrapper'>
+      <div className='enter-password-content'>
+        <h6>Enter Current Password to Continue</h6>
+        <div className='enter-password-form'>
+          <input type='text' placeholder='Password' />
+          <button className='enter-password-continue'>Continue</button>
+          <p>Forgot Password?</p>
         </div>
       </div>
-      <button onClick={onClose} className='sign-out-pop-up-close-window'><img src={CloseWindow} /></button>
+      <button onClick={onClose} className='enter-password-close-window'>
+        <img src={CloseWindow} />
+      </button>
     </div>
-    )
+  );
 }
 
 export default EnterPasswordPopUp;
