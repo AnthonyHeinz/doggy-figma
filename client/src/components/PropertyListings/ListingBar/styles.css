@@ -180,3 +180,41 @@
     max-width: 100%;
   }
 }
+
+@media screen and (max-width: 1250px) {
+  #property-listing-bar {
+    flex-direction: column;
+    align-items: center;
+    height: auto;
+    padding: 1rem;
+    gap: 1rem;
+  }
+
+  #property-listing-inputs {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  #property-listing-search-bar-wrapper {
+    margin-left: 0;
+  }
+
+  #property-listing-search-bar {
+    margin-left: 0;
+  }
+
+  #property-listing-price,
+  #property-listing-bed-bath,
+  .property-listing-home-lease-type {
+    width: auto;
+    max-width: none;
+  }
+
+  #property-listing-dog-icon {
+    align-self: center;
+    margin-right: 0;
+    margin-top: 1rem;
+  }
+  
+}
