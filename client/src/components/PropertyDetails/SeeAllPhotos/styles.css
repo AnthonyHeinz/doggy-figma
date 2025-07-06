@@ -1,0 +1,104 @@
+.see-all-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.see-all-box {
+  background: #fff;
+  border-radius: 12px;
+  width: 60rem;
+  max-width: 95%;
+  padding: 1.5rem;
+  position: relative;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+}
+
+.see-all-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  gap: 1rem;
+}
+
+.see-all-back {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  color: #1c1c1c;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.see-all-address {
+  flex: 1;
+  font-size: 18px;
+  font-weight: 600;
+  color: #1c1c1c;
+}
+
+.see-all-send-viewer {
+  background: #ffb500;
+  border: none;
+  border-radius: 6px;
+  padding: 0.5rem 1rem;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  color: #fff;
+}
+
+.see-all-close {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: #1c1c1c;
+}
+
+.see-all-main {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.see-all-main-image {
+  width: 100%;
+  max-height: 28rem;
+  object-fit: contain;
+  border-radius: 8px;
+}
+
+.see-all-arrow {
+  position: absolute;
+  background: rgba(255, 255, 255, 0.85);
+  border: none;
+  padding: 0.25rem;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.see-all-arrow.left {
+  left: -1.5rem;
+}
+
+.see-all-arrow.right {
+  right: -1.5rem;
+}
+
+.see-all-thumbnails {
+  margin-top: 1rem;
+  display: flex;
+  gap: 0.5rem;
+  ov

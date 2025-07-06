@@ -3,8 +3,10 @@ import { useState } from 'react';
 import './styles.css';
 import testDog from '../../../assets/testdog.jpeg';
 import photoIcon from '../../../assets/photo_icon.png';
+import SeeAllPhotos from '../SeeAllPhotos';
 
 function PropertyPhotos() {
+  const [showAllPhotosPopup, setShowAllPhotosPopup] = useState(false);
   const [images, setImages] = useState([
     testDog,
     testDog,
@@ -35,14 +37,23 @@ function PropertyPhotos() {
             />
           ))}
         </div>
-        <button className='property-details-see-all-photos-button'>
+        <button
+          className='property-details-see-all-photos-button'
+          onClick={() => setShowAllPhotosPopup(true)}
+        >
           <img
             src={photoIcon}
             alt='photo-icon'
             id='property-details-photo-icon'
-          ></img>
+          />
           See All {images.length} Photos
         </button>
+
+        <SeeAllPhotos
+          isOpen={showAllPhotosPopup}
+          onClose={() => setShowAllPhotosPopup(false)}
+          images={images}
+        />
       </div>
     </div>
   );
