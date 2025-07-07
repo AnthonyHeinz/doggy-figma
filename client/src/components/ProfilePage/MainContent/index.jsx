@@ -1,10 +1,9 @@
 import React from 'react';
 import MyAccount from '../MyAccount/index.jsx';
-import DogIcon from '../../../assets/dibby_Dog_Logo.png';
 import MyPropertyListings from '../ProperyListings/index.jsx';
 import './styles.css';
 
-function MainContent({ selected, setEnterPassword }) {
+function MainContent({ selected, setEnterPasswordEmail, setEnterPasswordPassword, setDeleteListing }) {
   return (
     <div className='main-content'>
       <div className='main-content-gradient-one'></div>
@@ -13,10 +12,11 @@ function MainContent({ selected, setEnterPassword }) {
       <div className='main-content-gradient-four'></div>
       {selected === 'myAccount' ? (
         <MyAccount
-          setEnterPassword={setEnterPassword}
+          setEnterPasswordEmail={setEnterPasswordEmail}
+          setEnterPasswordPassword={setEnterPasswordPassword}
         />
       ) : (
-        <MyPropertyListings />
+        <MyPropertyListings setDeleteListing={setDeleteListing} />
       )}
     </div>
   );

@@ -2,16 +2,16 @@ import { React, useState } from 'react';
 import CloseWindow from '../../../../assets/closeWindow.png';
 import './styles.css';
 
-function EnterPasswordPopUp({ onClose, setEnterPassword, setUpdateEmail }) {
+function EnterPasswordPopUpEmail({ onClose, setEnterPasswordEmail, setUpdateEmail }) {
   const [password, setPassword] = useState('');
-  const testPassword = '';
+  const testPassword = 'dibby';
 
   const handleContinue = () => {
     if (password === testPassword) {
-      setEnterPassword(false);
+      setEnterPasswordEmail(false);
       setTimeout(() => {
         setUpdateEmail(true);
-      }, 1000);
+      }, 10);
     }
   };
 
@@ -39,4 +39,4 @@ function EnterPasswordPopUp({ onClose, setEnterPassword, setUpdateEmail }) {
   );
 }
 
-export default EnterPasswordPopUp;
+export default EnterPasswordPopUpEmail;

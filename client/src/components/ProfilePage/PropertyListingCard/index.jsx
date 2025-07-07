@@ -6,7 +6,7 @@ import PropertyPic from '../../../assets/apartmentPreviewImage.png';
 import './styles.css';
 
 function PropertyListingCard({
-  hardCodedListingInfo,
+  hardCodedListingInfo, setDeleteListing
 }) {
     const [published, setPublished] = useState('true');
     
@@ -44,7 +44,7 @@ function PropertyListingCard({
               <button className='edit'>
                 <img src={Pencil} alt='pencil' className='edit-pencil' /> <span>Edit</span>
               </button>
-              <button className='delete'>
+              <button className='delete' onClick={() => setDeleteListing(true)}>
                 <img src={TrashCan} alt='trash' className='trash-can' /> <span>Delete</span>
               </button>
               <button className='preview'>

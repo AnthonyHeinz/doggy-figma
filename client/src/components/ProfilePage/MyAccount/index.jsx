@@ -2,7 +2,7 @@ import React from 'react';
 import './styles.css';
 import Pencil from '../../../assets/updatePencil.png';
 
-function MyAccount({ setEnterPassword }) {
+function MyAccount({ setEnterPasswordEmail, setEnterPasswordPassword }) {
   const hardCodedPersonalInfo = {
     firstName: 'John',
     lastName: 'Smith',
@@ -45,7 +45,7 @@ function MyAccount({ setEnterPassword }) {
                 {hardCodedPersonalInfo.email}
               </div>
             </div>
-            <button onClick={() => setEnterPassword(true)}>
+            <button onClick={() => setEnterPasswordEmail(true)}>
               <img src={Pencil} alt='pencil' className='log-and-sec-pencil' />
               <span>Update Email</span>
             </button>
@@ -57,7 +57,7 @@ function MyAccount({ setEnterPassword }) {
                 {hardCodedPersonalInfo.password}
               </div>
             </div>
-            <button >
+            <button onClick={() => setEnterPasswordPassword(true)} >
               <img src={Pencil} alt='pencil' className='log-and-sec-pencil' />
               <span>Update Password</span>
             </button>
