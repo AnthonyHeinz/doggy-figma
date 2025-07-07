@@ -41,11 +41,17 @@ function ConfirmAndPayPopUp({
               <h6 className='confirm-pay-location-info-h6-text'>
                 Send a Viewer to this Address:
               </h6>
-              {backgroundImage && (
+              {backgroundImage ? (
                 <img
                   src={backgroundImage}
                   alt='location-picture'
                   id='confirm-pay-picture'
+                />
+              ) : (
+                <img
+                  src={dogIcon}
+                  alt='dibby dog'
+                  className='confirm-pay-bottom-dog-icon'
                 />
               )}
               <div className='confirm-pay-info'>
