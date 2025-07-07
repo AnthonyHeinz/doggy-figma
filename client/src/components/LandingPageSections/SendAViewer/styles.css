@@ -80,7 +80,23 @@
 }
 
 .landing-send-a-viewer-state-zip-inputs-box {
-display: flex;
-flex-direction: row;
+  display: flex;
+  flex-direction: row;
 }
 
+#landing-send-a-viewer-continue-to-payment-button {
+  font-size: 16px;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 400;
+  width: 100%;
+  height: 44px;
+  background-color: #ffb500;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+#landing-send-a-viewer-continue-to-payment-button:hover {
+  background-color: #e5a300;
+}

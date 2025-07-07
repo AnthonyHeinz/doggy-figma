@@ -1,6 +1,7 @@
 import React from 'react';
 import './styles.css';
 import { useState } from 'react';
+import ConfirmAndPayPopUp from '../../ConfirmAndPayPopUp/index.jsx';
 
 function SendAViewer({ isOpen, onClose }) {
   const [showConfirmAndPayPopup, setShowConfirmAndPayPopup] = useState(false);
@@ -47,11 +48,15 @@ function SendAViewer({ isOpen, onClose }) {
             />
           </div>
           <button
-            id='confirm-pay-send-a-viewer-button'
+            id='landing-send-a-viewer-continue-to-payment-button'
             onClick={() => setShowConfirmAndPayPopup(true)}
           >
             Confirm and Pay
           </button>
+          <ConfirmAndPayPopUp
+            isOpen={showConfirmAndPayPopup}
+            onClose={() => setShowConfirmAndPayPopup}
+          />
         </div>
       </div>
     </div>
