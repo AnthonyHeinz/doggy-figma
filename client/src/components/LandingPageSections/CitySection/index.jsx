@@ -1,8 +1,12 @@
 import React from 'react';
 import './styles.css';
 import search from '../../../assets/Search.png';
+import { useState } from 'react';
+import SendAViewer from '../SendAViewer/index.jsx';
 
 function CitySection() {
+  const [showSendAViewerPopup, setShowSendAViewerPopup] = useState(false);
+
   return (
     <div className='city-wrapper'>
       <section className='city-section'>
@@ -30,7 +34,16 @@ function CitySection() {
             <div className='or-separator'>OR</div>
             <div>
               <p>Send a Viewer to a property you’ve found</p>
-              <button className='viewer-button'>Send a Viewer</button>
+              <button
+                className='viewer-button'
+                onClick={() => setShowSendAViewerPopup(true)}
+              >
+                Send a Viewer
+              </button>
+              <SendAViewer
+                isOpen={showSendAViewerPopup}
+                onClose={() => setShowSendAViewerPopup(false)}
+              />
             </div>
           </div>
         </div>
