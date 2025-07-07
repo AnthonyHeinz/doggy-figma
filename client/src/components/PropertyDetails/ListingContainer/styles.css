@@ -117,3 +117,10 @@
   margin-right: 0.5rem;
   color: #1c1c1c;
 }
+
+#property-details-list-map {
+  width: 39.6875rem;
+  height: 22.8875rem;
+  object-fit: cover;
+  margin-bottom: 5rem;
+}

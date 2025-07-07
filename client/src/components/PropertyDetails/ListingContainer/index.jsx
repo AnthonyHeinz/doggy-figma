@@ -2,6 +2,7 @@ import React from 'react';
 import { useState } from 'react';
 import './styles.css';
 import TourThisProperty from '../TourThisProperty';
+import NeighborhoodTestImage from '../../../assets/Neighborhood_Test_Image.png';
 
 function ListingContainer() {
   const [houseDetails, setHouseDetails] = useState({
@@ -89,6 +90,11 @@ function ListingContainer() {
         </section>
         <div className='property-details-grey-line'></div>
         <h4 className='property-details-bed-bath-sqft-h4-text'>Neighborhood</h4>
+        <img
+          src={NeighborhoodTestImage}
+          alt='neighborhood-test-image'
+          id='property-details-list-map'
+        ></img>
       </div>
       <div id='property-details-tour-dibby-container'>
         <TourThisProperty />
