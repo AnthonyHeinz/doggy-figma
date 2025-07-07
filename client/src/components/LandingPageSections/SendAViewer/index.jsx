@@ -2,6 +2,7 @@ import React from 'react';
 import './styles.css';
 import { useState } from 'react';
 import ConfirmAndPayPopUp from '../../ConfirmAndPayPopUp/index.jsx';
+import dogIcon from '../../../assets/dibby_Dog_Logo.png';
 
 function SendAViewer({ isOpen, onClose }) {
   const [showConfirmAndPayPopup, setShowConfirmAndPayPopup] = useState(false);
@@ -73,6 +74,11 @@ function SendAViewer({ isOpen, onClose }) {
             buildingName={houseDetails.buildingName}
           />
         </div>
+        <img
+          src={dogIcon}
+          alt='dog icon'
+          className='landing-send-a-viewer-dog-icon'
+        />
       </div>
     </div>
   );
