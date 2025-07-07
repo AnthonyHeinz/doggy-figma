@@ -18,12 +18,16 @@ function TourThisProperty() {
   return (
     <div id='property-details-tour-this-property-container'>
       <img src={dogIcon} alt='dog icon' className='property-details-dog-icon' />
-      <h5>Tour This Property</h5>
+      <h5 id='property-details-tour-this-property-container-h5-text'>
+        Tour This Property
+      </h5>
       <div id='property-details-send-viewer-list'>
-        <h6>
+        <h6 id='property-details-send-viewer-list-h6-text'>
           For <strong>$49</strong>, receive a full report on this property.{' '}
         </h6>
-        <p>Send a viewer to receive the following:</p>
+        <p id='property-details-tour-this-property-container-p-text'>
+          Send a viewer to receive the following:
+        </p>
         <ul>
           <li>Interior and exterior photos/videos</li>
           <li>Written report</li>

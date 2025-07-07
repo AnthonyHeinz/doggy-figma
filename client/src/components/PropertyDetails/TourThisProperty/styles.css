@@ -25,17 +25,17 @@
   transform: scaleX(-1);
 }
 
-#property-details-tour-this-property-container h5 {
+#property-details-tour-this-property-container-h5-text {
   font-size: 24px;
-  font-weight: 600px;
+  font-weight: 600;
 }
 
-#property-details-send-viewer-list h6 {
+#property-details-send-viewer-list-h6-text {
   font-size: 16px;
   margin: 1.5rem 0;
 }
 
-#property-details-tour-this-property-container p {
+#property-details-tour-this-property-container-p-text {
   font-size: 16px;
 }
 

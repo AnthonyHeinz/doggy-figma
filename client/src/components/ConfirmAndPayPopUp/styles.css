@@ -76,7 +76,7 @@
   width: 22.44625rem;
 }
 
-#confirm-pay-left-side h5 {
+#confirm-pay-left-side-h5-text {
   font-size: 24px;
   font-weight: 600;
   margin: 1rem 0;
@@ -87,7 +87,7 @@
   flex-direction: column;
 }
 
-#confirm-pay-location-info h6 {
+.confirm-pay-location-info-h6-text {
   margin: 0.5rem 0;
   font-size: 20px;
   font-weight: 600;
@@ -131,13 +131,13 @@
   line-height: 1.6;
 }
 
-#confirm-pay-viewing-details p {
+.confirm-pay-viewing-details-p-text {
   font-size: 14px;
   color: #4a4a4a;
   margin: 0.5rem 0;
 }
 
-#confirm-pay-viewing-details h6 {
+#confirm-pay-viewing-details-h6-text {
   font-size: 20px;
   color: #011329;
   margin: 1rem 0;
@@ -145,7 +145,7 @@
 
 #confirm-pay-right-side {
   width: 30rem;
-   z-index: 2;
+  z-index: 2;
 }
 
 .confirm-pay-step-container {
@@ -160,7 +160,7 @@
   margin: 1rem 0;
 }
 
-.confirm-pay-step-container h6 {
+.confirm-pay-step-container-h6-text {
   margin: 1rem;
   font-size: 18px;
   font-weight: 600;
@@ -171,7 +171,7 @@
   color: #204777;
 }
 
-.confirm-pay-step-container input {
+.confirm-pay-step-container-inputs {
   padding: 0.75rem 1rem;
   border: 1px solid #ccc;
   border-radius: 6px;
@@ -183,9 +183,6 @@
 .confirm-pay-input-row {
   display: flex;
   gap: 1rem;
-}
-
-.confirm-pay-input-row input {
   flex: 1;
 }
 

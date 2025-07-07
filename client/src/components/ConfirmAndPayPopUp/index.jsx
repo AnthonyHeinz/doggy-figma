@@ -36,9 +36,11 @@ function ConfirmAndPayPopUp({
         </div>
         <div id='confirm-pay-body'>
           <section id='confirm-pay-left-side'>
-            <h5>Confirm and Pay</h5>
+            <h5 id='confirm-pay-left-side-h5-text'>Confirm and Pay</h5>
             <div id='confirm-pay-location-info'>
-              <h6>Send a Viewer to this Address:</h6>
+              <h6 className='confirm-pay-location-info-h6-text'>
+                Send a Viewer to this Address:
+              </h6>
               {backgroundImage && (
                 <img
                   src={backgroundImage}
@@ -55,9 +57,13 @@ function ConfirmAndPayPopUp({
               </div>
             </div>
             <div id='confirm-pay-viewing-details'>
-              <h6>Viewing Details</h6>
-              <p>Viewings will be completed within 3 business days.</p>
-              <p>Viewing report will include the following:</p>
+              <h6 id='confirm-pay-viewing-details-h6-text'>Viewing Details</h6>
+              <p className='confirm-pay-viewing-details-p-text'>
+                Viewings will be completed within 3 business days.
+              </p>
+              <p className='confirm-pay-viewing-details-p-text'>
+                Viewing report will include the following:
+              </p>
               <ul className='confirm-pay-list'>
                 <li>Interior and exterior photos/videos</li>
                 <li>Written report</li>
@@ -70,23 +76,59 @@ function ConfirmAndPayPopUp({
           </section>
           <section id='confirm-pay-right-side'>
             <div className='confirm-pay-step-container'>
-              <h6>
+              <h6 className='confirm-pay-step-container-h6-text'>
                 1. Payment Price: <span className='confirm-pay-price'>$49</span>
               </h6>
 
-              <h6>2. Enter contact information</h6>
-              <input type='text' placeholder='Full Name' />
-              <input type='text' placeholder='Phone Number' />
-              <input type='email' placeholder='Email Address' />
+              <h6 className='confirm-pay-step-container-h6-text'>
+                2. Enter contact information
+              </h6>
+              <input
+                type='text'
+                placeholder='Full Name'
+                className='confirm-pay-step-container-inputs'
+              />
+              <input
+                type='text'
+                placeholder='Phone Number'
+                className='confirm-pay-step-container-inputs'
+              />
+              <input
+                type='email'
+                placeholder='Email Address'
+                className='confirm-pay-step-container-inputs'
+              />
 
-              <h6>3. Add Payment Method</h6>
-              <input type='text' placeholder='Card Number' />
+              <h6 className='confirm-pay-step-container-h6-text'>
+                3. Add Payment Method
+              </h6>
+              <input
+                type='text'
+                placeholder='Card Number'
+                className='confirm-pay-step-container-inputs'
+              />
               <div className='confirm-pay-input-row'>
-                <input type='text' placeholder='MM/YY' />
-                <input type='text' placeholder='CVC' />
+                <input
+                  type='text'
+                  placeholder='MM/YY'
+                  className='confirm-pay-step-container-inputs'
+                />
+                <input
+                  type='text'
+                  placeholder='CVC'
+                  className='confirm-pay-step-container-inputs'
+                />
               </div>
-              <input type='text' placeholder='ZIP Code' />
-              <input type='text' placeholder='Country/Region' />
+              <input
+                type='text'
+                placeholder='ZIP Code'
+                className='confirm-pay-step-container-inputs'
+              />
+              <input
+                type='text'
+                placeholder='Country/Region'
+                className='confirm-pay-step-container-inputs'
+              />
             </div>
             <button
               id='confirm-pay-send-a-viewer-button'
