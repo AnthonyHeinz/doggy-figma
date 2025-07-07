@@ -38,21 +38,29 @@ function ListingContainer() {
           </div>
           <div id='property-details-bed-bath-sqft'>
             <div className='property-listing-contents'>
-              <h4>{houseDetails.beds}</h4>
+              <h4 className='property-details-bed-bath-sqft-h4-text'>
+                {houseDetails.beds}
+              </h4>
               <p>beds</p>
             </div>
             <div className='property-listing-contents'>
-              <h4>{houseDetails.baths}</h4>
+              <h4 className='property-details-bed-bath-sqft-h4-text'>
+                {houseDetails.baths}
+              </h4>
               <p>baths</p>
             </div>
             <div className='property-listing-contents'>
-              <h4>{houseDetails.sqft}</h4>
+              <h4 className='property-details-bed-bath-sqft-h4-text'>
+                {houseDetails.sqft}
+              </h4>
               <p>sqft</p>
             </div>
           </div>
         </section>
         <section id='property-details-whats-special'>
-          <h4>What's Special</h4>
+          <h4 className='property-details-bed-bath-sqft-h4-text'>
+            What's Special
+          </h4>
           <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
             eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
@@ -65,7 +73,9 @@ function ListingContainer() {
         </section>
         <div className='property-details-grey-line'></div>
         <section id='property-details-apartment-features'>
-          <h4>Apartment Features</h4>
+          <h4 className='property-details-bed-bath-sqft-h4-text'>
+            Apartment Features
+          </h4>
           <h6 id='property-details-apartment-features-h6-text'>
             Features & Appliances
           </h6>
@@ -78,6 +88,7 @@ function ListingContainer() {
           </div>
         </section>
         <div className='property-details-grey-line'></div>
+        <h4 className='property-details-bed-bath-sqft-h4-text'>Neighborhood</h4>
       </div>
       <div id='property-details-tour-dibby-container'>
         <TourThisProperty />
