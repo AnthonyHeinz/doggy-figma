@@ -35,7 +35,9 @@ function CitySection() {
             </div>
             <div className='or-separator'>OR</div>
             <div>
-              <p>Send a Viewer to a property you’ve found</p>
+              <p className='city-content-p-text'>
+                Send a Viewer to a property you’ve found
+              </p>
               <button
                 className='viewer-button'
                 onClick={() => setShowSendAViewerPopup(true)}
