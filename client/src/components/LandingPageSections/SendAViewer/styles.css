@@ -18,11 +18,10 @@
   padding: 2rem;
   border-radius: 6.85px;
   width: 42.4375rem;
-  height: 44.5rem;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-  position: relative;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
   display: flex;
   flex-direction: column;
+  position: relative;
 }
 
 .landing-send-a-viewer-close-button {
@@ -33,38 +32,46 @@
   color: #1c1c1c;
   cursor: pointer;
   font-family: 'Open Sans', sans-serif;
+  position: absolute;
+  top: 1rem;
+  right: 1.5rem;
 }
 
 .landing-send-a-viewer-words-input-box {
   display: flex;
   flex-direction: column;
-  width: 36.625rem;
+  gap: 1rem;
+  margin-top: 2rem;
 }
 
 .landing-send-a-viewer-h5-text {
   font-size: 24px;
   font-weight: 600;
   color: #011329;
+  margin-bottom: 0.5rem;
 }
 
 .landing-send-a-viewer-p-text {
   font-size: 16px;
   color: #011329;
+  margin-bottom: 1rem;
+  line-height: 1.5;
 }
 
 .landing-send-a-viewer-h6-text {
   font-size: 20px;
   color: #011329;
+  font-weight: 600;
+  margin: 0.75rem 0 0.25rem;
 }
 
 .landing-send-a-viewer-inputs {
   width: 100%;
-  max-width: 100%;
   padding: 0.828125rem 1rem;
   font-size: 1rem;
   border: none;
   border-radius: 10px;
-  box-shadow: 0 0 0 1px #d9d9d9, 0 2px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 0 1px #d9d9d9, 0 2px 6px rgba(0, 0, 0, 0.08);
   background-color: #ffffff;
   font-family: 'Open Sans', sans-serif;
   outline: none;
@@ -76,29 +83,32 @@
 }
 
 .landing-send-a-viewer-inputs:focus {
-  box-shadow: 0 0 0 2px #ffb500, 0 2px 8px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 0 0 2px #ffb500, 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 .landing-send-a-viewer-state-zip-inputs-box {
   display: flex;
-  flex-direction: row;
+  gap: 1rem;
+}
+
+.landing-send-a-viewer-inputs.half-width {
+  width: 100%;
 }
 
 #landing-send-a-viewer-continue-to-payment-button {
-  font-size: 16px;
-  font-family: 'Open Sans', sans-serif;
-  font-weight: 400;
-  width: 100%;
-  height: 44px;
-  background-color: #ffb500;
+  margin-top: 2rem;
+  font-size: 1rem;
+  padding: 0.75rem 1rem;
+  background-color: #f4b400;
+  color: #1c1c1c;
   border: none;
   border-radius: 8px;
   cursor: pointer;
-  transition: background-color 0.2s ease;
+  font-weight: 600;
+  align-self: flex-end;
+  width: fit-content;
+  font-family: 'Open Sans', sans-serif;
 }
-
 #landing-send-a-viewer-continue-to-payment-button:hover {
   background-color: #e5a300;
 }
-
-

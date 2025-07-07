@@ -2,7 +2,6 @@ import React from 'react';
 import './styles.css';
 import { useState } from 'react';
 import ConfirmAndPayPopUp from '../../ConfirmAndPayPopUp/index.jsx';
-import testDog from '../../../assets/testdog.jpeg';
 
 function SendAViewer({ isOpen, onClose }) {
   const [showConfirmAndPayPopup, setShowConfirmAndPayPopup] = useState(false);
@@ -49,24 +48,24 @@ function SendAViewer({ isOpen, onClose }) {
           <input placeholder='City' className='landing-send-a-viewer-inputs' />
           <div className='landing-send-a-viewer-state-zip-inputs-box'>
             <input
-              placeholder='Apt, Unit, Floor, etc.'
-              className='landing-send-a-viewer-inputs'
+              placeholder='State'
+              className='landing-send-a-viewer-inputs half-width'
             />
             <input
-              placeholder='City'
-              className='landing-send-a-viewer-inputs'
+              placeholder='Zip Code'
+              className='landing-send-a-viewer-inputs half-width'
             />
           </div>
+
           <button
             id='landing-send-a-viewer-continue-to-payment-button'
             onClick={() => setShowConfirmAndPayPopup(true)}
           >
-            Confirm and Pay
+            Continue to Payment
           </button>
           <ConfirmAndPayPopUp
             isOpen={showConfirmAndPayPopup}
             onClose={() => setShowConfirmAndPayPopup(false)}
-            backgroundImage={testDog}
             beds={houseDetails.beds}
             baths={houseDetails.baths}
             sqft={houseDetails.sqft}
