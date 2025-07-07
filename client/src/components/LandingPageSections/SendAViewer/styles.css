@@ -15,7 +15,7 @@
 
 .landing-send-a-viewer-popup-box {
   background-color: #ffffff;
-  padding: 2rem;
+  padding: 3rem;
   border-radius: 6.85px;
   width: 42.4375rem;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
@@ -117,8 +117,8 @@
 .landing-send-a-viewer-dog-icon {
   position: absolute;
   top: 8.25rem;
-  right: -1.875rem;
-  width: 4.255rem;
+  right: -2.375rem;
+  width: 5.375rem;
   height: auto;
   transform: rotate(-45deg) scaleX(-1);
   z-index: 0;
