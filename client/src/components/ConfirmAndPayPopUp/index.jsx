@@ -39,11 +39,13 @@ function ConfirmAndPayPopUp({
             <h5>Confirm and Pay</h5>
             <div id='confirm-pay-location-info'>
               <h6>Send a Viewer to this Address:</h6>
-              <img
-                src={backgroundImage}
-                alt='location-picture'
-                id='confirm-pay-picture'
-              />
+              {backgroundImage && (
+                <img
+                  src={backgroundImage}
+                  alt='location-picture'
+                  id='confirm-pay-picture'
+                />
+              )}
               <div className='confirm-pay-info'>
                 <p className='confirm-pay-address'>{location}</p>
                 <p className='confirm-pay-building'>{buildingName}</p>

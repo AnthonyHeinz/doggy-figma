@@ -41,18 +41,18 @@
   width: 36.625rem;
 }
 
-.landing-send-a-viewer-words-input-box h5 {
+.landing-send-a-viewer-h5-text {
   font-size: 24px;
   font-weight: 600;
   color: #011329;
 }
 
-.landing-send-a-viewer-words-input-box p {
+.landing-send-a-viewer-p-text {
   font-size: 16px;
   color: #011329;
 }
 
-.landing-send-a-viewer-words-input-box h6 {
+.landing-send-a-viewer-h6-text {
   font-size: 20px;
   color: #011329;
 }
@@ -100,3 +100,5 @@
 #landing-send-a-viewer-continue-to-payment-button:hover {
   background-color: #e5a300;
 }
+
+
