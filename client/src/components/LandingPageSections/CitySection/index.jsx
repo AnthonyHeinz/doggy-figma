@@ -44,16 +44,16 @@ function CitySection() {
               >
                 Send a Viewer
               </button>
-              <SendAViewer
-                isOpen={showSendAViewerPopup}
-                onClose={() => setShowSendAViewerPopup(false)}
-              />
             </div>
           </div>
         </div>
       </section>
       <div className='how-it-works-gradient-one'></div>
       <div className='city-white-background'></div>
+      <SendAViewer
+        isOpen={showSendAViewerPopup}
+        onClose={() => setShowSendAViewerPopup(false)}
+      />
     </div>
   );
 }
