@@ -32,7 +32,9 @@ function ListingContainer() {
           <div id='property-details-price-location'>
             <h4>${houseDetails.price}/mo</h4>
             <p id='property-details-location'>{houseDetails.location}</p>
-            <p id='property-details-location-two'>{houseDetails.buildingName}</p>
+            <p id='property-details-location-two'>
+              {houseDetails.buildingName}
+            </p>
           </div>
           <div id='property-details-bed-bath-sqft'>
             <div className='property-listing-contents'>
@@ -64,7 +66,9 @@ function ListingContainer() {
         <div className='property-details-grey-line'></div>
         <section id='property-details-apartment-features'>
           <h4>Apartment Features</h4>
-          <h6>Features & Appliances</h6>
+          <h6 id='property-details-apartment-features-h6-text'>
+            Features & Appliances
+          </h6>
           <div className='property-details-list-container'>
             {features.map((item, index) => (
               <span className='property-details-list-item' key={index}>
