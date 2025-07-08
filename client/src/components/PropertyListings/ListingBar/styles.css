@@ -7,12 +7,6 @@
   height: 64px;
 }
 
-#property-listing-inputs {
-  display: flex;
-  flex-direction: row;
-  gap: 1rem;
-}
-
 #property-listing-search-bar-wrapper {
   position: relative;
 }
@@ -151,6 +145,18 @@
   padding-left: 1rem;
 }
 
+.property-listing-button-row {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+}
+
+#property-listing-inputs {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+}
+
 @media screen and (max-width: 768px) {
   .property-listing-button-row {
     display: flex;
@@ -204,7 +210,6 @@
 
 @media screen and (max-width: 1250px) {
   #property-listing-bar {
-    flex-direction: column;
     align-items: center;
     height: auto;
     padding: 1rem;
@@ -212,7 +217,6 @@
   }
 
   #property-listing-inputs {
-    flex-direction: column;
     align-items: center;
     gap: 0.75rem;
   }
