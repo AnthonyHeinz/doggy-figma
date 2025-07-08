@@ -62,7 +62,7 @@
 
 @media screen and (max-width: 768px) {
   .home-type-dropdown-container {
-    top: 360px !important;
+    top: 300px !important;
     left: 50% !important;
     transform: translateX(-50%);
     width: 90vw !important;
