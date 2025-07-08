@@ -144,6 +144,9 @@
     width: 100%;
   }
 
+  .property-details-bed-bath-sqft-h4-text {
+    text-align: center;
+  }
   #property-details-price-location {
     width: 100%;
     text-align: center;
