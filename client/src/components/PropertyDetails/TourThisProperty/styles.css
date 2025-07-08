@@ -13,6 +13,7 @@
   background-color: #ffffff;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
   top: 125px;
+  z-index: 5;
 }
 
 .property-details-dog-icon {
