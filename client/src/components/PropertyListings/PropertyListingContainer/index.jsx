@@ -31,7 +31,9 @@ function PropertyListingContainer({
           Properties in {location}{' '}
         </h2>
         <div className='property-listing-results-sort-button-container'>
-          <h4>{resultsNumber} Results</h4>
+          <h4 className='property-listing-results-sort-button-container-h4-text'>
+            {resultsNumber} Results
+          </h4>
           <button
             className='property-listing-sort-button'
             onClick={() => onToggleDropdown('sort')}
