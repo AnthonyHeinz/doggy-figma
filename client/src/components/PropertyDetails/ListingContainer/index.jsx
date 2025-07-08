@@ -5,6 +5,7 @@ import TourThisProperty from '../TourThisProperty';
 import NeighborhoodTestImage from '../../../assets/Neighborhood_Test_Image.png';
 
 function ListingContainer() {
+  const gradients = [0, 1, 2, 3, 4];
   const [houseDetails, setHouseDetails] = useState({
     price: '2800',
     location: '627 Belmont Ave #6, Los Angeles, CA 90026',
@@ -99,7 +100,9 @@ function ListingContainer() {
       <div id='property-details-tour-dibby-container'>
         <TourThisProperty />
       </div>
-      <div className='property-details-gradient-one'></div>
+      {gradients.map((_, index) => (
+        <div className={`property-details-gradient-${index}`} key={index}></div>
+      ))}
     </div>
   );
 }

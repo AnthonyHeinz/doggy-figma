@@ -5,6 +5,7 @@
   font-family: 'Open Sans', sans-serif;
   justify-content: space-between;
   position: relative;
+  overflow-x: hidden;
 }
 
 #property-details-price-special-features {
@@ -180,20 +181,38 @@
   }
 }
 
-.property-details-gradient-one {
+.property-details-gradient-0 {
   position: absolute;
   bottom: 60rem;
   left: 41rem;
-  width: 419.09px;
-  height: 286px;
+  width: 26.193125rem;
+  height: 17.875rem;
   background: radial-gradient(
     ellipse at center,
-    rgba(249, 201, 161, 0.2) 0%,
-    rgba(249, 201, 161, 0.1) 50%,
-    rgba(249, 201, 161, 0.05) 80%,
-    rgba(249, 201, 161, 0) 100%
+    #ffffff 0%,
+    #F9C9A133 20%,
+    #F9C9A133 80%,
+    #ffffff 100%
   );
   filter: blur(20px);
   z-index: 0;
   pointer-events: none;
+}
+
+.property-details-gradient-1 {
+  position: absolute;
+  top: 17rem;
+  left: -9rem;
+  width: 32.4375rem;
+  height: 38.0625rem;
+  background: radial-gradient(
+    ellipse at center,
+    #ffffff 0%,
+    #e0ebf5cc 50%,
+    #e0ebf5cc 50%,
+    #ffffff 100%
+  );
+  filter: blur(20px);
+  pointer-events: none;
+  z-index: -1;
 }
