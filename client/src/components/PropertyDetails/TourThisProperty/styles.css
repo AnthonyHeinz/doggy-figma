@@ -75,3 +75,40 @@
 #property-details-send-a-viewer-button:hover {
   background-color: #e5a300;
 }
+
+@media screen and (max-width: 768px) {
+  #property-details-tour-this-property-container {
+    width: 100%;
+    max-width: 22rem;
+    height: auto;
+    padding: 1.5rem 1rem;
+    margin: 2rem auto 4rem auto;
+    top: 0;
+  }
+
+  .property-details-dog-icon {
+    width: 5.5rem;
+    height: 5.5rem;
+    top: -5rem;
+    right: 0;
+  }
+
+  #property-details-send-viewer-list {
+    width: 100%;
+    height: auto;
+  }
+
+  #property-details-send-a-viewer-button {
+    width: 100%;
+  }
+
+  #property-details-tour-dibby-container {
+    align-items: center;
+    width: 100%;
+  }
+  #property-details-tour-this-property-container,
+  #property-details-send-viewer-list {
+    text-align: center;
+    align-items: center;
+  }
+}

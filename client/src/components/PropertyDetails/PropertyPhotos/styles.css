@@ -82,3 +82,40 @@
   width: 16px;
   height: 16px;
 }
+
+@media screen and (max-width: 768px) {
+  .property-details-photo-container {
+    flex-direction: column;
+    margin: 0 1rem;
+  }
+
+  .property-details-main-photo-container,
+  .property-details-photo-grid {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .property-details-main-image {
+    height: auto;
+    aspect-ratio: 4 / 3;
+  }
+
+  .property-details-photo-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .property-details-image {
+    height: auto;
+    aspect-ratio: 4 / 3;
+  }
+
+  .property-details-see-all-photos-button {
+    position: static;
+    margin: 1rem auto 0 auto;
+    width: fit-content;
+  }
+
+  .property-details-back-to-search {
+    padding: 1rem;
+  }
+}

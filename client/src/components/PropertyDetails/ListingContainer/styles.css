@@ -124,3 +124,54 @@
   object-fit: cover;
   margin-bottom: 5rem;
 }
+
+@media screen and (max-width: 768px) {
+  #property-details-whats-special,
+  #property-details-apartment-features,
+  .property-details-list-container,
+  .property-details-grey-line,
+  #property-details-list-map {
+    text-align: center;
+    align-items: center;
+  }
+
+  #property-details-listing-container {
+    flex-direction: column;
+    padding: 1.5rem;
+  }
+
+  #property-details-price-special-features {
+    width: 100%;
+  }
+
+  #property-details-price-location {
+    width: 100%;
+    text-align: center;
+    align-items: center;
+  }
+
+  #property-details-price-bed-bath {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  #property-details-bed-bath-sqft {
+    justify-content: center;
+  }
+
+  .property-details-grey-line {
+    width: 100%;
+  }
+
+  #property-details-list-map {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 4 / 3;
+  }
+
+  .property-details-list-item {
+    width: 100%;
+  }
+  .property-listing-contents {
+    text-align: center;
+  }
+}
