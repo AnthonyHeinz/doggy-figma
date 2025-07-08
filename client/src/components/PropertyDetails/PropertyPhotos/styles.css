@@ -1,6 +1,7 @@
 #property-details-back-search-photos-container {
   display: flex;
   flex-direction: column;
+  z-index: 5;
 }
 
 .property-details-photo-container {
@@ -8,6 +9,7 @@
   display: flex;
   gap: 10px;
   margin: 0 3rem;
+  z-index: 5;
 }
 
 .property-details-main-photo-container {
