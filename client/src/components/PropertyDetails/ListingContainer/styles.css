@@ -4,6 +4,7 @@
   padding: 2rem 3rem;
   font-family: 'Open Sans', sans-serif;
   justify-content: space-between;
+  position: relative;
 }
 
 #property-details-price-special-features {
@@ -177,4 +178,22 @@
   .property-listing-contents {
     text-align: center;
   }
+}
+
+.property-details-gradient-one {
+  position: absolute;
+  bottom: 60rem;
+  left: 41rem;
+  width: 419.09px;
+  height: 286px;
+  background: radial-gradient(
+    ellipse at center,
+    rgba(249, 201, 161, 0.2) 0%,
+    rgba(249, 201, 161, 0.1) 50%,
+    rgba(249, 201, 161, 0.05) 80%,
+    rgba(249, 201, 161, 0) 100%
+  );
+  filter: blur(20px);
+  z-index: 4;
+  pointer-events: none;
 }

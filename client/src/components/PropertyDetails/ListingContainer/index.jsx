@@ -99,6 +99,7 @@ function ListingContainer() {
       <div id='property-details-tour-dibby-container'>
         <TourThisProperty />
       </div>
+      <div className='property-details-gradient-one'></div>
     </div>
   );
 }
