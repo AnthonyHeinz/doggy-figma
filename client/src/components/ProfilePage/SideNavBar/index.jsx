@@ -29,7 +29,7 @@ function SideNavBar({ selected, setSelected, setSignedOut }) {
       <div className='side-nav-bar-filler'>
         <img src={DogIcon} alt='dogIcon' className='side-nav-bar-dog-icon' />
       </div>
-      <SignOut setSignedOut={setSignedOut}/>
+      <SignOut className='delete-for-mobile' setSignedOut={setSignedOut}/>
     </div>
   );
 }

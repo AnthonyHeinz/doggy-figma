@@ -23,3 +23,9 @@ button.sign-out-button {
 button.sign-out-button span {
     padding-left: 7px;
 }
+
+@media (max-width: 768px) {
+  .delete-for-mobile {
+    display: none;
+  }
+}

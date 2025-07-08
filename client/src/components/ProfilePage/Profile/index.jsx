@@ -15,7 +15,7 @@ import './styles.css';
 function Profile() {
   const [selected, setSelected] = useState('myAccount');
   const [signedOut, setSignedOut] = useState(false);
-  const [ deleteListing, setDeleteListing ] = useState(false);
+  const [deleteListing, setDeleteListing] = useState(false);
   const [enterPasswordEmail, setEnterPasswordEmail] = useState(false);
   const [enterPasswordPassword, setEnterPasswordPassword] = useState(false);
   const [updateEmail, setUpdateEmail] = useState(false);
@@ -23,7 +23,7 @@ function Profile() {
   const [emailSuccess, setEmailSuccess] = useState(false);
   const [passwordSuccess, setPasswordSuccess] = useState(false);
 
-console.log('setDL: ', deleteListing)
+  console.log('setDL: ', deleteListing);
 
   return (
     <div className='profile'>
@@ -42,30 +42,30 @@ console.log('setDL: ', deleteListing)
       {signedOut && <SignOutPopUp onClose={() => setSignedOut(false)} />}
       {enterPasswordEmail && (
         <EnterPasswordPopUpEmail
-        onClose={() => setEnterPasswordEmail(false)}
-        setUpdateEmail={setUpdateEmail}
-        setEnterPasswordEmail={setEnterPasswordEmail}
+          onClose={() => setEnterPasswordEmail(false)}
+          setUpdateEmail={setUpdateEmail}
+          setEnterPasswordEmail={setEnterPasswordEmail}
         />
       )}
       {enterPasswordPassword && (
         <EnterPasswordPopUpPassword
-        onClose={() => setEnterPasswordPassword(false)}
-        setUpdatePassword={setUpdatePassword}
-        setEnterPasswordPassword={setEnterPasswordPassword}
+          onClose={() => setEnterPasswordPassword(false)}
+          setUpdatePassword={setUpdatePassword}
+          setEnterPasswordPassword={setEnterPasswordPassword}
         />
       )}
       {updateEmail && (
         <UpdateEmailPopUp
-        setEmailSuccess={setEmailSuccess}
-        setUpdateEmail={setUpdateEmail}
-        onClose={() => setUpdateEmail(false)}
+          setEmailSuccess={setEmailSuccess}
+          setUpdateEmail={setUpdateEmail}
+          onClose={() => setUpdateEmail(false)}
         />
       )}
       {updatePassword && (
         <UpdatePasswordPopUp
-        setUpdatePassword={setUpdatePassword}
-        setPasswordSuccess={setPasswordSuccess}
-        onClose={() => setUpdatePassword(false)}
+          setUpdatePassword={setUpdatePassword}
+          setPasswordSuccess={setPasswordSuccess}
+          onClose={() => setUpdatePassword(false)}
         />
       )}
       {emailSuccess && (
@@ -74,7 +74,9 @@ console.log('setDL: ', deleteListing)
       {passwordSuccess && (
         <PasswordSuccessPopUp onClose={() => setPasswordSuccess(false)} />
       )}
-      {deleteListing && (<DeleteListingPopUp onClose={() => setDeleteListing(false)} />)}
+      {deleteListing && (
+        <DeleteListingPopUp onClose={() => setDeleteListing(false)} />
+      )}
     </div>
   );
 }
