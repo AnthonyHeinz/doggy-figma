@@ -217,9 +217,43 @@
 
 .confirm-pay-bottom-dog-icon {
   position: absolute;
-  bottom: -.5rem;
+  bottom: -0.5rem;
   right: 53rem;
   width: 5.375rem;
   height: auto;
   z-index: 1;
+}
+
+@media (max-width: 768px) {
+  .confirm-pay-popup-box {
+    width: 100vw;
+    height: 100vh;
+    border-radius: 0;
+    padding: 1rem;
+    overflow-y: auto;
+  }
+
+  #confirm-pay-body {
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  #confirm-pay-left-side,
+  #confirm-pay-right-side {
+    width: 100%;
+  }
+
+  .confirm-pay-popup-overlay {
+    align-items: flex-start;
+    padding-top: 2rem;
+  }
+
+  .confirm-pay-dog-icon,
+  .confirm-pay-bottom-dog-icon {
+    display: none;
+  }
+
+  .confirm-pay-input-row {
+    flex-direction: column;
+  }
 }

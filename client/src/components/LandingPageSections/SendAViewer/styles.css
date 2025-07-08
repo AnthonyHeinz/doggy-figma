@@ -123,3 +123,27 @@
   transform: rotate(-45deg) scaleX(-1);
   z-index: 0;
 }
+
+@media (max-width: 768px) {
+  .landing-send-a-viewer-popup-box {
+    width: 100%;
+    height: 100%;
+    border-radius: 0;
+    padding: 2rem 1.5rem;
+    justify-content: center;
+  }
+
+  .landing-send-a-viewer-words-input-box {
+    margin-top: 1rem;
+  }
+
+  .landing-send-a-viewer-dog-icon {
+    display: none;
+  }
+
+  .landing-send-a-viewer-close-button {
+    top: 1rem;
+    right: 1rem;
+    font-size: 2rem;
+  }
+}
