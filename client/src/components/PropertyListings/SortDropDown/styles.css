@@ -51,7 +51,7 @@
 
 @media screen and (max-width: 768px) {
   .sort-dropdown-container {
-    top: auto !important;
+    top: 100px !important;
     left: 50% !important;
     transform: translateX(-50%);
     width: 90vw !important;

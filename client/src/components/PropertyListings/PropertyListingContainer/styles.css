@@ -5,7 +5,7 @@
   width: 56.81vw;
 }
 
-.property-listing-results-container h2 {
+.property-listing-results-container-h2-text {
   margin: 2.5rem 1.5rem 0rem 1.5rem;
   font-family: 'Open Sans', sans-serif;
   font-size: 1.5rem;
@@ -172,19 +172,23 @@
   }
 
   .property-listing-results-sort-button-container {
-    flex-direction: column;
-    align-items: flex-start;
+    flex-direction: row;
+    justify-content: space-between;
     gap: 0.5rem;
   }
-}
-
-@media screen and (max-width: 768px) {
   .property-listing-results-map-container,
   .property-listing-results-container {
     padding-left: 1rem;
     padding-right: 1rem;
     box-sizing: border-box;
     width: 100%;
-    overflow-x: hidden;
+  }
+
+  .property-listing-card-container {
+    width: 80vw;
+  }
+  .property-listing-results-container-h2-text {
+    margin: 0;
+    text-align: center;
   }
 }

@@ -11,8 +11,9 @@
 
 .property-listing-image {
   width: 100%;
-  height: 186.67px;
+  aspect-ratio: 16 / 9;
   object-fit: cover;
+  display: block;
 }
 
 .property-listing-info {
@@ -51,3 +52,4 @@
     font-size: 0.875rem;
   }
 }
+

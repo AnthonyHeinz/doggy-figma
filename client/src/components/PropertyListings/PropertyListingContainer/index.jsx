@@ -27,7 +27,9 @@ function PropertyListingContainer({
     <div className='property-listing-results-map-container'>
       <section className='property-listing-map'></section>
       <section className='property-listing-results-container'>
-        <h2>Properties in {location} </h2>
+        <h2 className='property-listing-results-container-h2-text'>
+          Properties in {location}{' '}
+        </h2>
         <div className='property-listing-results-sort-button-container'>
           <h4>{resultsNumber} Results</h4>
           <button
