@@ -152,7 +152,7 @@
 
   .property-listing-results-container {
     width: 100%;
-    padding: 1rem;
+    padding: 1rem 0;
   }
 
   .property-listing-card-container {
@@ -160,6 +160,7 @@
     align-items: center;
     gap: 1rem;
     padding: 1rem 0;
+    width: 90vw;
   }
 
   .property-listing-card {
@@ -176,17 +177,7 @@
     justify-content: space-between;
     gap: 0.5rem;
   }
-  .property-listing-results-map-container,
-  .property-listing-results-container {
-    padding-left: 1rem;
-    padding-right: 1rem;
-    box-sizing: border-box;
-    width: 100%;
-  }
 
-  .property-listing-card-container {
-    width: 80vw;
-  }
   .property-listing-results-container-h2-text {
     margin: 0;
     text-align: center;
