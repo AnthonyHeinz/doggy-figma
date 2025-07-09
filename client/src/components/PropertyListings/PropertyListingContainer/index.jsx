@@ -4,6 +4,7 @@ import PropertyListingCard from '../PropertyListingCard';
 import testDog from '../../../assets/testdog.jpeg';
 import './styles.css';
 import SortDropDown from '../SortDropDown';
+import PropertyListingMap from '../PropertyListingMap';
 
 function PropertyListingContainer({
   location,
@@ -25,7 +26,7 @@ function PropertyListingContainer({
 
   return (
     <div className='property-listing-results-map-container'>
-      <section className='property-listing-map'></section>
+      <PropertyListingMap />
       <section className='property-listing-results-container'>
         <h2 className='property-listing-results-container-h2-text'>
           Properties in {location}{' '}
