@@ -7,7 +7,7 @@ import PropertyPhotos from '../components/PropertyDetails/PropertyPhotos/index.j
 function PropertyDetails() {
   return (
     <div>
-      <NavBar />
+      <NavBar hideOnMobile />
       <PropertyPhotos />
       <ListingContainer />
       <Footer />
