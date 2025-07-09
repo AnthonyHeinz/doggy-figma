@@ -33,76 +33,74 @@ function ListingBar({
             ></img>
           </button>
         </div>
-        <div className='property-listing-button-row'>
-          <button
-            type='text'
-            id='property-listing-price'
-            className={dropdownStates.price ? 'selected' : ''}
-            onClick={() => onToggleDropdown('price')}
-          >
-            Price
-            <span
-              className={`property-listing-custom-arrow ${
-                dropdownStates.price ? 'selected' : ''
-              }`}
-            />
-          </button>
-          {dropdownStates.price && (
-            <PriceDropDown onClose={() => onToggleDropdown('price')} />
-          )}
-          <button
-            type='text'
-            id='property-listing-bed-bath'
-            className={dropdownStates.bedsBaths ? 'selected' : ''}
-            onClick={() => onToggleDropdown('bedsBaths')}
-          >
-            Beds & Bath
-            <span
-              className={`property-listing-custom-arrow ${
-                dropdownStates.bedsBaths ? 'selected' : ''
-              }`}
-            />
-          </button>
-          {dropdownStates.bedsBaths && (
-            <BedAndBathDropDown onClose={() => onToggleDropdown('bedsBaths')} />
-          )}
-        </div>
-        <div className='property-listing-button-row'>
-          <button
-            type='text'
-            className={`property-listing-home-lease-type ${
+
+        <button
+          type='text'
+          id='property-listing-price'
+          className={dropdownStates.price ? 'selected' : ''}
+          onClick={() => onToggleDropdown('price')}
+        >
+          Price
+          <span
+            className={`property-listing-custom-arrow ${
+              dropdownStates.price ? 'selected' : ''
+            }`}
+          />
+        </button>
+        {dropdownStates.price && (
+          <PriceDropDown onClose={() => onToggleDropdown('price')} />
+        )}
+        <button
+          type='text'
+          id='property-listing-bed-bath'
+          className={dropdownStates.bedsBaths ? 'selected' : ''}
+          onClick={() => onToggleDropdown('bedsBaths')}
+        >
+          Beds & Bath
+          <span
+            className={`property-listing-custom-arrow ${
+              dropdownStates.bedsBaths ? 'selected' : ''
+            }`}
+          />
+        </button>
+        {dropdownStates.bedsBaths && (
+          <BedAndBathDropDown onClose={() => onToggleDropdown('bedsBaths')} />
+        )}
+
+        <button
+          type='text'
+          className={`property-listing-home-lease-type ${
+            dropdownStates.homeType ? 'selected' : ''
+          }`}
+          onClick={() => onToggleDropdown('homeType')}
+        >
+          Home Type
+          <span
+            className={`property-listing-custom-arrow ${
               dropdownStates.homeType ? 'selected' : ''
             }`}
-            onClick={() => onToggleDropdown('homeType')}
-          >
-            Home Type
-            <span
-              className={`property-listing-custom-arrow ${
-                dropdownStates.homeType ? 'selected' : ''
-              }`}
-            />
-          </button>
-          {dropdownStates.homeType && (
-            <HomeTypeDropDown onClose={() => onToggleDropdown('homeType')} />
-          )}
-          <button
-            type='text'
-            className={`property-listing-home-lease-type ${
+          />
+        </button>
+        {dropdownStates.homeType && (
+          <HomeTypeDropDown onClose={() => onToggleDropdown('homeType')} />
+        )}
+        <button
+          type='text'
+          className={`property-listing-home-lease-type ${
+            dropdownStates.leaseType ? 'selected' : ''
+          }`}
+          onClick={() => onToggleDropdown('leaseType')}
+        >
+          Lease Type
+          <span
+            className={`property-listing-custom-arrow ${
               dropdownStates.leaseType ? 'selected' : ''
             }`}
-            onClick={() => onToggleDropdown('leaseType')}
-          >
-            Lease Type
-            <span
-              className={`property-listing-custom-arrow ${
-                dropdownStates.leaseType ? 'selected' : ''
-              }`}
-            />
-          </button>
-          {dropdownStates.leaseType && (
-            <LeaseTypeDropDown onClose={() => onToggleDropdown('leaseType')} />
-          )}
-        </div>
+          />
+        </button>
+        {dropdownStates.leaseType && (
+          <LeaseTypeDropDown onClose={() => onToggleDropdown('leaseType')} />
+        )}
       </div>
       <img src={dogIcon} alt='dogIcon' id='property-listing-dog-icon'></img>
     </section>
