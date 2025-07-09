@@ -241,6 +241,7 @@
   #confirm-pay-left-side,
   #confirm-pay-right-side {
     width: 100%;
+    text-align: center;
   }
 
   .confirm-pay-popup-overlay {
@@ -255,5 +256,16 @@
 
   .confirm-pay-input-row {
     flex-direction: column;
+  }
+
+  #confirm-pay-picture {
+    width: 100%;
+    height: 11.7325rem;
+    border-radius: 9.4px;
+    object-fit: cover;
+  }
+
+  .confirm-pay-li-text {
+    text-align: left;
   }
 }

@@ -71,12 +71,16 @@ function ConfirmAndPayPopUp({
                 Viewing report will include the following:
               </p>
               <ul className='confirm-pay-list'>
-                <li>Interior and exterior photos/videos</li>
-                <li>Written report</li>
-                <li>FaceTime call</li>
-                <li>Neighborhood tour</li>
-                <li>Street parking report</li>
-                <li>Smell and noise level tests</li>
+                <li className='confirm-pay-li-text'>
+                  Interior and exterior photos/videos
+                </li>
+                <li className='confirm-pay-li-text'>Written report</li>
+                <li className='confirm-pay-li-text'>FaceTime call</li>
+                <li className='confirm-pay-li-text'>Neighborhood tour</li>
+                <li className='confirm-pay-li-text'>Street parking report</li>
+                <li className='confirm-pay-li-text'>
+                  Smell and noise level tests
+                </li>
               </ul>
             </div>
           </section>
