@@ -3,6 +3,9 @@
   flex-direction: column;
   position: relative;
   width: 56.81vw;
+  overflow-y: auto;
+  height: 100vh;
+  padding-right: 1rem;
 }
 
 .property-listing-results-container-h2-text {
@@ -127,12 +130,15 @@
   display: flex;
   flex-direction: row;
   width: 100vw;
+  height: 100vh;
+  overflow: hidden;
 }
 
 @media screen and (max-width: 768px) {
   .property-listing-results-map-container {
     flex-direction: column;
     width: 100%;
+    background-color: #ffffff;
   }
 
   .property-listing-results-container {
