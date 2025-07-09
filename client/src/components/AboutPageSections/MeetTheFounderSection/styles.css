@@ -1,57 +1,113 @@
 .meet-the-founder-section {
+  margin-top: 2rem;
   position: relative;
   width: 100%;
   height: auto;
   display: flex;
   justify-content: center;
+  flex-direction: column;
 }
-
 .meet-the-founder-content {
-  width: 86%;
+  width: 100%;
   display: flex;
   align-items: center;
+  flex-direction: column;
+}
+
+.founder {
+  order: 3;
+  height: auto;
+  margin: 0 1rem 1rem 1rem;
+  width: 80%;
+  border-radius: 8px;
 }
 
 .meet-the-founder-dog-icon {
   position: absolute;
-  top: 14%;
-  z-index: -1;
-}
-
-.founder {
-  height: 47%;
-  border-radius: 8px;
+  transform: rotate(35deg);
+  height: 15%;
+  top: 10%;
+  left: -18%;
+  z-index: 2;
 }
 
 .meet-the-founder-text {
+  width: 95%;
+  padding: 1rem;
+  order: 2;
   font-family: 'Open Sans', sans-serif;
-  padding: 5rem 0 5rem 5rem;
+  text-align: center;
 }
 
 .meet-the-founder-text h3 {
-  padding-bottom: 2rem;
-  font-size: 2.5rem;
+  padding-bottom: 0.5rem;
+  font-size: 2rem;
   font-weight: 700;
 }
 
 .meet-the-founder-text p {
+  padding: 1rem;
   font-size: 1rem;
   font-weight: 400;
 }
 
-.gradient-three {
-  position: absolute;
-  height: 387px;
-  width: 677px;
-  bottom: -5rem;
-  left: -30rem;
-  background: radial-gradient(
-    ellipse at center,
-    #f7e3e4 25%,
-    #f7e3e4 25%,
-    #f7e3e4 1%,
-    #ffffff 100%
-  );
-  filter: blur(60px);
-  z-index: -2;
+
+@media (min-width: 768px) {
+  .meet-the-founder-section {
+    padding: 0rem 0rem 3rem 5rem;  
+  }
+
+  .meet-the-founder-content {
+    width: 86%;
+    flex-direction: row;
+  }
+
+  .meet-the-founder-dog-icon {
+    order: 1;
+    height: 20%;
+    top: 1rem;
+    left: 6rem;
+    z-index: -1;
+    transform: rotate(0deg);
+  }
+
+  .founder {
+    order: 2;
+    height: auto;
+    width: 30%;
+    border-radius: 8px;
+    margin: none;
+  }
+
+  .meet-the-founder-text {
+    order: 3;
+    padding: 5rem 0 5rem 5rem;
+    text-align: left;
+  }
+
+  .meet-the-founder-text h3 {
+    padding-bottom: 2rem;
+    font-size: 2.5rem;
+  }
+
+  .meet-the-founder-text p {
+    padding: 0;
+  }
+
+  .gradient-three {
+    position: absolute;
+    height: 387px;
+    width: 677px;
+    bottom: -5rem;
+    left: -30rem;
+    background: radial-gradient(
+      ellipse at center,
+      #f7e3e4 25%,
+      #f7e3e4 25%,
+      #f7e3e4 1%,
+      #ffffff 100%
+    );
+    filter: blur(60px);
+    z-index: -2;
+  }
 }

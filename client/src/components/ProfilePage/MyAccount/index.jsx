@@ -1,9 +1,8 @@
 import React from 'react';
 import './styles.css';
 import Pencil from '../../../assets/updatePencil.png';
-import DogIcon from '../../../assets/dibby_Dog_Logo.png';
 
-function MyAccount() {
+function MyAccount({ setEnterPasswordEmail, setEnterPasswordPassword }) {
   const hardCodedPersonalInfo = {
     firstName: 'John',
     lastName: 'Smith',
@@ -46,7 +45,7 @@ function MyAccount() {
                 {hardCodedPersonalInfo.email}
               </div>
             </div>
-            <button>
+            <button onClick={() => setEnterPasswordEmail(true)}>
               <img src={Pencil} alt='pencil' className='log-and-sec-pencil' />
               <span>Update Email</span>
             </button>
@@ -58,7 +57,7 @@ function MyAccount() {
                 {hardCodedPersonalInfo.password}
               </div>
             </div>
-            <button >
+            <button onClick={() => setEnterPasswordPassword(true)} >
               <img src={Pencil} alt='pencil' className='log-and-sec-pencil' />
               <span>Update Password</span>
             </button>
@@ -66,11 +65,6 @@ function MyAccount() {
         </div>
         <button className='save-changes'>Save Changes</button>
       </div>
-      <img src={DogIcon} alt='dogIcon' className='my-account-dog-icon' />
-      <div className='my-account-gradient-one'></div>
-      <div className='my-account-gradient-two'></div>
-      <div className='my-account-gradient-three'></div>
-      <div className='my-account-gradient-four'></div>
     </div>
   );
 }

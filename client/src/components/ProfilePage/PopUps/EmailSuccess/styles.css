@@ -1,0 +1,53 @@
+.email-success-wrapper {
+   position: absolute;
+    top: 20rem;
+    left: 0rem;
+    width: 24rem;
+    height: auto;
+    background-color: rgba(0, 0, 0, 0.4); /* semi-transparent backdrop */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    background-color: transparent;
+}
+
+.email-success-content {
+    background-color: white;
+    border-radius: 12px;
+    padding: 1rem;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    width: 90%;
+    z-index: 1001;
+    position: relative;
+    font-family: 'Open Sans', sans-serif;
+    text-align: center;
+}
+
+ .email-success-content p {
+    margin-top: 16px;
+    font-size: 18px;
+    font-weight: 600;
+  }
+
+  .email-success-content button {
+    margin-top: 24px;
+    background-color: #204777;
+    color: #ffffff;
+    width: 100%;
+    height: auto;
+    padding: 12px 18px;
+    border-radius: 8px;
+  }
+
+@media (min-width: 768px) {
+  .email-success-wrapper {
+    top: 13rem;
+    left: 45rem;
+    width: 31rem;
+  }
+
+  .email-success-content {
+    padding: 60px 32px 88px 32px;
+  }
+}
