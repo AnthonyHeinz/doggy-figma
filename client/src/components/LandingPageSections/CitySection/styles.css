@@ -42,7 +42,7 @@
   margin-bottom: 1rem;
 }
 
-.city-content h6 {
+.city-content-h6-text {
   margin-bottom: 1.5rem;
   font-size: 1.25rem;
   max-width: 1063px;
@@ -52,7 +52,7 @@
   padding: 1rem;
 }
 
-.city-content p {
+.city-content-p-text {
   margin-bottom: 1.5rem;
   font-size: 1.25rem;
   max-width: 1063px;

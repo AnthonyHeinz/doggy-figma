@@ -59,3 +59,13 @@
   border-radius: 8px;
   cursor: pointer;
 }
+
+@media screen and (max-width: 768px) {
+  .lease-type-dropdown-container {
+    top: 300px !important;
+    left: 50% !important;
+    transform: translateX(-50%);
+    width: 90vw !important;
+    max-width: none;
+  }
+}

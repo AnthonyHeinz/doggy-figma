@@ -1,0 +1,29 @@
+.property-listing-map {
+  background-color: #ffffff;
+  max-width: 622px;
+  width: 43.19vw;
+  height: 100vh;
+  position: sticky;
+  top: 0;
+  flex-shrink: 0;
+  overflow: hidden;
+}
+
+.property-listing-map-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+@media screen and (max-width: 768px) {
+  .property-listing-map {
+    width: 100%;
+    height: 300px;
+    max-width: none;
+  }
+
+  .property-listing-map-image {
+    padding-bottom: 1rem;
+  }
+}

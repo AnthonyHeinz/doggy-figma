@@ -2,13 +2,13 @@ import React from 'react';
 import './styles.css';
 import dibbyLogo from '../../assets/dibby_Logo.svg';
 
-function Navbar() {
+function Navbar({ hideOnMobile }) {
   const handleAddPropertyButton = () => {
     console.log('This will eventually add a property');
   };
 
   return (
-    <header className='navbar'>
+    <header className={`navbar ${hideOnMobile ? 'hide-navbar-on-mobile' : ''}`}>
       <div className='navbar-left'>
         <img src={dibbyLogo} alt='Dibby logo' className='navbar-logo' />
       </div>

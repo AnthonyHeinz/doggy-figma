@@ -3,9 +3,12 @@
   flex-direction: column;
   position: relative;
   width: 56.81vw;
+  overflow-y: auto;
+  height: 100vh;
+  padding-right: 1rem;
 }
 
-.property-listing-results-container h2 {
+.property-listing-results-container-h2-text {
   margin: 2.5rem 1.5rem 0rem 1.5rem;
   font-family: 'Open Sans', sans-serif;
   font-size: 1.5rem;
@@ -30,7 +33,7 @@
   align-items: center;
 }
 
-.property-listing-results-sort-button-container h4 {
+.property-listing-results-sort-button-container-h4-text {
   color: #011329;
   font-size: 14px;
   font-family: 'Open Sans', sans-serif;
@@ -127,13 +130,92 @@
   display: flex;
   flex-direction: row;
   width: 100vw;
-}
-
-.property-listing-map {
-  background-color: #ffffff;
-  max-width: 622px;
-  width: 38.875rem;
   height: 100vh;
   overflow: hidden;
-  width: 43.19vw;
+}
+
+@media screen and (max-width: 768px) {
+  .property-listing-results-map-container {
+    flex-direction: column;
+    width: 100%;
+    background-color: #ffffff;
+  }
+
+  .property-listing-results-container {
+    width: 100%;
+    padding: 1rem 0;
+  }
+
+  .property-listing-card-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem 0;
+    width: 90vw;
+  }
+
+  .property-listing-card {
+    width: 90vw;
+    max-width: 100%;
+  }
+
+  .property-listing-sort-button {
+    width: auto;
+  }
+
+  .property-listing-results-sort-button-container {
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 0.5rem;
+  }
+
+  .property-listing-results-container-h2-text {
+    margin: 0;
+    text-align: center;
+  }
+
+  .property-listing-mobile-toggle-bar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    background: #ffffff;
+    padding: 0.75rem 1rem;
+    border-top: 1px solid #ccc;
+    z-index: 1000;
+  }
+
+  .property-listing-mobile-toggle-bar-button {
+    font-size: 1rem;
+    padding: 0.5rem 1.5rem;
+    border-radius: 8px;
+    background-color: #f8cb76;
+    border: none;
+    font-family: 'Open Sans', sans-serif;
+    cursor: pointer;
+  }
+
+  .property-listing-mobile-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100%;
+    background: white;
+    z-index: 1001;
+    overflow-y: auto;
+    padding: 1rem;
+  }
+
+  .property-listing-mobile-overlay-button {
+    margin-top: 1rem;
+    width: 100%;
+    background-color: #ddd;
+    padding: 0.75rem;
+    border: none;
+    border-radius: 6px;
+    font-size: 1rem;
+  }
 }

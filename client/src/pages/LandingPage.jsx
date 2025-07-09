@@ -1,6 +1,6 @@
 import React from 'react';
 import CitySection from '../components/LandingPageSections/CitySection/index.jsx';
-import Footer from '../components/LandingPageSections/Footer/index.jsx';
+import Footer from '../components/Footer/index.jsx';
 import HowItWorks from '../components/LandingPageSections/HowItWorksSection/index.jsx';
 import Navbar from '../components/Navbar/index.jsx';
 import TheDibbyExperience from '../components/LandingPageSections/TheDibbyExperienceSection/index.jsx';

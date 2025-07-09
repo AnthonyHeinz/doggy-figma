@@ -1,0 +1,91 @@
+.payment-successful-popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  border-radius: 8.16px;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.payment-successful-popup-box {
+  position: relative;
+  background-color: #ffffff;
+  padding: 2rem;
+  border-radius: 8px;
+  width: 53.875rem;
+  height: 21.25rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.payment-successful-close-button {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: #1c1c1c;
+  cursor: pointer;
+}
+
+#payment-successful-word-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 26.57125rem;
+}
+
+#payment-successful-word-box h5 {
+  font-size: 24px;
+  font-weight: 600;
+  margin: 1rem 0 0 0;
+}
+
+#payment-successful-word-box p {
+  font-size: 16px;
+  text-align: center;
+  margin: 1rem 0;
+}
+
+#payment-successful-green-check {
+  width: 3.75rem;
+  height: 3.75rem;
+}
+
+#payment-successful-send-a-viewer-button {
+  font-size: 16px;
+  font-family: 'Open Sans', sans-serif;
+  width: 100%;
+  height: 44px;
+  background-color: #ffb500;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+#payment-successful-send-a-viewer-button:hover {
+  background-color: #e5a300;
+}
+
+.payment-successful-dog-icon {
+  position: absolute;
+  top: 31.5rem;
+  right: 65rem;
+  width: 5.375rem;
+  height: auto;
+  z-index: 0;
+}

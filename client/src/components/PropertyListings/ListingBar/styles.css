@@ -7,14 +7,14 @@
   height: 64px;
 }
 
-#property-listing-inputs {
-  display: flex;
-  flex-direction: row;
-  gap: 1rem;
-}
-
 #property-listing-search-bar-wrapper {
   position: relative;
+}
+
+.property-listing-filters-row {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
 }
 
 #property-listing-search-bar {
@@ -47,73 +47,35 @@
 #property-listing-search-glass {
   height: 17.58px;
   width: 17.58px;
-  background-color: transparent;
 }
 
-#property-listing-price {
-  height: 48px;
-  border: 1.5px solid #e2e2e2;
-  border-radius: 8px;
-  max-width: 105.77px;
-  width: 6.610625rem;
-  padding: 0.75rem 1.5rem;
-  font-size: 1rem;
-  background-color: #ffffff;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-  cursor: pointer;
-  font-family: 'Open Sans', sans-serif;
-}
-
-#property-listing-price:hover {
-  border-color: #ffb500;
-}
-
-#property-listing-price.selected {
-  background-color: #fff5e2;
-  border-color: #ffb500;
-}
-
-#property-listing-bed-bath {
-  height: 48px;
-  border: 1.5px solid #e2e2e2;
-  border-radius: 8px;
-  max-width: 160.77px;
-  width: 10.08125rem;
-  padding: 0.75rem 1.5rem;
-  font-size: 1rem;
-  background-color: #ffffff;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-  cursor: pointer;
-  font-family: 'Open Sans', sans-serif;
-}
-
-#property-listing-bed-bath:hover {
-  border-color: #ffb500;
-}
-
-#property-listing-bed-bath.selected {
-  background-color: #fff5e2;
-  border-color: #ffb500;
-}
-
+#property-listing-price,
+#property-listing-bed-bath,
 .property-listing-home-lease-type {
   height: 48px;
   border: 1.5px solid #e2e2e2;
   border-radius: 8px;
-  max-width: 153.77px;
-  width: 9.610625rem;
   padding: 0.75rem 1.5rem;
   font-size: 1rem;
   background-color: #ffffff;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
   cursor: pointer;
   font-family: 'Open Sans', sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  padding-left: 1rem;
 }
 
+#property-listing-price:hover,
+#property-listing-bed-bath:hover,
 .property-listing-home-lease-type:hover {
   border-color: #ffb500;
 }
 
+#property-listing-price.selected,
+#property-listing-bed-bath.selected,
 .property-listing-home-lease-type.selected {
   background-color: #fff5e2;
   border-color: #ffb500;
@@ -134,19 +96,104 @@
   border-bottom: 2px solid #222;
   transform: rotate(45deg);
   transition: transform 0.3s ease;
-  top: 2px;
 }
-
 .property-listing-custom-arrow.selected {
   transform: rotate(-135deg);
 }
 
-#property-listing-price,
-#property-listing-bed-bath,
-.property-listing-home-lease-type {
+#property-listing-inputs {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 0.75rem;
-  padding-left: 1rem;
+  flex-direction: row;
+  gap: 1rem;
+}
+
+@media screen and (max-width: 768px) {
+  #property-listing-bar {
+    flex-direction: column;
+    align-items: stretch;
+    height: auto;
+    padding: 1rem;
+    gap: 1rem;
+  }
+
+  #property-listing-inputs {
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+    padding: 0 1rem;
+    gap: 0.75rem;
+  }
+
+  #property-listing-search-bar {
+    width: 90vw;
+    margin-left: 0;
+  }
+
+  .property-listing-filters-row {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+
+  .property-listing-filters-row::-webkit-scrollbar {
+    display: none;
+  }
+
+  #property-listing-price,
+  #property-listing-bed-bath,
+  .property-listing-home-lease-type {
+    flex: 0 0 auto;
+    min-width: max-content;
+    white-space: nowrap;
+    padding: 0.25rem 0.75rem;
+    font-size: 0.5625rem;
+    height: auto;
+    line-height: 1.2;
+    min-height: 38px;
+  }
+
+  .property-listing-custom-arrow {
+    width: 5px;
+    height: 5px;
+    border-width: 1.5px;
+  }
+
+  #property-listing-dog-icon {
+    align-self: center;
+    margin: 0;
+  }
+}
+
+@media screen and (max-width: 1250px) {
+  #property-listing-bar {
+    align-items: center;
+    height: auto;
+    padding: 1rem;
+    gap: 1rem;
+  }
+
+  #property-listing-inputs {
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  #property-listing-search-bar-wrapper {
+    margin-left: 0;
+  }
+
+  #property-listing-search-bar {
+    margin-left: 0;
+  }
+
+  #property-listing-price,
+  #property-listing-bed-bath,
+  .property-listing-home-lease-type {
+    width: auto;
+    max-width: none;
+  }
+
+  #property-listing-dog-icon {
+    display: none;
+  }
 }
