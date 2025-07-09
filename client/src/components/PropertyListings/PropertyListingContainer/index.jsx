@@ -12,6 +12,7 @@ function PropertyListingContainer({
   dropdownStates,
 }) {
   const [resultsNumber, setResultsNumber] = useState(0);
+  const [activeMobileView, setActiveMobileView] = useState(null);
 
   const hardcodedListings = Array.from({ length: 8 }).map((_, i) => ({
     id: i,
@@ -59,6 +60,36 @@ function PropertyListingContainer({
             />
           ))}
         </div>
+        <div className='property-listing-mobile-toggle-bar'>
+          <button
+            onClick={() => setActiveMobileView('map')}
+            className='property-listing-mobile-toggle-bar-button'
+          >
+            Map
+          </button>
+          <button
+            onClick={() => setActiveMobileView('sort')}
+            className='property-listing-mobile-toggle-bar-button'
+          >
+            Sort
+          </button>
+        </div>
+        {activeMobileView === 'map' && (
+          <div className='property-listing-mobile-overlay'>
+            <PropertyListingMap />
+            <button
+              onClick={() => setActiveMobileView(null)}
+              className='property-listing-mobile-overlay-button'
+            >
+              Close
+            </button>
+          </div>
+        )}
+        {activeMobileView === 'sort' && (
+          <div className='property-listing-mobile-overlay'>
+            <SortDropDown onClose={() => setActiveMobileView(null)} />
+          </div>
+        )}
         <div id='property-listing-blurs'>
           <div id='property-listing-yellow-blur' />
           <div id='property-listing-pink-blur' />
