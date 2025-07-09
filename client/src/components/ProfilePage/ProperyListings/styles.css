@@ -1,0 +1,13 @@
+.my-prop-list {
+    margin-top: 4rem;
+    padding: 1rem;
+    width: 100%;
+    height: auto;
+    flex-direction: column;
+}
+.my-prop-list h4 {
+    font-size: 32px;
+    font-weight: 600;
+    text-align: center;
+}
+

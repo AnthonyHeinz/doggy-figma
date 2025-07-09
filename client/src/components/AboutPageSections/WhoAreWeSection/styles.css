@@ -1,0 +1,75 @@
+.who-are-we-section {
+  margin-top: 4.5rem;
+  position: relative;
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 3rem;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.packing-boxes {
+  border-radius: 8px;
+  margin-top: 2rem;
+  height: auto;
+  width: 80%;
+}
+
+.who-are-we-text h3 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  padding-bottom: 1rem;
+}
+
+.who-are-we-text p {
+  padding: 1rem;
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+.about-who-are-we-dog-icon {
+  position: absolute;
+  top: 50%;
+  left: 93%;
+  transform: scaleX(-1) rotate(45deg);
+  height: 10%;
+  width: auto;
+  z-index: 1;
+}
+
+
+@media (min-width: 1024px) {
+
+  .who-are-we-section-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: left;
+    width: 79.7%;
+  }
+
+  .who-are-we-text {
+    font-family: 'Open Sans', sans-serif;
+    color: #1c1c1c;
+    padding-right: 4rem;
+  }
+
+  .who-are-we-text p {
+    padding: 0;
+  }
+  .packing-boxes {
+    width: 44.4%;
+  }
+
+  .about-who-are-we-dog-icon {
+    top: 13%;
+    left: 85%;
+    transform: rotate(45deg);
+    height: 36%;
+    z-index: -1;
+  }
+}
