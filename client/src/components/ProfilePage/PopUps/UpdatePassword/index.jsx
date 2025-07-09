@@ -19,7 +19,7 @@ function UpdatePasswordPopUp({ setPasswordSuccess, setUpdatePassword, onClose}) 
     <div className='update-password-wrapper'>
       <div className='update-password-content'>
         <h6>Update Password</h6>
-        <div className='update-email-form'>
+        <div className='update-password-form'>
           <input
             type='text'
             placeholder='New Password'
@@ -32,12 +32,12 @@ function UpdatePasswordPopUp({ setPasswordSuccess, setUpdatePassword, onClose}) 
             value={password2}
             onChange={(e) => setPassword2(e.target.value)}
           />
-          <button className='update-email-continue' onClick={handleContinue}>
+          <button className='update-password-continue' onClick={handleContinue}>
             Continue
           </button>
         </div>
       </div>
-      <button onClick={onClose} className='update-email-close-window'>
+      <button onClick={onClose} className='update-password-close-window'>
         <img src={CloseWindow} />
       </button>
     </div>

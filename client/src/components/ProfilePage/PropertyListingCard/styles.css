@@ -58,47 +58,7 @@
     font-size: 14px;
     color: #6c6c6c;
   }
-   .listing-info-buttons {
-    display: flex;
-    justify-content: space-around;
-  }
-
-    .listing-info-buttons button {
-    background-color: #ffffff;
-    height: 48px;
-    padding: 10px 16px 10px 16px;
-    border: none;
-    display: flex;
-    align-items: center;
-  }
-
-@media (min-width: 768px) {
-  .card-wrapper {
-    padding: 18px;
-    margin-top: 36px;
-    display: flex;
-    flex-direction: row;
-    width: 93%;
-    height: 25.3%;
-    background-color: #ffffff;
-    border: 1.5px solid #e2e2e2;
-    border-radius: 8px;
-  }
-
-  .card-content {
-    display: flex;
-    width: 100%;
-  }
-  .card-content-text {
-    width: 100%;
-  }
-  .property-pic {
-    border-radius: 8px;
-    height: 100%;
-    width: auto;
-  }
-
-  .listing-info {
+   .listing-info {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -118,54 +78,13 @@
     flex-direction: row;
     justify-content: space-between;
   }
-  .address {
-    font-size: 16px;
-    font-weight: 400;
-  }
 
-  .unit-info {
-    margin-top: 8px;
-    font-size: 14px;
-    font-weight: 400;
-  }
-
-  .listing-price {
-    margin-top: 8px;
-    font-size: 16px;
-    font-weight: 400;
-  }
-
-  .published {
-    height: 40%;
-    width: auto;
-    background-color: #204777;
-    border-radius: 8px;
-    border: none;
-    padding: 8px 16px 8px 16px;
-    color: #ffffff;
-  }
-
-  .unpublished {
-    height: 40%;
-    width: auto;
-    background-color: #ffffff;
-    border-radius: 8px;
-    border: 1px solid #e2e2e2;
-    padding: 8px 16px 8px 16px;
-    color: #6c6c6c;
-  }
-
-  .date-added {
-    padding-top: 16px;
-    font-weight: 400;
-    font-size: 14px;
-    color: #6c6c6c;
-  }
-  .listing-info-buttons {
+   .listing-info-buttons {
     display: flex;
+    justify-content: space-around;
   }
 
-  .listing-info-buttons button {
+    .listing-info-buttons button {
     background-color: #ffffff;
     height: 48px;
     padding: 10px 16px 10px 16px;
@@ -173,8 +92,7 @@
     display: flex;
     align-items: center;
   }
-
-  .edit-pencil {
+    .edit-pencil {
     margin-right: 6px;
     height: 20px;
     width: auto;
@@ -193,5 +111,51 @@
     height: 20px;
     width: auto;
     padding: 2px;
+  }
+
+@media (min-width: 768px) {
+  .card-wrapper {
+    padding: 18px;
+    margin-top: 36px;
+    display: flex;
+    flex-direction: row;
+    width: 93%;
+    height: 25.3%;
+  }
+
+  .card-content {
+    display: flex;
+    width: 100%;
+  }
+
+  .card-content-text {
+    width: 100%;
+  }
+  
+  .property-pic {
+    height: 100%;
+    width: auto;
+  }
+
+  .address {
+    font-size: 16px;
+  }
+
+  .unit-info {
+    margin-top: 8px;
+    font-size: 14px;
+  }
+
+  .listing-price {
+    margin-top: 8px;
+    font-size: 16px;
+  }
+
+  .date-added {
+    padding-top: 16px;
+  }
+
+  .listing-info-buttons {
+    display: flex;
   }
 }

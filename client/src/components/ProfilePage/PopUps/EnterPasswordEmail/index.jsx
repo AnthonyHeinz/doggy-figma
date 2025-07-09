@@ -16,23 +16,23 @@ function EnterPasswordPopUpEmail({ onClose, setEnterPasswordEmail, setUpdateEmai
   };
 
   return (
-    <div className='enter-password-wrapper'>
-      <div className='enter-password-content'>
+    <div className='enter-password-email-wrapper'>
+      <div className='enter-password-email-content'>
         <h6>Enter Current Password to Continue</h6>
-        <div className='enter-password-form'>
+        <div className='enter-password-email-form'>
           <input
             type='text'
             placeholder='Password'
             value={password}
             onChange={(e) => setPassword(e.target.value)}
           />
-          <button className='enter-password-continue' onClick={handleContinue}>
+          <button className='enter-password-email-continue' onClick={handleContinue}>
             Continue
           </button>
           <p>Forgot Password?</p>
         </div>
       </div>
-      <button onClick={onClose} className='enter-password-close-window'>
+      <button onClick={onClose} className='enter-password-email-close-window'>
         <img src={CloseWindow} />
       </button>
     </div>

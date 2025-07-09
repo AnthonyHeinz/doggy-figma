@@ -48,55 +48,16 @@
   z-index: 1;
 }
 
-@media (min-width: 1024px) {
-  .hero-section-wrapper {
-    position: relative;
-    width: 100%;
-    height: auto;
-  }
-
-  .about-hero-section {
-    position: relative;
-    isolation: isolate;
-    background-image: url('../../../assets/hero_image.png');
-    background-size: cover;
-    background-position: center bottom;
-    background-repeat: no-repeat;
-    color: #ffffff;
-    font-family: 'Open Sans', sans-serif;
-    min-height: 480px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 0;
-  }
-
-  .about-hero-section-content {
-    font-weight: bold;
-    align-items: center;
-    display: flex;
-    flex-direction: column;
-  }
+@media (min-width: 768px) {
 
   .about-hero-section-content h2 {
     font-size: 4rem;
-    font-weight: 700;
-    margin-bottom: 1.7rem;
-  }
-
-  .about-hero-section-content h6 {
-    font-size: 1.25rem;
-    font-weight: 600;
-    margin-bottom: 4.5rem;
   }
 
   .about-hero-dog-icon {
-    position: absolute;
-    height: 16vh;
-    width: auto;
-    top: 66%;
-    left: 6%;
-    z-index: 1;
+    height: 27%;
+    top: 67%;
+    left: 4%;
   }
 
   .about-gradient-one {

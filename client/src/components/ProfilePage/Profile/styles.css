@@ -16,15 +16,10 @@
 
 @media (min-width: 768px) {
   .profile {
-    position: relative;
-    height: 100%;
-    width: 100%;
     flex-direction: row;
-    overflow: hidden;
   }
 
   .profile-dog-icon {
-    position: absolute;
     transform: scaleX(-1) rotate(27.21deg);
     top: 2.5rem;
     left: 85rem;

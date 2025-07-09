@@ -13,6 +13,7 @@
   align-items: center;
   flex-direction: column;
 }
+
 .founder {
   order: 3;
   height: auto;
@@ -51,29 +52,20 @@
 }
 
 
-@media (min-width: 1024px) {
+@media (min-width: 768px) {
   .meet-the-founder-section {
-    padding: 3rem 0rem 3rem 5rem;
-    position: relative;
-    width: 100%;
-    height: auto;
-    display: flex;
-    justify-content: center;
-  
+    padding: 0rem 0rem 3rem 5rem;  
   }
 
   .meet-the-founder-content {
     width: 86%;
-    display: flex;
-    align-items: center;
     flex-direction: row;
   }
 
   .meet-the-founder-dog-icon {
     order: 1;
-    position: absolute;
-    height: 15vh;
-    top: 1.5rem;
+    height: 20%;
+    top: 1rem;
     left: 6rem;
     z-index: -1;
     transform: rotate(0deg);
@@ -81,14 +73,14 @@
 
   .founder {
     order: 2;
-    height: 26vh;
-    width: auto;
+    height: auto;
+    width: 30%;
     border-radius: 8px;
+    margin: none;
   }
 
   .meet-the-founder-text {
     order: 3;
-    font-family: 'Open Sans', sans-serif;
     padding: 5rem 0 5rem 5rem;
     text-align: left;
   }
@@ -96,13 +88,10 @@
   .meet-the-founder-text h3 {
     padding-bottom: 2rem;
     font-size: 2.5rem;
-    font-weight: 700;
   }
 
   .meet-the-founder-text p {
     padding: 0;
-    font-size: 1rem;
-    font-weight: 400;
   }
 
   .gradient-three {

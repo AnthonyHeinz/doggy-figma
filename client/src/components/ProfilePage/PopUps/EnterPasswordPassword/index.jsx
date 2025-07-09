@@ -18,23 +18,23 @@ function EnterPasswordPopUpPassword({ onClose, setEnterPasswordPassword, setUpda
   
 
   return (
-    <div className='enter-password-wrapper'>
-      <div className='enter-password-content'>
+    <div className='enter-password-pw-wrapper'>
+      <div className='enter-password-pw-content'>
         <h6>Enter Current Password to Continue</h6>
-        <div className='enter-password-form'>
+        <div className='enter-password-pw-form'>
           <input
             type='text'
             placeholder='Password'
             value={password}
             onChange={(e) => setPassword(e.target.value)}
           />
-          <button className='enter-password-continue' onClick={handleContinue}>
+          <button className='enter-password-pw-continue' onClick={handleContinue}>
             Continue
           </button>
           <p>Forgot Password?</p>
         </div>
       </div>
-      <button onClick={onClose} className='enter-password-close-window'>
+      <button onClick={onClose} className='enter-password-pw-close-window'>
         <img src={CloseWindow} />
       </button>
     </div>
