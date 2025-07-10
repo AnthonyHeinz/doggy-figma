@@ -1,11 +1,27 @@
 import React from 'react';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import './styles.css';
 import TourThisProperty from '../TourThisProperty';
 import NeighborhoodTestImage from '../../../assets/Neighborhood_Test_Image.png';
 
 function ListingContainer() {
   const gradients = [0, 1, 2, 3, 4];
+
+  function useIsMobile() {
+    const [isMobile, setIsMobile] = useState(false);
+
+    useEffect(() => {
+      const checkMobile = () => setIsMobile(window.innerWidth <= 768);
+      checkMobile();
+      window.addEventListener('resize', checkMobile);
+      return () => window.removeEventListener('resize', checkMobile);
+    }, []);
+
+    return isMobile;
+  }
+
+  const isMobile = useIsMobile();
+
   const [houseDetails, setHouseDetails] = useState({
     price: '2800',
     location: '627 Belmont Ave #6, Los Angeles, CA 90026',
@@ -98,7 +114,7 @@ function ListingContainer() {
         ></img>
       </div>
       <div id='property-details-tour-dibby-container'>
-        <TourThisProperty />
+        <TourThisProperty isMobile={isMobile} />
       </div>
       {gradients.map((_, index) => (
         <div className={`property-details-gradient-${index}`} key={index}></div>
