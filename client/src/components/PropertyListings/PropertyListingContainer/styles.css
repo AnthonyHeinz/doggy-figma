@@ -176,25 +176,36 @@
 
   .property-listing-mobile-toggle-bar {
     position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
+    bottom: 1rem;
+    left: 50%;
+    transform: translateX(-50%);
     display: flex;
-    justify-content: space-around;
-    background: #ffffff;
-    padding: 0.75rem 1rem;
-    border-top: 1px solid #ccc;
+    align-items: center;
+    background-color: #e4f4ff;
+    padding: 0.5rem 1.25rem;
+    box-shadow: 0 1px 6px rgba(0, 0, 0, 0.1);
     z-index: 1000;
   }
 
   .property-listing-mobile-toggle-bar-button {
-    font-size: 1rem;
-    padding: 0.5rem 1.5rem;
-    border-radius: 8px;
-    background-color: #f8cb76;
-    border: none;
+    all: unset;
     font-family: 'Open Sans', sans-serif;
+    font-size: 1rem;
+    color: #007aff;
+    padding: 0.4rem 0.75rem;
     cursor: pointer;
+    border-radius: 6px;
+  }
+
+  .property-listing-mobile-toggle-bar-button:active {
+    background-color: rgba(0, 122, 255, 0.1);
+  }
+
+  .property-listing-mobile-toggle-bar-divider {
+    margin: 0 0.75rem;
+    font-size: 1rem;
+    color: #007aff;
+    user-select: none;
   }
 
   .property-listing-mobile-overlay {

@@ -82,6 +82,7 @@ function PropertyListingContainer({
           >
             Map
           </button>
+          <span className='property-listing-mobile-toggle-bar-divider'>|</span>
           <button
             onClick={() => setActiveMobileView('sort')}
             className='property-listing-mobile-toggle-bar-button'
