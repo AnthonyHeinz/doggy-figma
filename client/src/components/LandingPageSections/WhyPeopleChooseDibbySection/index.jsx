@@ -80,14 +80,14 @@ function WhyPeopleChooseDibby() {
 
   const handlePrev = () => {
     if (startIndex === 0) return;
-    setAnimateDirection('slide-right');
+    setAnimateDirection('why-people-choose-dibby-slide-right');
     setIsAnimating(true);
     setStartIndex((prev) => Math.max(prev - 1, 0));
   };
 
   const handleNext = () => {
     if (startIndex + visibleCount >= testimonials.length) return;
-    setAnimateDirection('slide-left');
+    setAnimateDirection('why-people-choose-dibby-slide-left');
     setIsAnimating(true);
     setStartIndex((prev) =>
       Math.min(prev + 1, testimonials.length - visibleCount)
@@ -101,10 +101,16 @@ function WhyPeopleChooseDibby() {
 
   return (
     <section className='testimonials-section'>
-      <div className='how-it-works-gradient-three'></div>
-      <div className='header-with-dog'>
-        <h2>Why people choose Dibby</h2>
-        <img src={dogIcon} alt='dog' className='dog-icon-top-right' />
+      <div className='testimonials-section-gradient-three'></div>
+      <div className='testimonials-section-header-with-dog'>
+        <h2 className='testimonials-section-h2-text'>
+          Why people choose Dibby
+        </h2>
+        <img
+          src={dogIcon}
+          alt='dog'
+          className='testimonials-section-dog-icon-top-right'
+        />
       </div>
       <p className='subtitle'>
         Hear what real customers have to say about their Dibby experience.

@@ -6,11 +6,35 @@
   overflow: hidden;
 }
 
-.testimonials-section h2 {
+.testimonials-section-gradient-three {
+  top: 10rem;
+  left: -22rem;
+}
+
+.testimonials-section-header-with-dog {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  gap: 1rem;
+  flex-wrap: nowrap;
+}
+
+.testimonials-section-h2-text {
   font-size: 3rem;
   font-weight: 800;
   margin-bottom: 0.5rem;
   color: #222;
+}
+
+.testimonials-section-dog-icon-top-right {
+  height: 100px;
+  position: absolute;
+  top: 4.25rem;
+  right: 20%;
+  transform: scaleX(-1);
+  z-index: 0;
+  transition: all 0.3s ease;
 }
 
 .subtitle {
@@ -96,39 +120,6 @@
   left: 3rem;
 }
 
-.dog-icon-top-right {
-  height: 100px;
-  position: absolute;
-  top: 4.25rem;
-  right: 20%;
-  transform: scaleX(-1);
-  z-index: 0;
-  transition: all 0.3s ease;
-}
-
-@media (max-width: 1200px) {
-  .header-with-dog {
-    justify-content: center;
-    flex-wrap: nowrap;
-    gap: 1.2rem;
-  }
-
-  .dog-icon-top-right {
-    position: static;
-    height: 80px;
-    transform: scaleX(-1);
-  }
-}
-
-.header-with-dog {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-  gap: 1rem;
-  flex-wrap: nowrap;
-}
-
 .how-it-works-gradient-three,
 .how-it-works-gradient-four,
 .how-it-works-gradient-five {
@@ -144,11 +135,6 @@
   filter: blur(60px);
   z-index: -1;
   pointer-events: none;
-}
-
-.how-it-works-gradient-three {
-  top: 10rem;
-  left: -22rem;
 }
 
 .how-it-works-gradient-four {
@@ -167,7 +153,7 @@
   }
 }
 
-.slide-left {
+.why-people-choose-dibby-slide-left {
   animation: slideLeft 0.3s ease-in-out;
 }
 
@@ -182,7 +168,21 @@
   }
 }
 
-.slide-right {
+@media (max-width: 1200px) {
+  .testimonials-section-header-with-dog {
+    justify-content: center;
+    flex-wrap: nowrap;
+    gap: 1.2rem;
+  }
+
+  .testimonials-section-dog-icon-top-right {
+    position: static;
+    height: 80px;
+    transform: scaleX(-1);
+  }
+}
+
+.why-people-choose-dibby-slide-right {
   animation: slideRight 0.3s ease-in-out;
 }
 
@@ -202,7 +202,7 @@
     max-width: 90vw;
   }
 
-  .dog-icon-top-right {
+  .testimonials-section-dog-icon-top-right {
     position: absolute;
     top: 2rem;
     right: -4.5rem;
