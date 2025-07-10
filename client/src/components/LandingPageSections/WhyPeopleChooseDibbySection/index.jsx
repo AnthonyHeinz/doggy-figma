@@ -52,6 +52,32 @@ function WhyPeopleChooseDibby() {
   const [visibleCount, setVisibleCount] = useState(getVisibleCount(4));
   const [animateDirection, setAnimateDirection] = useState('');
   const [isAnimating, setIsAnimating] = useState(false);
+  const [touchStartX, setTouchStartX] = useState(null);
+  const [touchEndX, setTouchEndX] = useState(null);
+
+  const handleTouchStart = (e) => {
+    setTouchStartX(e.touches[0].clientX);
+  };
+
+  const handleTouchMove = (e) => {
+    setTouchEndX(e.touches[0].clientX);
+  };
+
+  const handleTouchEnd = () => {
+    if (touchStartX === null || touchEndX === null) return;
+    const distance = touchStartX - touchEndX;
+    const minSwipeDistance = 50;
+
+    if (distance > minSwipeDistance) {
+ 
+      handleNext();
+    } else if (distance < -minSwipeDistance) {
+
+      handlePrev();
+    }
+    setTouchStartX(null);
+    setTouchEndX(null);
+  };
 
   useEffect(() => {
     const updateCount = () => setVisibleCount(getVisibleCount());
@@ -123,7 +149,12 @@ function WhyPeopleChooseDibby() {
         >
           ‹
         </button>
-        <div className={`carousel-track ${animateDirection}`}>
+        <div
+          className={`carousel-track ${animateDirection}`}
+          onTouchStart={handleTouchStart}
+          onTouchMove={handleTouchMove}
+          onTouchEnd={handleTouchEnd}
+        >
           {visibleCards.map((card, index) => (
             <div className='carousel-card testimonial-card' key={index}>
               <div
