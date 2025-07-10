@@ -1,5 +1,4 @@
-import React from 'react';
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import './styles.css';
 import dogIcon from '../../../assets/dibby_Dog_Logo.png';
 import dogImage from '../../../assets/testdog.jpeg';
@@ -7,74 +6,90 @@ import dogImage from '../../../assets/testdog.jpeg';
 function WhyPeopleChooseDibby() {
   const testimonials = [
     {
-      name: 'Doggo',
+      name: 'Doggo 1',
       quote: `This honestly made life so much easier. I honestly was pretty nervous about moving with my sister, but Dibby gave us a lot of comfort in our decision.`,
       image: dogImage,
     },
     {
-      name: 'NAME',
+      name: 'Doggo 2',
       quote: `This was crazy helpful. So many apartment tours are during the week and it’s hard to take enough time off to make it worth the cost of the work day.`,
       image: dogImage,
     },
     {
-      name: 'NAME',
+      name: 'Doggo 3',
       quote: `There is no way me and my partner would have been able to move as quickly without Dibby’s help.`,
       image: dogImage,
     },
     {
-      name: 'NAME',
+      name: 'Doggo 4',
       quote: `Something was going on with the property manager, and we received very helpful advice.`,
       image: dogImage,
     },
     {
-      name: 'NAME',
+      name: 'Doggo 5',
       quote: `This honestly made life so much easier. I honestly was pretty nervous about moving with my sister, but Dibby gave us a lot of comfort in our decision.`,
       image: dogImage,
     },
     {
-      name: 'NAME',
+      name: 'Doggo 6',
       quote: `This was crazy helpful. So many apartment tours are during the week and it’s hard to take enough time off to make it worth the cost of the work day.`,
       image: dogImage,
     },
     {
-      name: 'NAME',
+      name: 'Doggo 7',
       quote: `There is no way me and my partner would have been able to move as quickly without Dibby’s help.`,
       image: dogImage,
     },
     {
-      name: 'NAME',
+      name: 'Doggo 8',
       quote: `Something was going on with the property manager, and we received very helpful advice.`,
       image: dogImage,
     },
   ];
 
   const [startIndex, setStartIndex] = useState(0);
-  const [visibleCount, setVisibleCount] = useState(getVisibleCount(4));
+  const [visibleCount, setVisibleCount] = useState(getVisibleCount());
   const [animateDirection, setAnimateDirection] = useState('');
-  const [isAnimating, setIsAnimating] = useState(false);
   const [touchStartX, setTouchStartX] = useState(null);
   const [touchEndX, setTouchEndX] = useState(null);
 
-  const handleTouchStart = (e) => {
-    setTouchStartX(e.touches[0].clientX);
+  function getVisibleCount() {
+    const width = window.innerWidth;
+    if (width >= 1200) return 4;
+    if (width >= 992) return 3;
+    if (width >= 768) return 2;
+    return 1;
+  }
+
+  const triggerAnimation = (direction, updateFn) => {
+    setAnimateDirection(direction);
+    updateFn();
   };
 
-  const handleTouchMove = (e) => {
-    setTouchEndX(e.touches[0].clientX);
+  const handlePrev = () => {
+    if (startIndex === 0) return;
+    triggerAnimation('why-people-choose-dibby-slide-right', () =>
+      setStartIndex((prev) => Math.max(prev - 1, 0))
+    );
   };
 
+  const handleNext = () => {
+    if (startIndex + visibleCount >= testimonials.length) return;
+    triggerAnimation('why-people-choose-dibby-slide-left', () =>
+      setStartIndex((prev) =>
+        Math.min(prev + 1, testimonials.length - visibleCount)
+      )
+    );
+  };
+
+  const handleTouchStart = (e) => setTouchStartX(e.touches[0].clientX);
+  const handleTouchMove = (e) => setTouchEndX(e.touches[0].clientX);
   const handleTouchEnd = () => {
     if (touchStartX === null || touchEndX === null) return;
     const distance = touchStartX - touchEndX;
     const minSwipeDistance = 50;
-
-    if (distance > minSwipeDistance) {
- 
-      handleNext();
-    } else if (distance < -minSwipeDistance) {
-
-      handlePrev();
-    }
+    if (distance > minSwipeDistance) handleNext();
+    else if (distance < -minSwipeDistance) handlePrev();
     setTouchStartX(null);
     setTouchEndX(null);
   };
@@ -87,38 +102,11 @@ function WhyPeopleChooseDibby() {
   }, []);
 
   useEffect(() => {
-    if (isAnimating) {
-      const timeout = setTimeout(() => {
-        setIsAnimating(false);
-        setAnimateDirection('');
-      }, 300);
+    if (animateDirection) {
+      const timeout = setTimeout(() => setAnimateDirection(''), 300);
       return () => clearTimeout(timeout);
     }
-  }, [isAnimating]);
-
-  function getVisibleCount() {
-    const width = window.innerWidth;
-    if (width >= 1200) return 4;
-    if (width >= 992) return 3;
-    if (width >= 768) return 2;
-    return 1;
-  }
-
-  const handlePrev = () => {
-    if (startIndex === 0) return;
-    setAnimateDirection('why-people-choose-dibby-slide-right');
-    setIsAnimating(true);
-    setStartIndex((prev) => Math.max(prev - 1, 0));
-  };
-
-  const handleNext = () => {
-    if (startIndex + visibleCount >= testimonials.length) return;
-    setAnimateDirection('why-people-choose-dibby-slide-left');
-    setIsAnimating(true);
-    setStartIndex((prev) =>
-      Math.min(prev + 1, testimonials.length - visibleCount)
-    );
-  };
+  }, [animateDirection]);
 
   const visibleCards = testimonials.slice(
     startIndex,
