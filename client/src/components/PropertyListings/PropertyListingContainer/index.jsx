@@ -57,7 +57,7 @@ function PropertyListingContainer({
           >
             Sort <span className='property-listing-sort-icon'>⇅</span>
           </button>
-          {dropdownStates.sort && (
+          {dropdownStates.sort && !isMobile && (
             <SortDropDown onClose={() => onToggleDropdown('sort')} />
           )}
         </div>

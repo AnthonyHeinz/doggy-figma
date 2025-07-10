@@ -160,7 +160,7 @@
   }
 
   .property-listing-sort-button {
-    width: auto;
+    display: none;
   }
 
   .property-listing-results-sort-button-container {
