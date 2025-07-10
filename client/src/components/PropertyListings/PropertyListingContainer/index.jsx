@@ -1,5 +1,5 @@
 import React from 'react';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import PropertyListingCard from '../PropertyListingCard';
 import testDog from '../../../assets/testdog.jpeg';
 import './styles.css';
@@ -14,6 +14,21 @@ function PropertyListingContainer({
   const [resultsNumber, setResultsNumber] = useState(0);
   const [activeMobileView, setActiveMobileView] = useState(null);
 
+  function useIsMobile() {
+    const [isMobile, setIsMobile] = useState(false);
+
+    useEffect(() => {
+      const checkMobile = () => setIsMobile(window.innerWidth <= 768);
+      checkMobile();
+      window.addEventListener('resize', checkMobile);
+      return () => window.removeEventListener('resize', checkMobile);
+    }, []);
+
+    return isMobile;
+  }
+
+  const isMobile = useIsMobile();
+
   const hardcodedListings = Array.from({ length: 8 }).map((_, i) => ({
     id: i,
     backgroundImage: testDog,
@@ -27,7 +42,7 @@ function PropertyListingContainer({
 
   return (
     <div className='property-listing-results-map-container'>
-      <PropertyListingMap />
+      {!isMobile && <PropertyListingMap />}
       <section className='property-listing-results-container'>
         <h2 className='property-listing-results-container-h2-text'>
           Properties in {location}{' '}
