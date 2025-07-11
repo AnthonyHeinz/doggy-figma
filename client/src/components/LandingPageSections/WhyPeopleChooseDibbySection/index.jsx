@@ -144,7 +144,7 @@ function WhyPeopleChooseDibby() {
           onTouchEnd={handleTouchEnd}
         >
           {visibleCards.map((card, index) => (
-            <div className='carousel-card testimonial-card' key={index}>
+            <div className='carousel-card' key={index}>
               <div
                 className='testimonial-background'
                 style={{ backgroundImage: `url(${card.image})` }}
@@ -158,7 +158,7 @@ function WhyPeopleChooseDibby() {
           ))}
         </div>
         <button
-          className='carousel-btn'
+          className='testimonials-section-carousel-btn'
           onClick={handleNext}
           disabled={startIndex + visibleCount >= testimonials.length}
         >

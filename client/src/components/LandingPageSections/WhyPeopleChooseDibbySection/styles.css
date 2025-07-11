@@ -211,4 +211,8 @@
     height: 80px;
     z-index: 0;
   }
+
+  .testimonials-section {
+    justify-content: center;
+  }
 }
