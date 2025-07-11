@@ -7,13 +7,22 @@
 
 .navbar-left {
   display: flex;
+  flex-direction: row;
   align-items: center;
   gap: 0.5rem;
+  width: 7rem;
+  margin-left: 1rem;
 }
 
 .navbar-logo {
-  height: 2.2rem;
-  margin-left: 1rem;
+  height: 2.5rem;
+  transform: scaleX(-1);
+}
+
+.navbar-h2-logo-text {
+  font-size: 24px;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 600;
 }
 
 .navbar-right {
@@ -22,13 +31,13 @@
   gap: 1.5rem;
 }
 
-.nav-link {
+.navbar-link {
   text-decoration: none;
   color: #333;
   font-weight: 500;
 }
 
-.add-property-btn {
+.navbar-add-property-btn {
   background-color: #f8cb76;
   color: black;
   border: none;
@@ -42,7 +51,10 @@
   .navbar {
     flex-direction: column;
     align-items: center;
-    gap: 1rem;
+  }
+
+  .navbar-left {
+    margin: 0.25rem;
   }
 
   .navbar-right {
@@ -52,16 +64,16 @@
     gap: 0.5rem;
   }
 
-  .add-property-btn {
+  .navbar-add-property-btn {
     flex: 1;
     width: 100%;
   }
 
-  .nav-link {
+  .navbar-link {
     font-size: 0.95rem;
   }
 
-  .hide-navbar-on-mobile {
+  .navbar-hide-on-mobile {
     display: none;
   }
 }

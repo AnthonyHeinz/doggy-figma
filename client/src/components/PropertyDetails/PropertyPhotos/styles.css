@@ -202,6 +202,7 @@
   }
 
   .property-details-carousel-card {
-    width: 90vw;
+    width: 100vw;
+    border-radius: 0;
   }
 }

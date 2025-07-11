@@ -1,6 +1,6 @@
 import React from 'react';
 import './styles.css';
-import dibbyLogo from '../../assets/dibby_Logo.svg';
+import dogIcon from '../../assets/dibby_Dog_Logo.png';
 
 function Navbar({ hideOnMobile }) {
   const handleAddPropertyButton = () => {
@@ -8,19 +8,20 @@ function Navbar({ hideOnMobile }) {
   };
 
   return (
-    <header className={`navbar ${hideOnMobile ? 'hide-navbar-on-mobile' : ''}`}>
+    <header className={`navbar ${hideOnMobile ? 'navbar-hide-on-mobile' : ''}`}>
       <div className='navbar-left'>
-        <img src={dibbyLogo} alt='Dibby logo' className='navbar-logo' />
+        <h2>Dibby</h2>
+        <img src={dogIcon} alt='Dibby logo' className='navbar-logo' />
       </div>
       <nav className='navbar-right'>
-        <a href='#' className='nav-link'>
+        <a href='#' className='navbar-link'>
           About
         </a>
-        <a href='#' className='nav-link'>
+        <a href='#' className='navbar-link'>
           Sign In / Sign Up
         </a>
         <button
-          className='add-property-btn'
+          className='navbar-add-property-btn'
           onClick={() => handleAddPropertyButton()}
         >
           Add Property
