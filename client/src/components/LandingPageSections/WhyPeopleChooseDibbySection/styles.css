@@ -37,20 +37,20 @@
   transition: all 0.3s ease;
 }
 
-.subtitle {
+.testimonials-section-subtitle {
   color: #555;
   font-size: 1rem;
   margin-bottom: 4rem;
 }
 
-.carousel-wrapper {
+.testimonials-section-carousel-wrapper {
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 1rem;
 }
 
-.carousel-btn {
+.testimonials-section-carousel-btn {
   font-size: 2rem;
   background: none;
   border: none;
@@ -59,12 +59,12 @@
   user-select: none;
 }
 
-.carousel-btn:disabled {
+.testimonials-section-:disabled {
   opacity: 0.3;
   cursor: not-allowed;
 }
 
-.carousel-track {
+.testimonials-section-carousel-track {
   display: flex;
   gap: 1rem;
   padding: 0 1rem;

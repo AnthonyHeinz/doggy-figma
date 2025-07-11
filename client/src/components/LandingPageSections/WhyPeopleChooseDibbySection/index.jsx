@@ -126,19 +126,19 @@ function WhyPeopleChooseDibby() {
           className='testimonials-section-dog-icon-top-right'
         />
       </div>
-      <p className='subtitle'>
+      <p className='testimonials-section-subtitle'>
         Hear what real customers have to say about their Dibby experience.
       </p>
-      <div className='carousel-wrapper'>
+      <div className='testimonials-section-carousel-wrapper'>
         <button
-          className='carousel-btn'
+          className='testimonials-section-carousel-btn'
           onClick={handlePrev}
           disabled={startIndex === 0}
         >
           ‹
         </button>
         <div
-          className={`carousel-track ${animateDirection}`}
+          className={`testimonials-section-carousel-track ${animateDirection}`}
           onTouchStart={handleTouchStart}
           onTouchMove={handleTouchMove}
           onTouchEnd={handleTouchEnd}
