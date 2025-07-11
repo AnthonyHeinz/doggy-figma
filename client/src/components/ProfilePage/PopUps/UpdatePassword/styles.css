@@ -2,7 +2,7 @@
     position: absolute;
     top: 20rem;
     left: 0rem;
-    width:m 24rem;
+    width: 24rem;
     background-color: rgba(0, 0, 0, 0.4); /* semi-transparent backdrop */
     display: flex;
     align-items: center;
@@ -19,7 +19,7 @@
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
     width: 90%;
     z-index: 1001;
-    position: relative;
+
     font-family: 'Open Sans', sans-serif;
     display: flex;
     flex-direction: column;

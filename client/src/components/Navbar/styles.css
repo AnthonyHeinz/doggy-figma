@@ -27,6 +27,15 @@
   color: #333;
   font-weight: 500;
 }
+.sign-in-sign-up {
+  background: none;
+  color: black;
+  border: none;
+  padding: 1rem 0.625rem;
+  cursor: pointer;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1rem;
+}
 
 .add-property-btn {
   background-color: #f8cb76;
