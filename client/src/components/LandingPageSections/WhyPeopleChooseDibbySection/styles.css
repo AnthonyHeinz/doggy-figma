@@ -1,4 +1,4 @@
-.testimonials-section {
+.testimonials-section-container {
   padding: 4rem 2rem 10rem 2rem;
   text-align: center;
   position: relative;
@@ -59,7 +59,7 @@
   user-select: none;
 }
 
-.testimonials-section-:disabled {
+.testimonials-section-carousel-btn:disabled {
   opacity: 0.3;
   cursor: not-allowed;
 }
@@ -70,7 +70,7 @@
   padding: 0 1rem;
 }
 
-.carousel-card {
+.testimonials-section-carousel-card {
   position: relative;
   height: 450px;
   flex: 0 0 auto;
@@ -84,7 +84,7 @@
   flex-shrink: 0;
 }
 
-.testimonial-background {
+.testimonials-section-background {
   height: 100%;
   width: 100%;
   background-size: cover;
@@ -93,7 +93,7 @@
   align-items: flex-end;
 }
 
-.testimonial-overlay {
+.testimonials-section-overlay {
   background-color: rgba(30, 30, 30, 0.6);
   color: #fff;
   padding: 1rem;
@@ -102,27 +102,27 @@
   text-align: left;
 }
 
-.testimonial-overlay .quote {
+.testimonials-section-overlay .quote {
   margin: 0;
   line-height: 1.4;
 }
 
-.testimonial-overlay .name {
+.testimonials-section-overlay .name {
   margin-top: 0.5rem;
   font-style: italic;
   text-align: right;
 }
 
-.dog-icon-bottom-left {
+.testimonials-section-dog-icon-bottom-left {
   height: 100px;
   position: absolute;
   bottom: -0.5rem;
   left: 3rem;
 }
 
-.how-it-works-gradient-three,
-.how-it-works-gradient-four,
-.how-it-works-gradient-five {
+.testimonials-section-gradient-three,
+.testimonials-section-gradient-four,
+.testimonials-section-gradient-five {
   position: absolute;
   width: 400px;
   height: 400px;
@@ -137,24 +137,22 @@
   pointer-events: none;
 }
 
-.how-it-works-gradient-four {
+.testimonials-section-gradient-four {
   top: 3rem;
   left: 85rem;
 }
 
-.how-it-works-gradient-five {
+.testimonials-section-gradient-five {
   top: 33rem;
   left: 50rem;
 }
 
-@media (max-width: 767px) {
-  .carousel-card {
-    max-width: 90vw;
-  }
-}
-
 .why-people-choose-dibby-slide-left {
   animation: slideLeft 0.3s ease-in-out;
+}
+
+.why-people-choose-dibby-slide-right {
+  animation: slideRight 0.3s ease-in-out;
 }
 
 @keyframes slideLeft {
@@ -166,24 +164,6 @@
     transform: translateX(0);
     opacity: 1;
   }
-}
-
-@media (max-width: 1200px) {
-  .testimonials-section-header-with-dog {
-    justify-content: center;
-    flex-wrap: nowrap;
-    gap: 1.2rem;
-  }
-
-  .testimonials-section-dog-icon-top-right {
-    position: static;
-    height: 80px;
-    transform: scaleX(-1);
-  }
-}
-
-.why-people-choose-dibby-slide-right {
-  animation: slideRight 0.3s ease-in-out;
 }
 
 @keyframes slideRight {
@@ -198,7 +178,7 @@
 }
 
 @media (max-width: 767px) {
-  .carousel-card {
+  .testimonials-section-carousel-card {
     max-width: 90vw;
   }
 
@@ -212,7 +192,21 @@
     z-index: 0;
   }
 
-  .testimonials-section {
+  .testimonials-section-container {
     justify-content: center;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1200px) {
+  .testimonials-section-header-with-dog {
+    justify-content: center;
+    flex-wrap: nowrap;
+    gap: 1.2rem;
+  }
+
+  .testimonials-section-dog-icon-top-right {
+    position: static;
+    height: 80px;
+    transform: scaleX(-1);
   }
 }

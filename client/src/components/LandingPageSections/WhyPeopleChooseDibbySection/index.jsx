@@ -114,7 +114,7 @@ function WhyPeopleChooseDibby() {
   );
 
   return (
-    <section className='testimonials-section'>
+    <section className='testimonials-section-container'>
       <div className='testimonials-section-gradient-three'></div>
       <div className='testimonials-section-header-with-dog'>
         <h2 className='testimonials-section-h2-text'>
@@ -144,12 +144,12 @@ function WhyPeopleChooseDibby() {
           onTouchEnd={handleTouchEnd}
         >
           {visibleCards.map((card, index) => (
-            <div className='carousel-card' key={index}>
+            <div className='testimonials-section-carousel-card' key={index}>
               <div
-                className='testimonial-background'
+                className='testimonials-section-background'
                 style={{ backgroundImage: `url(${card.image})` }}
               >
-                <div className='testimonial-overlay'>
+                <div className='testimonials-section-overlay'>
                   <p className='quote'>“{card.quote}”</p>
                   <p className='name'>– {card.name}</p>
                 </div>
@@ -165,9 +165,13 @@ function WhyPeopleChooseDibby() {
           ›
         </button>
       </div>
-      <img src={dogIcon} alt='dog' className='dog-icon-bottom-left' />
-      <div className='how-it-works-gradient-four'></div>
-      <div className='how-it-works-gradient-five'></div>
+      <img
+        src={dogIcon}
+        alt='dog'
+        className='testimonials-section-dog-icon-bottom-left'
+      />
+      <div className='testimonials-section-gradient-four'></div>
+      <div className='testimonials-section-gradient-five'></div>
     </section>
   );
 }
