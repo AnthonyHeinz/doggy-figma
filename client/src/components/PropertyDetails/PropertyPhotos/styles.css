@@ -116,9 +116,7 @@
   position: relative;
   height: 450px;
   flex: 0 0 auto;
-  width: 100%;
-  min-width: 280px;
-  max-width: 280px;
+  width: 280px;
   border-radius: 1rem;
   overflow: hidden;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
@@ -197,5 +195,13 @@
 
   .property-details-back-to-search {
     padding: 1rem;
+  }
+
+  .property-details-carousel-btn {
+    display: none;
+  }
+
+  .property-details-carousel-card {
+    width: 90vw;
   }
 }

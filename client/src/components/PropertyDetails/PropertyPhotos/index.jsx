@@ -6,6 +6,7 @@ import photoIcon from '../../../assets/photo_icon.png';
 import SeeAllPhotos from '../SeeAllPhotos';
 
 function PropertyPhotos() {
+  
   const [images, setImages] = useState([
     testDog,
     testDog,
@@ -13,6 +14,7 @@ function PropertyPhotos() {
     testDog,
     testDog,
   ]);
+
   const [showAllPhotosPopup, setShowAllPhotosPopup] = useState(false);
   const [startIndex, setStartIndex] = useState(0);
   const [visibleCount, setVisibleCount] = useState(getVisibleCount());
