@@ -1,7 +1,7 @@
 #property-details-back-search-photos-container {
   display: flex;
   flex-direction: column;
-  z-index: 5;
+  position: relative;
 }
 
 .property-details-photo-container {
@@ -58,7 +58,7 @@
 .property-details-see-all-photos-button {
   position: absolute;
   bottom: 1rem;
-  right: 1rem;
+  right: 4rem;
   display: flex;
   align-items: center;
   gap: 0.5rem;
@@ -74,6 +74,7 @@
   border-radius: 8px;
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
   text-align: center;
+  z-index: 5;
 }
 
 .property-details-see-all-photos-button:hover {
@@ -204,5 +205,9 @@
   .property-details-carousel-card {
     width: 100vw;
     border-radius: 0;
+  }
+
+  .property-details-carousel-track {
+    padding: 0;
   }
 }
