@@ -29,7 +29,7 @@ function Navbar({ hideOnMobile }) {
         <a href='about' className='navbar-link'>
           About
         </a>
-        <button onClick={handleSignUp} className='sign-in-sign-up'>
+        <button onClick={handleSignUp} className='navbar-sign-in-sign-up'>
           Sign In / Sign Up
         </button>
         <button
