@@ -1,7 +1,7 @@
 #property-details-back-search-photos-container {
   display: flex;
   flex-direction: column;
-  z-index: 5;
+  position: relative;
 }
 
 .property-details-photo-container {
@@ -58,7 +58,7 @@
 .property-details-see-all-photos-button {
   position: absolute;
   bottom: 1rem;
-  right: 1rem;
+  right: 4rem;
   display: flex;
   align-items: center;
   gap: 0.5rem;
@@ -74,6 +74,7 @@
   border-radius: 8px;
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
   text-align: center;
+  z-index: 5;
 }
 
 .property-details-see-all-photos-button:hover {
@@ -83,6 +84,84 @@
 #property-details-photo-icon {
   width: 16px;
   height: 16px;
+}
+
+.property-details-carousel-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.property-details-carousel-btn {
+  font-size: 2rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0 1rem;
+  user-select: none;
+}
+
+.property-details-carousel-btn:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+.property-details-carousel-track {
+  display: flex;
+  gap: 1rem;
+  padding: 0 1rem;
+}
+
+.property-details-carousel-card {
+  position: relative;
+  height: 450px;
+  flex: 0 0 auto;
+  width: 280px;
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  background-color: #f0f0f0;
+  flex-shrink: 0;
+}
+
+.property-details-background {
+  height: 100%;
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: flex-end;
+}
+
+.property-details-slide-left {
+  animation: propertyDetailsSlideLeft 0.3s ease-in-out;
+}
+
+.property-details-slide-right {
+  animation: propertyDetailsSlideRight 0.3s ease-in-out;
+}
+
+@keyframes propertyDetailsSlideLeft {
+  from {
+    transform: translateX(50px);
+    opacity: 0.6;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes propertyDetailsSlideRight {
+  from {
+    transform: translateX(-50px);
+    opacity: 0.6;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
 }
 
 @media screen and (max-width: 768px) {
@@ -112,12 +191,23 @@
   }
 
   .property-details-see-all-photos-button {
-    position: static;
-    margin: 1rem auto 0 auto;
-    width: fit-content;
+    display: none;
   }
 
   .property-details-back-to-search {
     padding: 1rem;
+  }
+
+  .property-details-carousel-btn {
+    display: none;
+  }
+
+  .property-details-carousel-card {
+    width: 100vw;
+    border-radius: 0;
+  }
+
+  .property-details-carousel-track {
+    padding: 0;
   }
 }

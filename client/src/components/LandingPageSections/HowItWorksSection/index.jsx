@@ -1,6 +1,8 @@
 import React from 'react';
 import './styles.css';
 import dogIcon from '../../../assets/dibby_Dog_Logo.png';
+import dogIconTwo from '../../../assets/dogiconthree.png'
+import dogIconThree from '../../../assets/dogicontwo.png'
 
 function HowItWorks() {
   const steps = [
@@ -19,7 +21,7 @@ function HowItWorks() {
       description:
         'Send one of our gig Viewers to inspect and tour the property for you.',
       linkText: '',
-      picture: dogIcon,
+      picture: dogIconTwo,
     },
     {
       number: 3,
@@ -27,7 +29,7 @@ function HowItWorks() {
       description: 'Receive a comprehensive report on your future home.',
       linkText: 'See Example Report →',
       href: 'See_Example_Report',
-      picture: dogIcon,
+      picture: dogIconThree,
     },
   ];
 
@@ -46,7 +48,11 @@ function HowItWorks() {
                   {step.linkText}
                 </a>
               )}
-              <img src={step.picture} alt='dog' className='step-dog' />
+              <img
+                src={step.picture}
+                alt='dog'
+                className={`step-dog-` + `${ index }`}
+              />
             </div>
           ))}
         </div>

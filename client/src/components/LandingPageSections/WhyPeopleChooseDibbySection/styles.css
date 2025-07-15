@@ -1,4 +1,4 @@
-.testimonials-section {
+.testimonials-section-container {
   padding: 4rem 2rem 10rem 2rem;
   text-align: center;
   position: relative;
@@ -6,27 +6,51 @@
   overflow: hidden;
 }
 
-.testimonials-section h2 {
+.testimonials-section-gradient-three {
+  top: 10rem;
+  left: -22rem;
+}
+
+.testimonials-section-header-with-dog {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  gap: 1rem;
+  flex-wrap: nowrap;
+}
+
+.testimonials-section-h2-text {
   font-size: 3rem;
   font-weight: 800;
   margin-bottom: 0.5rem;
   color: #222;
 }
 
-.subtitle {
+.testimonials-section-dog-icon-top-right {
+  height: 100px;
+  position: absolute;
+  top: 4.25rem;
+  right: 20%;
+  transform: scaleX(-1);
+  z-index: 0;
+  transition: all 0.3s ease;
+}
+
+.testimonials-section-subtitle {
   color: #555;
   font-size: 1rem;
   margin-bottom: 4rem;
 }
 
-.carousel-wrapper {
+.testimonials-section-carousel-wrapper {
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 1rem;
 }
 
-.carousel-btn {
+.testimonials-section-carousel-btn {
   font-size: 2rem;
   background: none;
   border: none;
@@ -35,18 +59,18 @@
   user-select: none;
 }
 
-.carousel-btn:disabled {
+.testimonials-section-carousel-btn:disabled {
   opacity: 0.3;
   cursor: not-allowed;
 }
 
-.carousel-track {
+.testimonials-section-carousel-track {
   display: flex;
   gap: 1rem;
   padding: 0 1rem;
 }
 
-.carousel-card {
+.testimonials-section-carousel-card {
   position: relative;
   height: 450px;
   flex: 0 0 auto;
@@ -60,7 +84,7 @@
   flex-shrink: 0;
 }
 
-.testimonial-background {
+.testimonials-section-background {
   height: 100%;
   width: 100%;
   background-size: cover;
@@ -69,7 +93,7 @@
   align-items: flex-end;
 }
 
-.testimonial-overlay {
+.testimonials-section-overlay {
   background-color: rgba(30, 30, 30, 0.6);
   color: #fff;
   padding: 1rem;
@@ -78,60 +102,27 @@
   text-align: left;
 }
 
-.testimonial-overlay .quote {
+.testimonials-section-overlay .quote {
   margin: 0;
   line-height: 1.4;
 }
 
-.testimonial-overlay .name {
+.testimonials-section-overlay .name {
   margin-top: 0.5rem;
   font-style: italic;
   text-align: right;
 }
 
-.dog-icon-bottom-left {
+.testimonials-section-dog-icon-bottom-left {
   height: 100px;
   position: absolute;
   bottom: -0.5rem;
   left: 3rem;
 }
 
-.dog-icon-top-right {
-  height: 100px;
-  position: absolute;
-  top: 4.25rem;
-  right: 20%;
-  transform: scaleX(-1);
-  z-index: 0;
-  transition: all 0.3s ease;
-}
-
-@media (max-width: 1200px) {
-  .header-with-dog {
-    justify-content: center;
-    flex-wrap: nowrap;
-    gap: 1.2rem;
-  }
-
-  .dog-icon-top-right {
-    position: static;
-    height: 80px;
-    transform: scaleX(-1);
-  }
-}
-
-.header-with-dog {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-  gap: 1rem;
-  flex-wrap: nowrap;
-}
-
-.how-it-works-gradient-three,
-.how-it-works-gradient-four,
-.how-it-works-gradient-five {
+.testimonials-section-gradient-three,
+.testimonials-section-gradient-four,
+.testimonials-section-gradient-five {
   position: absolute;
   width: 400px;
   height: 400px;
@@ -146,29 +137,22 @@
   pointer-events: none;
 }
 
-.how-it-works-gradient-three {
-  top: 10rem;
-  left: -22rem;
-}
-
-.how-it-works-gradient-four {
+.testimonials-section-gradient-four {
   top: 3rem;
   left: 85rem;
 }
 
-.how-it-works-gradient-five {
+.testimonials-section-gradient-five {
   top: 33rem;
   left: 50rem;
 }
 
-@media (max-width: 767px) {
-  .carousel-card {
-    max-width: 90vw;
-  }
+.why-people-choose-dibby-slide-left {
+  animation: slideLeft 0.3s ease-in-out;
 }
 
-.slide-left {
-  animation: slideLeft 0.3s ease-in-out;
+.why-people-choose-dibby-slide-right {
+  animation: slideRight 0.3s ease-in-out;
 }
 
 @keyframes slideLeft {
@@ -180,10 +164,6 @@
     transform: translateX(0);
     opacity: 1;
   }
-}
-
-.slide-right {
-  animation: slideRight 0.3s ease-in-out;
 }
 
 @keyframes slideRight {
@@ -198,11 +178,11 @@
 }
 
 @media (max-width: 767px) {
-  .carousel-card {
+  .testimonials-section-carousel-card {
     max-width: 90vw;
   }
 
-  .dog-icon-top-right {
+  .testimonials-section-dog-icon-top-right {
     position: absolute;
     top: 2rem;
     right: -4.5rem;
@@ -210,5 +190,23 @@
     opacity: 0.8;
     height: 80px;
     z-index: 0;
+  }
+
+  .testimonials-section-container {
+    justify-content: center;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1200px) {
+  .testimonials-section-header-with-dog {
+    justify-content: center;
+    flex-wrap: nowrap;
+    gap: 1.2rem;
+  }
+
+  .testimonials-section-dog-icon-top-right {
+    position: static;
+    height: 80px;
+    transform: scaleX(-1);
   }
 }

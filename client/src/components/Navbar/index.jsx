@@ -1,11 +1,10 @@
 import { React, useState } from 'react';
 import './styles.css';
-import dibbyLogo from '../../assets/dibby_Logo.svg';
 import CreateAccount from './PopUps/CreateAccount/index.jsx';
 import CreatePassword from './PopUps/CreatePassword';
 import SignIn from './PopUps/SignIn/index.jsx';
 import AccountCreationConfirmation from './PopUps/AccountCreationConfirmation/index.jsx';
-
+import dogIcon from '../../assets/dibby_Dog_Logo.png';
 
 function Navbar({ hideOnMobile }) {
   const handleAddPropertyButton = () => {
@@ -21,19 +20,20 @@ function Navbar({ hideOnMobile }) {
   };
 
   return (
-    <header className={`navbar ${hideOnMobile ? 'hide-navbar-on-mobile' : ''}`}>
+    <header className={`navbar ${hideOnMobile ? 'navbar-hide-on-mobile' : ''}`}>
       <div className='navbar-left'>
-        <img src={dibbyLogo} alt='Dibby logo' className='navbar-logo' />
+        <h2>Dibby</h2>
+        <img src={dogIcon} alt='Dibby logo' className='navbar-logo' />
       </div>
       <nav className='navbar-right'>
-        <a href='#' className='nav-link'>
+        <a href='about' className='navbar-link'>
           About
         </a>
         <button onClick={handleSignUp} className='sign-in-sign-up'>
           Sign In / Sign Up
         </button>
         <button
-          className='add-property-btn'
+          className='navbar-add-property-btn'
           onClick={() => handleAddPropertyButton()}
         >
           Add Property

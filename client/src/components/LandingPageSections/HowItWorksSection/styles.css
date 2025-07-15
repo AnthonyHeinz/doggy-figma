@@ -39,6 +39,7 @@
   flex: 1;
   min-width: 280px;
   max-width: 360px;
+  height: 100%;
 }
 
 .step-number {
@@ -75,11 +76,23 @@
   margin-bottom: 1rem;
 }
 
-.step-dog {
+.step-dog-0 {
   height: 13rem;
   width: 13rem;
+  margin-top: 5rem;
+}
+
+.step-dog-1 {
+  height: 21rem;
+  width: 25rem;
   margin-top: 1rem;
-  margin-top: auto;
+  margin-left: 6rem;
+}
+
+.step-dog-2 {
+  height: 15rem;
+  width: 20rem;
+  margin-top: 4rem;
 }
 
 .how-it-works-gradient-two {
@@ -88,7 +101,7 @@
   left: 85rem;
   width: 400px;
   height: 300px;
- background: radial-gradient(
+  background: radial-gradient(
     ellipse at center,
     rgba(249, 201, 161, 0.5) 100%,
     rgba(249, 201, 161, 0.3) 50%,
@@ -104,4 +117,10 @@
   overflow-x: hidden;
   width: 100%;
   position: relative;
+}
+
+@media screen and (max-width: 768px) {
+  .step-dog-1 {
+    margin-left: 1rem;
+  }
 }

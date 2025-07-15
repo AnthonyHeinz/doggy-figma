@@ -77,6 +77,10 @@
   background-color: #e5a300;
 }
 
+.property-details-send-a-viewer-mobile-fixed-button {
+  display: none;
+}
+
 @media screen and (max-width: 768px) {
   #property-details-tour-this-property-container {
     width: 100%;
@@ -111,5 +115,28 @@
   #property-details-send-viewer-list {
     text-align: center;
     align-items: center;
+  }
+
+  .property-details-send-a-viewer-mobile-fixed-button {
+    display: block;
+    position: fixed;
+    bottom: 1.25rem;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50%;
+    max-width: 22rem;
+    padding: 0.75rem;
+    background-color: #ffb500;
+    color: #000;
+    font-size: 1rem;
+    font-family: 'Open Sans', sans-serif;
+    border: none;
+    border-radius: 8px;
+    z-index: 1000;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  .property-details-send-a-viewer-mobile-fixed-button:hover {
+    background-color: #e5a300;
   }
 }

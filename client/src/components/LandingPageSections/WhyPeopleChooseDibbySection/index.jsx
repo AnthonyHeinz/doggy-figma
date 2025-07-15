@@ -1,5 +1,4 @@
-import React from 'react';
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import './styles.css';
 import dogIcon from '../../../assets/dibby_Dog_Logo.png';
 import dogImage from '../../../assets/testdog.jpeg';
@@ -7,68 +6,52 @@ import dogImage from '../../../assets/testdog.jpeg';
 function WhyPeopleChooseDibby() {
   const testimonials = [
     {
-      name: 'Doggo',
+      name: 'Doggo 1',
       quote: `This honestly made life so much easier. I honestly was pretty nervous about moving with my sister, but Dibby gave us a lot of comfort in our decision.`,
       image: dogImage,
     },
     {
-      name: 'NAME',
+      name: 'Doggo 2',
       quote: `This was crazy helpful. So many apartment tours are during the week and it’s hard to take enough time off to make it worth the cost of the work day.`,
       image: dogImage,
     },
     {
-      name: 'NAME',
+      name: 'Doggo 3',
       quote: `There is no way me and my partner would have been able to move as quickly without Dibby’s help.`,
       image: dogImage,
     },
     {
-      name: 'NAME',
+      name: 'Doggo 4',
       quote: `Something was going on with the property manager, and we received very helpful advice.`,
       image: dogImage,
     },
     {
-      name: 'NAME',
+      name: 'Doggo 5',
       quote: `This honestly made life so much easier. I honestly was pretty nervous about moving with my sister, but Dibby gave us a lot of comfort in our decision.`,
       image: dogImage,
     },
     {
-      name: 'NAME',
+      name: 'Doggo 6',
       quote: `This was crazy helpful. So many apartment tours are during the week and it’s hard to take enough time off to make it worth the cost of the work day.`,
       image: dogImage,
     },
     {
-      name: 'NAME',
+      name: 'Doggo 7',
       quote: `There is no way me and my partner would have been able to move as quickly without Dibby’s help.`,
       image: dogImage,
     },
     {
-      name: 'NAME',
+      name: 'Doggo 8',
       quote: `Something was going on with the property manager, and we received very helpful advice.`,
       image: dogImage,
     },
   ];
 
   const [startIndex, setStartIndex] = useState(0);
-  const [visibleCount, setVisibleCount] = useState(getVisibleCount(4));
+  const [visibleCount, setVisibleCount] = useState(getVisibleCount());
   const [animateDirection, setAnimateDirection] = useState('');
-  const [isAnimating, setIsAnimating] = useState(false);
-
-  useEffect(() => {
-    const updateCount = () => setVisibleCount(getVisibleCount());
-    updateCount();
-    window.addEventListener('resize', updateCount);
-    return () => window.removeEventListener('resize', updateCount);
-  }, []);
-
-  useEffect(() => {
-    if (isAnimating) {
-      const timeout = setTimeout(() => {
-        setIsAnimating(false);
-        setAnimateDirection('');
-      }, 300);
-      return () => clearTimeout(timeout);
-    }
-  }, [isAnimating]);
+  const [touchStartX, setTouchStartX] = useState(null);
+  const [touchEndX, setTouchEndX] = useState(null);
 
   function getVisibleCount() {
     const width = window.innerWidth;
@@ -78,21 +61,52 @@ function WhyPeopleChooseDibby() {
     return 1;
   }
 
+  const triggerAnimation = (direction, updateFn) => {
+    setAnimateDirection(direction);
+    updateFn();
+  };
+
   const handlePrev = () => {
     if (startIndex === 0) return;
-    setAnimateDirection('slide-right');
-    setIsAnimating(true);
-    setStartIndex((prev) => Math.max(prev - 1, 0));
+    triggerAnimation('why-people-choose-dibby-slide-right', () =>
+      setStartIndex((prev) => Math.max(prev - 1, 0))
+    );
   };
 
   const handleNext = () => {
     if (startIndex + visibleCount >= testimonials.length) return;
-    setAnimateDirection('slide-left');
-    setIsAnimating(true);
-    setStartIndex((prev) =>
-      Math.min(prev + 1, testimonials.length - visibleCount)
+    triggerAnimation('why-people-choose-dibby-slide-left', () =>
+      setStartIndex((prev) =>
+        Math.min(prev + 1, testimonials.length - visibleCount)
+      )
     );
   };
+
+  const handleTouchStart = (e) => setTouchStartX(e.touches[0].clientX);
+  const handleTouchMove = (e) => setTouchEndX(e.touches[0].clientX);
+  const handleTouchEnd = () => {
+    if (touchStartX === null || touchEndX === null) return;
+    const distance = touchStartX - touchEndX;
+    const minSwipeDistance = 50;
+    if (distance > minSwipeDistance) handleNext();
+    else if (distance < -minSwipeDistance) handlePrev();
+    setTouchStartX(null);
+    setTouchEndX(null);
+  };
+
+  useEffect(() => {
+    const updateCount = () => setVisibleCount(getVisibleCount());
+    updateCount();
+    window.addEventListener('resize', updateCount);
+    return () => window.removeEventListener('resize', updateCount);
+  }, []);
+
+  useEffect(() => {
+    if (animateDirection) {
+      const timeout = setTimeout(() => setAnimateDirection(''), 300);
+      return () => clearTimeout(timeout);
+    }
+  }, [animateDirection]);
 
   const visibleCards = testimonials.slice(
     startIndex,
@@ -100,31 +114,42 @@ function WhyPeopleChooseDibby() {
   );
 
   return (
-    <section className='testimonials-section'>
-      <div className='how-it-works-gradient-three'></div>
-      <div className='header-with-dog'>
-        <h2>Why people choose Dibby</h2>
-        <img src={dogIcon} alt='dog' className='dog-icon-top-right' />
+    <section className='testimonials-section-container'>
+      <div className='testimonials-section-gradient-three'></div>
+      <div className='testimonials-section-header-with-dog'>
+        <h2 className='testimonials-section-h2-text'>
+          Why people choose Dibby
+        </h2>
+        <img
+          src={dogIcon}
+          alt='dog'
+          className='testimonials-section-dog-icon-top-right'
+        />
       </div>
-      <p className='subtitle'>
+      <p className='testimonials-section-subtitle'>
         Hear what real customers have to say about their Dibby experience.
       </p>
-      <div className='carousel-wrapper'>
+      <div className='testimonials-section-carousel-wrapper'>
         <button
-          className='carousel-btn'
+          className='testimonials-section-carousel-btn'
           onClick={handlePrev}
           disabled={startIndex === 0}
         >
           ‹
         </button>
-        <div className={`carousel-track ${animateDirection}`}>
+        <div
+          className={`testimonials-section-carousel-track ${animateDirection}`}
+          onTouchStart={handleTouchStart}
+          onTouchMove={handleTouchMove}
+          onTouchEnd={handleTouchEnd}
+        >
           {visibleCards.map((card, index) => (
-            <div className='carousel-card testimonial-card' key={index}>
+            <div className='testimonials-section-carousel-card' key={index}>
               <div
-                className='testimonial-background'
+                className='testimonials-section-background'
                 style={{ backgroundImage: `url(${card.image})` }}
               >
-                <div className='testimonial-overlay'>
+                <div className='testimonials-section-overlay'>
                   <p className='quote'>“{card.quote}”</p>
                   <p className='name'>– {card.name}</p>
                 </div>
@@ -133,16 +158,20 @@ function WhyPeopleChooseDibby() {
           ))}
         </div>
         <button
-          className='carousel-btn'
+          className='testimonials-section-carousel-btn'
           onClick={handleNext}
           disabled={startIndex + visibleCount >= testimonials.length}
         >
           ›
         </button>
       </div>
-      <img src={dogIcon} alt='dog' className='dog-icon-bottom-left' />
-      <div className='how-it-works-gradient-four'></div>
-      <div className='how-it-works-gradient-five'></div>
+      <img
+        src={dogIcon}
+        alt='dog'
+        className='testimonials-section-dog-icon-bottom-left'
+      />
+      <div className='testimonials-section-gradient-four'></div>
+      <div className='testimonials-section-gradient-five'></div>
     </section>
   );
 }
