@@ -26,7 +26,7 @@ function Navbar({ hideOnMobile }) {
         <img src={dogIcon} alt='Dibby logo' className='navbar-logo' />
       </div>
       <nav className='navbar-right'>
-        <a href='about' className='navbar-link'>
+        <a href='about' className='navbar-about'>
           About
         </a>
         <button onClick={handleSignUp} className='navbar-sign-in-sign-up'>
