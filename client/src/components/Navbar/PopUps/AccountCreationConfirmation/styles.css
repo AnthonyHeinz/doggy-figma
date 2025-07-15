@@ -1,0 +1,72 @@
+.account-creation-confirmation-wrapper {
+  position: absolute;
+  top: 20rem;
+  left: 0rem;
+  width: 24rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 1006;
+  background-color: transparent;
+}
+
+.account-creation-confirmation-content {
+  background-color: white;
+  border-radius: 12px;
+  padding: 1rem 3rem 1rem 3rem;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+  width: 90%;
+  z-index: 1007;
+  position: relative;
+  font-family: 'Open Sans', sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.account-creation-confirmation-content h6 {
+  font-weight: 600px;
+}
+
+.account-creation-confirmation-content p {
+  margin-top: 16px;
+  font-size: 18px;
+  font-weight: 600;
+  width: 15rem;
+}
+
+.account-creation-confirmation-content button {
+  margin-top: 24px;
+  background-color: #204777;
+  color: #ffffff;
+  width: 100%;
+  height: auto;
+  padding: 12px 18px;
+  border-radius: 8px;
+}
+
+.account-created-dog-icon {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .account-creation-confirmation-wrapper {
+    top: 10rem;
+    left: 30rem;
+    width: 31rem;
+  }
+
+  .account-creation-confirmation-content {
+    padding: 4rem 3rem 3rem 3rem;
+    height: 20rem;
+  }
+  .account-created-dog-icon {
+    position: absolute;
+    display: flex; 
+    top: 13.1rem;
+    left: 2rem;
+    z-index: 2000;
+    transform: rotate(1deg);
+  }
+}
