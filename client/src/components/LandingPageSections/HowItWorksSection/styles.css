@@ -1,3 +1,9 @@
+.how-it-works-wrapper {
+  overflow-x: hidden;
+  width: 100%;
+  position: relative;
+}
+
 .how-it-works-section {
   display: flex;
   flex-direction: column;
@@ -111,12 +117,6 @@
   filter: blur(60px);
   z-index: 2;
   pointer-events: none;
-}
-
-.how-it-works-wrapper {
-  overflow-x: hidden;
-  width: 100%;
-  position: relative;
 }
 
 @media screen and (max-width: 768px) {
