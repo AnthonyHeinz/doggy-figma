@@ -13,7 +13,7 @@ function YourHomeYourChoice() {
           or any other home you've found online.
         </p>
         <div className='home-choice-buttons'>
-          <button className='home-choice-primary-button'>Start Browsing on Dibby</button>
+          <button className='home-choice-start-browsing-button'>Start Browsing on Dibby</button>
           <button className='home-choice-secondary-button'>
             Send a Viewer to a Property You've Found
           </button>
