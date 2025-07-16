@@ -8,8 +8,8 @@ function CitySection() {
   const [showSendAViewerPopup, setShowSendAViewerPopup] = useState(false);
 
   return (
-    <div className='city-wrapper'>
-      <section className='city-section'>
+    <div className='city-section-wrapper'>
+      <section className='city-section-container'>
         <div className='city-content'>
           <h1>We tour properties just for you.</h1>
           <h6 className='city-content-h6-text'>
@@ -22,7 +22,7 @@ function CitySection() {
               <p className='city-content-p-text'>
                 Start browsing listings on Dibby
               </p>
-              <div className='input-wrapper'>
+              <div className='city-section-input-wrapper'>
                 <input
                   type='text'
                   placeholder='Enter city or ZIP Code'

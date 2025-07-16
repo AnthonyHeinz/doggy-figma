@@ -1,10 +1,10 @@
-.city-wrapper {
+.city-section-wrapper {
   position: relative;
   width: 100%;
   height: auto;
 }
 
-.city-section {
+.city-section-container {
   background-image: url('../../../assets/city_Image.png');
   background-size: cover;
   background-position: center bottom;
@@ -95,7 +95,7 @@
   margin: 2rem;
 }
 
-.input-wrapper {
+.city-section-input-wrapper {
   position: relative;
   display: block;
   width: 100%;
@@ -103,7 +103,7 @@
   box-sizing: border-box;
 }
 
-.input-wrapper input {
+.city-section-input-wrapper input {
   max-width: 31.25rem;
   padding: 0.75rem 1rem;
   padding-right: 3rem;
@@ -111,7 +111,7 @@
   border: 1px solid #ccc;
 }
 
-.input-wrapper .overlay-button {
+.city-section-input-wrapper .overlay-button {
   position: absolute;
   right: 1rem;
   top: 50%;
@@ -126,7 +126,7 @@
   justify-content: center;
 }
 
-.input-wrapper .overlay-button img {
+.city-section-input-wrapper .overlay-button img {
   height: 18px;
   width: 18px;
 }
@@ -179,8 +179,8 @@
 @media (max-width: 600px) {
   .city-options-input,
   .viewer-button,
-  .input-wrapper,
-  .input-wrapper input {
+  .city-section-input-wrapper,
+  .city-section-input-wrapper input {
     max-width: 100%;
     width: 100%;
     font-size: 1rem;
@@ -188,4 +188,3 @@
     box-sizing: border-box;
   }
 }
-
