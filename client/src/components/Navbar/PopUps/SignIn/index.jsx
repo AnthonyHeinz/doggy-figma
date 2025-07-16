@@ -1,21 +1,35 @@
-import React from 'react';
+import React, { useState } from 'react';
 import CloseWindow from '../../../../assets/closeWindow.png';
 import './styles.css';
 
-function SignIn({ onClose, setSignUp, setSignIn }) {
+function SignIn({ onClose, setSignUp, setSignIn, onSignInSuccess }) {
+    const [email, setEmail] = useState('');
+
     const handleSignUp = () => {
         setSignIn(false);
         setTimeout(() => {
             setSignUp(true);
         }, 10)
     }
+
+    const handleContinue = () => {
+        // Extract username from email (everything before @) or use default
+        const username = email ? email.split('@')[0] : 'John Smith';
+        onSignInSuccess(username);
+    }
+
     return(
         <div className='sign-in-wrapper'>
               <div className='sign-in-content'>
                 <h6>Sign In</h6>
-                <input type='text' placeholder='Email Address'></input>
+                <input 
+                  type='text' 
+                  placeholder='Email Address'
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                />
                 <input type='text' placeholder='Password'></input>
-                <button onClick={onClose} className='sign-in-continue'>
+                <button onClick={handleContinue} className='sign-in-continue'>
                   Continue
                 </button>
                 <div className='dont-have-account-content'>

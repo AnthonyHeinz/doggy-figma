@@ -33,9 +33,15 @@
 }
 
 .navbar-about {
+  background: none;
+  border: none;
   text-decoration: none;
   color: #333;
   font-weight: 500;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1rem;
+  cursor: pointer;
+  padding: 0;
 }
 
 .navbar-about:hover {
@@ -53,6 +59,21 @@
 
 .navbar-sign-in-sign-up:hover {
   text-decoration: underline;
+}
+
+.navbar-custom-arrow {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-right: 2px solid #222;
+  border-bottom: 2px solid #222;
+  transform: rotate(45deg);
+  transition: transform 0.3s ease;
+  margin-left: 4px;
+}
+
+.navbar-custom-arrow.selected {
+  transform: rotate(-135deg);
 }
 
 .navbar-add-property-btn {

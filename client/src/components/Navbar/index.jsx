@@ -17,9 +17,22 @@ function Navbar({ hideOnMobile }) {
   const [createPassword, setCreatePassword] = useState(false);
   const [confirmation, setConfirmation] = useState(false);
   const [signIn, setSignIn] = useState(false);
+  const [isSignedIn, setIsSignedIn] = useState(false);
+  const [username, setUsername] = useState('John Smith');
+  const [isSignInDropdownOpen, setIsSignInDropdownOpen] = useState(false);
 
-  const handleSignUp = () => {
-    setSignUp(true);
+  const handleSignInSignUp = () => {
+    if (!isSignedIn) {
+      setSignIn(true);
+    } else {
+      setIsSignInDropdownOpen(!isSignInDropdownOpen);
+    }
+  };
+
+  const handleSignInSuccess = (userName = 'John Smith') => {
+    setIsSignedIn(true);
+    setUsername(userName);
+    setSignIn(false);
   };
 
   return (
@@ -29,11 +42,17 @@ function Navbar({ hideOnMobile }) {
         <img src={dogIcon} alt='Dibby logo' className='navbar-logo' />
       </div>
       <nav className='navbar-right'>
-        <a href='about' className='navbar-about'>
+        <button onClick={() => navigate('/about')} className='navbar-about'>
           About
-        </a>
-        <button onClick={handleSignUp} className='navbar-sign-in-sign-up'>
-          Sign In / Sign Up
+        </button>
+        <button onClick={handleSignInSignUp} className='navbar-sign-in-sign-up'>
+          {isSignedIn ? (
+            <>
+              {username} <span className={`navbar-custom-arrow ${isSignInDropdownOpen ? 'selected' : ''}`}></span>
+            </>
+          ) : (
+            'Sign In / Sign Up'
+          )}
         </button>
         <button
           className='navbar-add-property-btn'
@@ -65,6 +84,7 @@ function Navbar({ hideOnMobile }) {
           onClose={() => setSignIn(false)}
           setSignUp={setSignUp}
           setSignIn={setSignIn}
+          onSignInSuccess={handleSignInSuccess}
         />
       )}
     </header>
