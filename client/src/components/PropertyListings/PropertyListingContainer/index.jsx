@@ -65,6 +65,7 @@ function PropertyListingContainer({
           {hardcodedListings.map((listing) => (
             <PropertyListingCard
               key={listing.id}
+              id={listing.id}
               backgroundImage={listing.backgroundImage}
               price={listing.price}
               beds={listing.beds}

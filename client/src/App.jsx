@@ -15,6 +15,7 @@ function App() {
         <Route path='/about' element={<AboutPage />} />
         <Route path='/property-listings' element={<PropertyListings />} />
         <Route path='/property-details' element={<PropertyDetails />} />
+        <Route path='/property-details/:id' element={<PropertyDetails />} />
       </Routes>
     </BrowserRouter>
   );

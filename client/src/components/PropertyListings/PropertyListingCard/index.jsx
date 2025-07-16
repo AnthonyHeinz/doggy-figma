@@ -1,7 +1,9 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import './styles.css';
 
 function PropertyListingCard({
+  id,
   backgroundImage,
   price,
   beds,
@@ -10,8 +12,14 @@ function PropertyListingCard({
   address,
   buildingName,
 }) {
+  const navigate = useNavigate();
+
+  const handleCardClick = () => {
+    navigate(`/property-details/${id}`);
+  };
+
   return (
-    <div className='property-listing-card'>
+    <div className='property-listing-card' onClick={handleCardClick}>
       <img
         src={backgroundImage}
         alt='Property'
