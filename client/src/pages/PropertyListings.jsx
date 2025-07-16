@@ -1,10 +1,13 @@
 import React from 'react';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { useSearchParams, useNavigate } from 'react-router-dom';
 import Navbar from '../components/Navbar';
 import PropertyListingContainer from '../components/PropertyListings/PropertyListingContainer/index.jsx';
 import ListingBar from '../components/PropertyListings/ListingBar/index.jsx';
 
 function PropertyListings() {
+  const [searchParams] = useSearchParams();
+  const navigate = useNavigate();
   const [searchValue, setSearchValue] = useState('');
   const [submittedLocation, setSubmittedLocation] = useState('');
   const [dropdownStates, setDropdownStates] = useState({
@@ -15,9 +18,20 @@ function PropertyListings() {
     sort: false,
   });
 
+  useEffect(() => {
+    const locationParam = searchParams.get('location');
+    if (locationParam) {
+      setSearchValue(locationParam);
+      setSubmittedLocation(locationParam);
+    }
+  }, [searchParams]);
+
   const handleSearchSubmit = () => {
     const trimmed = searchValue.trim();
-    if (trimmed) setSubmittedLocation(trimmed);
+    if (trimmed) {
+      setSubmittedLocation(trimmed);
+      navigate(`/property-listings?location=${encodeURIComponent(trimmed)}`);
+    }
   };
 
   const toggleDropdown = (key) => {
