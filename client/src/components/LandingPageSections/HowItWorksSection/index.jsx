@@ -1,8 +1,8 @@
 import React from 'react';
 import './styles.css';
 import dogIcon from '../../../assets/dibby_Dog_Logo.png';
-import dogIconTwo from '../../../assets/dogiconthree.png'
-import dogIconThree from '../../../assets/dogicontwo.png'
+import dogIconTwo from '../../../assets/dogiconthree.png';
+import dogIconThree from '../../../assets/dogicontwo.png';
 
 function HowItWorks() {
   const steps = [
@@ -12,7 +12,7 @@ function HowItWorks() {
       description:
         'Choose your next home from our selection of listings or from another site.',
       linkText: 'View Property Listings →',
-      href: 'View_Property_Listing',
+      href: 'property-listings',
       picture: dogIcon,
     },
     {
@@ -51,7 +51,7 @@ function HowItWorks() {
               <img
                 src={step.picture}
                 alt='dog'
-                className={`step-dog-` + `${ index }`}
+                className={`step-dog-` + `${index}`}
               />
             </div>
           ))}
