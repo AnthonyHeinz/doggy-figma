@@ -21,14 +21,14 @@
   font-family: 'Open Sans', sans-serif;
 }
 
-.how-it-works-steps {
+.how-it-works-steps-container {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
   gap: 3rem;
 }
 
-.step {
+.how-it-works-step {
   font-family: 'Open Sans', sans-serif;
   display: flex;
   flex-direction: column;
@@ -42,7 +42,7 @@
   height: 100%;
 }
 
-.step-number {
+.how-it-works-step-number {
   background-color: #fbbc05;
   color: black;
   font-weight: bold;
@@ -56,20 +56,20 @@
   font-size: 1.2rem;
 }
 
-.step-title {
+.how-it-works-step-title {
   font-weight: 700;
   font-size: 1.2rem;
   margin-bottom: 0.5rem;
   color: #333;
 }
 
-.step-description {
+.how-it-works-step-description {
   color: #555;
   font-size: 0.95rem;
   margin-bottom: 0.5rem;
 }
 
-.step-link {
+.how-it-works-step-link {
   color: #0066cc;
   text-decoration: none;
   font-weight: 600;

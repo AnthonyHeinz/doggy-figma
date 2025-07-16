@@ -37,14 +37,14 @@ function HowItWorks() {
     <div className='how-it-works-wrapper'>
       <section className='how-it-works-section'>
         <h2 className='how-it-works-title'>How it Works</h2>
-        <div className='how-it-works-steps'>
+        <div className='how-it-works-steps-container'>
           {steps.map((step, index) => (
-            <div className='step' key={index}>
-              <div className='step-number'>{step.number}</div>
-              <h3 className='step-title'>{step.title}</h3>
-              <p className='step-description'>{step.description}</p>
+            <div className='how-it-works-step' key={index}>
+              <div className='how-it-works-step-number'>{step.number}</div>
+              <h3 className='how-it-works-step-title'>{step.title}</h3>
+              <p className='how-it-works-step-description'>{step.description}</p>
               {step.linkText && (
-                <a className='step-link' href={step.href}>
+                <a className='how-it-works-step-link' href={step.href}>
                   {step.linkText}
                 </a>
               )}
