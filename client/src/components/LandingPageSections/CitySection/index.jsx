@@ -19,7 +19,7 @@ function CitySection() {
             somewhere else, we’ll send a trusted Viewer to tour it for you and
             give a full, honest report so you can move with confidence.
           </h6>
-          <div className='city-options'>
+          <div className='city-section-options'>
             <div>
               <p className='city-section-content-p-text'>
                 Start browsing listings on Dibby
