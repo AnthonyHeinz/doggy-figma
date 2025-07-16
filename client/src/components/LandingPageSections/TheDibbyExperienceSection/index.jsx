@@ -16,23 +16,23 @@ function TheDibbyExperience() {
   ];
 
   return (
-    <section className='dibby-experience'>
-      <div className='experience-text'>
-        <h1 className='experience-h1-text'>The Dibby Experience</h1>
-        <p className='experience-p-text'>
+    <section className='dibby-experience-container'>
+      <div className='dibby-experience-text'>
+        <h1 className='dibby-experience-h1-text'>The Dibby Experience</h1>
+        <p className='dibby-experience-p-text'>
           Get the full picture without actually being there. For $49, we’ll send
           a trusted Viewer to tour a property on your behalf. You’ll get
           everything you need to decide if it’s worth your time without the
           hassle of going in person.
         </p>
       </div>
-      <div className='experience-card'>
+      <div className='dibby-experience-card'>
         <img
           src={dogIcon}
           alt='dogIcon'
           className='dibby-experience-dog-icon'
         />
-        <div className='what-we-provide-card'>
+        <div className='dibby-experience-what-we-provide-card'>
           <h3 className='experience-card-h3-text'>What We Provide</h3>
           <ul className='feature-grid'>
             {features.map((item, index) => (

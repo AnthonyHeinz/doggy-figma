@@ -1,4 +1,4 @@
-.dibby-experience {
+.dibby-experience-container {
   background: linear-gradient(
     to bottom,
     #ffffff 0%,
@@ -17,27 +17,27 @@
   overflow-x: hidden;
 }
 
-.experience-text {
+.dibby-experience-text {
   flex: 1;
   min-width: 280px;
   max-width: 582px;
 }
 
-.experience-h1-text {
+.dibby-experience-h1-text {
   font-size: 3rem;
   font-weight: 800;
   color: #222;
   margin-bottom: 2rem;
 }
 
-.experience-p-text {
+.dibby-experience-p-text {
   color: #444;
   line-height: 1.6;
   margin-bottom: 2rem;
   max-width: 582px;
 }
 
-.experience-card {
+.dibby-experience-card {
   position: relative;
   max-width: 850px;
   flex: 1;
@@ -89,7 +89,7 @@
   pointer-events: none;
 }
 
-.what-we-provide-card {
+.dibby-experience-what-we-provide-card {
   display: flex;
   width: 100%;
   max-width: 621px;
