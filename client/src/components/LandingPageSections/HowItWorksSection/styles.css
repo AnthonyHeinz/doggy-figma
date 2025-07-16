@@ -10,9 +10,7 @@
   justify-content: center;
   align-items: center;
   background-color: white;
-  text-align: center;
   z-index: 2;
-  width: 100%;
   margin: 3rem 0;
 }
 
@@ -26,9 +24,9 @@
 
 .how-it-works-steps-container {
   display: flex;
+  flex-direction: row;
   justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 3rem;
+  width: 100%;
 }
 
 .how-it-works-step {
@@ -39,10 +37,8 @@
   align-items: center;
   justify-content: center;
   z-index: 2;
-  flex: 1;
-  min-width: 280px;
-  max-width: 360px;
   height: 100%;
+  margin: 0 3rem;
 }
 
 .how-it-works-step-number {
@@ -70,6 +66,7 @@
   color: #555;
   font-size: 0.95rem;
   margin-bottom: 0.5rem;
+  max-width: 360px;
 }
 
 .how-it-works-step-link {
@@ -114,6 +111,34 @@
   filter: blur(60px);
   z-index: 2;
   pointer-events: none;
+}
+
+@media screen and (max-width: 1250px) {
+  .how-it-works-steps-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-items: center;
+    gap: 2rem 4rem;
+  }
+
+  .how-it-works-step {
+    width: 100%;
+    max-width: 360px;
+  }
+
+  .how-it-works-step:nth-child(3) {
+    grid-column: 1 / -1;
+    justify-self: center;
+  }
+}
+
+@media screen and (max-width: 925px) {
+  .how-it-works-steps-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
 }
 
 @media screen and (max-width: 768px) {
