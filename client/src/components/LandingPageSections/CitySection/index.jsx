@@ -11,15 +11,17 @@ function CitySection() {
     <div className='city-section-wrapper'>
       <section className='city-section-container'>
         <div className='city-section-content'>
-          <h1 className='city-section-content-h1-text'>We tour properties just for you.</h1>
-          <h6 className='city-content-h6-text'>
+          <h1 className='city-section-content-h1-text'>
+            We tour properties just for you.
+          </h1>
+          <h6 className='city-section-content-h6-text'>
             Found a home that looks promising? Whether it’s listed on Dibby or
             somewhere else, we’ll send a trusted Viewer to tour it for you and
             give a full, honest report so you can move with confidence.
           </h6>
           <div className='city-options'>
             <div>
-              <p className='city-content-p-text'>
+              <p className='city-section-content-p-text'>
                 Start browsing listings on Dibby
               </p>
               <div className='city-section-input-wrapper'>
@@ -35,7 +37,7 @@ function CitySection() {
             </div>
             <div className='or-separator'>OR</div>
             <div>
-              <p className='city-content-p-text'>
+              <p className='city-section-content-p-text'>
                 Send a Viewer to a property you’ve found
               </p>
               <button
