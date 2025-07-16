@@ -10,8 +10,8 @@ function CitySection() {
   return (
     <div className='city-section-wrapper'>
       <section className='city-section-container'>
-        <div className='city-content'>
-          <h1>We tour properties just for you.</h1>
+        <div className='city-section-content'>
+          <h1 className='city-section-content-h1-text'>We tour properties just for you.</h1>
           <h6 className='city-content-h6-text'>
             Found a home that looks promising? Whether it’s listed on Dibby or
             somewhere else, we’ll send a trusted Viewer to tour it for you and

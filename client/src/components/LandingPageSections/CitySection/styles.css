@@ -31,12 +31,12 @@
   z-index: 1;
 }
 
-.city-content {
+.city-section-content {
   max-width: 1093px;
   border-radius: 8px;
 }
 
-.city-content h1 {
+.city-section-content-h1-text {
   font-size: 3rem;
   font-weight: 700;
   margin-bottom: 1rem;
