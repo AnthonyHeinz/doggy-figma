@@ -14,7 +14,7 @@ function YourHomeYourChoice() {
         </p>
         <div className='home-choice-buttons'>
           <button className='home-choice-start-browsing-button'>Start Browsing on Dibby</button>
-          <button className='home-choice-secondary-button'>
+          <button className='home-choice-send-a-viewer-button'>
             Send a Viewer to a Property You've Found
           </button>
         </div>

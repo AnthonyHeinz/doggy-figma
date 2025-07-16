@@ -60,7 +60,7 @@
   font-family: 'Open Sans', sans-serif;
 }
 
-.home-choice-secondary-button {
+.home-choice-send-a-viewer-button {
   background-color: white;
   color: black;
   border: 2px solid #f5aa1c;
@@ -82,9 +82,9 @@
     position: absolute;
     left: -2.5rem;
     top: 10rem;
-    height: 5rem; 
+    height: 5rem;
     opacity: 0.7;
-     transform: rotate(45deg);
+    transform: rotate(45deg);
   }
 
   .home-choice-content {
@@ -99,7 +99,7 @@
   }
 
   .home-choice-start-browsing-button,
-  .home-choice-secondary-button {
+  .home-choice-send-a-viewer-button {
     width: 100%;
     max-width: 300px;
   }
