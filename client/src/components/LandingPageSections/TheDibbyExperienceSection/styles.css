@@ -23,14 +23,14 @@
   max-width: 582px;
 }
 
-.experience-text h1 {
+.experience-h1-text {
   font-size: 3rem;
   font-weight: 800;
   color: #222;
   margin-bottom: 2rem;
 }
 
-.experience-text p {
+.experience-p-text {
   color: #444;
   line-height: 1.6;
   margin-bottom: 2rem;
@@ -45,7 +45,7 @@
   z-index: 0;
 }
 
-.experience-card h3 {
+.experience-card-h3-text {
   font-size: 1.25rem;
   font-weight: 700;
   margin-bottom: 1rem;
