@@ -33,14 +33,17 @@ function TheDibbyExperience() {
           className='dibby-experience-dog-icon'
         />
         <div className='dibby-experience-what-we-provide-card'>
-          <h3 className='experience-card-h3-text'>What We Provide</h3>
-          <ul className='feature-grid'>
+          <h3 className='dibby-experience-card-h3-text'>What We Provide</h3>
+          <ul className='dibby-experience-feature-grid'>
             {features.map((item, index) => (
-              <li key={index}>
+              <li
+                key={index}
+                className='dibby-experience-feature-grid-list-item'
+              >
                 <img
                   src={greenCheckMark}
                   alt='greenCheckMark'
-                  className='check-icon'
+                  className='dibby-experience-check-icon'
                 />
                 {item}
               </li>
