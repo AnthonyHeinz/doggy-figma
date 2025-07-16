@@ -50,7 +50,7 @@
   flex-wrap: wrap;
 }
 
-.primary-btn {
+.home-choice-primary-button {
   background-color: #f5aa1c;
   color: black;
   border: none;
@@ -60,7 +60,7 @@
   font-family: 'Open Sans', sans-serif;
 }
 
-.secondary-btn {
+.home-choice-secondary-button {
   background-color: white;
   color: black;
   border: 2px solid #f5aa1c;
@@ -98,8 +98,8 @@
     gap: 0.75rem;
   }
 
-  .primary-btn,
-  .secondary-btn {
+  .home-choice-primary-button,
+  .home-choice-secondary-button {
     width: 100%;
     max-width: 300px;
   }
