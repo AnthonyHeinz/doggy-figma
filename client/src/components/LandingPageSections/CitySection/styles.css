@@ -21,7 +21,7 @@
   min-height: 611.5584716796875px;
 }
 
-.city-white-background {
+.city-section-white-background {
   position: absolute;
   bottom: 0;
   left: 0;
@@ -36,23 +36,22 @@
   border-radius: 8px;
 }
 
-.city-section-content-h1-text {
+.city-section-h1-text {
   font-size: 3rem;
   font-weight: 700;
   margin-bottom: 1rem;
 }
 
-.city-section-content-h6-text {
+.city-section-h6-text {
   margin-bottom: 1.5rem;
   font-size: 1.25rem;
   max-width: 1063px;
   font-weight: 600;
-  letter-spacing: 0%;
   line-height: 28px;
   padding: 1rem;
 }
 
-.city-section-content-p-text {
+.city-section-p-text {
   margin-bottom: 1.5rem;
   font-size: 1.25rem;
   max-width: 1063px;
@@ -67,14 +66,14 @@
   justify-content: center;
 }
 
-.city-options-input {
+.city-section-input {
   padding: 0.75rem;
   border-radius: 8px;
   border: none;
   width: 31.25rem;
 }
 
-.viewer-button {
+.city-section-viewer-button {
   width: 100%;
   max-width: 31.25rem;
   padding: 0.75rem 12.808125rem;
@@ -89,7 +88,7 @@
   box-sizing: border-box;
 }
 
-.or-separator {
+.city-section-or-separator {
   font-weight: bold;
   font-size: 1.25rem;
   margin: 2rem;
@@ -111,7 +110,7 @@
   border: 1px solid #ccc;
 }
 
-.city-section-input-wrapper .overlay-button {
+.city-section-overlay-button {
   position: absolute;
   right: 1rem;
   top: 50%;
@@ -126,39 +125,39 @@
   justify-content: center;
 }
 
-.city-section-input-wrapper .overlay-button img {
+.city-section-overlay-button img {
   height: 18px;
   width: 18px;
 }
 
 @media (max-width: 1155px) {
-  .city-options {
+  .city-section-options {
     flex-direction: column;
     align-items: center;
     text-align: center;
   }
 
-  .city-options > div:first-child {
+  .city-section-options > div:first-child {
     order: 1;
   }
 
-  .or-separator {
+  .city-section-or-separator {
     order: 2;
     font-size: 1.25rem;
     margin: 0.5rem 0;
   }
 
-  .city-options > div:last-child {
+  .city-section-options > div:last-child {
     order: 3;
   }
 
-  .city-options > div {
+  .city-section-options > div {
     width: 100%;
     max-width: 500px;
   }
 }
 
-.how-it-works-gradient-one {
+.city-section-gradient-one {
   position: absolute;
   bottom: -5rem;
   left: -3rem;
@@ -177,8 +176,8 @@
 }
 
 @media (max-width: 600px) {
-  .city-options-input,
-  .viewer-button,
+  .city-section-input,
+  .city-section-viewer-button,
   .city-section-input-wrapper,
   .city-section-input-wrapper input {
     max-width: 100%;
