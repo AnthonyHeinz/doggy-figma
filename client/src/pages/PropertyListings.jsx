@@ -21,10 +21,22 @@ function PropertyListings() {
   };
 
   const toggleDropdown = (key) => {
-    setDropdownStates((prev) => ({
-      ...prev,
-      [key]: !prev[key],
-    }));
+    setDropdownStates((prev) => {
+      if (prev[key]) {
+        return {
+          ...prev,
+          [key]: false,
+        };
+      }
+      return {
+        price: false,
+        bedsBaths: false,
+        homeType: false,
+        leaseType: false,
+        sort: false,
+        [key]: true,
+      };
+    });
   };
   return (
     <div>
