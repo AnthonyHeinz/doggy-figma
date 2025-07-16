@@ -23,7 +23,7 @@ function Navbar({ hideOnMobile }) {
   };
 
   return (
-    <header className={`navbar ${hideOnMobile ? 'navbar-hide-on-mobile' : ''}`}>
+    <header className={`navbar-container ${hideOnMobile ? 'navbar-hide-on-mobile' : ''}`}>
       <div className='navbar-left' onClick={() => navigate('/')}>
         <h2>Dibby</h2>
         <img src={dogIcon} alt='Dibby logo' className='navbar-logo' />
