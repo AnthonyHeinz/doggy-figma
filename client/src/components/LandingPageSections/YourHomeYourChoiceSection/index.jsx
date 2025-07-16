@@ -1,8 +1,15 @@
 import React from 'react';
 import './styles.css';
 import dogIcon from '../../../assets/dibby_Dog_Logo.png';
+import { useNavigate } from 'react-router-dom';
 
 function YourHomeYourChoice() {
+  const navigate = useNavigate();
+
+  const handleClickStartBrowsing = () => {
+    navigate('/property-listings');
+  };
+
   return (
     <section className='home-choice-section'>
       <img src={dogIcon} alt='dogIcon' className='dog-icon' />
@@ -13,7 +20,14 @@ function YourHomeYourChoice() {
           or any other home you've found online.
         </p>
         <div className='home-choice-buttons'>
-          <button className='home-choice-start-browsing-button'>Start Browsing on Dibby</button>
+          <button
+            className='home-choice-start-browsing-button'
+            onClick={() => {
+              handleClickStartBrowsing();
+            }}
+          >
+            Start Browsing on Dibby
+          </button>
           <button className='home-choice-send-a-viewer-button'>
             Send a Viewer to a Property You've Found
           </button>
