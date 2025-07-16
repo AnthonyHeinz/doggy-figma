@@ -64,7 +64,7 @@
   margin: 0;
 }
 
-.dibby-experience-feature-grid-list-item{
+.dibby-experience-feature-grid-list-item {
   display: flex;
   align-items: center;
   font-size: 1rem;
@@ -101,6 +101,19 @@
   justify-content: center;
 }
 
+@media (min-width: 768px) and (max-width: 925px) {
+  .dibby-experience-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .dibby-experience-h1-text,
+  .dibby-experience-p-text {
+    text-align: center;
+  }
+}
 
 @media (max-width: 768px) {
   .dibby-experience-text {
