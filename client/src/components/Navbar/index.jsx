@@ -5,8 +5,11 @@ import CreatePassword from './PopUps/CreatePassword';
 import SignIn from './PopUps/SignIn/index.jsx';
 import AccountCreationConfirmation from './PopUps/AccountCreationConfirmation/index.jsx';
 import dogIcon from '../../assets/dibby_Dog_Logo.png';
+import { useNavigate } from 'react-router-dom';
 
 function Navbar({ hideOnMobile }) {
+  const navigate = useNavigate();
+
   const handleAddPropertyButton = () => {
     console.log('This will eventually add a property');
   };
@@ -21,7 +24,7 @@ function Navbar({ hideOnMobile }) {
 
   return (
     <header className={`navbar ${hideOnMobile ? 'navbar-hide-on-mobile' : ''}`}>
-      <div className='navbar-left'>
+      <div className='navbar-left' onClick={() => navigate('/')}>
         <h2>Dibby</h2>
         <img src={dogIcon} alt='Dibby logo' className='navbar-logo' />
       </div>
@@ -54,8 +57,16 @@ function Navbar({ hideOnMobile }) {
           setCreatePassword={setCreatePassword}
         />
       )}
-      {confirmation && <AccountCreationConfirmation onClose={() => setConfirmation(false)} />}
-      {signIn && <SignIn onClose={() => setSignIn(false)} setSignUp={setSignUp} setSignIn={setSignIn} />}
+      {confirmation && (
+        <AccountCreationConfirmation onClose={() => setConfirmation(false)} />
+      )}
+      {signIn && (
+        <SignIn
+          onClose={() => setSignIn(false)}
+          setSignUp={setSignUp}
+          setSignIn={setSignIn}
+        />
+      )}
     </header>
   );
 }
