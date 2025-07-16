@@ -51,7 +51,7 @@ function HowItWorks() {
               <img
                 src={step.picture}
                 alt='dog'
-                className={`step-dog-` + `${index}`}
+                className={`how-it-works-step-dog-` + `${index}`}
               />
             </div>
           ))}
