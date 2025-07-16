@@ -4,6 +4,7 @@ import CreateAccount from './PopUps/CreateAccount/index.jsx';
 import CreatePassword from './PopUps/CreatePassword';
 import SignIn from './PopUps/SignIn/index.jsx';
 import AccountCreationConfirmation from './PopUps/AccountCreationConfirmation/index.jsx';
+import AccountDetailsDropDown from './AccountDetailsDropDown/index.jsx';
 import dogIcon from '../../assets/dibby_Dog_Logo.png';
 import { useNavigate } from 'react-router-dom';
 
@@ -54,6 +55,9 @@ function Navbar({ hideOnMobile }) {
             'Sign In / Sign Up'
           )}
         </button>
+        {isSignInDropdownOpen && isSignedIn && (
+          <AccountDetailsDropDown onClose={() => setIsSignInDropdownOpen(false)} />
+        )}
         <button
           className='navbar-add-property-btn'
           onClick={() => handleAddPropertyButton()}
