@@ -133,27 +133,18 @@
   opacity: 1;
 }
 
-@media screen and (min-width: 1441px) and (max-width: 1699px) {
+@media screen and (min-width: 992px) {
   .property-listing-card-container {
+    grid-template-columns: repeat(2, 1fr);
     gap: 2.5rem;
-    max-width: 1200;
+    max-width: 1200px;
     justify-content: center;
     padding: 0 2rem;
-    grid-template-columns: repeat(2, 1fr);
     margin: 0 auto;
   }
 }
 
-@media screen and (min-width: 170px) {
-  .property-listing-card-container {
-    gap: 2.5rem;
-    max-width: 1200;
-    justify-content: center;
-    padding: 0 2rem;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    margin: 0 auto;
-  }
-}
+
 
 @media screen and (max-width: 768px) {
   .property-listing-results-map-container {
