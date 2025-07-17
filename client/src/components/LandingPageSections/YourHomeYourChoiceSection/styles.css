@@ -1,4 +1,4 @@
-.home-choice-section {
+.home-choice-section-container {
   background: linear-gradient(
     to bottom,
     #ffffff 0%,
@@ -16,7 +16,7 @@
   font-family: 'Open Sans', sans-serif;
 }
 
-.dog-icon {
+.home-choice-dog-icon {
   height: 6rem;
   flex-shrink: 0;
 }
@@ -29,14 +29,14 @@
   align-items: center;
 }
 
-.home-choice-content h1 {
+.home-choice-content-h1-text {
   font-size: 3rem;
   font-weight: bold;
   color: #222;
   margin-bottom: 0.75rem;
 }
 
-.home-choice-content p {
+.home-choice-content-p-text {
   font-size: 1rem;
   line-height: 1.4;
   color: #444;
@@ -71,14 +71,14 @@
 }
 
 @media (max-width: 768px) {
-  .home-choice-section {
+  .home-choice-section-container {
     flex-direction: column;
     align-items: center;
     text-align: center;
     position: relative;
   }
 
-  .dog-icon {
+  .home-choice-dog-icon {
     position: absolute;
     left: -2.5rem;
     top: 10rem;
