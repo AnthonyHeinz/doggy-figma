@@ -1,10 +1,12 @@
-import React from 'react';
-import { useState } from 'react';
+import React, { useState } from 'react';
 import './styles.css';
+import { createPortal } from 'react-dom';
+import { useIsMobile } from '../../../util/useIsMobile';
 
 function HomeTypeDropDown({ onClose }) {
   const homeTypes = ['Room', 'Apartment', 'Condo', 'House'];
   const [selectedTypes, setSelectedTypes] = useState([]);
+  const isMobile = useIsMobile();
 
   const handleToggle = (type) => {
     setSelectedTypes((prev) =>
@@ -12,7 +14,7 @@ function HomeTypeDropDown({ onClose }) {
     );
   };
 
-  return (
+  const dropdown = (
     <div className='home-type-dropdown-container'>
       {homeTypes.map((type) => (
         <label key={type} className='home-type-dropdown-option'>
@@ -30,6 +32,14 @@ function HomeTypeDropDown({ onClose }) {
       </button>
     </div>
   );
+
+  const portalRoot = document.getElementById('portal-root');
+
+  if (isMobile && portalRoot) {
+    return createPortal(dropdown, portalRoot);
+  }
+
+  return dropdown;
 }
 
 export default HomeTypeDropDown;

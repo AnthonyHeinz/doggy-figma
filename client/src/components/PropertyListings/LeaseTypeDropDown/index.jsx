@@ -1,10 +1,12 @@
-import React from 'react';
-import { useState } from 'react';
+import React, { useState } from 'react';
 import './styles.css';
+import { createPortal } from 'react-dom';
+import { useIsMobile } from '../../../util/useIsMobile';
 
 function LeaseTypeDropDown({ onClose }) {
   const leaseTypes = ['Rent', 'Sublease'];
   const [selectedTypes, setSelectedTypes] = useState([]);
+  const isMobile = useIsMobile();
 
   const handleToggle = (type) => {
     setSelectedTypes((prev) =>
@@ -12,7 +14,7 @@ function LeaseTypeDropDown({ onClose }) {
     );
   };
 
-  return (
+  const dropdown = (
     <div className='lease-type-dropdown-container'>
       {leaseTypes.map((type) => (
         <label key={type} className='lease-type-dropdown-option'>
@@ -30,6 +32,14 @@ function LeaseTypeDropDown({ onClose }) {
       </button>
     </div>
   );
+
+  const portalRoot = document.getElementById('portal-root');
+
+  if (isMobile && portalRoot) {
+    return createPortal(dropdown, portalRoot);
+  }
+
+  return dropdown;
 }
 
 export default LeaseTypeDropDown;

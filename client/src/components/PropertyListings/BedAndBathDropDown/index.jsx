@@ -1,14 +1,17 @@
-import React from 'react';
-import { useState } from 'react';
+import React, { useState } from 'react';
+import { createPortal } from 'react-dom';
 import '../BedAndBathDropDown/styles.css';
+import { useIsMobile } from '../../../util/useIsMobile';
 
 function BedAndBathDropDown({ onClose }) {
   const [selectedBed, setSelectedBed] = useState('Any');
   const [selectedBath, setSelectedBath] = useState('Any');
+  const isMobile = useIsMobile();
+
   const bedOptions = ['Any', 'Studio', '1+', '2+', '3+'];
   const bathOptions = ['Any', '1+', '2+', '3+'];
 
-  return (
+  const dropdown = (
     <div id='bed-and-bath-dropdown-container'>
       <h3>Beds</h3>
       <div className='bed-and-bath-dropdown-option-row'>
@@ -43,6 +46,14 @@ function BedAndBathDropDown({ onClose }) {
       </button>
     </div>
   );
+
+  const portalRoot = document.getElementById('portal-root');
+
+  if (isMobile && portalRoot) {
+    return createPortal(dropdown, portalRoot);
+  }
+
+  return dropdown;
 }
 
 export default BedAndBathDropDown;
