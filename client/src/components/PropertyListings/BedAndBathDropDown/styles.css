@@ -56,5 +56,6 @@
     transform: translateX(-50%);
     width: 90vw !important;
     max-width: none;
+    z-index: 3;
   }
 }
