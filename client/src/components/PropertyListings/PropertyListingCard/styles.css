@@ -90,6 +90,7 @@
     font-family: 'Open Sans', sans-serif;
     height: auto;
     min-height: auto;
+    z-index: 0;
   }
 
   .property-listing-details{
