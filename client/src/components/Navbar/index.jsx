@@ -36,6 +36,12 @@ function Navbar({ hideOnMobile }) {
     setSignIn(false);
   };
 
+  const handleSignOut = () => {
+    setIsSignedIn(false);
+    setUsername('John Smith');
+    setIsSignInDropdownOpen(false);
+  };
+
   return (
     <header className={`navbar-container ${hideOnMobile ? 'navbar-hide-on-mobile' : ''}`}>
       <div className='navbar-left' onClick={() => navigate('/')}>
@@ -56,7 +62,7 @@ function Navbar({ hideOnMobile }) {
           )}
         </button>
         {isSignInDropdownOpen && isSignedIn && (
-          <AccountDetailsDropDown onClose={() => setIsSignInDropdownOpen(false)} />
+          <AccountDetailsDropDown onClose={() => setIsSignInDropdownOpen(false)} onSignOut={handleSignOut} />
         )}
         <button
           className='navbar-add-property-btn'

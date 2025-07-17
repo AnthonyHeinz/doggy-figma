@@ -1,19 +1,32 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import './styles.css';
 
-function AccountDetailsDropDown() {
+function AccountDetailsDropDown({ onClose, onSignOut }) {
+  const navigate = useNavigate();
+
+  const handleMyAccountClick = () => {
+    navigate('/profile');
+    onClose();
+  };
+
+  const handleSignOutClick = () => {
+    onSignOut();
+    onClose();
+  };
+
   return (
     <div className='account-details-drop-down-container'>
       <div className='account-details-drop-down-content'>
         <button
           className='account-details-drop-down-option'
-          onClick={() => console.log('Profile clicked')}
+          onClick={handleMyAccountClick}
         >
           My Account
         </button>
         <button
           className='account-details-drop-down-option'
-          onClick={() => console.log('Sign out clicked')}
+          onClick={handleSignOutClick}
         >
           Sign Out
         </button>
