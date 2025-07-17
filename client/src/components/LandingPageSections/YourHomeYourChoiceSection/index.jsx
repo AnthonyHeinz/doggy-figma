@@ -1,9 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './styles.css';
 import dogIcon from '../../../assets/dibby_Dog_Logo.png';
 import { useNavigate } from 'react-router-dom';
+import SendAViewer from '../SendAViewer/index.jsx';
 
 function YourHomeYourChoice() {
+  const [showSendAViewerPopup, setShowSendAViewerPopup] = useState(false);
   const navigate = useNavigate();
 
   const handleClickStartBrowsing = () => {
@@ -28,11 +30,18 @@ function YourHomeYourChoice() {
           >
             Start Browsing on Dibby
           </button>
-          <button className='home-choice-send-a-viewer-button'>
+          <button
+            className='home-choice-send-a-viewer-button'
+            onClick={() => setShowSendAViewerPopup(true)}
+          >
             Send a Viewer to a Property You've Found
           </button>
         </div>
       </div>
+      <SendAViewer
+        isOpen={showSendAViewerPopup}
+        onClose={() => setShowSendAViewerPopup(false)}
+      />
     </section>
   );
 }
