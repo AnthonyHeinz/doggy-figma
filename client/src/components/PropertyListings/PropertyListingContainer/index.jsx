@@ -76,36 +76,40 @@ function PropertyListingContainer({
             />
           ))}
         </div>
-        <div className='property-listing-mobile-toggle-bar'>
-          <button
-            onClick={() => setActiveMobileView('map')}
-            className='property-listing-mobile-toggle-bar-button'
-          >
-            Map
-          </button>
-          <span className='property-listing-mobile-toggle-bar-divider'>|</span>
-          <button
-            onClick={() => setActiveMobileView('sort')}
-            className='property-listing-mobile-toggle-bar-button'
-          >
-            Sort
-          </button>
-        </div>
-        {activeMobileView === 'map' && (
-          <div className='property-listing-mobile-overlay'>
-            <PropertyListingMap />
-            <button
-              onClick={() => setActiveMobileView(null)}
-              className='property-listing-mobile-overlay-button'
-            >
-              Close
-            </button>
-          </div>
-        )}
-        {activeMobileView === 'sort' && (
-          <div className='property-listing-mobile-overlay'>
-            <SortDropDown onClose={() => setActiveMobileView(null)} />
-          </div>
+        {isMobile && (
+          <>
+            <div className='property-listing-mobile-toggle-bar'>
+              <button
+                onClick={() => setActiveMobileView('map')}
+                className='property-listing-mobile-toggle-bar-button'
+              >
+                Map
+              </button>
+              <span className='property-listing-mobile-toggle-bar-divider'>|</span>
+              <button
+                onClick={() => setActiveMobileView('sort')}
+                className='property-listing-mobile-toggle-bar-button'
+              >
+                Sort
+              </button>
+            </div>
+            {activeMobileView === 'map' && (
+              <div className='property-listing-mobile-overlay'>
+                <PropertyListingMap />
+                <button
+                  onClick={() => setActiveMobileView(null)}
+                  className='property-listing-mobile-overlay-button'
+                >
+                  Close
+                </button>
+              </div>
+            )}
+            {activeMobileView === 'sort' && (
+              <div className='property-listing-mobile-overlay'>
+                <SortDropDown onClose={() => setActiveMobileView(null)} />
+              </div>
+            )}
+          </>
         )}
         <div id='property-listing-blurs'>
           <div id='property-listing-yellow-blur' />
