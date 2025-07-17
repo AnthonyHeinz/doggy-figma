@@ -156,6 +156,8 @@
     padding: 1rem 0;
     position: relative;
     z-index: 1;
+    overflow: visible;
+    height: auto;
   }
 
   .property-listing-card-container {
