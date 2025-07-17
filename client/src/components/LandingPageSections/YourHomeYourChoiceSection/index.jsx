@@ -17,7 +17,7 @@ function YourHomeYourChoice() {
       <img src={dogIcon} alt='dogIcon' className='home-choice-dog-icon' />
       <div className='home-choice-content'>
         <h1 className='home-choice-content-h1-text'>Your Home, Your Choice</h1>
-        <p className='.home-choice-content-p-text'>
+        <p className='home-choice-content-p-text'>
           Use Dibby to schedule a property tour from our selection of listings
           or any other home you've found online.
         </p>
