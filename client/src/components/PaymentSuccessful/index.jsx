@@ -2,8 +2,11 @@ import React from 'react';
 import './styles.css';
 import greenCheck from '../../assets/green_Check_Mark.png';
 import dogIcon from '../../assets/dibby_Dog_Logo.png';
+import { useNavigate } from 'react-router-dom';
 
 function PaymentSuccessful({ isOpen, onClose }) {
+  const navigate = useNavigate();
+
   if (!isOpen) return null;
   return (
     <div className='payment-successful-popup-overlay' onClick={onClose}>
@@ -26,7 +29,10 @@ function PaymentSuccessful({ isOpen, onClose }) {
             A confirmation email has been sent to you. Your Viewer will send
             your report within 3 business days.
           </p>
-          <button id='payment-successful-send-a-viewer-button'>
+          <button
+            id='payment-successful-send-a-viewer-button'
+            onClick={() => navigate('/profile')}
+          >
             Return to Property Listing
           </button>
         </div>
