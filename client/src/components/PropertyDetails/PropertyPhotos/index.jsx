@@ -1,11 +1,13 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import './styles.css';
 import testDog from '../../../assets/testdog.jpeg';
 import photoIcon from '../../../assets/photo_icon.png';
 import SeeAllPhotos from '../SeeAllPhotos';
 
 function PropertyPhotos() {
+  const navigate = useNavigate();
   
   const [images, setImages] = useState([
     testDog,
@@ -72,12 +74,18 @@ function PropertyPhotos() {
     setTouchEndX(null);
   };
 
+  const handleBackToSearch = () => {
+    navigate('/property-listings');
+  };
+
   const visibleImages = images.slice(startIndex, startIndex + visibleCount);
 
   return (
     <div id='property-details-back-search-photos-container'>
       <div className='property-details-back-to-search'>
-        <div>{'<'} Back to Search</div>
+        <button onClick={() =>handleBackToSearch()}>
+          {'<'} Back to Search
+        </button>
       </div>
 
       {isMobile ? (

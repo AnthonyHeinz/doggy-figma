@@ -51,7 +51,23 @@
   padding: 1rem 2rem;
 }
 
-.property-details-back-to-search:hover {
+.property-details-back-to-search button {
+  background: none;
+  border: none;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  color: #1c1c1c;
+  cursor: pointer;
+  transition: color 0.2s ease;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.property-details-back-to-search:hover,
+.property-details-back-to-search button:hover {
   text-decoration: underline;
 }
 
