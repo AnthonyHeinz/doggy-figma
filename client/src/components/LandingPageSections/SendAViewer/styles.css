@@ -124,6 +124,99 @@
   z-index: 0;
 }
 
+/* Add styles for form integration */
+.property-form .reusable-form {
+  gap: 1rem;
+  margin: 0;
+}
+
+.property-form .form-field-container {
+  margin-bottom: 0;
+}
+
+.property-form .form-field-input {
+  width: 100%;
+  padding: 0.828125rem 1rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0 0 0 1px #d9d9d9, 0 2px 6px rgba(0, 0, 0, 0.08);
+  background-color: #ffffff;
+  font-family: 'Open Sans', sans-serif;
+  outline: none;
+  transition: box-shadow 0.2s ease;
+}
+
+.property-form .form-field-input::placeholder {
+  color: #6c6c6c;
+}
+
+.property-form .form-field-input:focus {
+  box-shadow: 0 0 0 2px #ffb500, 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.property-form .form-field-input.error {
+  box-shadow: 0 0 0 2px #ff4444, 0 2px 6px rgba(0, 0, 0, 0.08);
+  background-color: #fff5f5;
+}
+
+.property-form .form-field-error {
+  color: #ff4444;
+  font-size: 0.75rem;
+  margin-top: 0.25rem;
+  margin-left: 0.25rem;
+}
+
+.property-form .form-submit-button {
+  margin-top: 2rem;
+  font-size: 1rem;
+  padding: 0.75rem 1rem;
+  background-color: #f4b400;
+  color: #1c1c1c;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  align-self: flex-end;
+  width: fit-content;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.property-form .form-submit-button:hover:not(:disabled) {
+  background-color: #e5a300;
+}
+
+.property-form .form-submit-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  background-color: #cccccc;
+}
+
+/* Style the state/zip row to match existing design */
+.landing-send-a-viewer-state-zip-inputs-box .form-field-container {
+  margin-bottom: 0;
+}
+
+.landing-send-a-viewer-state-zip-inputs-box .form-field-error {
+  color: #ff4444;
+  font-size: 0.75rem;
+  margin-top: 0.25rem;
+  margin-left: 0.25rem;
+}
+
+.landing-send-a-viewer-inputs.error {
+  box-shadow: 0 0 0 2px #ff4444, 0 2px 6px rgba(0, 0, 0, 0.08);
+  background-color: #fff5f5;
+}
+
+/* Ensure proper spacing for form sections */
+.property-form h6 {
+  font-size: 20px;
+  color: #011329;
+  font-weight: 600;
+  margin: 0.75rem 0 0.25rem;
+}
+
 @media (max-width: 768px) {
   .landing-send-a-viewer-popup-box {
     width: 100%;
@@ -145,5 +238,10 @@
     top: 1rem;
     right: 1rem;
     font-size: 2rem;
+  }
+
+  .property-form .form-submit-button {
+    width: 100%;
+    align-self: stretch;
   }
 }

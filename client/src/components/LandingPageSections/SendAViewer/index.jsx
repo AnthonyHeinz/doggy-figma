@@ -2,18 +2,157 @@ import React from 'react';
 import './styles.css';
 import { useState } from 'react';
 import ConfirmAndPayPopUp from '../../ConfirmAndPayPopUp/index.jsx';
+import ReusableForm from '../../ReusableForm';
 import dogIcon from '../../../assets/dibby_Dog_Logo.png';
 
 function SendAViewer({ isOpen, onClose }) {
   const [showConfirmAndPayPopup, setShowConfirmAndPayPopup] = useState(false);
-  const [houseDetails, setHouseDetails] = useState({
-    location: '627 Belmont Ave #6, Los Angeles, CA 90026',
-    buildingName: 'Belmont Apartments',
+  const [propertyData, setPropertyData] = useState(null);
+  
+  // Default property details (beds, baths, sqft, buildingName) that don't need to be collected in the form
+  const defaultPropertyDetails = {
     beds: 2,
     baths: 1,
     sqft: 875,
-  });
+    buildingName: 'Property Listing', // Generic default since we don't collect building name
+  };
+
   if (!isOpen) return null;
+
+  // Form configuration for property information
+  const propertyFormInitialValues = {
+    propertyUrl: '',
+    address: '',
+    unit: '',
+    city: '',
+    state: '',
+    zipCode: '',
+  };
+
+  const propertyFormValidationSchema = {
+    address: {
+      required: true,
+      requiredMessage: 'Property address is required',
+    },
+    city: {
+      required: true,
+      requiredMessage: 'City is required',
+    },
+    state: {
+      required: true,
+      requiredMessage: 'State is required',
+    },
+    zipCode: {
+      required: true,
+      requiredMessage: 'ZIP code is required',
+      pattern: /^\d{5}(-\d{4})?$/,
+      patternMessage: 'Please enter a valid ZIP code',
+    },
+    propertyUrl: {
+      validate: (value) => {
+        if (value && value.trim() !== '') {
+          // Basic URL validation
+          try {
+            new URL(value);
+            return null;
+          } catch {
+            return 'Please enter a valid URL';
+          }
+        }
+        return null;
+      },
+    },
+  };
+
+  const propertyFormFields = [
+    {
+      name: 'propertyUrl',
+      type: 'url',
+      placeholder: 'Property URL',
+      inputClassName: 'landing-send-a-viewer-inputs',
+      containerClassName: 'form-field-container',
+    },
+    {
+      name: 'address',
+      type: 'text',
+      placeholder: 'Address',
+      inputClassName: 'landing-send-a-viewer-inputs',
+      containerClassName: 'form-field-container',
+    },
+    {
+      name: 'unit',
+      type: 'text',
+      placeholder: 'Apt, Unit, Floor, etc.',
+      inputClassName: 'landing-send-a-viewer-inputs',
+      containerClassName: 'form-field-container',
+    },
+    {
+      name: 'city',
+      type: 'text',
+      placeholder: 'City',
+      inputClassName: 'landing-send-a-viewer-inputs',
+      containerClassName: 'form-field-container',
+    },
+  ];
+
+  // Create a custom component for state/zip row
+  const StateZipRow = ({ formData, handleInputChange, validationErrors, disabled }) => (
+    <div className='landing-send-a-viewer-state-zip-inputs-box'>
+      <div className="form-field-container">
+        <input
+          name="state"
+          type="text"
+          placeholder="State"
+          className={`landing-send-a-viewer-inputs half-width ${
+            validationErrors.state ? 'error' : ''
+          }`}
+          value={formData.state || ''}
+          onChange={(e) => handleInputChange('state', e.target.value)}
+          disabled={disabled}
+        />
+        {validationErrors.state && (
+          <span className="form-field-error">{validationErrors.state}</span>
+        )}
+      </div>
+      <div className="form-field-container">
+        <input
+          name="zipCode"
+          type="text"
+          placeholder="Zip Code"
+          className={`landing-send-a-viewer-inputs half-width ${
+            validationErrors.zipCode ? 'error' : ''
+          }`}
+          value={formData.zipCode || ''}
+          onChange={(e) => handleInputChange('zipCode', e.target.value)}
+          disabled={disabled}
+        />
+        {validationErrors.zipCode && (
+          <span className="form-field-error">{validationErrors.zipCode}</span>
+        )}
+      </div>
+    </div>
+  );
+
+  const handleFormSubmit = async (formData) => {
+    // Construct the location string from form data
+    let location = formData.address;
+    if (formData.unit && formData.unit.trim()) {
+      location += `, ${formData.unit}`;
+    }
+    location += `, ${formData.city}, ${formData.state} ${formData.zipCode}`;
+
+    // Prepare the complete property data
+    const completePropertyData = {
+      ...defaultPropertyDetails,
+      location: location,
+      propertyUrl: formData.propertyUrl || '',
+      // You could extract building name from address or form data if needed
+      buildingName: defaultPropertyDetails.buildingName,
+    };
+
+    setPropertyData(completePropertyData);
+    setShowConfirmAndPayPopup(true);
+  };
 
   return (
     <div className='landing-send-a-viewer-popup-overlay'>
@@ -28,52 +167,35 @@ function SendAViewer({ isOpen, onClose }) {
           <h5 className='landing-send-a-viewer-h5-text'>Send a Viewer</h5>
           <p className='landing-send-a-viewer-p-text'>
             For $49, you can send one of our trusted Viewers to tour and inspect
-            an existing property listing that isn’t listed on Dibby.
+            an existing property listing that isn't listed on Dibby.
           </p>
-          <h6 className='landing-send-a-viewer-h6-text'>Enter Property URL</h6>
-          <input
-            placeholder='Property URL'
-            className='landing-send-a-viewer-inputs'
-          />
-          <h6 className='landing-send-a-viewer-h6-text'>
-            Enter Property Address
-          </h6>
-          <input
-            placeholder='Address'
-            className='landing-send-a-viewer-inputs'
-          />
-          <input
-            placeholder='Apt, Unit, Floor, etc.'
-            className='landing-send-a-viewer-inputs'
-          />
-          <input placeholder='City' className='landing-send-a-viewer-inputs' />
-          <div className='landing-send-a-viewer-state-zip-inputs-box'>
-            <input
-              placeholder='State'
-              className='landing-send-a-viewer-inputs half-width'
-            />
-            <input
-              placeholder='Zip Code'
-              className='landing-send-a-viewer-inputs half-width'
-            />
-          </div>
-
-          <button
-            id='landing-send-a-viewer-continue-to-payment-button'
-            onClick={() => setShowConfirmAndPayPopup(true)}
+          
+          <ReusableForm
+            initialValues={propertyFormInitialValues}
+            validationSchema={propertyFormValidationSchema}
+            fields={propertyFormFields}
+            onSubmit={handleFormSubmit}
+            submitButtonText="Continue to Payment"
+            className="property-form"
           >
-            Continue to Payment
-          </button>
-          <ConfirmAndPayPopUp
-            isOpen={showConfirmAndPayPopup}
-            onClose={() => setShowConfirmAndPayPopup(false)}
-            beds={houseDetails.beds}
-            baths={houseDetails.baths}
-            sqft={houseDetails.sqft}
-            location={houseDetails.location}
-            buildingName={houseDetails.buildingName}
-          />
+            {/* Custom state/zip row component */}
+            <StateZipRow />
+          </ReusableForm>
+          
+          {showConfirmAndPayPopup && propertyData && (
+            <ConfirmAndPayPopUp
+              isOpen={showConfirmAndPayPopup}
+              onClose={() => setShowConfirmAndPayPopup(false)}
+              beds={propertyData.beds}
+              baths={propertyData.baths}
+              sqft={propertyData.sqft}
+              location={propertyData.location}
+              buildingName={propertyData.buildingName}
+              url={propertyData.propertyUrl}
+            />
+          )}
         </div>
+        
         <img
           src={dogIcon}
           alt='dog icon'
