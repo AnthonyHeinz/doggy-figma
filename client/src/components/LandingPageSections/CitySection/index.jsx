@@ -1,25 +1,22 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
 import './styles.css';
-import search from '../../../assets/Search.png';
+import LocationSearch from '../../LocationSearch';
 import SendAViewer from '../SendAViewer/index.jsx';
+import searchIcon from '../../../assets/Search.png';
 
 function CitySection() {
   const [showSendAViewerPopup, setShowSendAViewerPopup] = useState(false);
-  const [searchValue, setSearchValue] = useState('');
-  const navigate = useNavigate();
 
-  const handleSearchSubmit = () => {
-    const trimmed = searchValue.trim();
-    if (trimmed) {
-      navigate(`/property-listings?location=${encodeURIComponent(trimmed)}`);
-    }
+  // Handle custom search logic if needed
+  const handleLocationSearch = async (searchTerm, locationId) => {
+    console.log('Searching for:', searchTerm, 'Location ID:', locationId);
+    // Custom search logic can be implemented here
   };
 
-  const handleKeyPress = (e) => {
-    if (e.key === 'Enter') {
-      handleSearchSubmit();
-    }
+  // Handle location selection
+  const handleLocationSelect = (suggestion, displayName) => {
+    console.log('Selected location:', suggestion, 'Display name:', displayName);
+    // Custom selection logic can be implemented here
   };
 
   return (
@@ -39,19 +36,21 @@ function CitySection() {
               <p className='city-section-p-text'>
                 Start browsing listings on Dibby
               </p>
-              <div className='city-section-input-wrapper'>
-                <input
-                  type='text'
-                  placeholder='Enter city or ZIP Code'
-                  className='city-section-input'
-                  value={searchValue}
-                  onChange={(e) => setSearchValue(e.target.value)}
-                  onKeyPress={handleKeyPress}
-                />
-                <button className='city-section-overlay-button' onClick={handleSearchSubmit}>
-                  <img src={search} alt='Search' />
-                </button>
-              </div>
+              <LocationSearch
+                apiKey={import.meta.env.VITE_REALTOR_API_KEY}
+                placeholder="Enter city, ZIP code, or address"
+                className="city-section-search"
+                inputClassName="city-section-input"
+                buttonClassName="city-section-overlay-button"
+                searchIcon={<img src={searchIcon} alt="Search" />}
+                navigateTo="/property-listings"
+                queryParam="locationId"
+                // Remove this line to use default navigation
+                // onSearch={handleLocationSearch}
+                onSelect={handleLocationSelect}
+                debounceMs={200}
+                suggestionLimit={8}
+              />
             </div>
             <div className='city-section-or-separator'>OR</div>
             <div>

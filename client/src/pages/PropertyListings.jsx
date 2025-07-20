@@ -19,7 +19,7 @@ function PropertyListings() {
   });
 
   useEffect(() => {
-    const locationParam = searchParams.get('location');
+    const locationParam = searchParams.get('locationId');
     if (locationParam) {
       setSearchValue(locationParam);
       setSubmittedLocation(locationParam);
@@ -30,7 +30,7 @@ function PropertyListings() {
     const trimmed = searchValue.trim();
     if (trimmed) {
       setSubmittedLocation(trimmed);
-      navigate(`/property-listings?location=${encodeURIComponent(trimmed)}`);
+      navigate(`/property-listings?locationId=${encodeURIComponent(trimmed)}`);
     }
   };
 
