@@ -74,6 +74,129 @@
   transform: translateY(0.5px);
 }
 
+/* ===== LOADING SKELETON STYLES TO MATCH PROPERTY LISTING CARDS ===== */
+
+.loading-card {
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+  width: 100%;
+  height: auto;
+  min-height: 326.67px;
+  font-family: 'Open Sans', sans-serif;
+  pointer-events: none;
+  opacity: 0.8;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  cursor: default;
+  transition: none; /* Disable hover transitions for loading cards */
+}
+
+/* Loading image skeleton - matches .property-listing-image */
+.loading-card .property-listing-image {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: loading 1.5s infinite;
+  border: none;
+  border-radius: 0;
+  object-fit: unset;
+  display: block;
+}
+
+/* Loading info container - matches .property-listing-info */
+.loading-card .property-listing-info {
+  padding: 0.75rem 1rem 0.875rem 1rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+/* Loading skeleton base styles */
+.loading-skeleton {
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: loading 1.5s infinite;
+  border-radius: 4px;
+}
+
+/* Price skeleton - matches .property-listing-price */
+.loading-price {
+  height: 20px; /* Matches 1.25rem font size */
+  width: 90px;
+  margin: 0;
+  margin-bottom: 16px; /* 1rem margin like in details */
+}
+
+/* Details skeleton - matches .property-listing-details */
+.loading-details {
+  height: 16px; /* Base font size */
+  width: 140px;
+  margin: 0;
+  margin-bottom: 16px; /* 1rem margin */
+}
+
+/* Address skeleton - matches .property-listing-address */
+.loading-address {
+  height: 14px; /* 0.875rem font size */
+  width: 220px;
+  margin: 0;
+  margin-bottom: 4px; /* 0.25rem margin */
+}
+
+/* Building name skeleton - matches .property-listing-building */
+.loading-building {
+  height: 14px; /* 0.875rem font size */
+  width: 160px;
+  margin: 0;
+}
+
+/* Loading animation */
+@keyframes loading {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+/* No results styles */
+.no-results-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 300px;
+  width: 100%;
+  grid-column: 1 / -1; /* Span full width in grid */
+}
+
+.no-results-content {
+  text-align: center;
+  padding: 2rem;
+  color: #666;
+}
+
+.no-results-content h3 {
+  margin-bottom: 1rem;
+  color: #333;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.no-results-content p {
+  margin-bottom: 0.5rem;
+  line-height: 1.5;
+  font-family: 'Open Sans', sans-serif;
+}
+
+/* Disabled button styles */
+button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
 #property-listing-blurs {
   position: absolute;
   top: 0;
@@ -241,5 +364,44 @@
     border: none;
     border-radius: 6px;
     font-size: 1rem;
+  }
+
+  /* ===== MOBILE LOADING CARD STYLES ===== */
+  .loading-card {
+    background-color: transparent;
+    border-radius: 0;
+    box-shadow: none;
+    overflow: visible;
+    padding: 0;
+    width: 100%;
+    max-width: 376px;
+    height: auto;
+    min-height: auto;
+    z-index: 0;
+  }
+
+  .loading-card .property-listing-image {
+    aspect-ratio: unset;
+    height: 300px;
+    border-radius: 12px; /* Mobile has border radius on image */
+  }
+
+  .loading-price {
+    height: 18px; /* 1.125rem mobile font size */
+    margin-bottom: 4px; /* 0.25rem margin on mobile */
+  }
+
+  .loading-details {
+    height: 14px; /* 0.875rem mobile font size */
+    margin: 4px 0; /* 0.25rem margin */
+  }
+
+  .loading-address {
+    height: 14px; /* 0.875rem mobile font size */
+    margin: 4px 0;
+  }
+
+  .loading-building {
+    height: 14px; /* 0.875rem mobile font size */
   }
 }

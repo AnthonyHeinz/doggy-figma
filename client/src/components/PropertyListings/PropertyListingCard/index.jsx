@@ -3,7 +3,8 @@ import { useNavigate } from 'react-router-dom';
 import './styles.css';
 
 function PropertyListingCard({
-  id,
+  listing_id,
+  property_id,
   backgroundImage,
   price,
   beds,
@@ -15,7 +16,7 @@ function PropertyListingCard({
   const navigate = useNavigate();
 
   const handleCardClick = () => {
-    navigate(`/property-details/${id}`);
+    navigate(`/property-details/${property_id}?property_id=${property_id}&listing_id=${listing_id}`);
   };
 
   return (
@@ -28,7 +29,7 @@ function PropertyListingCard({
       <div className='property-listing-info'>
         <h6 className='property-listing-price'>{price}</h6>
         <p className='property-listing-details'>
-          {beds} bds | {baths} ba | {sqft} sqft
+          {beds === 'Studio' ? 'Studio' : `${beds} bds`} | {baths} ba | {sqft} sqft
         </p>
         <p className='property-listing-address'>{address}</p>
         <p className='property-listing-building'>{buildingName}</p>
