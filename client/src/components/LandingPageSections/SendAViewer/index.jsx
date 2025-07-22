@@ -1,6 +1,7 @@
 import React from 'react';
 import './styles.css';
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import ConfirmAndPayPopUp from '../../ConfirmAndPayPopUp/index.jsx';
 import ReusableForm from '../../ReusableForm';
 import dogIcon from '../../../assets/dibby_Dog_Logo.png';
@@ -8,6 +9,7 @@ import dogIcon from '../../../assets/dibby_Dog_Logo.png';
 function SendAViewer({ isOpen, onClose }) {
   const [showConfirmAndPayPopup, setShowConfirmAndPayPopup] = useState(false);
   const [propertyData, setPropertyData] = useState(null);
+  const navigate = useNavigate();
   
   // Default property details (beds, baths, sqft, buildingName) that don't need to be collected in the form
   const defaultPropertyDetails = {
@@ -29,40 +31,40 @@ function SendAViewer({ isOpen, onClose }) {
     zipCode: '',
   };
 
-  const propertyFormValidationSchema = {
-    address: {
-      required: true,
-      requiredMessage: 'Property address is required',
-    },
-    city: {
-      required: true,
-      requiredMessage: 'City is required',
-    },
-    state: {
-      required: true,
-      requiredMessage: 'State is required',
-    },
-    zipCode: {
-      required: true,
-      requiredMessage: 'ZIP code is required',
-      pattern: /^\d{5}(-\d{4})?$/,
-      patternMessage: 'Please enter a valid ZIP code',
-    },
-    propertyUrl: {
-      validate: (value) => {
-        if (value && value.trim() !== '') {
-          // Basic URL validation
-          try {
-            new URL(value);
-            return null;
-          } catch {
-            return 'Please enter a valid URL';
-          }
-        }
-        return null;
-      },
-    },
-  };
+  // const propertyFormValidationSchema = {
+  //   address: {
+  //     required: true,
+  //     requiredMessage: 'Property address is required',
+  //   },
+  //   city: {
+  //     required: true,
+  //     requiredMessage: 'City is required',
+  //   },
+  //   state: {
+  //     required: true,
+  //     requiredMessage: 'State is required',
+  //   },
+  //   zipCode: {
+  //     required: true,
+  //     requiredMessage: 'ZIP code is required',
+  //     pattern: /^\d{5}(-\d{4})?$/,
+  //     patternMessage: 'Please enter a valid ZIP code',
+  //   },
+  //   propertyUrl: {
+  //     validate: (value) => {
+  //       if (value && value.trim() !== '') {
+  //         // Basic URL validation
+  //         try {
+  //           new URL(value);
+  //           return null;
+  //         } catch {
+  //           return 'Please enter a valid URL';
+  //         }
+  //       }
+  //       return null;
+  //     },
+  //   },
+  // };
 
   const propertyFormFields = [
     {
@@ -144,14 +146,18 @@ function SendAViewer({ isOpen, onClose }) {
     // Prepare the complete property data
     const completePropertyData = {
       ...defaultPropertyDetails,
-      location: location,
+      location: location.length > 5 ? location : '',
       propertyUrl: formData.propertyUrl || '',
-      // You could extract building name from address or form data if needed
       buildingName: defaultPropertyDetails.buildingName,
     };
 
-    setPropertyData(completePropertyData);
-    setShowConfirmAndPayPopup(true);
+    // Navigate to checkout page with property data as state
+    navigate('/checkout', {
+      state: {
+        propertyData: completePropertyData,
+        serviceType: 'send-a-viewer'
+      }
+    });
   };
 
   return (
@@ -172,7 +178,6 @@ function SendAViewer({ isOpen, onClose }) {
           
           <ReusableForm
             initialValues={propertyFormInitialValues}
-            validationSchema={propertyFormValidationSchema}
             fields={propertyFormFields}
             onSubmit={handleFormSubmit}
             submitButtonText="Continue to Payment"
@@ -182,7 +187,8 @@ function SendAViewer({ isOpen, onClose }) {
             <StateZipRow />
           </ReusableForm>
           
-          {showConfirmAndPayPopup && propertyData && (
+          {/* TODO: Is this still needed? */}
+          {/* {showConfirmAndPayPopup && propertyData && (
             <ConfirmAndPayPopUp
               isOpen={showConfirmAndPayPopup}
               onClose={() => setShowConfirmAndPayPopup(false)}
@@ -193,7 +199,7 @@ function SendAViewer({ isOpen, onClose }) {
               buildingName={propertyData.buildingName}
               url={propertyData.propertyUrl}
             />
-          )}
+          )} */}
         </div>
         
         <img
