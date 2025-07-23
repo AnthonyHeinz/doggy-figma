@@ -1,5 +1,6 @@
 import { useState, useEffect, useCallback, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { formatSuggestionText } from './formatLocationDisplay';
 
 /**
  * Custom hook for location search with autocomplete functionality
@@ -198,9 +199,8 @@ export const useLocationSearch = ({
 
   // Handle suggestion selection
   const handleSuggestionSelect = useCallback(async (suggestion) => {
-    const displayName = suggestion.city && suggestion.state_code 
-      ? `${suggestion.city}, ${suggestion.state_code}`
-      : suggestion.city || suggestion.id;
+    // Use the proper formatting function
+    const displayName = formatSuggestionText(suggestion);
     
     // Update local state first
     setSearchValue(displayName);

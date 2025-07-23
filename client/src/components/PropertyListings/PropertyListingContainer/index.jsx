@@ -5,6 +5,7 @@ import testDog from '../../../assets/testdog.jpeg';
 import './styles.css';
 import SortDropDown from '../SortDropDown';
 import PropertyListingMap from '../PropertyListingMap';
+import { formatLocationDisplay } from '../../../util/formatLocationDisplay';
 
 function PropertyListingContainer({
   location,
@@ -160,7 +161,7 @@ function PropertyListingContainer({
       <div className='no-results-container'>
         <div className='no-results-content'>
           <h3>No Properties Found</h3>
-          <p>We couldn't find any properties matching your search criteria in {location}.</p>
+          <p>We couldn't find any properties matching your search criteria near {formatLocationDisplay(location)}.</p>
           <p>Try adjusting your search or check back later for new listings.</p>
         </div>
       </div>
@@ -183,7 +184,7 @@ function PropertyListingContainer({
       {!isMobile && <PropertyListingMap />}
       <section className='property-listing-results-container'>
         <h2 className='property-listing-results-container-h2-text'>
-          Properties in {location}
+          Properties near {formatLocationDisplay(location)}
         </h2>
         <div className='property-listing-results-sort-button-container'>
           <h4 className='property-listing-results-sort-button-container-h4-text'>

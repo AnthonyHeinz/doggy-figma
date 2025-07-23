@@ -1,5 +1,6 @@
 import React, { useRef, useEffect } from 'react';
 import { useLocationSearch } from '../../util/useLocationSearch';
+import { formatSuggestionText } from '../../util/formatLocationDisplay';
 import './styles.css';
 
 /**
@@ -97,11 +98,8 @@ const LocationSearch = ({
   }, [closeSuggestions]);
 
   // Format suggestion display text
-  const formatSuggestionText = (suggestion) => {
-    if (suggestion.city && suggestion.state_code) {
-      return `${suggestion.city}, ${suggestion.state_code}`;
-    }
-    return suggestion.city || suggestion.id;
+  const formatSuggestionTextLocal = (suggestion) => {
+    return formatSuggestionText(suggestion);
   };
 
   // Get suggestion type label
@@ -117,6 +115,10 @@ const LocationSearch = ({
         return 'County';
       case 'state':
         return 'State';
+      case 'school':
+        return 'School';
+      case 'university':
+        return 'University';
       default:
         return 'Location';
     }
@@ -206,7 +208,7 @@ const LocationSearch = ({
                 >
                   <div className="location-search-suggestion-content">
                     <div className="location-search-suggestion-text">
-                      {formatSuggestionText(suggestion)}
+                      {formatSuggestionTextLocal(suggestion)}
                     </div>
                     <div className="location-search-suggestion-type">
                       {getSuggestionTypeLabel(suggestion)}

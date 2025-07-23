@@ -8,105 +8,125 @@ import LocationSearch from '../../LocationSearch/index.jsx';
 import './styles.css';
 
 function ListingBar({
-  searchValue,
-  onSearchChange,
   onToggleDropdown,
   dropdownStates,
-  onLocationSearch, // New prop for handling location search
-  isLoading, // New prop to disable search during loading
+  onLocationSearch,
+  isLoading,
+  filters,
+  filterHandlers,
 }) {
   return (
     <section id='property-listing-bar'>
       <div id='property-listing-inputs'>
         <div id='property-listing-search-bar-wrapper'>
-          {/* Replace the simple input/button with LocationSearch */}
           <LocationSearch
             apiKey={import.meta.env.VITE_REALTOR_API_KEY}
             placeholder="Enter city, ZIP code, or address"
-            onSearch={onLocationSearch} // Custom search handler
+            onSearch={onLocationSearch}
             disabled={isLoading}
             className="property-listing-location-search"
             inputClassName="property-listing-search-input"
             buttonClassName="property-listing-search-button"
-            // Don't use navigateTo since we want custom behavior
           />
         </div>
         
-        {/* Keep existing filter dropdowns unchanged */}
         <div className='property-listing-filters-row'>
-          <button
-            type='button'
-            id='property-listing-price'
-            className={dropdownStates.price ? 'selected' : ''}
-            onClick={() => onToggleDropdown('price')}
-            disabled={isLoading}
-          >
-            Price
-            <span
-              className={`property-listing-custom-arrow ${
-                dropdownStates.price ? 'selected' : ''
-              }`}
-            />
-          </button>
-          {dropdownStates.price && (
-            <PriceDropDown onClose={() => onToggleDropdown('price')} />
-          )}
+          <div className="filter-dropdown-wrapper">
+            <button
+              type='button'
+              id='property-listing-price'
+              className={dropdownStates.price ? 'selected' : ''}
+              onClick={() => onToggleDropdown('price')}
+              disabled={isLoading}
+            >
+              Price
+              <span
+                className={`property-listing-custom-arrow ${
+                  dropdownStates.price ? 'selected' : ''
+                }`}
+              />
+            </button>
+            {dropdownStates.price && (
+              <PriceDropDown 
+                onClose={() => onToggleDropdown('price')}
+                onPriceChange={filterHandlers.onPriceChange}
+                currentMin={filters.priceMin}
+                currentMax={filters.priceMax}
+              />
+            )}
+          </div>
 
-          <button
-            type='button'
-            id='property-listing-bed-bath'
-            className={dropdownStates.bedsBaths ? 'selected' : ''}
-            onClick={() => onToggleDropdown('bedsBaths')}
-            disabled={isLoading}
-          >
-            Beds &amp; Bath
-            <span
-              className={`property-listing-custom-arrow ${
-                dropdownStates.bedsBaths ? 'selected' : ''
-              }`}
-            />
-          </button>
-          {dropdownStates.bedsBaths && (
-            <BedAndBathDropDown onClose={() => onToggleDropdown('bedsBaths')} />
-          )}
+          <div className="filter-dropdown-wrapper">
+            <button
+              type='button'
+              id='property-listing-bed-bath'
+              className={dropdownStates.bedsBaths ? 'selected' : ''}
+              onClick={() => onToggleDropdown('bedsBaths')}
+              disabled={isLoading}
+            >
+              Beds &amp; Bath
+              <span
+                className={`property-listing-custom-arrow ${
+                  dropdownStates.bedsBaths ? 'selected' : ''
+                }`}
+              />
+            </button>
+            {dropdownStates.bedsBaths && (
+              <BedAndBathDropDown 
+                onClose={() => onToggleDropdown('bedsBaths')}
+                onBedroomChange={filterHandlers.onBedroomChange}
+                onBathroomChange={filterHandlers.onBathroomChange}
+                currentBedrooms={filters.bedrooms}
+                currentBathrooms={filters.bathrooms}
+              />
+            )}
+          </div>
 
-          <button
-            type='button'
-            className={`property-listing-home-lease-type ${
-              dropdownStates.homeType ? 'selected' : ''
-            }`}
-            onClick={() => onToggleDropdown('homeType')}
-            disabled={isLoading}
-          >
-            Home Type
-            <span
-              className={`property-listing-custom-arrow ${
+          <div className="filter-dropdown-wrapper">
+            <button
+              type='button'
+              className={`property-listing-home-lease-type ${
                 dropdownStates.homeType ? 'selected' : ''
               }`}
-            />
-          </button>
-          {dropdownStates.homeType && (
-            <HomeTypeDropDown onClose={() => onToggleDropdown('homeType')} />
-          )}
+              onClick={() => onToggleDropdown('homeType')}
+              disabled={isLoading}
+            >
+              Home Type
+              <span
+                className={`property-listing-custom-arrow ${
+                  dropdownStates.homeType ? 'selected' : ''
+                }`}
+              />
+            </button>
+            {dropdownStates.homeType && (
+              <HomeTypeDropDown 
+                onClose={() => onToggleDropdown('homeType')}
+                onPropertyTypeChange={filterHandlers.onPropertyTypeChange}
+                currentPropertyTypes={filters.propertyType}
+              />
+            )}
+          </div>
 
-          <button
-            type='type'
-            className={`property-listing-home-lease-type ${
-              dropdownStates.leaseType ? 'selected' : ''
-            }`}
-            onClick={() => onToggleDropdown('leaseType')}
-            disabled={isLoading}
-          >
-            Lease Type
-            <span
-              className={`property-listing-custom-arrow ${
+          <div className="filter-dropdown-wrapper">
+            <button
+              type='type'
+              className={`property-listing-home-lease-type ${
                 dropdownStates.leaseType ? 'selected' : ''
               }`}
-            />
-          </button>
-          {dropdownStates.leaseType && (
-            <LeaseTypeDropDown onClose={() => onToggleDropdown('leaseType')} />
-          )}
+              onClick={() => onToggleDropdown('leaseType')}
+              disabled={isLoading}
+            >
+              Lease Type
+              <span
+                className={`property-listing-custom-arrow ${
+                  dropdownStates.leaseType ? 'selected' : ''
+                }`}
+              />
+            </button>
+            {dropdownStates.leaseType && (
+              <LeaseTypeDropDown onClose={() => onToggleDropdown('leaseType')} />
+            )}
+          </div>
         </div>
       </div>
 

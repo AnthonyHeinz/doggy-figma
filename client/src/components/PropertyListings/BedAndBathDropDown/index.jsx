@@ -1,15 +1,33 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { createPortal } from 'react-dom';
 import '../BedAndBathDropDown/styles.css';
 import { useIsMobile } from '../../../util/useIsMobile';
 
-function BedAndBathDropDown({ onClose }) {
-  const [selectedBed, setSelectedBed] = useState('Any');
-  const [selectedBath, setSelectedBath] = useState('Any');
+function BedAndBathDropDown({ 
+  onClose, 
+  onBedroomChange, 
+  onBathroomChange, 
+  currentBedrooms, 
+  currentBathrooms 
+}) {
+  const [selectedBed, setSelectedBed] = useState(currentBedrooms || 'Any');
+  const [selectedBath, setSelectedBath] = useState(currentBathrooms || 'Any');
   const isMobile = useIsMobile();
 
-  const bedOptions = ['Any', 'Studio', '1+', '2+', '3+'];
-  const bathOptions = ['Any', '1+', '2+', '3+'];
+  const bedOptions = ['Any', 'Studio', '1+', '2+', '3+', '4+', '5+'];
+  const bathOptions = ['Any', '1+', '2+', '3+', '4+', '5+'];
+
+  // Update local state when props change
+  useEffect(() => {
+    setSelectedBed(currentBedrooms || 'Any');
+    setSelectedBath(currentBathrooms || 'Any');
+  }, [currentBedrooms, currentBathrooms]);
+
+  const handleApply = () => {
+    onBedroomChange(selectedBed === 'Any' ? null : selectedBed);
+    onBathroomChange(selectedBath === 'Any' ? null : selectedBath);
+    onClose();
+  };
 
   const dropdown = (
     <div id='bed-and-bath-dropdown-container'>
@@ -41,7 +59,7 @@ function BedAndBathDropDown({ onClose }) {
           </button>
         ))}
       </div>
-      <button id='bed-and-bath-dropdown-apply-button' onClick={onClose}>
+      <button id='bed-and-bath-dropdown-apply-button' onClick={handleApply}>
         Apply
       </button>
     </div>

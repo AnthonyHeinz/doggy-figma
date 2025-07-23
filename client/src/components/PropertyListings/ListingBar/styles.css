@@ -143,6 +143,13 @@
   z-index: 1000;
 }
 
+/* Add these styles after the existing rules */
+
+.filter-dropdown-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
 @media screen and (max-width: 768px) {
   #property-listing-bar {
     flex-direction: column;
