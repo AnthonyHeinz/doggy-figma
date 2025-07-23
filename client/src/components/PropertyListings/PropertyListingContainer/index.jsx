@@ -40,21 +40,11 @@ function PropertyListingContainer({
   // ===== UPDATED LOADING SKELETON COMPONENT =====
   const LoadingCard = ({ index }) => (
     <div className='property-listing-card loading-card'>
-      {/* Image skeleton with exact same structure */}
       <div className='property-listing-image loading-skeleton'></div>
-      
-      {/* Info container with exact same structure */}
       <div className='property-listing-info'>
-        {/* Price skeleton */}
         <div className='loading-skeleton loading-price'></div>
-        
-        {/* Details skeleton */}
         <div className='loading-skeleton loading-details'></div>
-        
-        {/* Address skeleton */}
         <div className='loading-skeleton loading-address'></div>
-        
-        {/* Building name skeleton */}
         <div className='loading-skeleton loading-building'></div>
       </div>
     </div>
@@ -92,6 +82,11 @@ function PropertyListingContainer({
     return addressParts.length > 0 ? addressParts.join(', ') : 'Address not available';
   };
 
+  const formatImageUrl = (url) => {
+    let imageUrlArr = url.split('s.jpg');
+    return imageUrlArr.join('rd-w1280_h960.jpg');
+  }
+
   // TODO: Extract to util folder or something else
   // ===== TRANSFORM API DATA TO COMPONENT FORMAT =====
   const transformedListings = listings.map((listing) => {
@@ -116,7 +111,7 @@ function PropertyListingContainer({
     return {
       listing_id: listing.listing_id,
       property_id: listing.property_id,
-      backgroundImage: listing.primary_photo?.href || testDog,
+      backgroundImage: formatImageUrl(listing.primary_photo?.href) || testDog,
       price: formatPrice(price),
       beds: beds || 'Studio',
       baths: baths || 'N/A', 
@@ -127,25 +122,23 @@ function PropertyListingContainer({
     };
   });
 
-  // ===== UPDATE RESULTS COUNT =====
+  // Update results count
   useEffect(() => {
     if (isLoading) {
-      setResultsNumber(0); // Reset count while loading
+      setResultsNumber(0);
     } else {
       setResultsNumber(paginationData.totalRecords);
     }
   }, [transformedListings.length, isLoading]);
 
-  // ===== RENDER DIFFERENT STATES =====
+  // Render different states
   const renderListingCards = () => {
-    // Show loading skeletons while data is being fetched
     if (isLoading) {
       return Array.from({ length: 8 }).map((_, index) => (
         <LoadingCard key={`loading-${index}`} index={index} />
       ));
     }
 
-    // Show real data when available
     if (transformedListings.length > 0) {
       return transformedListings.map((listing) => (
         <PropertyListingCard
@@ -163,7 +156,6 @@ function PropertyListingContainer({
       ));
     }
 
-    // Show empty state when no results found
     return (
       <div className='no-results-container'>
         <div className='no-results-content'>
@@ -175,7 +167,7 @@ function PropertyListingContainer({
     );
   };
 
-  // ===== RESULTS TEXT LOGIC =====
+  // Results text logic
   const getResultsText = () => {
     if (isLoading) {
       return 'Searching...';
@@ -200,7 +192,7 @@ function PropertyListingContainer({
           <button
             className='property-listing-sort-button'
             onClick={() => onToggleDropdown('sort')}
-            disabled={isLoading} // Disable sort while loading
+            disabled={isLoading}
           >
             Sort <span className='property-listing-sort-icon'>⇅</span>
           </button>

@@ -1,20 +1,17 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
-import { useSearchParams, useNavigate } from 'react-router-dom';
+import { useSearchParams } from 'react-router-dom';
 import Navbar from '../components/Navbar';
 import PropertyListingContainer from '../components/PropertyListings/PropertyListingContainer/index.jsx';
 import ListingBar from '../components/PropertyListings/ListingBar/index.jsx';
 
 function PropertyListings() {
-  const [searchParams] = useSearchParams();
-  const navigate = useNavigate();
-  const [searchValue, setSearchValue] = useState('');
+  const [searchParams, setSearchParams] = useSearchParams();
   const [submittedLocation, setSubmittedLocation] = useState('');
   const [propertyListings, setPropertyListings] = useState([]);
-  const [propertListingsPaginationData, setPropertListingsPaginationData] = useState({})
-
-  // ===== NEW STATE FOR LOADING =====
+  const [propertListingsPaginationData, setPropertListingsPaginationData] = useState({});
   const [isLoading, setIsLoading] = useState(false);
+  const [isSearching, setIsSearching] = useState(false);
   const [dropdownStates, setDropdownStates] = useState({
     price: false,
     bedsBaths: false,
@@ -23,15 +20,33 @@ function PropertyListings() {
     sort: false,
   });
 
+  // Initialize from URL parameters
   useEffect(() => {
-    const locationParam = searchParams.get('locationId');
+    const locationParam = searchParams.get('locationId') || searchParams.get('location');
     if (locationParam) {
-      setSearchValue(locationParam);
       setSubmittedLocation(locationParam);
     }
   }, [searchParams]);
 
-  // ===== ENHANCED API INTEGRATION WITH LOADING STATES =====
+  // Handle location search from LocationSearch component
+  const handleLocationSearch = (searchTerm, locationId) => {
+    // Set immediate search state
+    setIsSearching(true);
+    
+    // Update URL
+    const newSearchParams = new URLSearchParams(searchParams);
+    newSearchParams.set('location', searchTerm);
+    if (locationId) {
+      newSearchParams.set('locationId', locationId);
+    }
+    setSearchParams(newSearchParams);
+    
+    // Use locationId for API call, fallback to searchTerm if no locationId
+    const apiLocation = locationId || searchTerm;
+    setSubmittedLocation(apiLocation);
+  };
+
+  // Enhanced API integration with loading states
   useEffect(() => {
     if (!submittedLocation || submittedLocation.trim() === '') {
       return;
@@ -42,17 +57,14 @@ function PropertyListings() {
     // TODO: Move to util folder or create a custom hook for this
     const fetchPropertyListings = async () => {
       try {
-        // ===== START LOADING =====
         setIsLoading(true);
-        setPropertyListings([]); 
+        setIsSearching(false);
 
         const apiUrl = new URL('https://realtor-search.p.rapidapi.com/properties/search-rent');
         apiUrl.searchParams.append('location', submittedLocation);
         apiUrl.searchParams.append('resultsPerPage', '20');
         apiUrl.searchParams.append('page', '1');
         apiUrl.searchParams.append('sortBy', 'best_match');
-
-        console.log(`📡 Making API request to: ${apiUrl.toString()}`);
 
         const response = await fetch(apiUrl, {
           method: 'GET',
@@ -78,7 +90,6 @@ function PropertyListings() {
           console.log(`📊 Number of properties found: ${data.data.results.length}`);
           console.log('🏠 First property sample:', data.data.results[0]);
         } else {
-          console.log('⚠️ No results array found in API response');
           setPropertyListings([]);
         }
 
@@ -92,19 +103,7 @@ function PropertyListings() {
 
     fetchPropertyListings();
 
-    return () => {
-      console.log(`🧹 Cleanup: API call effect for location "${submittedLocation}" is being cleaned up`);
-    };
-
   }, [submittedLocation]);
-
-  const handleSearchSubmit = () => {
-    const trimmed = searchValue.trim();
-    if (trimmed) {
-      setSubmittedLocation(trimmed);
-      navigate(`/property-listings?locationId=${encodeURIComponent(trimmed)}`);
-    }
-  };
 
   const toggleDropdown = (key) => {
     setDropdownStates((prev) => {
@@ -129,11 +128,10 @@ function PropertyListings() {
     <div>
       <Navbar />
       <ListingBar
-        searchValue={searchValue}
-        onSearchChange={setSearchValue}
         onToggleDropdown={toggleDropdown}
         dropdownStates={dropdownStates}
-        onSearchSubmit={handleSearchSubmit}
+        onLocationSearch={handleLocationSearch}
+        isLoading={isLoading || isSearching}
       />
       {submittedLocation && (
         <PropertyListingContainer
@@ -142,7 +140,7 @@ function PropertyListings() {
           dropdownStates={dropdownStates}
           listings={propertyListings}
           paginationData={propertListingsPaginationData}
-          isLoading={isLoading} 
+          isLoading={isLoading || isSearching}
         />
       )}
     </div>

@@ -82,7 +82,7 @@ const StripeCheckout = ({ priceId = null, metadata = {} }) => {
         {propertyData && (
           <div className="property-summary">
             <h3>Send a Viewer Service</h3>
-            { propertyData.city && propertyData.state && propertyData.zipCode && (
+            { propertyData.location  && (
               <p><strong>Property:</strong> {propertyData.location}</p>
             )}
             {propertyData.propertyUrl && (

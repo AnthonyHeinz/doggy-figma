@@ -6,9 +6,8 @@ import ConfirmAndPayPopUp from '../../ConfirmAndPayPopUp/index.jsx';
 import ReusableForm from '../../ReusableForm';
 import dogIcon from '../../../assets/dibby_Dog_Logo.png';
 
-function SendAViewer({ isOpen, onClose }) {
-  const [showConfirmAndPayPopup, setShowConfirmAndPayPopup] = useState(false);
-  const [propertyData, setPropertyData] = useState(null);
+function SendAViewer({ isOpen, onClose, propertyData = {} }) {
+  // const [showConfirmAndPayPopup, setShowConfirmAndPayPopup] = useState(false);
   const navigate = useNavigate();
   
   // Default property details (beds, baths, sqft, buildingName) that don't need to be collected in the form
@@ -23,12 +22,12 @@ function SendAViewer({ isOpen, onClose }) {
 
   // Form configuration for property information
   const propertyFormInitialValues = {
-    propertyUrl: '',
-    address: '',
-    unit: '',
-    city: '',
-    state: '',
-    zipCode: '',
+    propertyUrl: propertyData.propertyUrl || '',
+    address: propertyData.address.line || '',
+    unit: propertyData.unit || '',
+    city: propertyData.address.city || '',
+    state: propertyData.address.state_code || '',
+    zipCode: propertyData.address.postal_code || '',
   };
 
   // const propertyFormValidationSchema = {

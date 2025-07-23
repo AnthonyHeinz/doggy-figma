@@ -60,6 +60,7 @@ function PropertyDetails() {
           address: data.data.location.address,
           description: data.data.description.text,
           details: data.data.details,
+          propertyUrl: data.data.href,
         };
 
         setPropertyDetails(newPropertyDetails);
@@ -95,7 +96,7 @@ function PropertyDetails() {
       {isLoading ? (
         <PropertyPhotosSkeleton />
       ) : (
-        <PropertyPhotos photos={propertyPhotos} propertyId={property_id} />
+        <PropertyPhotos photos={propertyPhotos} propertyId={property_id} address={propertyDetails.address} />
       )}
       {isLoading ? (
         <ListingContainerSkeleton />

@@ -33,18 +33,7 @@ function ListingContainer({propertyDetails}) {
     sqft: 875,
   });
 
-  const [features, setFeatures] = useState([
-    'Lorem ipsum',
-    'Lorem ipsum',
-    'Lorem ipsum',
-    'Consectetur adipiscing',
-    'Consectetur adipiscing',
-    'Consectetur adipiscing',
-    'Lorem ipsum dolor',
-    'Lorem ipsum dolor',
-    'Lorem ipsum dolor',
-  ]);
-
+  
   function getFeatures(features) {
     
     return features.map((detail) => (
@@ -64,14 +53,23 @@ function ListingContainer({propertyDetails}) {
     
   }
 
+  const formatBuildingType = (type) => {
+    if (!type || typeof type !== 'string') return 'Property Type Not Available';
+    return type
+      .split('_')
+      .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+      .join(' ');
+  };
+
   const addressString = address ? `${address.line}, ${address.city}, ${address.state_code} ${address.postal_code}` : '';
+
   return (
     <div id='property-details-listing-container'>
       <div id='property-details-price-special-features'>
         <section id='property-details-price-bed-bath'>
           <div id='property-details-price-location'>
             <h4>${price}/mo</h4>
-            <h5>{type}</h5>
+            <h5>{formatBuildingType(type)}</h5>
             <p id='property-details-location'>{addressString}</p>
             <p id='property-details-location-two'>
               {property_name ? property_name : ''}
@@ -122,7 +120,7 @@ function ListingContainer({propertyDetails}) {
         ></img>
       </div>
       <div id='property-details-tour-dibby-container'>
-        <TourThisProperty isMobile={isMobile} />
+        <TourThisProperty isMobile={isMobile} propertyData={propertyDetails} />
       </div>
       {gradients.map((_, index) => (
         <div className={`property-details-gradient-${index}`} key={index}></div>

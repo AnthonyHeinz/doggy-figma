@@ -1,10 +1,10 @@
 import React from 'react';
-import PropertySearch from '../../../assets/Property_Listing_Search.png';
 import dogIcon from '../../../assets/dibby_Dog_Logo.png';
 import PriceDropDown from '../PriceDropdown/index.jsx';
 import BedAndBathDropDown from '../BedAndBathDropdown/index.jsx';
 import HomeTypeDropDown from '../HomeTypeDropDown/index.jsx';
 import LeaseTypeDropDown from '../LeaseTypeDropDown/index.jsx';
+import LocationSearch from '../../LocationSearch/index.jsx';
 import './styles.css';
 
 function ListingBar({
@@ -12,33 +12,34 @@ function ListingBar({
   onSearchChange,
   onToggleDropdown,
   dropdownStates,
-  onSearchSubmit,
+  onLocationSearch, // New prop for handling location search
+  isLoading, // New prop to disable search during loading
 }) {
   return (
     <section id='property-listing-bar'>
       <div id='property-listing-inputs'>
         <div id='property-listing-search-bar-wrapper'>
-          <input
-            type='text'
-            id='property-listing-search-bar'
-            placeholder='Enter city or ZIP Code'
-            value={searchValue}
-            onChange={(e) => onSearchChange(e.target.value)}
+          {/* Replace the simple input/button with LocationSearch */}
+          <LocationSearch
+            apiKey={import.meta.env.VITE_REALTOR_API_KEY}
+            placeholder="Enter city, ZIP code, or address"
+            onSearch={onLocationSearch} // Custom search handler
+            disabled={isLoading}
+            className="property-listing-location-search"
+            inputClassName="property-listing-search-input"
+            buttonClassName="property-listing-search-button"
+            // Don't use navigateTo since we want custom behavior
           />
-          <button id='property-listing-search-button' onClick={onSearchSubmit}>
-            <img
-              src={PropertySearch}
-              alt='Property Search'
-              id='property-listing-search-glass'
-            />
-          </button>
         </div>
+        
+        {/* Keep existing filter dropdowns unchanged */}
         <div className='property-listing-filters-row'>
           <button
             type='button'
             id='property-listing-price'
             className={dropdownStates.price ? 'selected' : ''}
             onClick={() => onToggleDropdown('price')}
+            disabled={isLoading}
           >
             Price
             <span
@@ -56,6 +57,7 @@ function ListingBar({
             id='property-listing-bed-bath'
             className={dropdownStates.bedsBaths ? 'selected' : ''}
             onClick={() => onToggleDropdown('bedsBaths')}
+            disabled={isLoading}
           >
             Beds &amp; Bath
             <span
@@ -74,6 +76,7 @@ function ListingBar({
               dropdownStates.homeType ? 'selected' : ''
             }`}
             onClick={() => onToggleDropdown('homeType')}
+            disabled={isLoading}
           >
             Home Type
             <span
@@ -87,11 +90,12 @@ function ListingBar({
           )}
 
           <button
-            type='button'
+            type='type'
             className={`property-listing-home-lease-type ${
               dropdownStates.leaseType ? 'selected' : ''
             }`}
             onClick={() => onToggleDropdown('leaseType')}
+            disabled={isLoading}
           >
             Lease Type
             <span

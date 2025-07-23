@@ -108,6 +108,41 @@
   gap: 1rem;
 }
 
+/* Add these styles to integrate LocationSearch with existing ListingBar styles */
+
+.property-listing-location-search {
+  width: 100%;
+}
+
+.property-listing-location-search .location-search-form {
+  width: 100%;
+}
+
+.property-listing-location-search .location-search-input-container {
+  width: 100%;
+}
+
+.property-listing-location-search .location-search-input-wrapper {
+  width: 100%;
+  position: relative;
+}
+
+.property-listing-search-input {
+  /* Apply your existing search input styles */
+  width: 100%;
+  /* Add any other existing styles from #property-listing-search-bar */
+}
+
+.property-listing-search-button {
+  /* Apply your existing search button styles */
+  /* Add any other existing styles from #property-listing-search-button */
+}
+
+/* Ensure suggestions dropdown appears above other elements */
+.property-listing-location-search .location-search-suggestions {
+  z-index: 1000;
+}
+
 @media screen and (max-width: 768px) {
   #property-listing-bar {
     flex-direction: column;
