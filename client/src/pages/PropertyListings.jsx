@@ -14,6 +14,21 @@ function PropertyListings() {
   const [submittedLocationDisplay, setSubmittedLocationDisplay] = useState('');
   const [propertyListings, setPropertyListings] = useState([]);
   const [propertListingsPaginationData, setPropertListingsPaginationData] = useState({});
+  const [mapBoundary, setMapBoundary] = useState({});
+  // Map Boundary Object looks like this:
+  // {
+  //   "type": ShapeType (circle, polygon, etc.)
+  //   "coordinates": array of array of coordinates
+  // }
+  // For Property Coordinates, consider batchloading from fetch property listings
+  // and then using the map boundary to filter the properties to only include those within the boundary
+  // This will reduce the number of API calls and improve performance
+  // For example, if the map boundary is a circle, we can use the radius to filter the properties
+  // If the map boundary is a polygon, we can use the coordinates to filter the properties
+  // If the map boundary is a rectangle, we can use the coordinates to filter the properties
+  
+
+
   const [isLoading, setIsLoading] = useState(false);
   const [isSearching, setIsSearching] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
@@ -115,11 +130,13 @@ function PropertyListings() {
 
       const data = await response.json();
       
-      
+      console.log('data', data);
       
       if (data.data && data.data.results && Array.isArray(data.data.results)) {
         const newListings = data.data.results;
-        
+        // Setting Map Boundary from first page of results only
+        setMapBoundary(data.data.boundary);
+
         if (append && page > 1) {
           setPropertyListings(prev => [...prev, ...newListings]);
         } else {
