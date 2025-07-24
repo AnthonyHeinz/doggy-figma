@@ -47,7 +47,7 @@ function CitySection() {
                 queryParam="locationId"
                 // Remove this line to use default navigation
                 // onSearch={handleLocationSearch}
-                onSelect={handleLocationSelect}
+                // onSelect={handleLocationSelect}
                 debounceMs={200}
                 suggestionLimit={8}
               />

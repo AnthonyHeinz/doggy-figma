@@ -44,12 +44,11 @@ const CheckoutReturn = () => {
     fetchSessionStatus();
   }, [searchParams]);
 
-  // ✅ CORRECT - Handle Google Sheets submission in useEffect
+  // Handle Google Sheets submission in useEffect
   useEffect(() => {
     const submitToGoogleSheets = async () => {
       if (status === 'complete' && !hasSubmittedToSheets.current) {
-        console.log('Submitting to Google Sheets...');
-        hasSubmittedToSheets.current = true; // Mark as submitted immediately
+        hasSubmittedToSheets.current = true; 
         
         try {
           await handleGoogleSheetsSubmit();

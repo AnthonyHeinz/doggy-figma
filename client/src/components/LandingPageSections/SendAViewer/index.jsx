@@ -23,11 +23,11 @@ function SendAViewer({ isOpen, onClose, propertyData = {} }) {
   // Form configuration for property information
   const propertyFormInitialValues = {
     propertyUrl: propertyData.propertyUrl || '',
-    address: propertyData.address.line || '',
+    address: propertyData.address?.line || '',
     unit: propertyData.unit || '',
-    city: propertyData.address.city || '',
-    state: propertyData.address.state_code || '',
-    zipCode: propertyData.address.postal_code || '',
+    city: propertyData.address?.city || '',
+    state: propertyData.address?.state_code || '',
+    zipCode: propertyData.address?.postal_code || '',
   };
 
   // const propertyFormValidationSchema = {

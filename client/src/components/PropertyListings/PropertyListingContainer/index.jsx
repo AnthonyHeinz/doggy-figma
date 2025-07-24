@@ -1,7 +1,6 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
 import PropertyListingCard from '../PropertyListingCard';
-import testDog from '../../../assets/testdog.jpeg';
 import './styles.css';
 import SortDropDown from '../SortDropDown';
 import PropertyListingMap from '../PropertyListingMap';
@@ -13,11 +12,11 @@ function PropertyListingContainer({
   dropdownStates,
   listings = [],
   paginationData = {},
-  isLoading = false, 
+  isLoading = false,
+  isLoadingMore = false,
+  hasMore = true,
+  lastElementRef,
 }) {
-
-  // TODO: We bring in pagination data to update the results number. 
-  // Pagination for property listings is not implemented yet.
 
   const [resultsNumber, setResultsNumber] = useState(0);
   const [activeMobileView, setActiveMobileView] = useState(null);
@@ -83,12 +82,43 @@ function PropertyListingContainer({
     return addressParts.length > 0 ? addressParts.join(', ') : 'Address not available';
   };
 
+  // ===== SAFE IMAGE URL PROCESSING =====
   const formatImageUrl = (url) => {
-    let imageUrlArr = url.split('s.jpg');
-    return imageUrlArr.join('rd-w1280_h960.jpg');
-  }
+    // Return null for invalid URLs instead of throwing errors
+    if (!url || typeof url !== 'string' || url.trim() === '') {
+      return null;
+    }
+    
+    try {
+      // Only format if it contains the expected pattern
+      if (url.includes('s.jpg')) {
+        let imageUrlArr = url.split('s.jpg');
+        return imageUrlArr.join('rd-w1280_h960.jpg');
+      }
+      // Return original URL if it doesn't match the expected pattern
+      return url;
+    } catch (error) {
+      console.warn('Failed to format image URL:', url, error);
+      return null;
+    }
+  };
 
-  // TODO: Extract to util folder or something else
+  // Process and validate image URLs
+  const processPropertyImage = (photoData) => {
+    if (!photoData || !photoData.href) {
+      return { url: null, hasImage: false };
+    }
+    
+    const formattedUrl = formatImageUrl(photoData.href);
+    
+    // Additional validation for the URL
+    if (formattedUrl && formattedUrl.startsWith('http')) {
+      return { url: formattedUrl, hasImage: true };
+    }
+    
+    return { url: null, hasImage: false };
+  };
+
   // ===== TRANSFORM API DATA TO COMPONENT FORMAT =====
   const transformedListings = listings.map((listing) => {
 
@@ -96,23 +126,29 @@ function PropertyListingContainer({
     let altPrice = listing.list_price_max === listing.list_price_min ? listing.list_price_min : listing.list_price_max;
     let price = listing.list_price ? listing.list_price : altPrice;
 
-    // ===== HANDLE BEDS RANGE ===== CURRENTLY DOESNT ADDRESS BEDS RANGE WHEN BEDS MAX AND MIN ARE NOT THE SAME OR ZERO
-    // NO BEDS POBABLY MEANS STUDIO APARTMENT
+    // ===== HANDLE BEDS RANGE =====
     let altBeds = listing.description?.beds_min === listing.description?.beds_max ? listing.description?.beds_min : listing.description?.beds_max;
     let beds = listing.description?.beds || altBeds;
+    if (beds <= 0) {
+      beds = 'Studio';
+    }
 
-    // ===== HANDLE BATHS RANGE ===== CURRENTLY DOESNT ADDRESS BATHS RANGE WHEN BATHS MAX AND MIN ARE NOT THE SAME OR ZERO
+    // ===== HANDLE BATHS RANGE =====
     let altBaths = listing.description?.baths_min === listing.description?.baths_max ? listing.description?.baths_min : listing.description?.baths_max;
     let baths = listing.description?.baths || altBaths;
 
-    // ===== HANDLE SQFT RANGE ===== CURRENTLY DOESNT ADDRESS SQFT RANGE WHEN SQFT MAX AND MIN ARE NOT THE SAME OR ZERO
+    // ===== HANDLE SQFT RANGE =====
     let altSqft = listing.description?.sqft_min === listing.description?.sqft_max ? listing.description?.sqft_min : listing.description?.sqft_max;
     let sqft = listing.description?.sqft || altSqft;
+    
+    // ===== SAFE IMAGE PROCESSING =====
+    const imageData = processPropertyImage(listing.primary_photo);
     
     return {
       listing_id: listing.listing_id,
       property_id: listing.property_id,
-      backgroundImage: formatImageUrl(listing.primary_photo?.href) || testDog,
+      backgroundImage: imageData.url, // This will be null if no valid image
+      hasImage: imageData.hasImage,
       price: formatPrice(price),
       beds: beds || 'Studio',
       baths: baths || 'N/A', 
@@ -130,7 +166,7 @@ function PropertyListingContainer({
     } else {
       setResultsNumber(paginationData.totalRecords);
     }
-  }, [transformedListings.length, isLoading]);
+  }, [paginationData.totalRecords, isLoading]);
 
   // Render different states
   const renderListingCards = () => {
@@ -141,20 +177,28 @@ function PropertyListingContainer({
     }
 
     if (transformedListings.length > 0) {
-      return transformedListings.map((listing) => (
-        <PropertyListingCard
-          key={listing.listing_id}
-          listing_id={listing.listing_id}
-          property_id={listing.property_id}
-          backgroundImage={listing.backgroundImage}
-          price={listing.price}
-          beds={listing.beds}
-          baths={listing.baths}
-          sqft={listing.sqft}
-          address={listing.address}
-          buildingName={listing.buildingName}
-        />
-      ));
+      return transformedListings.map((listing, index) => {
+        // Attach the infinite scroll ref to the last few items
+        const isLastItem = index === transformedListings.length - 1;
+        const isNearEnd = index >= transformedListings.length - 3;
+        
+        return (
+          <PropertyListingCard
+            key={listing.listing_id}
+            listing_id={listing.listing_id}
+            property_id={listing.property_id}
+            backgroundImage={listing.backgroundImage}
+            hasImage={listing.hasImage} // Add this new prop
+            price={listing.price}
+            beds={listing.beds}
+            baths={listing.baths}
+            sqft={listing.sqft}
+            address={listing.address}
+            buildingName={listing.buildingName}
+            ref={isNearEnd && lastElementRef ? lastElementRef : null}
+          />
+        );
+      });
     }
 
     return (
@@ -203,6 +247,22 @@ function PropertyListingContainer({
         </div>
         <div className='property-listing-card-container'>
           {renderListingCards()}
+          
+          {/* Loading indicator for infinite scroll */}
+          {isLoadingMore && (
+            <div className='infinite-scroll-loading'>
+              {Array.from({ length: 4 }).map((_, index) => (
+                <LoadingCard key={`loading-more-${index}`} index={index} />
+              ))}
+            </div>
+          )}
+          
+          {/* End of results indicator */}
+          {!hasMore && transformedListings.length > 0 && !isLoading && (
+            <div className='end-of-results'>
+              <p>You've reached the end of the results</p>
+            </div>
+          )}
         </div>
         {isMobile && (
           <>

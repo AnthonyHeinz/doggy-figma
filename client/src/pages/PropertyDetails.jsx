@@ -19,7 +19,6 @@ function PropertyDetails() {
 
   useEffect(() => {
     if (!property_id || !listing_id) {
-      console.log('⚠️ Missing required parameters for property details API');
       setError('Missing required parameters');
       setIsLoading(false);
       return;

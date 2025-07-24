@@ -106,6 +106,7 @@
   display: flex;
   flex-direction: row;
   gap: 1rem;
+  margin-left: 1rem;
 }
 
 /* Add these styles to integrate LocationSearch with existing ListingBar styles */

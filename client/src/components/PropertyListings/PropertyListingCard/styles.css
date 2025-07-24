@@ -97,3 +97,54 @@
     margin: 0.25rem 0;
   }
 }
+
+/* Add these styles to your existing CSS */
+
+.property-listing-image-placeholder {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px 8px 0 0;
+}
+
+.property-listing-placeholder-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  opacity: 0.6;
+}
+
+.property-listing-placeholder-icon {
+  width: 48px;
+  height: 48px;
+  opacity: 0.5;
+}
+
+.property-listing-placeholder-text {
+  color: #6c757d;
+  font-size: 0.875rem;
+  font-weight: 500;
+  text-align: center;
+}
+
+/* Mobile styles for placeholder */
+@media screen and (max-width: 768px) {
+  .property-listing-image-placeholder {
+    aspect-ratio: unset;
+    height: 300px;
+    border-radius: 12px;
+  }
+  
+  .property-listing-placeholder-icon {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .property-listing-placeholder-text {
+    font-size: 0.8rem;
+  }
+}

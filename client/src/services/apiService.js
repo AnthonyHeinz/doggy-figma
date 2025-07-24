@@ -61,7 +61,6 @@ class ApiService {
     
     // Extract the data from the server response structure
     // Server returns: { success: true, data: { status: "...", customer_email: "...", payment_status: "..." } }
-    console.log('response', response);
     return {
       status: response.data.status,
       customer_details: response.data.customer_details,

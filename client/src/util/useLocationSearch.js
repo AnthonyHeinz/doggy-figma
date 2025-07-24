@@ -233,9 +233,30 @@ export const useLocationSearch = ({
       return;
     }
 
-    // Perform navigation with current search value
+    // If no location is selected but we have suggestions, automatically use the first one
+    if (!selectedLocationId && suggestions.length > 0) {
+      const firstSuggestion = suggestions[0];
+      const displayName = formatSuggestionText(firstSuggestion);
+      
+      // Update local state to reflect the selection
+      setSearchValue(displayName);
+      setSelectedLocationId(firstSuggestion.id);
+      setShowSuggestions(false);
+      setActiveSuggestionIndex(-1);
+      
+      // Call custom onSelect callback if provided
+      if (onSelect) {
+        onSelect(firstSuggestion, displayName);
+      }
+      
+      // Perform navigation with the first suggestion
+      await performNavigation(displayName, firstSuggestion.id);
+      return;
+    }
+
+    // Perform navigation with current search value (either with selectedLocationId or raw text)
     await performNavigation(trimmed, selectedLocationId);
-  }, [searchValue, selectedLocationId, performNavigation]);
+  }, [searchValue, selectedLocationId, suggestions, onSelect, performNavigation]);
 
   // Handle keyboard navigation
   const handleKeyDown = useCallback((e) => {

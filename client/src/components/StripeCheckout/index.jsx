@@ -34,7 +34,6 @@ const StripeCheckout = ({ priceId = null, metadata = {} }) => {
         })
       };
 
-      console.log('Creating checkout session with metadata:', sessionMetadata);
 
       const data = await apiService.createCheckoutSession(finalPriceId, sessionMetadata);
       return data.clientSecret;

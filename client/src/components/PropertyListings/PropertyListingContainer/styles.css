@@ -405,3 +405,22 @@ button:disabled {
     height: 14px; /* 0.875rem mobile font size */
   }
 }
+
+.infinite-scroll-loading {
+  display: contents;
+}
+
+.end-of-results {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 2rem;
+  color: #666;
+  font-style: italic;
+  border-top: 1px solid #eee;
+  margin-top: 2rem;
+}
+
+.end-of-results p {
+  margin: 0;
+  font-size: 0.9rem;
+}

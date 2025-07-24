@@ -14,8 +14,8 @@ function BedAndBathDropDown({
   const [selectedBath, setSelectedBath] = useState(currentBathrooms || 'Any');
   const isMobile = useIsMobile();
 
-  const bedOptions = ['Any', 'Studio', '1+', '2+', '3+', '4+', '5+'];
-  const bathOptions = ['Any', '1+', '2+', '3+', '4+', '5+'];
+  const bedOptions = ['Any', 'Studio', '1+', '2+', '3+', '4+'];
+  const bathOptions = ['Any', '1+', '2+', '3+', '4+'];
 
   // Update local state when props change
   useEffect(() => {
