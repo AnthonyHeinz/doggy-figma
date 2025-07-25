@@ -24,16 +24,7 @@ function ListingContainer({propertyDetails}) {
 
   const isMobile = useIsMobile();
 
-  const [houseDetails, setHouseDetails] = useState({
-    price: '2800',
-    location: '627 Belmont Ave #6, Los Angeles, CA 90026',
-    buildingName: 'Belmont Apartments',
-    beds: 2,
-    baths: 1,
-    sqft: 875,
-  });
-
-  
+    
   function getFeatures(features) {
     
     return features.map((detail) => (

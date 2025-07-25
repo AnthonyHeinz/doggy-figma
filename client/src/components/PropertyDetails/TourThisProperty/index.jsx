@@ -2,19 +2,10 @@ import React from 'react';
 import { useState } from 'react';
 import './styles.css';
 import dogIcon from '../../../assets/dibby_Dog_Logo.png';
-import ConfirmAndPayPopUp from '../../ConfirmAndPayPopUp';
-import testDog from '../../../assets/testdog.jpeg';
 import SendAViewer from '../../LandingPageSections/SendAViewer';
 
 function TourThisProperty({ isMobile, propertyData }) {
   const [showSendViewerPopup, setShowSendViewerPopup] = useState(false);
-  const [houseDetails] = useState({
-    location: '627 Belmont Ave #6, Los Angeles, CA 90026',
-    buildingName: 'Belmont Apartments',
-    beds: 2,
-    baths: 1,
-    sqft: 875,
-  });
 
   return (
     <>

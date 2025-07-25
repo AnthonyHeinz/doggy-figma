@@ -1,19 +1,9 @@
 import React, { useState } from 'react';
 import './styles.css';
 import { IoIosArrowBack, IoIosArrowForward } from 'react-icons/io';
-import ConfirmAndPayPopUp from '../../ConfirmAndPayPopUp/index.jsx';
-import testDog from '../../../assets/testdog.jpeg';
 
 function SeeAllPhotos({ isOpen, onClose, images, address }) {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [showSendViewerPopup, setShowSendViewerPopup] = useState(false);
-  const [houseDetails, setHouseDetails] = useState({
-    location: '627 Belmont Ave #6, Los Angeles, CA 90026',
-    buildingName: 'Belmont Apartments',
-    beds: 2,
-    baths: 1,
-    sqft: 875,
-  });
 
   if (!isOpen) return null;
 

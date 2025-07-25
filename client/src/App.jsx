@@ -10,7 +10,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 function App() {
   return (
-    <BrowserRouter basename='/doggy-figma/'>
+    <BrowserRouter >
       <Routes>
         <Route path='/' element={<LandingPage />} />
         <Route path='/profile' element={<ProfilePage />} />

@@ -1,8 +1,6 @@
 import React from 'react';
 import './styles.css';
-import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import ConfirmAndPayPopUp from '../../ConfirmAndPayPopUp/index.jsx';
 import ReusableForm from '../../ReusableForm';
 import dogIcon from '../../../assets/dibby_Dog_Logo.png';
 

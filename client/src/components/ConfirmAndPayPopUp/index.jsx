@@ -78,46 +78,8 @@ function ConfirmAndPayPopUp({
     },
   ];
 
-  // Payment form configuration
-  const paymentFormFields = [
-    {
-      name: 'cardNumber',
-      type: 'text',
-      placeholder: 'Card Number',
-      inputClassName: 'confirm-pay-step-container-inputs',
-      containerClassName: 'form-input-container',
-    },
-    {
-      name: 'expiryDate',
-      type: 'text',
-      placeholder: 'MM/YY',
-      inputClassName: 'confirm-pay-step-container-inputs',
-      containerClassName: 'form-input-container',
-    },
-    {
-      name: 'cvc',
-      type: 'text',
-      placeholder: 'CVC',
-      inputClassName: 'confirm-pay-step-container-inputs',
-      containerClassName: 'form-input-container',
-    },
-    {
-      name: 'zipCode',
-      type: 'text',
-      placeholder: 'ZIP Code',
-      inputClassName: 'confirm-pay-step-container-inputs',
-      containerClassName: 'form-input-container',
-    },
-    {
-      name: 'country',
-      type: 'text',
-      placeholder: 'Country/Region',
-      inputClassName: 'confirm-pay-step-container-inputs',
-      containerClassName: 'form-input-container',
-    },
-  ];
-
-  const handleFormSubmit = async (contactFormData, { setFieldError }) => {
+  
+  const handleFormSubmit = async (contactFormData) => {
     setError(null);
 
     try {

@@ -38,7 +38,7 @@ function PropertyListingContainer({
 
   // TODO: Move to Skeleton folder
   // ===== UPDATED LOADING SKELETON COMPONENT =====
-  const LoadingCard = ({ index }) => (
+  const LoadingCard = () => (
     <div className='property-listing-card loading-card'>
       <div className='property-listing-image loading-skeleton'></div>
       <div className='property-listing-info'>
@@ -179,7 +179,6 @@ function PropertyListingContainer({
     if (transformedListings.length > 0) {
       return transformedListings.map((listing, index) => {
         // Attach the infinite scroll ref to the last few items
-        const isLastItem = index === transformedListings.length - 1;
         const isNearEnd = index >= transformedListings.length - 3;
         
         return (

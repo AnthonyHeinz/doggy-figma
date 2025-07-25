@@ -1,6 +1,7 @@
 class ApiService {
   constructor() {
-    this.baseURL = 'http://localhost:3000/api';
+    // Use environment variable for API URL, fallback to production API
+    this.baseURL = import.meta.env.VITE_BACKEND_URL || 'https://dibby-backend.vercel.app/api';
   }
 
   async request(endpoint, options = {}) {

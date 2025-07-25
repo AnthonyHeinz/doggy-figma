@@ -51,8 +51,8 @@ export const usePropertyFilters = () => {
     
     // Prices - format as "min,max"
     if (filters.priceMin || filters.priceMax) {
-      const min = filters.priceMin.replace(/[\$,]/g, '') || '';
-      const max = filters.priceMax.replace(/[\$,]/g, '') || '';
+      const min = filters.priceMin.replace(/[$,]/g, '') || '';
+      const max = filters.priceMax.replace(/[$,]/g, '') || '';
       params.prices = `${min},${max}`;
     }
     

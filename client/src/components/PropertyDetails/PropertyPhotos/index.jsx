@@ -2,7 +2,6 @@ import React from 'react';
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './styles.css';
-import testDog from '../../../assets/testdog.jpeg';
 import photoIcon from '../../../assets/photo_icon.png';
 import SeeAllPhotos from '../SeeAllPhotos';
 
