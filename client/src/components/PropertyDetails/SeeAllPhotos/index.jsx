@@ -4,7 +4,7 @@ import { IoIosArrowBack, IoIosArrowForward } from 'react-icons/io';
 import ConfirmAndPayPopUp from '../../ConfirmAndPayPopUp/index.jsx';
 import testDog from '../../../assets/testdog.jpeg';
 
-function SeeAllPhotos({ isOpen, onClose, images }) {
+function SeeAllPhotos({ isOpen, onClose, images, address }) {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [showSendViewerPopup, setShowSendViewerPopup] = useState(false);
   const [houseDetails, setHouseDetails] = useState({
@@ -30,19 +30,19 @@ function SeeAllPhotos({ isOpen, onClose, images }) {
       <div className='see-all-box' onClick={(e) => e.stopPropagation()}>
         <div className='see-all-header'>
           <div className='see-all-popup-x-back-buttons'>
-            <button
+            {/* <button
               className='see-all-back-button'
               onClick={() => console.log('Back')}
             >
               {'<'} Back to Listing
-            </button>
+            </button> */}
             <button className='see-all-close-button' onClick={onClose}>
               ×
             </button>
           </div>
           <div className='see-all-location-send-viewer-button'>
-            <span>627 Belmont Ave #6, Los Angeles, CA 90026</span>
-            <button
+            <span>{address.line}, {address.city}, {address.state} {address.postal_code}</span>
+            {/* <button
               id='see-all-send-a-viewer-button'
               onClick={() => setShowSendViewerPopup(true)}
             >
@@ -57,7 +57,7 @@ function SeeAllPhotos({ isOpen, onClose, images }) {
               sqft={houseDetails.sqft}
               location={houseDetails.location}
               buildingName={houseDetails.buildingName}
-            />
+            /> */}
           </div>
         </div>
         <div className='see-all-main-container'>

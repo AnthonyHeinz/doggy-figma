@@ -4,8 +4,9 @@ import './styles.css';
 import dogIcon from '../../../assets/dibby_Dog_Logo.png';
 import ConfirmAndPayPopUp from '../../ConfirmAndPayPopUp';
 import testDog from '../../../assets/testdog.jpeg';
+import SendAViewer from '../../LandingPageSections/SendAViewer';
 
-function TourThisProperty({ isMobile }) {
+function TourThisProperty({ isMobile, propertyData }) {
   const [showSendViewerPopup, setShowSendViewerPopup] = useState(false);
   const [houseDetails] = useState({
     location: '627 Belmont Ave #6, Los Angeles, CA 90026',
@@ -61,7 +62,13 @@ function TourThisProperty({ isMobile }) {
         </button>
       )}
 
-      <ConfirmAndPayPopUp
+      <SendAViewer
+        isOpen={showSendViewerPopup}
+        onClose={() => setShowSendViewerPopup(false)}
+        propertyData={propertyData}
+      />
+
+      {/* <ConfirmAndPayPopUp
         isOpen={showSendViewerPopup}
         onClose={() => setShowSendViewerPopup(false)}
         backgroundImage={testDog}
@@ -70,7 +77,7 @@ function TourThisProperty({ isMobile }) {
         sqft={houseDetails.sqft}
         location={houseDetails.location}
         buildingName={houseDetails.buildingName}
-      />
+      /> */}
     </>
   );
 }

@@ -1,17 +1,28 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './styles.css';
 import { createPortal } from 'react-dom';
 import { useIsMobile } from '../../../util/useIsMobile';
 
-function HomeTypeDropDown({ onClose }) {
-  const homeTypes = ['Room', 'Apartment', 'Condo', 'House'];
-  const [selectedTypes, setSelectedTypes] = useState([]);
+function HomeTypeDropDown({ onClose, onPropertyTypeChange, currentPropertyTypes }) {
+  // Updated to match API property types
+  const homeTypes = ['Apartment', 'Condo', 'House', 'Room'];
+  const [selectedTypes, setSelectedTypes] = useState(currentPropertyTypes || []);
   const isMobile = useIsMobile();
+
+  // Update local state when props change
+  useEffect(() => {
+    setSelectedTypes(currentPropertyTypes || []);
+  }, [currentPropertyTypes]);
 
   const handleToggle = (type) => {
     setSelectedTypes((prev) =>
       prev.includes(type) ? prev.filter((t) => t !== type) : [...prev, type]
     );
+  };
+
+  const handleApply = () => {
+    onPropertyTypeChange(selectedTypes);
+    onClose();
   };
 
   const dropdown = (
@@ -27,7 +38,7 @@ function HomeTypeDropDown({ onClose }) {
           {type}
         </label>
       ))}
-      <button id='home-type-dropdown-apply-button' onClick={onClose}>
+      <button id='home-type-dropdown-apply-button' onClick={handleApply}>
         Apply
       </button>
     </div>

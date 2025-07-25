@@ -6,16 +6,10 @@ import testDog from '../../../assets/testdog.jpeg';
 import photoIcon from '../../../assets/photo_icon.png';
 import SeeAllPhotos from '../SeeAllPhotos';
 
-function PropertyPhotos() {
+function PropertyPhotos({photos, address}) {
   const navigate = useNavigate();
   
-  const [images, setImages] = useState([
-    testDog,
-    testDog,
-    testDog,
-    testDog,
-    testDog,
-  ]);
+  const [images, setImages] = useState([]);
 
   const [showAllPhotosPopup, setShowAllPhotosPopup] = useState(false);
   const [startIndex, setStartIndex] = useState(0);
@@ -32,7 +26,16 @@ function PropertyPhotos() {
     return 1;
   }
 
+  const formatImageUrl = (url) => {
+    let imageUrlArr = url.split('s.jpg');
+    return imageUrlArr.join('rd-w1280_h960.jpg');
+  }
+
   const isMobile = visibleCount === 1;
+
+  useEffect(() => {
+    setImages(photos.map(photo => formatImageUrl(photo.href)));
+  }, [photos]);
 
   useEffect(() => {
     const handleResize = () => {
@@ -130,7 +133,7 @@ function PropertyPhotos() {
             />
           </div>
           <div className='property-details-photo-grid'>
-            {images.slice(1).map((src, index) => (
+            {images.slice(1,5).map((src, index) => (
               <img
                 key={index}
                 src={src}
@@ -157,6 +160,7 @@ function PropertyPhotos() {
       <SeeAllPhotos
         isOpen={showAllPhotosPopup}
         onClose={() => setShowAllPhotosPopup(false)}
+        address={address}
         images={images}
       />
     </div>

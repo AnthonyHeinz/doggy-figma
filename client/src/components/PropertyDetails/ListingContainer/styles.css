@@ -216,3 +216,11 @@
   pointer-events: none;
   z-index: -1;
 }
+
+.skeleton-margin-top {
+  margin-top: 8px;
+}
+
+.skeleton-margin-small {
+  margin-top: 4px;
+}

@@ -4,8 +4,10 @@ import './styles.css';
 import TourThisProperty from '../TourThisProperty';
 import NeighborhoodTestImage from '../../../assets/Neighborhood_Test_Image.png';
 
-function ListingContainer() {
+function ListingContainer({propertyDetails}) {
   const gradients = [0, 1, 2, 3, 4];
+  const {price, beds, baths, sqft, type, property_name, address, description, details} = propertyDetails;
+  
 
   function useIsMobile() {
     const [isMobile, setIsMobile] = useState(false);
@@ -31,45 +33,64 @@ function ListingContainer() {
     sqft: 875,
   });
 
-  const [features, setFeatures] = useState([
-    'Lorem ipsum',
-    'Lorem ipsum',
-    'Lorem ipsum',
-    'Consectetur adipiscing',
-    'Consectetur adipiscing',
-    'Consectetur adipiscing',
-    'Lorem ipsum dolor',
-    'Lorem ipsum dolor',
-    'Lorem ipsum dolor',
-  ]);
+  
+  function getFeatures(features) {
+    
+    return features.map((detail) => (
+      <div key={detail.category}>
+        <h6 id='property-details-apartment-features-h6-text'>
+          {detail.category}
+        </h6>
+        <ul className='property-details-list-container'>
+          {detail.text.map((feature, index) => (
+            <li className='property-details-list-item' key={index}>
+              {feature}
+            </li>
+          ))}
+        </ul>
+      </div>
+    ))
+    
+  }
+
+  const formatBuildingType = (type) => {
+    if (!type || typeof type !== 'string') return 'Property Type Not Available';
+    return type
+      .split('_')
+      .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+      .join(' ');
+  };
+
+  const addressString = address ? `${address.line}, ${address.city}, ${address.state_code} ${address.postal_code}` : '';
 
   return (
     <div id='property-details-listing-container'>
       <div id='property-details-price-special-features'>
         <section id='property-details-price-bed-bath'>
           <div id='property-details-price-location'>
-            <h4>${houseDetails.price}/mo</h4>
-            <p id='property-details-location'>{houseDetails.location}</p>
+            <h4>${price}/mo</h4>
+            <h5>{formatBuildingType(type)}</h5>
+            <p id='property-details-location'>{addressString}</p>
             <p id='property-details-location-two'>
-              {houseDetails.buildingName}
+              {property_name ? property_name : ''}
             </p>
           </div>
           <div id='property-details-bed-bath-sqft'>
             <div className='property-listing-contents'>
               <h4 className='property-details-bed-bath-sqft-h4-text'>
-                {houseDetails.beds}
+                {beds < 1 ? 'Studio' : beds}
               </h4>
               <p>beds</p>
             </div>
             <div className='property-listing-contents'>
               <h4 className='property-details-bed-bath-sqft-h4-text'>
-                {houseDetails.baths}
+                {baths}
               </h4>
-              <p>baths</p>
+              <p>{baths === 1 ? 'bath' : 'baths'}</p>
             </div>
             <div className='property-listing-contents'>
               <h4 className='property-details-bed-bath-sqft-h4-text'>
-                {houseDetails.sqft}
+                {sqft}
               </h4>
               <p>sqft</p>
             </div>
@@ -80,30 +101,15 @@ function ListingContainer() {
             What's Special
           </h4>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat. Duis aute irure dolor in
-            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-            culpa qui officia deserunt mollit anim id est laborum.
+            {description ? description : ''}
           </p>
         </section>
         <div className='property-details-grey-line'></div>
         <section id='property-details-apartment-features'>
           <h4 className='property-details-bed-bath-sqft-h4-text'>
-            Apartment Features
+            Features & Amenities
           </h4>
-          <h6 id='property-details-apartment-features-h6-text'>
-            Features & Appliances
-          </h6>
-          <div className='property-details-list-container'>
-            {features.map((item, index) => (
-              <span className='property-details-list-item' key={index}>
-                {item}
-              </span>
-            ))}
-          </div>
+          {details ? getFeatures(details) : ''}
         </section>
         <div className='property-details-grey-line'></div>
         <h4 className='property-details-bed-bath-sqft-h4-text'>Neighborhood</h4>
@@ -114,7 +120,7 @@ function ListingContainer() {
         ></img>
       </div>
       <div id='property-details-tour-dibby-container'>
-        <TourThisProperty isMobile={isMobile} />
+        <TourThisProperty isMobile={isMobile} propertyData={propertyDetails} />
       </div>
       {gradients.map((_, index) => (
         <div className={`property-details-gradient-${index}`} key={index}></div>

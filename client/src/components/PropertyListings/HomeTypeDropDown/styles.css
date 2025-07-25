@@ -1,8 +1,8 @@
 .home-type-dropdown-container {
   font-family: 'Open Sans', sans-serif;
   position: absolute;
-  top: 63px;
-  left: 812px;
+  top: calc(100% + 8px); /* Position below button with 8px gap */
+  left: 0; /* Align with left edge of button */
   max-width: 262px;
   width: 16.375rem;
   background-color: #ffffff;

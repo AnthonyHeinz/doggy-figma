@@ -3,6 +3,8 @@ import './styles.css';
 import { useState } from 'react';
 import dogIcon from '../../assets/dibby_Dog_Logo.png';
 import PaymentSuccessful from '../PaymentSuccessful';
+import ReusableForm from '../ReusableForm';
+import { apiService } from '../../services/apiService';
 
 function ConfirmAndPayPopUp({
   isOpen,
@@ -13,10 +15,142 @@ function ConfirmAndPayPopUp({
   sqft,
   location,
   buildingName,
+  url,
 }) {
-  const [showPaymentSuccessfulPopup, setShowPaymentSuccessfulPopup] =
-    useState(false);
+  const [showPaymentSuccessfulPopup, setShowPaymentSuccessfulPopup] = useState(false);
+  const [error, setError] = useState(null);
+
   if (!isOpen) return null;
+
+  // Contact form configuration
+  const contactFormInitialValues = {
+    fullName: '',
+    phoneNumber: '',
+    email: '',
+  };
+
+  const contactFormValidationSchema = {
+    fullName: {
+      required: true,
+      requiredMessage: 'Full name is required',
+    },
+    phoneNumber: {
+      required: true,
+      requiredMessage: 'Phone number is required',
+      pattern: /^\d{10,}$/,
+      validate: (value) => {
+        const cleaned = value.replace(/\D/g, '');
+        if (cleaned.length < 10) {
+          return 'Please enter a valid phone number';
+        }
+        return null;
+      },
+    },
+    email: {
+      required: true,
+      requiredMessage: 'Email is required',
+      pattern: /\S+@\S+\.\S+/,
+      patternMessage: 'Please enter a valid email address',
+    },
+  };
+
+  const contactFormFields = [
+    {
+      name: 'fullName',
+      type: 'text',
+      placeholder: 'Full Name',
+      inputClassName: 'confirm-pay-step-container-inputs',
+      containerClassName: 'form-input-container',
+    },
+    {
+      name: 'phoneNumber',
+      type: 'tel',
+      placeholder: 'Phone Number',
+      inputClassName: 'confirm-pay-step-container-inputs',
+      containerClassName: 'form-input-container',
+    },
+    {
+      name: 'email',
+      type: 'email',
+      placeholder: 'Email Address',
+      inputClassName: 'confirm-pay-step-container-inputs',
+      containerClassName: 'form-input-container',
+    },
+  ];
+
+  // Payment form configuration
+  const paymentFormFields = [
+    {
+      name: 'cardNumber',
+      type: 'text',
+      placeholder: 'Card Number',
+      inputClassName: 'confirm-pay-step-container-inputs',
+      containerClassName: 'form-input-container',
+    },
+    {
+      name: 'expiryDate',
+      type: 'text',
+      placeholder: 'MM/YY',
+      inputClassName: 'confirm-pay-step-container-inputs',
+      containerClassName: 'form-input-container',
+    },
+    {
+      name: 'cvc',
+      type: 'text',
+      placeholder: 'CVC',
+      inputClassName: 'confirm-pay-step-container-inputs',
+      containerClassName: 'form-input-container',
+    },
+    {
+      name: 'zipCode',
+      type: 'text',
+      placeholder: 'ZIP Code',
+      inputClassName: 'confirm-pay-step-container-inputs',
+      containerClassName: 'form-input-container',
+    },
+    {
+      name: 'country',
+      type: 'text',
+      placeholder: 'Country/Region',
+      inputClassName: 'confirm-pay-step-container-inputs',
+      containerClassName: 'form-input-container',
+    },
+  ];
+
+  const handleFormSubmit = async (contactFormData, { setFieldError }) => {
+    setError(null);
+
+    try {
+      // Prepare data for Google Sheets
+      const currentDate = new Date().toISOString();
+      const rowData = [
+        [
+          currentDate,           // Timestamp
+          contactFormData.fullName,     // Full Name
+          contactFormData.email,        // Email
+          contactFormData.phoneNumber,  // Phone
+          location,              // Property Address
+          buildingName,          // Building Name
+          `${beds} beds, ${baths} baths, ${sqft} sqft`, // Property Details
+          '$49',                 // Payment Amount
+          'Confirmed',            // Status
+          url,                    // Property URL
+        ]
+      ];
+
+      // Send to Google Sheets API
+      await apiService.addRowToSheet('Sheet1!A:I', rowData);
+      
+      // Show success popup
+      setShowPaymentSuccessfulPopup(true);
+      
+    } catch (err) {
+      setError('Failed to process payment. Please try again.');
+      console.error('Submission error:', err);
+      throw err; // Re-throw to let form handle the error state
+    }
+  };
+
   return (
     <div className='confirm-pay-popup-overlay' onClick={onClose}>
       <div
@@ -93,66 +227,75 @@ function ConfirmAndPayPopUp({
               <h6 className='confirm-pay-step-container-h6-text'>
                 2. Enter contact information
               </h6>
-              <input
-                type='text'
-                placeholder='Full Name'
-                className='confirm-pay-step-container-inputs'
-              />
-              <input
-                type='text'
-                placeholder='Phone Number'
-                className='confirm-pay-step-container-inputs'
-              />
-              <input
-                type='email'
-                placeholder='Email Address'
-                className='confirm-pay-step-container-inputs'
-              />
+              
+              {error && (
+                <div className="error-message">
+                  {error}
+                </div>
+              )}
 
-              <h6 className='confirm-pay-step-container-h6-text'>
-                3. Add Payment Method
-              </h6>
-              <input
-                type='text'
-                placeholder='Card Number'
-                className='confirm-pay-step-container-inputs'
-              />
-              <div className='confirm-pay-input-row'>
-                <input
-                  type='text'
-                  placeholder='MM/YY'
-                  className='confirm-pay-step-container-inputs'
-                />
-                <input
-                  type='text'
-                  placeholder='CVC'
-                  className='confirm-pay-step-container-inputs'
-                />
-              </div>
-              <input
-                type='text'
-                placeholder='ZIP Code'
-                className='confirm-pay-step-container-inputs'
-              />
-              <input
-                type='text'
-                placeholder='Country/Region'
-                className='confirm-pay-step-container-inputs'
-              />
+              <ReusableForm
+                initialValues={contactFormInitialValues}
+                validationSchema={contactFormValidationSchema}
+                fields={contactFormFields}
+                onSubmit={handleFormSubmit}
+                submitButtonText="Confirm and Pay"
+                className="contact-form"
+              >
+                <h6 className='confirm-pay-step-container-h6-text'>
+                  3. Add Payment Method
+                </h6>
+                
+                {/* Payment fields - could also be converted to use ReusableForm */}
+                <div className="form-input-container">
+                  <input
+                    type='text'
+                    placeholder='Card Number'
+                    className='confirm-pay-step-container-inputs'
+                  />
+                </div>
+                <div className='confirm-pay-input-row'>
+                  <div className="form-input-container">
+                    <input
+                      type='text'
+                      placeholder='MM/YY'
+                      className='confirm-pay-step-container-inputs'
+                    />
+                  </div>
+                  <div className="form-input-container">
+                    <input
+                      type='text'
+                      placeholder='CVC'
+                      className='confirm-pay-step-container-inputs'
+                    />
+                  </div>
+                </div>
+                <div className="form-input-container">
+                  <input
+                    type='text'
+                    placeholder='ZIP Code'
+                    className='confirm-pay-step-container-inputs'
+                  />
+                </div>
+                <div className="form-input-container">
+                  <input
+                    type='text'
+                    placeholder='Country/Region'
+                    className='confirm-pay-step-container-inputs'
+                  />
+                </div>
+              </ReusableForm>
             </div>
-            <button
-              id='confirm-pay-send-a-viewer-button'
-              onClick={() => setShowPaymentSuccessfulPopup(true)}
-            >
-              Confirm and Pay
-            </button>
           </section>
         </div>
         <img src={dogIcon} alt='dog icon' className='confirm-pay-dog-icon' />
       </div>
       <PaymentSuccessful
         isOpen={showPaymentSuccessfulPopup}
-        onClose={() => setShowPaymentSuccessfulPopup(false)}
+        onClose={() => {
+          setShowPaymentSuccessfulPopup(false);
+          onClose(); // Close the main popup too
+        }}
       />
     </div>
   );
