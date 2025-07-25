@@ -134,11 +134,6 @@
   /* Add any other existing styles from #property-listing-search-bar */
 }
 
-.property-listing-search-button {
-  /* Apply your existing search button styles */
-  /* Add any other existing styles from #property-listing-search-button */
-}
-
 /* Ensure suggestions dropdown appears above other elements */
 .property-listing-location-search .location-search-suggestions {
   z-index: 1000;

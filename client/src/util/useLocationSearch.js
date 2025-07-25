@@ -78,7 +78,7 @@ export const useLocationSearch = ({
         try {
           const errorBody = await response.text();
           errorDetails = errorBody;
-        } catch (e) {
+        } catch {
           // Ignore error reading response body
         }
 
@@ -160,6 +160,7 @@ export const useLocationSearch = ({
       }
       return true;
     } catch (err) {
+      console.error('Search failed:', err);
       setError('Search failed. Please try again.');
       return false;
     } finally {

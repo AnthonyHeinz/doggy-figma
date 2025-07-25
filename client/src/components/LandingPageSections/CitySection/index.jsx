@@ -8,16 +8,16 @@ function CitySection() {
   const [showSendAViewerPopup, setShowSendAViewerPopup] = useState(false);
 
   // Handle custom search logic if needed
-  const handleLocationSearch = async (searchTerm, locationId) => {
-    console.log('Searching for:', searchTerm, 'Location ID:', locationId);
-    // Custom search logic can be implemented here
-  };
+  // const handleLocationSearch = async (searchTerm, locationId) => {
+  //   console.log('Searching for:', searchTerm, 'Location ID:', locationId);
+  //   // Custom search logic can be implemented here
+  // };
 
-  // Handle location selection
-  const handleLocationSelect = (suggestion, displayName) => {
-    console.log('Selected location:', suggestion, 'Display name:', displayName);
-    // Custom selection logic can be implemented here
-  };
+  // // Handle location selection
+  // const handleLocationSelect = (suggestion, displayName) => {
+  //   console.log('Selected location:', suggestion, 'Display name:', displayName);
+  //   // Custom selection logic can be implemented here
+  // };
 
   return (
     <div className='city-section-wrapper'>

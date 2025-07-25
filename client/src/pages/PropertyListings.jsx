@@ -15,6 +15,7 @@ function PropertyListings() {
   const [propertyListings, setPropertyListings] = useState([]);
   const [propertListingsPaginationData, setPropertListingsPaginationData] = useState({});
   const [mapBoundary, setMapBoundary] = useState({});
+  console.log('mapBoundary', mapBoundary);
   // Map Boundary Object looks like this:
   // {
   //   "type": ShapeType (circle, polygon, etc.)

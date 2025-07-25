@@ -14,7 +14,7 @@ const StripeCheckout = ({ priceId = null, metadata = {} }) => {
   const location = useLocation();
   
   // Get property data from navigation state
-  const { propertyData, serviceType } = location.state || {};
+  const { propertyData } = location.state || {};
 
   const fetchClientSecret = useCallback(async () => {
     try {
@@ -44,7 +44,7 @@ const StripeCheckout = ({ priceId = null, metadata = {} }) => {
     } finally {
       setIsLoading(false);
     }
-  }, [priceId, metadata, propertyData, serviceType]);
+  }, [priceId, metadata, propertyData]);
 
   const options = { 
     fetchClientSecret,
