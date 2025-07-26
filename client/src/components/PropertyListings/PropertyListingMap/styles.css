@@ -8,12 +8,23 @@
   overflow: hidden;
 }
 
-.property-listing-map-image {
-  width: 100%;
+.spinner-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   height: 100%;
-  object-fit: cover;
-  display: block;
 }
+
+.spinner {
+  font-size: 2rem;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
 
 @media screen and (max-width: 768px) {
   .property-listing-map {

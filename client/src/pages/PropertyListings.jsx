@@ -1,11 +1,10 @@
-import React from 'react';
-import { useState, useEffect, useCallback, useMemo } from 'react';
+import { useCallback, useEffect, useMemo, useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import Navbar from '../components/Navbar';
-import PropertyListingContainer from '../components/PropertyListings/PropertyListingContainer/index.jsx';
 import ListingBar from '../components/PropertyListings/ListingBar/index.jsx';
-import { usePropertyFilters } from '../hooks/usePropertyFilters.js';
+import PropertyListingContainer from '../components/PropertyListings/PropertyListingContainer/index.jsx';
 import { useInfiniteScroll } from '../hooks/useInfiniteScroll.js';
+import { usePropertyFilters } from '../hooks/usePropertyFilters.js';
 import { formatLocationDisplay } from '../util/formatLocationDisplay';
 
 function PropertyListings() {
@@ -27,7 +26,7 @@ function PropertyListings() {
   // For example, if the map boundary is a circle, we can use the radius to filter the properties
   // If the map boundary is a polygon, we can use the coordinates to filter the properties
   // If the map boundary is a rectangle, we can use the coordinates to filter the properties
-  
+
 
 
   const [isLoading, setIsLoading] = useState(false);
@@ -42,7 +41,7 @@ function PropertyListings() {
   });
 
   const { filters, updateFilter, updatePriceFilter, clearFilters, apiFilters } = usePropertyFilters();
-  
+
   const {
     lastElementRef,
     setLoadMoreCallback,
@@ -62,26 +61,26 @@ function PropertyListings() {
 
   // Handle location search from LocationSearch component
   const handleLocationSearch = useCallback((searchTerm, locationId) => {
-    
+
     // Prevent duplicate calls with the same parameters
     if (submittedLocation === (locationId || searchTerm) && !isSearching) {
       return;
     }
-    
+
     setIsSearching(true);
-    
+
     const newSearchParams = new URLSearchParams(searchParams);
     newSearchParams.set('location', searchTerm);
     if (locationId) {
       newSearchParams.set('locationId', locationId);
     }
     setSearchParams(newSearchParams);
-    
+
     // Reset pagination when searching new location
     setCurrentPage(1);
     setPropertyListings([]);
     setHasMore(true);
-    
+
     const apiLocation = locationId || searchTerm;
     setSubmittedLocation(apiLocation);
     setSubmittedLocationDisplay(searchTerm);
@@ -130,9 +129,9 @@ function PropertyListings() {
       }
 
       const data = await response.json();
-      
+
       console.log('data', data);
-      
+
       if (data.data && data.data.results && Array.isArray(data.data.results)) {
         const newListings = data.data.results;
         // Setting Map Boundary from first page of results only
@@ -143,12 +142,12 @@ function PropertyListings() {
         } else {
           setPropertyListings(newListings);
         }
-        
+
         setPropertListingsPaginationData(data.meta || {});
-        
+
         const totalPages = data.meta ? Math.ceil(data.meta.totalRecords / 20) : 1;
         setHasMore(page < totalPages);
-        
+
       } else {
         if (!append) {
           setPropertyListings([]);
@@ -248,6 +247,7 @@ function PropertyListings() {
           onToggleDropdown={toggleDropdown}
           dropdownStates={dropdownStates}
           listings={propertyListings}
+          boundary={mapBoundary}
           paginationData={propertListingsPaginationData}
           isLoading={isLoading || isSearching}
           isLoadingMore={isLoadingMore}

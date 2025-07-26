@@ -14,6 +14,7 @@ function PropertyListingContainer({
   isLoading = false,
   isLoadingMore = false,
   hasMore = true,
+  boundary,
   lastElementRef,
 }) {
 
@@ -224,7 +225,7 @@ function PropertyListingContainer({
 
   return (
     <div className='property-listing-results-map-container'>
-      {!isMobile && <PropertyListingMap listings={transformedListings} />}
+      {!isMobile && <PropertyListingMap listings={transformedListings} boundary={boundary} />}
       <section className='property-listing-results-container'>
         <h2 className='property-listing-results-container-h2-text'>
           Properties near {formatLocationDisplay(location)}
@@ -284,7 +285,7 @@ function PropertyListingContainer({
             </div>
             {activeMobileView === 'map' && !isLoading && (
               <div className='property-listing-mobile-overlay'>
-                <PropertyListingMap listings={transformedListings} />
+                <PropertyListingMap listings={transformedListings} boundary={boundary} />
                 <button
                   onClick={() => setActiveMobileView(null)}
                   className='property-listing-mobile-overlay-button'
