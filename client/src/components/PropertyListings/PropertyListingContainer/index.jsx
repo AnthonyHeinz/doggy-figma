@@ -1,10 +1,9 @@
-import React from 'react';
-import { useState, useEffect } from 'react';
-import PropertyListingCard from '../PropertyListingCard';
-import './styles.css';
-import SortDropDown from '../SortDropDown';
-import PropertyListingMap from '../PropertyListingMap';
+import { useEffect, useState } from 'react';
 import { formatLocationDisplay } from '../../../util/formatLocationDisplay';
+import PropertyListingCard from '../PropertyListingCard';
+import PropertyListingMap from '../PropertyListingMap';
+import SortDropDown from '../SortDropDown';
+import './styles.css';
 
 function PropertyListingContainer({
   location,
@@ -70,15 +69,15 @@ function PropertyListingContainer({
   // Helper function to construct full address from location object
   const formatAddress = (locationObj) => {
     if (!locationObj?.address) return 'Address not available';
-    
+
     const { line, city, state_code, postal_code } = locationObj.address;
     const addressParts = [];
-    
+
     if (line) addressParts.push(line);
     if (city) addressParts.push(city);
     if (state_code) addressParts.push(state_code);
     if (postal_code) addressParts.push(postal_code);
-    
+
     return addressParts.length > 0 ? addressParts.join(', ') : 'Address not available';
   };
 
@@ -88,7 +87,7 @@ function PropertyListingContainer({
     if (!url || typeof url !== 'string' || url.trim() === '') {
       return null;
     }
-    
+
     try {
       // Only format if it contains the expected pattern
       if (url.includes('s.jpg')) {
@@ -108,21 +107,21 @@ function PropertyListingContainer({
     if (!photoData || !photoData.href) {
       return { url: null, hasImage: false };
     }
-    
+
     const formattedUrl = formatImageUrl(photoData.href);
-    
+
     // Additional validation for the URL
     if (formattedUrl && formattedUrl.startsWith('http')) {
       return { url: formattedUrl, hasImage: true };
     }
-    
+
     return { url: null, hasImage: false };
   };
 
   // ===== TRANSFORM API DATA TO COMPONENT FORMAT =====
   const transformedListings = listings.map((listing) => {
 
-    // ===== HANDLE PRICE RANGE ===== CURRENTLY DOESNT ADDRESS PRICE RANGE WHEN PRICE MAX AND MIN ARE NOT THE SAME
+    // ===== HANDLE PRICE RANGE ===== CURRENTLY DOESN'T ADDRESS PRICE RANGE WHEN PRICE MAX AND MIN ARE NOT THE SAME
     let altPrice = listing.list_price_max === listing.list_price_min ? listing.list_price_min : listing.list_price_max;
     let price = listing.list_price ? listing.list_price : altPrice;
 
@@ -140,10 +139,10 @@ function PropertyListingContainer({
     // ===== HANDLE SQFT RANGE =====
     let altSqft = listing.description?.sqft_min === listing.description?.sqft_max ? listing.description?.sqft_min : listing.description?.sqft_max;
     let sqft = listing.description?.sqft || altSqft;
-    
+
     // ===== SAFE IMAGE PROCESSING =====
     const imageData = processPropertyImage(listing.primary_photo);
-    
+
     return {
       listing_id: listing.listing_id,
       property_id: listing.property_id,
@@ -151,11 +150,12 @@ function PropertyListingContainer({
       hasImage: imageData.hasImage,
       price: formatPrice(price),
       beds: beds || 'Studio',
-      baths: baths || 'N/A', 
+      baths: baths || 'N/A',
       sqft: sqft || 'N/A',
       address: formatAddress(listing.location),
       buildingName: formatBuildingType(listing.description?.type),
       url: listing.href,
+      coordinates: listing.location.address.coordinate
     };
   });
 
@@ -180,7 +180,7 @@ function PropertyListingContainer({
       return transformedListings.map((listing, index) => {
         // Attach the infinite scroll ref to the last few items
         const isNearEnd = index >= transformedListings.length - 3;
-        
+
         return (
           <PropertyListingCard
             key={listing.listing_id}
@@ -224,7 +224,7 @@ function PropertyListingContainer({
 
   return (
     <div className='property-listing-results-map-container'>
-      {!isMobile && <PropertyListingMap />}
+      {!isMobile && <PropertyListingMap listings={transformedListings} />}
       <section className='property-listing-results-container'>
         <h2 className='property-listing-results-container-h2-text'>
           Properties near {formatLocationDisplay(location)}
@@ -246,7 +246,7 @@ function PropertyListingContainer({
         </div>
         <div className='property-listing-card-container'>
           {renderListingCards()}
-          
+
           {/* Loading indicator for infinite scroll */}
           {isLoadingMore && (
             <div className='infinite-scroll-loading'>
@@ -255,7 +255,7 @@ function PropertyListingContainer({
               ))}
             </div>
           )}
-          
+
           {/* End of results indicator */}
           {!hasMore && transformedListings.length > 0 && !isLoading && (
             <div className='end-of-results'>
@@ -284,7 +284,7 @@ function PropertyListingContainer({
             </div>
             {activeMobileView === 'map' && !isLoading && (
               <div className='property-listing-mobile-overlay'>
-                <PropertyListingMap />
+                <PropertyListingMap listings={transformedListings} />
                 <button
                   onClick={() => setActiveMobileView(null)}
                   className='property-listing-mobile-overlay-button'
