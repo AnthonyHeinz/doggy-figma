@@ -147,15 +147,12 @@ function PropertyListings() {
             : [coordinates]  // shape it like [[[]]]
         );
 
-        console.log("boundaryPoly", boundaryPoly);
-
+        // Filter listings
         filteredListings = newListings.filter((listing) => {
-          console.log("listing", listing)
           const lat = listing.location.address?.coordinate?.lat;
           const lon = listing.location.address?.coordinate?.lon;
 
           if (lat !== undefined && lon !== undefined) {
-            console.log("got inside this if statement")
             const pt = point([lon, lat]);
             return booleanPointInPolygon(pt, boundaryPoly);
           }
@@ -163,7 +160,6 @@ function PropertyListings() {
           return false;
         });
       }
-
 
       if (append && page > 1) {
         setPropertyListings(prev => [...prev, ...filteredListings]);
