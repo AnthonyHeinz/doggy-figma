@@ -16,7 +16,7 @@ function PropertyListings() {
   const [propertyListings, setPropertyListings] = useState([]);
   const [propertyListingsPaginationData, setPropertyListingsPaginationData] = useState({});
   const [mapBoundary, setMapBoundary] = useState({});
-  console.log('mapBoundary', mapBoundary);
+
   // Map Boundary Object looks like this:
   // {
   //   "type": ShapeType (circle, polygon, etc.)
@@ -130,35 +130,34 @@ function PropertyListings() {
 
       const data = await response.json();
 
-      console.log('data', data);
 
       if (data.data && data.data.results && Array.isArray(data.data.results)) {
-      const newListings = data.data.results;
-      setMapBoundary(data.data.boundary);
+        const newListings = data.data.results;
+        setMapBoundary(data.data.boundary);
 
-      // Boundary filtering
-      let filteredListings = newListings;
-      if (data.data.boundary?.type === 'Polygon' && Array.isArray(data.data.boundary.coordinates)) {
-        const coordinates = data.data.boundary.coordinates;
-        // Ensure it's properly shaped
-        const boundaryPoly = polygon(
-          Array.isArray(coordinates[0][0])
-            ? coordinates  // already shaped like [[[]]]
-            : [coordinates]  // shape it like [[[]]]
-        );
+        // Boundary filtering
+        let filteredListings = newListings;
+        if (data.data.boundary?.type === 'Polygon' && Array.isArray(data.data.boundary.coordinates)) {
+          const coordinates = data.data.boundary.coordinates;
+          // Ensure it's properly shaped
+          const boundaryPoly = polygon(
+            Array.isArray(coordinates[0][0])
+              ? coordinates  // already shaped like [[[]]]
+              : [coordinates]  // shape it like [[[]]]
+          );
 
-        // Filter listings
-        filteredListings = newListings.filter((listing) => {
-          const lat = listing.location.address?.coordinate?.lat;
-          const lon = listing.location.address?.coordinate?.lon;
+          // Filter listings
+          filteredListings = newListings.filter((listing) => {
+            const lat = listing.location.address?.coordinate?.lat;
+            const lon = listing.location.address?.coordinate?.lon;
 
-          if (lat !== undefined && lon !== undefined) {
-            const pt = point([lon, lat]);
-            return booleanPointInPolygon(pt, boundaryPoly);
-          }
+            if (lat !== undefined && lon !== undefined) {
+              const pt = point([lon, lat]);
+              return booleanPointInPolygon(pt, boundaryPoly);
+            }
 
-          return false;
-        });
+            return false;
+          });
       }
 
       if (append && page > 1) {

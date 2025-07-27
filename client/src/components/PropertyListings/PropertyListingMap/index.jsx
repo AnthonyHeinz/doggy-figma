@@ -17,7 +17,6 @@ function PropertyListingMap({ listings = [], boundary }) {
         longitude: listings[0].coordinates.lon,
         zoom: 10
       });
-      console.log("viewport", viewport);
     }
   }, [listings]);
 
