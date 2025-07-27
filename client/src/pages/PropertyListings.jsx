@@ -1,3 +1,5 @@
+import booleanPointInPolygon from '@turf/boolean-point-in-polygon';
+import { point, polygon } from '@turf/helpers';
 import { useCallback, useEffect, useMemo, useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import Navbar from '../components/Navbar';
@@ -12,7 +14,7 @@ function PropertyListings() {
   const [submittedLocation, setSubmittedLocation] = useState('');
   const [submittedLocationDisplay, setSubmittedLocationDisplay] = useState('');
   const [propertyListings, setPropertyListings] = useState([]);
-  const [propertListingsPaginationData, setPropertListingsPaginationData] = useState({});
+  const [propertyListingsPaginationData, setPropertyListingsPaginationData] = useState({});
   const [mapBoundary, setMapBoundary] = useState({});
   console.log('mapBoundary', mapBoundary);
   // Map Boundary Object looks like this:
@@ -26,8 +28,6 @@ function PropertyListings() {
   // For example, if the map boundary is a circle, we can use the radius to filter the properties
   // If the map boundary is a polygon, we can use the coordinates to filter the properties
   // If the map boundary is a rectangle, we can use the coordinates to filter the properties
-
-
 
   const [isLoading, setIsLoading] = useState(false);
   const [isSearching, setIsSearching] = useState(false);
@@ -133,22 +133,48 @@ function PropertyListings() {
       console.log('data', data);
 
       if (data.data && data.data.results && Array.isArray(data.data.results)) {
-        const newListings = data.data.results;
-        // Setting Map Boundary from first page of results only
-        setMapBoundary(data.data.boundary);
+      const newListings = data.data.results;
+      setMapBoundary(data.data.boundary);
 
-        if (append && page > 1) {
-          setPropertyListings(prev => [...prev, ...newListings]);
-        } else {
-          setPropertyListings(newListings);
-        }
+      // Boundary filtering
+      let filteredListings = newListings;
+      if (data.data.boundary?.type === 'Polygon' && Array.isArray(data.data.boundary.coordinates)) {
+        const coordinates = data.data.boundary.coordinates;
+        // Ensure it's properly shaped
+        const boundaryPoly = polygon(
+          Array.isArray(coordinates[0][0])
+            ? coordinates  // already shaped like [[[]]]
+            : [coordinates]  // shape it like [[[]]]
+        );
 
-        setPropertListingsPaginationData(data.meta || {});
+        console.log("boundaryPoly", boundaryPoly);
 
-        const totalPages = data.meta ? Math.ceil(data.meta.totalRecords / 20) : 1;
-        setHasMore(page < totalPages);
+        filteredListings = newListings.filter((listing) => {
+          console.log("listing", listing)
+          const lat = listing.location.address?.coordinate?.lat;
+          const lon = listing.location.address?.coordinate?.lon;
 
+          if (lat !== undefined && lon !== undefined) {
+            console.log("got inside this if statement")
+            const pt = point([lon, lat]);
+            return booleanPointInPolygon(pt, boundaryPoly);
+          }
+
+          return false;
+        });
+      }
+
+
+      if (append && page > 1) {
+        setPropertyListings(prev => [...prev, ...filteredListings]);
       } else {
+        setPropertyListings(filteredListings);
+      }
+
+      setPropertyListingsPaginationData(data.meta || {});
+      const totalPages = data.meta ? Math.ceil(data.meta.totalRecords / 20) : 1;
+      setHasMore(page < totalPages);
+    } else {
         if (!append) {
           setPropertyListings([]);
         }
@@ -248,7 +274,7 @@ function PropertyListings() {
           dropdownStates={dropdownStates}
           listings={propertyListings}
           boundary={mapBoundary}
-          paginationData={propertListingsPaginationData}
+          paginationData={propertyListingsPaginationData}
           isLoading={isLoading || isSearching}
           isLoadingMore={isLoadingMore}
           hasMore={hasMore}

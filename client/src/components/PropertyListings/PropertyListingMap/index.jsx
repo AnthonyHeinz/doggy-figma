@@ -39,7 +39,7 @@ function PropertyListingMap({ listings = [], boundary }) {
             type: 'Feature',
             geometry: {
               type: boundary.type,
-              coordinates: [boundary.coordinates, boundary.coordinates[0]]
+              coordinates: boundary.coordinates
             },
             properties: {}
           }
@@ -86,13 +86,13 @@ function PropertyListingMap({ listings = [], boundary }) {
                   padding: '5px 10px',
                   fontWeight: 'bold',
                   cursor: 'pointer',
-                  backgroundColor: '#1BFFFF'
+                  backgroundColor: '#FFB501'
                 }}
                 onClick={() => window.open(listing.url, '_blank')}
               >
                 {listing.price}
               </div>
-              <FaLocationPin size={30} color='#1BFFFF' />
+              <FaLocationPin size={30} color='#FFB501' />
             </div>
           </Marker>
         ))}
